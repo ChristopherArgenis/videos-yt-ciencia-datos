@@ -1,0 +1,38 @@
+{
+  "_nota": "Video de prueba del motor (no se publica). Copia este archivo para empezar un video nuevo.",
+  "id": "plantilla",
+  "titulo": "Plantilla de video largo",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "La pregunta",
+      "pantalla": "Pregunta grande palabra por palabra y un sticker de 'Pista'.",
+      "voz": {
+        "g1": "Con solo veintitrés personas en un salón, ya es más probable que dos cumplan años el mismo día.",
+        "g2": "¿Cómo puede ser?"
+      }
+    },
+    {
+      "id": "cap1",
+      "capitulo": "Las parejas",
+      "pantalla": "Título de capítulo y luego contador de parejas con barras.",
+      "voz": {
+        "c1": "La clave no eres tú: son las parejas.",
+        "c2": "Con veintitrés personas hay doscientas cincuenta y tres parejas posibles."
+      }
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "Cierre estándar; la mitad derecha queda libre para la pantalla final de YouTube.",
+      "voz": {
+        "z1": "¿Te sirvió? Suscríbete a Universo Ciencia de Datos para más."
+      },
+      "min": 12
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "_nota": "Tiempos compartidos entre Remotion (src/kit/largo.tsx) y scripts/capitulos.py. Cambiar aquí cambia ambos.",
+  "fps": 30,
+  "inicio": 0.4,
+  "entre": 0.35,
+  "pausa": 0.8,
+  "palabrasPorSegundo": 2.4
+}
