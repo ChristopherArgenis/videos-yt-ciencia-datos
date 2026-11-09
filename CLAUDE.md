@@ -1,29 +1,47 @@
-# Proyecto: videos para YouTube @UniversoCienciaDatos
+# Proyecto: videos largos de YouTube para @UniversoCienciaDatos
 
-Solo se optimiza para YouTube (videos largos horizontales 16:9). Nada de TikTok, Reels ni Shorts salvo que el usuario lo pida.
+Solo se optimiza para YouTube: videos horizontales 16:9 de **3 a 10 minutos**.
 
-## Herramientas
-- "Skillselion MCP" y "yt-agent-skill" no existen en este entorno (revisado: ni conectores ni skills con esos nombres).
-- En su lugar se usa la skill `video-show` del usuario (motor local: Pillow + numpy + ffmpeg, voz espeak-ng, música sintetizada, sin API keys), adaptada a 1920×1080. El motor original es solo 9:16, así que la versión 16:9 vive en este repo.
+## Recursos: los del repo `ChristopherArgenis/shorts-ciencia-datos`
+Se reutiliza su motor y su estilo, no la skill `video-show` (el dueño pidió no usarla).
+- **Remotion 4.0.541** (React): un archivo `.tsx` por video, kit compartido en `src/kit/`
+  (`theme.ts` con colores `C`, fuentes Poppins / JetBrains Mono, `voz.tsx` con `Narracion` y `Musica`).
+- **Voz:** Alex, Kokoro TTS local (`em_alex`, velocidad 0.88, filtro ffmpeg de `scripts/make_voice.py`).
+  Frases en `scripts/voz.json`, números escritos con letra.
+- **Música y efectos** originales hechos con código (`scripts/make_audio.py`, `public/*.wav`).
+- **Miniaturas** como `<Still>` en `src/miniaturas/` y `npx remotion still <id> out/miniaturas/<id>.png`.
+- Chromium del entorno: `remotion.config.ts` usa `Config.setBrowserExecutable(...)`.
 
-## Formato de cada video
-- Duración: mínimo 3 min, máximo 10 min.
-- Resolución 1920×1080, 30 fps. Subtítulos activados (blanco con borde negro).
-- Cierre: «¿Te sirvió? Soy Argenis y te enseño Ciencia de Datos» + llamada a suscribirse a @UniversoCienciaDatos.
-- Datos inventados siempre marcados como «DATOS DE EJEMPLO». Nada con derechos de autor ni descargado sin licencia.
+## Reglas del dueño (heredadas)
+- **Todo 100 % gratuito.** Nada con costo, créditos o prueba que luego cobra. Si hay duda, preguntar.
+  Aprobadas: Remotion, Kokoro local, Whisper local, ffmpeg, Python (numpy/scipy, scikit-learn).
+  No usar: ElevenLabs, HeyGen, Remotion Lambda, servicios en la nube de pago.
+- Sin cara. Datos reales con fuente en pantalla; ejemplos marcados como "Ejemplo simplificado".
+- Nada con derechos de autor ni imágenes/audio de internet.
+
+## Formato del video largo
+- 1920×1080, 30 fps, 3–10 min. Subtítulos en pantalla. Capítulos claros.
+- Gancho en los primeros 30 s (pregunta o paradoja concreta, no una definición).
+- Cierre: «¿Te sirvió? Soy Argenis y te enseño Ciencia de Datos» + suscribirse a @UniversoCienciaDatos.
+- Aprovechar los Shorts ya hechos: el video largo profundiza un tema y se enlaza con su Short.
 
 ## Flujo (en orden, sin saltar pasos)
-1. Plan del video: público, objetivo, palabra clave principal, gancho de los primeros 30 s, estructura con capítulos y tiempos, estilo visual y música.
-2. Guion completo escena por escena (narración + qué se ve en pantalla).
-3. **Esperar aprobación explícita del usuario.** No renderizar nada antes.
-4. Vista previa (un cuadro por escena), revisar y corregir.
-5. Render final + verificación con ffprobe (1920×1080, duración esperada).
-6. Miniatura 1280×720 que enganche: máx. 4–5 palabras grandes, alto contraste, un solo foco visual, legible en pequeño.
-7. Textos de YouTube:
-   - Título: palabra clave al inicio, máx. ~60–70 caracteres, sin clickbait falso. Ofrecer 2–3 variantes.
-   - Descripción: primeras 2 líneas con palabra clave y valor; resumen; capítulos con marcas de tiempo (00:00 …); fuentes de datos; suscripción; mención a TikTok @argenis2125 e Instagram @kriz2125.
-   - 3–5 hashtags al final (los primeros aparecen sobre el título) + lista de etiquetas.
-8. Guardar todo en `videos/<NN>-<slug>/` (guion, miniatura, textos). El MP4 se entrega aparte si pesa mucho.
+1. **Plan:** público y nivel, palabra clave, gancho, capítulos con tiempos, estilo visual y música.
+2. **Guion** escena por escena (narración de Alex + qué se ve).
+3. **Esperar aprobación explícita del usuario. No renderizar antes.**
+4. Voz → composición Remotion → revisar fotogramas clave (`npx remotion still`).
+5. Render final + `ffprobe` (1920×1080, duración esperada).
+6. **Miniatura 1280×720**: máximo 3–4 palabras grandes, distintas al título, alto contraste,
+   un solo foco visual, legible en pequeño.
+7. **Entregar en el chat, listo para copiar:**
+   - **Título** ≤ 60 caracteres, palabra clave al inicio (2–3 variantes).
+   - **Descripción**: 2 primeras líneas dicen qué da el video con las palabras que la gente busca;
+     resumen; capítulos `00:00`; fuentes; suscripción; mención a TikTok @argenis2125 e Instagram @kriz2125.
+   - **#**: 3 a 5 hashtags (los 3 primeros salen sobre el título).
+   - Comentario fijado sugerido.
+8. Registrar todo en `PUBLICAR.md`.
 
 ## Cursos y series
-Cuando el usuario pida un curso o serie: proponer listas de reproducción, orden de episodios, nivel por episodio, temas, palabra clave por episodio, cómo se enlazan (pantallas finales, tarjetas) y calendario de publicación. Considerar si conviene serie o video único según el tema.
+Cuando se pida un curso o serie: decidir si conviene serie o video único; proponer episodios,
+orden, nivel, palabra clave por episodio, lista de reproducción, enlaces entre videos
+(pantalla final, tarjetas, Shorts relacionados) y calendario de publicación.
