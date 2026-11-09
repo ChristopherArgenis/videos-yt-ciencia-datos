@@ -2,15 +2,20 @@
 
 Solo se optimiza para YouTube: videos horizontales 16:9 de **3 a 10 minutos**.
 
-## Recursos: los del repo `ChristopherArgenis/shorts-ciencia-datos`
-Se reutiliza su motor y su estilo, no la skill `video-show` (el dueño pidió no usarla).
-- **Remotion 4.0.541** (React): un archivo `.tsx` por video, kit compartido en `src/kit/`
-  (`theme.ts` con colores `C`, fuentes Poppins / JetBrains Mono, `voz.tsx` con `Narracion` y `Musica`).
-- **Voz:** Alex, Kokoro TTS local (`em_alex`, velocidad 0.88, filtro ffmpeg de `scripts/make_voice.py`).
-  Frases en `scripts/voz.json`, números escritos con letra.
-- **Música y efectos** originales hechos con código (`scripts/make_audio.py`, `public/*.wav`).
-- **Miniaturas** como `<Still>` en `src/miniaturas/` y `npx remotion still <id> out/miniaturas/<id>.png`.
+## Recursos: adaptados de `ChristopherArgenis/shorts-ciencia-datos`
+Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No usar la skill
+`video-show` (el dueño pidió no usarla).
+- **Remotion 4.0.541**. Guion en `src/guiones/<video>.json` (única fuente del texto), escenas en
+  `src/videos/<Video>.tsx`, motor en `src/kit/largo.tsx`, piezas en `src/kit/kit.tsx`.
+- **Voz:** Alex, Kokoro local (`em_alex`, 0.88): `python3 scripts/make_voice.py <video>`.
+  Narración con números escritos con letra.
+- **Música** en bucle (`public/musica/`) y efectos (`public/sfx/`), hechos con `scripts/make_audio.py`.
+- **Miniaturas** 1280×720 como `<Still>` en `src/miniaturas/Miniaturas.tsx` con `src/kit/miniatura.tsx`.
+- `scripts/render.py` se niega a renderizar si el guion no tiene `"aprobado": true`.
+  Solo se pone `true` después de que el usuario apruebe el guion.
+- `scripts/capitulos.py` da duración y capítulos; `scripts/titulo.py` revisa títulos y descripción.
 - Chromium del entorno: `remotion.config.ts` usa `Config.setBrowserExecutable(...)`.
+- Modelo de Kokoro: si falta, descargar a `~/.cache/hyperframes/tts` (ver cabecera de `make_voice.py`).
 
 ## Reglas del dueño (heredadas)
 - **Todo 100 % gratuito.** Nada con costo, créditos o prueba que luego cobra. Si hay duda, preguntar.
