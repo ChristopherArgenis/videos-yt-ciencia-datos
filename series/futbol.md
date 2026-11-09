@@ -1,0 +1,118 @@
+# Serie: Fútbol con Datos (10 partes)
+
+**Estado:** plan propuesto, pendiente de aprobación. Nada se renderiza hasta aprobar cada guion.
+
+## Idea
+Aprender ciencia de datos analizando fútbol real: de "qué es un evento" a analizar un partido
+completo con Python. Cada video explica un concepto, lo muestra con datos reales y enseña el
+código mínimo para hacerlo (Python + `statsbombpy` + `mplsoccer`, gratis).
+
+- **Público:** aficionados al fútbol que quieren aprender datos, y estudiantes de ciencia de datos.
+  Nivel principiante → intermedio.
+- **Por qué esta serie:** el mejor Short del canal ("3 métricas… analistas de fútbol") hizo 11,8×
+  la mediana, y hay poca competencia en español.
+- **Formato:** 6–9 min, 1920×1080, voz de Alex, subtítulos, capítulos.
+- **Lista de reproducción:** "Fútbol con Datos: curso de análisis de datos en el fútbol".
+- **Patrón de títulos:** tema + palabra clave al inicio; en pantalla y miniatura "FÚTBOL CON DATOS #N".
+
+## ⚠️ Datos: decisión necesaria antes de empezar
+Licencia de StatsBomb Open Data (User Agreement, 8 sep 2023), leída completa:
+- **1.2.2:** prohíbe "commercially exploit the data or any analysis derived from the use of the Service".
+  Un video **monetizado** puede contar como uso comercial.
+- **1.4:** obliga a acreditar con el **logo de StatsBomb** cada publicación.
+- **1.2.1:** prohíbe redistribuir los datos (se enlaza a su repositorio, no se suben archivos).
+
+Opciones:
+1. **(Recomendada)** Escribir a StatsBomb/Hudl pidiendo permiso por escrito para usar sus datos
+   abiertos en un canal educativo de YouTube. Es gratis. Mientras llega la respuesta, la serie
+   se publica **sin monetizar** o se empieza por episodios con ejemplos simplificados.
+2. Usar solo datos de ejemplo ("Ejemplo simplificado") para los conceptos. Sirve si el canal
+   está monetizado, pero pierde el atractivo de los partidos reales.
+3. Otra fuente abierta (por ejemplo, el dataset público de Wyscout de Pappalardo et al., 2019).
+   **No verificado:** no pude abrir su licencia desde este entorno.
+
+Verificado en un partido real (final del Mundial 2022, Argentina–Francia): 4,407 eventos,
+38 tiros con xG por tiro, pases con origen y destino, 940 conducciones y 361 presiones.
+Datos 360 disponibles para Mundial 2022, Euro 2020 y 2024, La Liga 2020/21, Ligue 1, MLS 2023, entre otros.
+
+Reglas extra para esta serie: sin fotos, escudos ni imágenes de jugadores o clubes (solo nombres
+y gráficas propias); logo de StatsBomb y "Datos: StatsBomb Open Data" en pantalla y descripción.
+
+## Episodios
+| # | Título (≤ 60) | Palabra clave | Datos | Min |
+|---|---|---|---|---|
+| 1 | Cómo un partido de fútbol se convierte en datos | datos en el fútbol | Final Mundial 2022 | 6 |
+| 2 | Qué es el xG en el fútbol, explicado con datos reales | xG fútbol | Tiros Mundial 2022 | 8 |
+| 3 | Mapa de tiros con Python: dónde dispara un goleador | mapa de tiros python | Messi, La Liga | 8 |
+| 4 | Redes de pases: quién es el cerebro del equipo | red de pases | Final Mundial 2022 | 8 |
+| 5 | Presión en el fútbol: cómo se mide con datos | presión fútbol datos | Euro 2024 | 7 |
+| 6 | Mapas de calor en el fútbol con Python | mapa de calor fútbol | Euro 2024 | 7 |
+| 7 | xA: el jugador que crea los goles (sin anotarlos) | asistencias esperadas | Euro 2024 | 7 |
+| 8 | Comparar jugadores con radares: ¿quién es mejor? | radar de jugadores | Euro 2024, por 90 min | 8 |
+| 9 | Cómo fichan los clubes con datos (scouting) | scouting con datos | La Liga 2020/21 | 9 |
+| 10 | Analizo la final del Mundial 2022 con datos | análisis de partido | Final + 360 | 10 |
+
+## Detalle por episodio
+**1 · Del partido a los datos.** Gancho: "Esta final tuvo 4,407 momentos registrados. Te enseño a leerlos."
+Qué es un evento (tipo, minuto, ubicación x/y, jugador), la cancha como plano de coordenadas,
+cómo se ven los datos en Python. Short relacionado: StatsBomb (Short 6).
+
+**2 · xG.** Gancho: "Francia tiró desde lejos; Argentina desde cerca. ¿Quién mereció ganar?"
+Probabilidad de gol por tiro (distancia, ángulo, tipo), xG total vs goles, por qué un penal vale ~0.78.
+Enlaza con la serie de Mates (probabilidad y regresión logística).
+
+**3 · Mapa de tiros.** Gancho: "¿Desde dónde anota Messi?" Dibujar la cancha con `mplsoccer`,
+puntos por tiro con tamaño = xG y color = gol. Código paso a paso.
+
+**4 · Redes de pases.** Gancho: "El jugador más importante no siempre es el que anota."
+Posición media + líneas por número de pases; grafos (enlaza con Algoritmos #8 Grafos).
+
+**5 · Presión.** Gancho: "¿Qué equipo incomoda más al rival?" Presiones por zona, recuperaciones
+en campo rival, PPDA explicado simple.
+
+**6 · Mapas de calor.** Gancho: "Dónde vive un mediocampista durante 90 minutos."
+Agrupar acciones en una cuadrícula, densidad (KDE), comparar dos jugadores.
+
+**7 · xA.** Gancho: "Este jugador no metió goles, pero creó los más claros."
+Pases clave, xG del tiro que generó cada pase, ranking de creadores.
+
+**8 · Radares.** Gancho: "Dos delanteros, mismos goles. ¿Quién es mejor?" Métricas por 90 minutos,
+percentiles, por qué normalizar (enlaza con Mates #2 y #3).
+
+**9 · Scouting.** Gancho: "Busco un reemplazo con datos, sin ver un solo partido."
+Filtrar por posición y minutos, similitud entre jugadores (enlaza con Mates #7 similitud coseno).
+
+**10 · Final del Mundial 2022 (final de la serie).** Gancho: "La mejor final de la historia, contada con datos."
+xG en el tiempo, momentos clave, presión, datos 360 de posición de jugadores. Une todo lo aprendido.
+
+## Cómo se enlazan
+- **Pantalla final (últimos 20 s):** siguiente episodio + lista de reproducción. Ya prevista en el `Cierre`.
+- **Tarjeta** hacia el episodio anterior cuando se usa un concepto suyo (por ejemplo, xG en el #3, #7 y #10).
+- **Descripción:** enlace a la lista y al episodio anterior/siguiente; capítulos con `scripts/capitulos.py`.
+- **Comentario fijado:** pregunta que invita a pedir un jugador o partido para el siguiente video.
+- **Shorts:** 2 Shorts por episodio, cortados del mismo tema (en `shorts-ciencia-datos`), con el
+  video largo como "video relacionado".
+- **Miniaturas:** misma plantilla en toda la serie: cancha verde de fondo, un número o palabra grande,
+  chip "FÚTBOL CON DATOS #N". Máximo 3–4 palabras.
+
+## Calendario sugerido
+Un episodio por semana (los videos largos tardan más) y 2 Shorts entre semana.
+| Semana | Fecha | Video largo |
+|---|---|---|
+| 1 | jue 19 nov 2026 | #1 Del partido a los datos |
+| 2 | jue 26 nov | #2 xG |
+| 3 | jue 3 dic | #3 Mapa de tiros |
+| 4 | jue 10 dic | #4 Redes de pases |
+| 5 | jue 17 dic | #5 Presión |
+| 6 | jue 7 ene 2027 | #6 Mapas de calor (pausa por fiestas) |
+| 7 | jue 14 ene | #7 xA |
+| 8 | jue 21 ene | #8 Radares |
+| 9 | jue 28 ene | #9 Scouting |
+| 10 | jue 4 feb | #10 Final del Mundial 2022 |
+
+Ajustar el día y la hora con YouTube Studio → Estadísticas → "Cuándo está conectada tu audiencia".
+
+## Qué medir
+- **CTR de la miniatura** (meta: ≥ 4–5 % en un canal pequeño).
+- **Retención a los 30 s** (si cae mucho, el gancho no funciona).
+- **% de espectadores que pasan al siguiente episodio** (si es bajo, revisar pantallas finales).
