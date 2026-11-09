@@ -334,16 +334,17 @@ export const Cierre: React.FC<EscenaProps> = () => (
   <AbsoluteFill style={{ padding: "150px 120px 210px 120px", display: "flex", flexDirection: "row" }}>
     <div style={{ flex: 0.46, display: "flex", flexDirection: "column", justifyContent: "center", gap: 30 }}>
       <Words text="¿Te *sirvió?*" size={110} align="left" />
+      <Words text="Ve más videos en" size={54} weight={800} align="left" delay={18} stagger={2} />
       <Words
-        text="Soy Argenis y te enseño *Ciencia de Datos*"
-        size={54}
+        text="*@UniversoCienciaDatos*"
+        size={50}
         weight={800}
         align="left"
-        delay={18}
-        stagger={2}
+        delay={28}
         accent={C.green}
+        style={{ fontFamily: MONO }}
       />
-      <Words text="Suscríbete para más" size={40} weight={600} color={C.dim} align="left" delay={45} />
+      <Words text="Suscríbete y sigue aprendiendo →" size={38} weight={600} color={C.dim} align="left" delay={45} />
       <Sfx src="ding.wav" at={18} volume={0.4} />
     </div>
     <div style={{ flex: 0.54 }} />

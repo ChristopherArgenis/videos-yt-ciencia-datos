@@ -15,53 +15,51 @@ código mínimo para hacerlo (Python + `statsbombpy` + `mplsoccer`, gratis).
 - **Lista de reproducción:** "Fútbol con Datos: curso de análisis de datos en el fútbol".
 - **Patrón de títulos:** tema + palabra clave al inicio; en pantalla y miniatura "FÚTBOL CON DATOS #N".
 
-## ⚠️ Datos: decisión necesaria antes de empezar
-Licencia de StatsBomb Open Data (User Agreement, 8 sep 2023), leída completa:
-- **1.2.2:** prohíbe "commercially exploit the data or any analysis derived from the use of the Service".
-  Un video **monetizado** puede contar como uso comercial.
-- **1.4:** obliga a acreditar con el **logo de StatsBomb** cada publicación.
-- **1.2.1:** prohíbe redistribuir los datos (se enlaza a su repositorio, no se suben archivos).
+## Datos: fuentes comparadas (revisado el 9 nov 2026)
+| Fuente | Qué trae | Licencia | ¿Monetizar? |
+|---|---|---|---|
+| **Wyscout público** (Pappalardo et al., 2019) | 1,941 partidos: 5 grandes ligas 2017/18, Mundial 2018, Euro 2016. Eventos con x/y (pases, tiros, duelos), jugadores y equipos. Sin xG. | CC BY 4.0 (visto en el repo espejo octosport; figshare no abrió desde aquí) | Sí, citando la fuente |
+| **SkillCorner Open Data** | 10 partidos de la A-League 2024/25 con tracking (posición de todos los jugadores) y eventos dinámicos | MIT; piden dar crédito a SkillCorner | Sí, dando crédito |
+| **StatsBomb Open Data** | La mejor: xG por tiro, presiones, conducciones, datos 360. Mundial 2022, Euro 2020/2024, Messi en La Liga… | Acuerdo propio: prohíbe uso comercial (1.2.2) y exige su logo (1.4) | No, salvo permiso por escrito |
+| Metrica Sports (muestra) | 3 partidos anónimos con tracking y eventos | Sin licencia formal; piden citar la fuente | Dudoso |
+| openfootball | Solo resultados y calendarios | CC0 (dominio público) | Sí |
+| PFF FC Mundial 2022 | Eventos + tracking de los 64 partidos | Términos no encontrados | Sin confirmar |
 
-Opciones:
-1. **(Recomendada)** Escribir a StatsBomb/Hudl pidiendo permiso por escrito para usar sus datos
-   abiertos en un canal educativo de YouTube. Es gratis. Mientras llega la respuesta, la serie
-   se publica **sin monetizar** o se empieza por episodios con ejemplos simplificados.
-2. Usar solo datos de ejemplo ("Ejemplo simplificado") para los conceptos. Sirve si el canal
-   está monetizado, pero pierde el atractivo de los partidos reales.
-3. Otra fuente abierta (por ejemplo, el dataset público de Wyscout de Pappalardo et al., 2019).
-   **No verificado:** no pude abrir su licencia desde este entorno.
+**Decisión:** la serie se basa en **Wyscout (CC BY 4.0)** y **SkillCorner (MIT)**, que permiten monetizar
+citando la fuente. StatsBomb solo entra si responden con permiso por escrito (correo en borrador en Gmail).
+Sin xG en Wyscout se convierte en ventaja: en el #2 construimos nuestro propio modelo de xG.
 
-Verificado en un partido real (final del Mundial 2022, Argentina–Francia): 4,407 eventos,
-38 tiros con xG por tiro, pases con origen y destino, 940 conducciones y 361 presiones.
-Datos 360 disponibles para Mundial 2022, Euro 2020 y 2024, La Liga 2020/21, Ligue 1, MLS 2023, entre otros.
+Atribución en pantalla y descripción:
+- "Datos: Wyscout, vía Pappalardo et al. (2019), Scientific Data. CC BY 4.0."
+- "Tracking: SkillCorner Open Data."
 
 Reglas extra para esta serie: sin fotos, escudos ni imágenes de jugadores o clubes (solo nombres
-y gráficas propias); logo de StatsBomb y "Datos: StatsBomb Open Data" en pantalla y descripción.
+y gráficas propias). Antes del primer video, confirmar la licencia en la página de figshare.
 
 ## Episodios
 | # | Título (≤ 60) | Palabra clave | Datos | Min |
 |---|---|---|---|---|
-| 1 | Cómo un partido de fútbol se convierte en datos | datos en el fútbol | Final Mundial 2022 | 6 |
-| 2 | Qué es el xG en el fútbol, explicado con datos reales | xG fútbol | Tiros Mundial 2022 | 8 |
-| 3 | Mapa de tiros con Python: dónde dispara un goleador | mapa de tiros python | Messi, La Liga | 8 |
-| 4 | Redes de pases: quién es el cerebro del equipo | red de pases | Final Mundial 2022 | 8 |
-| 5 | Presión en el fútbol: cómo se mide con datos | presión fútbol datos | Euro 2024 | 7 |
-| 6 | Mapas de calor en el fútbol con Python | mapa de calor fútbol | Euro 2024 | 7 |
-| 7 | xA: el jugador que crea los goles (sin anotarlos) | asistencias esperadas | Euro 2024 | 7 |
-| 8 | Comparar jugadores con radares: ¿quién es mejor? | radar de jugadores | Euro 2024, por 90 min | 8 |
-| 9 | Cómo fichan los clubes con datos (scouting) | scouting con datos | La Liga 2020/21 | 9 |
-| 10 | Analizo la final del Mundial 2022 con datos | análisis de partido | Final + 360 | 10 |
+| 1 | Cómo un partido de fútbol se convierte en datos | datos en el fútbol | Final Mundial 2018 (Wyscout) | 6 |
+| 2 | Qué es el xG en el fútbol, explicado con datos reales | xG fútbol | Tiros 5 ligas 2017/18: creamos el modelo | 9 |
+| 3 | Mapa de tiros con Python: dónde dispara un goleador | mapa de tiros python | Messi, La Liga 2017/18 | 8 |
+| 4 | Redes de pases: quién es el cerebro del equipo | red de pases | Final Mundial 2018 | 8 |
+| 5 | Presión en el fútbol: cómo se mide con datos | presión fútbol datos | Eventos dinámicos SkillCorner | 7 |
+| 6 | Mapas de calor en el fútbol con Python | mapa de calor fútbol | Tracking SkillCorner + Wyscout | 7 |
+| 7 | xA: el jugador que crea los goles (sin anotarlos) | asistencias esperadas | 5 ligas 2017/18 + nuestro xG | 7 |
+| 8 | Comparar jugadores con radares: ¿quién es mejor? | radar de jugadores | 5 ligas 2017/18, por 90 min | 8 |
+| 9 | Cómo fichan los clubes con datos (scouting) | scouting con datos | 5 ligas 2017/18 | 9 |
+| 10 | Analizo la final del Mundial 2018 con datos | análisis de partido | Francia–Croacia (o Mundial 2022 si StatsBomb da permiso) | 10 |
 
 ## Detalle por episodio
-**1 · Del partido a los datos.** Gancho: "Esta final tuvo 4,407 momentos registrados. Te enseño a leerlos."
+**1 · Del partido a los datos.** Gancho: "Esta final tuvo miles de momentos registrados. Te enseño a leerlos."
 Qué es un evento (tipo, minuto, ubicación x/y, jugador), la cancha como plano de coordenadas,
 cómo se ven los datos en Python. Short relacionado: StatsBomb (Short 6).
 
-**2 · xG.** Gancho: "Francia tiró desde lejos; Argentina desde cerca. ¿Quién mereció ganar?"
-Probabilidad de gol por tiro (distancia, ángulo, tipo), xG total vs goles, por qué un penal vale ~0.78.
+**2 · xG.** Gancho: "¿Ese tiro era gol seguro o un milagro?" Con miles de tiros reales entrenamos nuestro
+propio modelo de xG (distancia y ángulo → regresión logística) y lo comparamos con los goles reales.
 Enlaza con la serie de Mates (probabilidad y regresión logística).
 
-**3 · Mapa de tiros.** Gancho: "¿Desde dónde anota Messi?" Dibujar la cancha con `mplsoccer`,
+**3 · Mapa de tiros.** Gancho: "¿Desde dónde anota Messi?" (temporada 2017/18). Dibujar la cancha con `mplsoccer`,
 puntos por tiro con tamaño = xG y color = gol. Código paso a paso.
 
 **4 · Redes de pases.** Gancho: "El jugador más importante no siempre es el que anota."
@@ -82,8 +80,9 @@ percentiles, por qué normalizar (enlaza con Mates #2 y #3).
 **9 · Scouting.** Gancho: "Busco un reemplazo con datos, sin ver un solo partido."
 Filtrar por posición y minutos, similitud entre jugadores (enlaza con Mates #7 similitud coseno).
 
-**10 · Final del Mundial 2022 (final de la serie).** Gancho: "La mejor final de la historia, contada con datos."
-xG en el tiempo, momentos clave, presión, datos 360 de posición de jugadores. Une todo lo aprendido.
+**10 · Final del Mundial (final de la serie).** Gancho: "Una final entera, contada solo con datos."
+Francia–Croacia 2018 con nuestro xG, redes de pases y mapas de calor. Si StatsBomb da permiso,
+se cambia a Argentina–Francia 2022 con datos 360. Une todo lo aprendido.
 
 ## Cómo se enlazan
 - **Pantalla final (últimos 20 s):** siguiente episodio + lista de reproducción. Ya prevista en el `Cierre`.

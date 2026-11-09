@@ -27,7 +27,8 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
 ## Formato del video largo
 - 1920×1080, 30 fps, 3–10 min. Subtítulos en pantalla. Capítulos claros.
 - Gancho en los primeros 30 s (pregunta o paradoja concreta, no una definición).
-- Cierre: «¿Te sirvió? Soy Argenis y te enseño Ciencia de Datos» + suscribirse a @UniversoCienciaDatos.
+- Cierre: «¿Te sirvió? Ve más videos en @UniversoCienciaDatos» + «Suscríbete y sigue aprendiendo».
+  Alex dice: «¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete.» (componente `Cierre`).
 - Aprovechar los Shorts ya hechos: el video largo profundiza un tema y se enlaza con su Short.
 
 ## Flujo (en orden, sin saltar pasos)
