@@ -9,6 +9,7 @@ Todo es gratis y local: Remotion, voz Kokoro (Alex), música hecha con código y
 | ID | Tema |
 | --- | --- |
 | `00-Plantilla` | Video de prueba del motor (no se publica) |
+| `01-FutbolDatos` | Fútbol con Datos #1: cómo un partido se convierte en datos (StatsBomb, final Mundial 2022) |
 
 ## Cómo se hace un video
 ```bash
@@ -25,6 +26,11 @@ npx remotion still Mini-01-Tema out/miniaturas/Mini-01-Tema.png   # 5. miniatura
 python3 scripts/capitulos.py 01-tema                       # 6. capítulos para la descripción
 python3 scripts/titulo.py "Título 1" "Título 2"            #    revisar títulos
 ```
+
+## Datos de fútbol (StatsBomb)
+Su licencia prohíbe redistribuir los datos, así que no están en git. Antes de abrir o renderizar
+un episodio de la serie, genera sus datos: `python3 scripts/futbol/ep01_datos.py`
+(descarga a `datos/` y escribe `src/datos/privado/`). El logo oficial está en `public/logos/`.
 
 ## Estructura
 - `src/guiones/<video>.json` guion: escenas, capítulo, qué se ve y frases de Alex. Es la única fuente

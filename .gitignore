@@ -7,3 +7,7 @@ models
 
 # Videos y miniaturas renderizados (se entregan aparte)
 out
+
+# Datos de StatsBomb: su licencia prohíbe redistribuirlos. Se generan con scripts/futbol/*.py
+datos/
+src/datos/privado/

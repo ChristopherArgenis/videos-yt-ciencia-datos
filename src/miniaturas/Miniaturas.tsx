@@ -37,3 +37,36 @@ export const MiniPlantilla: React.FC = () => (
     />
   </FondoMini>
 );
+
+// ---------- Fútbol con Datos ----------
+import { Cancha } from "../kit/cancha";
+import datosEp01 from "../datos/privado/ep01.json";
+
+export const MiniFutbol01: React.FC = () => (
+  <FondoMini accent={C.green}>
+    <div style={{ position: "absolute", right: -40, top: 90, rotate: "-4deg", opacity: 0.95 }}>
+      <Cancha width={760} lineas={0.8}>
+        {datosEp01.puntos.map(([x, y, t], i) => (
+          <circle
+            key={i}
+            cx={x as number}
+            cy={y as number}
+            r={0.75}
+            fill={t === "Pass" ? C.green : t === "Carry" ? C.blue : t === "Pressure" ? C.coral : "#ffffff"}
+            opacity={0.8}
+          />
+        ))}
+      </Cancha>
+    </div>
+    <div style={{ position: "absolute", left: 60, top: 70, display: "flex", flexDirection: "column", gap: 18 }}>
+      <ChipMini bg={C.green}>FÚTBOL CON DATOS #1</ChipMini>
+      <Grande size={190} color={C.yellow}>
+        4,407
+      </Grande>
+      <Grande size={150}>DATOS</Grande>
+      <div style={{ fontFamily: "Poppins", fontWeight: 800, fontSize: 40, color: C.ink, textShadow: "0 4px 12px #000" }}>
+        en una sola final
+      </div>
+    </div>
+  </FondoMini>
+);

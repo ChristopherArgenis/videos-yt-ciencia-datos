@@ -30,4 +30,19 @@ Plantilla por video:
 
 ---
 
-(Aún no hay videos publicados.)
+# Serie: Fútbol con Datos
+
+## 01 · Cómo un partido de fútbol se convierte en datos (4:52)
+**Título:** Cómo un partido de fútbol se convierte en datos (47)
+**Alternativas:** La final del Mundial 2022 en 4,407 datos (40) · Así ve un analista de datos un partido de fútbol (48)
+**Miniatura:** `Mini-01-FutbolDatos` → "4,407 DATOS en una sola final"
+**Lista:** Fútbol con Datos: curso de análisis de datos en el fútbol
+**Short relacionado:** Short6-StatsBomb (repo shorts-ciencia-datos)
+**Datos:** StatsBomb Open Data, partido 3869685. Logo en pantalla todo el video (cláusula 1.4).
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb (cláusula 1.2.2; correo en borrador).
+
+**Descripción:** ver `videos/01-futbol-datos/descripcion.txt` (código verificado con statsbombpy: 4407 eventos).
+
+**#:** #cienciadedatos #futbol #python #analisisdedatos #mundial2022
+**Comentario fijado:** ¿Qué partido o jugador quieres que analicemos con datos? Lo puedo usar en un próximo episodio 👇
+**Pantalla final (últimos 20 s):** lista de la serie + botón de suscribirse (el episodio 2 cuando exista).

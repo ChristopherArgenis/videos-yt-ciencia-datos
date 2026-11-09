@@ -366,7 +366,12 @@ const Entrada: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   );
 };
 
-export const VideoLargo: React.FC<{ guion: Guion; escenas: Escenas }> = ({ guion, escenas }) => {
+export const VideoLargo: React.FC<{
+  guion: Guion;
+  escenas: Escenas;
+  /** Capa fija sobre todas las escenas (por ejemplo, el crédito de la fuente de datos). */
+  extra?: React.ReactNode;
+}> = ({ guion, escenas, extra }) => {
   const plan = planificar(guion);
   const acento = guion.acento ?? C.blue;
   return (
@@ -383,6 +388,7 @@ export const VideoLargo: React.FC<{ guion: Guion; escenas: Escenas }> = ({ guion
           </Sequence>
         );
       })}
+      {extra}
       <Handle />
       <BarraCapitulos plan={plan} acento={acento} />
       {guion.subtitulos !== false && <Subtitulos plan={plan} />}

@@ -1,0 +1,31 @@
+Así se convierte un partido de fútbol en datos: la final del Mundial 2022 (Argentina vs Francia) tuvo 4,407 eventos registrados.
+Aprende qué es un evento, cómo se ubica cada jugada en la cancha y cómo analizarlo tú mismo con Python, paso a paso.
+
+Episodio 1 de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Veremos qué guarda cada pase, por qué los tres penales de la final tienen la misma coordenada, todo lo que hizo Messi en 241 eventos y qué dicen los datos sobre quién jugó mejor.
+
+Capítulos:
+00:00 La final de los 4,407 datos
+00:32 ¿Qué es un evento?
+01:26 La cancha es un plano
+02:08 120 minutos en números
+02:42 Messi, en datos
+03:17 ¿Quién jugó mejor?
+03:57 Tu turno: con Python
+04:32 Cierre
+
+Código del video (Python):
+pip install statsbombpy
+from statsbombpy import sb
+df = sb.events(match_id=3869685)   # final del Mundial 2022
+len(df)                            # 4407 eventos
+df["type"].value_counts()          # cuántos hay de cada tipo
+
+Datos: StatsBomb Open Data (Hudl StatsBomb) — github.com/statsbomb/open-data
+El análisis es propio y no representa la opinión de StatsBomb.
+
+Próximo episodio: ¿Qué es el xG? (goles esperados)
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #python #analisisdedatos #mundial2022
