@@ -1,0 +1,176 @@
+{
+  "_nota": "Fútbol con Datos #1. Cifras verificadas en StatsBomb Open Data, partido 3869685 (final Mundial 2022). Sin la tanda de penales salvo donde se dice.",
+  "id": "01-futbol-datos",
+  "titulo": "Cómo un partido de fútbol se convierte en datos",
+  "aprobado": false,
+  "musica": "musica/curiosa.wav",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "La final de los 4,407 datos",
+      "pantalla": "Marcador 3-3 'Argentina vs Francia · Final Mundial 2022'. Un contador sube hasta 4,407 mientras la cancha se llena de puntos (cada punto = un evento real).",
+      "voz": {
+        "g1": "Diciembre de dos mil veintidós. Final del Mundial. Argentina contra Francia.",
+        "g2": "Ciento veinte minutos, seis goles y una tanda de penales.",
+        "g3": "Pero mientras tú veías el partido, alguien más lo estaba convirtiendo en datos.",
+        "g4": "Cuatro mil cuatrocientos siete datos, para ser exactos.",
+        "g5": "Hoy te enseño a leerlos. Y vas a ver el fútbol de otra forma."
+      },
+      "sub": {
+        "g1": "Diciembre de 2022. Final del Mundial. Argentina contra Francia.",
+        "g2": "120 minutos, 6 goles y una tanda de penales.",
+        "g4": "4,407 datos, para ser exactos."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #1' y una fila con los 10 episodios de la serie; se ilumina el primero.",
+      "voz": {
+        "s1": "Este es el primer episodio de Fútbol con Datos: una serie para aprender ciencia de datos analizando fútbol real."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "evento",
+      "capitulo": "¿Qué es un evento?",
+      "pantalla": "Cancha vista desde arriba. Aparece una flecha: el pase de Otamendi a Romero (0:39). Al lado se arma una ficha con sus datos: jugador, minuto, inicio, fin, tipo de pase, resultado.",
+      "voz": {
+        "e1": "Empecemos por lo más pequeño: un evento.",
+        "e2": "Un evento es cualquier cosa que pasa con el balón: un pase, un tiro, una falta, una presión.",
+        "e3": "Mira este. Minuto cero, segundo treinta y nueve.",
+        "e4": "Otamendi le pasa el balón a Cristian Romero. Un pase raso, con la derecha, de unos veinte metros.",
+        "e5": "Para la computadora, ese pase es una ficha: quién, cuándo, dónde empezó, dónde terminó y si llegó.",
+        "e5b": "Y además guarda detalles: con qué pie fue, a qué altura iba el balón y quién lo recibió.",
+        "e6": "Y una final tiene miles de fichas así."
+      },
+      "sub": {
+        "e3": "Mira este. Minuto 0, segundo 39."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "quien",
+      "pantalla": "Ilustración simple: una pantalla con el partido y una persona marcando acciones; cada clic agrega un punto a la cancha. Luego una palomita de 'revisado'.",
+      "voz": {
+        "w1": "¿Y quién llena esas fichas? Personas entrenadas que ven el video del partido y registran cada acción, una por una.",
+        "w2": "Después se revisa todo, para que cada dato sea correcto.",
+        "w3": "Por eso estos datos son tan valiosos para clubes, medios y analistas."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cancha",
+      "capitulo": "La cancha es un plano",
+      "pantalla": "La cancha se convierte en un plano con ejes 0–120 y 0–80. Se marca el inicio del pase (24, 27). Luego caen tres puntos en el mismo lugar: los penales de Messi (22') y Mbappé (79', 117') en (108, 40).",
+      "voz": {
+        "c1": "¿Y cómo se guarda el dónde? Con coordenadas, como en un plano cartesiano.",
+        "c2": "StatsBomb mide la cancha de cero a ciento veinte de largo, y de cero a ochenta de ancho.",
+        "c2b": "Esas medidas están en yardas. Una yarda es casi un metro, así que la cancha mide unos ciento diez metros de largo.",
+        "c3": "El pase de Otamendi empezó en el punto veinticuatro, veintisiete. Cerca de su propia área.",
+        "c4": "Y aquí viene algo curioso: los tres penales del partido, uno de Messi y dos de Mbappé, tienen exactamente la misma coordenada.",
+        "c5": "Ciento ocho, cuarenta. El punto penal.",
+        "c6": "Con solo dos números, sabemos en qué lugar de la cancha pasó cada cosa."
+      },
+      "sub": {
+        "c2": "StatsBomb mide la cancha de 0 a 120 de largo y de 0 a 80 de ancho.",
+        "c3": "El pase de Otamendi empezó en (24, 27). Cerca de su propia área.",
+        "c5": "(108, 40). El punto penal.",
+        "c2b": "Las medidas están en yardas (casi un metro). La cancha mide unos 110 metros."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "partido",
+      "capitulo": "120 minutos en números",
+      "pantalla": "Barras animadas por tipo de evento: pases 1,263 · conducciones 940 · presiones 361 · tiros 30. Luego un reloj: 35 eventos por minuto.",
+      "voz": {
+        "p1": "Ahora juntemos todos los eventos del partido.",
+        "p2": "Mil doscientos sesenta y tres pases. Novecientas cuarenta conducciones, que es cuando un jugador avanza con el balón.",
+        "p3": "Trescientas sesenta y una presiones. Y solo treinta tiros.",
+        "p3b": "Y mil ciento catorce veces, alguien recibió el balón.",
+        "p4": "Hagamos la cuenta: son unos treinta y cinco eventos por minuto. Casi uno cada dos segundos.",
+        "p5": "Y fíjate en esto: por cada tiro hubo más de cuarenta pases. El fútbol es, sobre todo, pases."
+      },
+      "sub": {
+        "p2": "1,263 pases. 940 conducciones: cuando un jugador avanza con el balón.",
+        "p3": "361 presiones. Y solo 30 tiros.",
+        "p4": "Unos 35 eventos por minuto. Casi uno cada 2 segundos.",
+        "p5": "Por cada tiro hubo más de 40 pases. El fútbol es, sobre todo, pases.",
+        "p3b": "1,114 veces alguien recibió el balón."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "messi",
+      "capitulo": "Messi, en datos",
+      "pantalla": "Tarjeta 'Messi · 241 eventos' con contadores: 74 recepciones, 60 pases, 53 conducciones, 17 presiones. Luego la cancha se llena con sus 241 puntos (vista previa del mapa de calor).",
+      "voz": {
+        "m1": "Los datos también cuentan la historia de un jugador. Busquemos a Messi.",
+        "m2": "Messi aparece en doscientos cuarenta y un eventos. Recibió el balón setenta y cuatro veces, dio sesenta pases y condujo cincuenta y tres veces.",
+        "m3": "Anotó dos goles: un penal, y un remate dentro del área en el tiempo extra.",
+        "m4": "Y algo que casi nadie nota: presionó diecisiete veces para recuperar el balón.",
+        "m5": "Si dibujamos todos sus eventos en la cancha, vemos por dónde se movió. A eso se le llama mapa de calor, y lo haremos en el episodio seis."
+      },
+      "sub": {
+        "m2": "Messi aparece en 241 eventos: 74 recepciones, 60 pases y 53 conducciones.",
+        "m4": "Y algo que casi nadie nota: presionó 17 veces para recuperar el balón."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "equipos",
+      "capitulo": "¿Quién jugó mejor?",
+      "pantalla": "Comparativa lado a lado Argentina vs Francia: pases 693 vs 570, tiros 20 vs 10, goles 3 vs 3. Al final aparece 'xG 2.76 vs 2.27' con un signo de interrogación.",
+      "voz": {
+        "q1": "Con los datos también podemos comparar a los equipos.",
+        "q2": "Argentina dio seiscientos noventa y tres pases. Francia, quinientos setenta.",
+        "q2b": "Pero no solo importa cuántos: Argentina completó el ochenta y uno por ciento de sus pases, y Francia, el setenta y seis.",
+        "q3": "Argentina tiró veinte veces. Francia, diez.",
+        "q4": "Y aun así, el marcador terminó tres a tres.",
+        "q5": "Hay un número que explica mucho mejor lo que pasó: el equis ge, o goles esperados. Argentina, dos punto setenta y seis. Francia, dos punto veintisiete.",
+        "q6": "¿Qué significa ese número? Eso lo vemos en el próximo episodio."
+      },
+      "sub": {
+        "q2": "Argentina dio 693 pases. Francia, 570.",
+        "q3": "Argentina tiró 20 veces. Francia, 10.",
+        "q4": "Y aun así, el marcador terminó 3 a 3.",
+        "q5": "Hay un número que lo explica mejor: el xG, o goles esperados. Argentina 2.76, Francia 2.27.",
+        "q2b": "Argentina completó el 81 % de sus pases. Francia, el 76 %."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor de código oscuro. Se escriben 4 líneas: from statsbombpy import sb / df = sb.events(match_id=3869685) / len(df) → 4407 / df['type'].value_counts() → tabla con Pass 1263, Carry 940…",
+      "voz": {
+        "y1": "Lo mejor: estos datos son abiertos y puedes usarlos tú.",
+        "y2": "Con la librería stats bomb pai, en Python, cargas el partido completo con una sola línea.",
+        "y2b": "El resultado es una tabla: cada fila es un evento, y cada columna es un dato, como el minuto, el jugador o la ubicación.",
+        "y3": "Y con otra, cuentas cuántos eventos hay de cada tipo. Así saqué todos los números de este video.",
+        "y3b": "Y si cambias el número del partido, puedes analizar cualquier otro: hay cientos de partidos gratis.",
+        "y4": "Te dejo el código en la descripción."
+      },
+      "sub": {
+        "y2": "Con la librería statsbombpy, en Python, cargas el partido con una sola línea."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "Cierre estándar del canal + 'Datos: StatsBomb Open Data' con su logo. Mitad derecha libre para la pantalla final de YouTube (episodio 2 + lista de la serie).",
+      "voz": {
+        "z1": "En el próximo episodio vamos a descubrir qué es el equis ge, y por qué un tiro puede valer más que otro.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "sub": {
+        "z1": "En el próximo episodio: qué es el xG y por qué un tiro puede valer más que otro."
+      },
+      "min": 20
+    }
+  ]
+}

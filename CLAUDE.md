@@ -1,6 +1,6 @@
 # Proyecto: videos largos de YouTube para @UniversoCienciaDatos
 
-Solo se optimiza para YouTube: videos horizontales 16:9 de **3 a 10 minutos**.
+Solo se optimiza para YouTube: videos horizontales 16:9 de **~5 minutos de media** (3 a 10).
 
 ## Recursos: adaptados de `ChristopherArgenis/shorts-ciencia-datos`
 Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No usar la skill
@@ -25,7 +25,9 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
 - Nada con derechos de autor ni imágenes/audio de internet.
 
 ## Formato del video largo
-- 1920×1080, 30 fps, 3–10 min. Subtítulos en pantalla. Capítulos claros.
+- 1920×1080, 30 fps. **Duración media: ~5 min** (rango permitido 3–10). Subtítulos en pantalla. Capítulos claros.
+- Medir la duración con la voz real (`make_voice.py` + `capitulos.py`): Alex habla más rápido que la estimación.
+- Cifras: Alex las dice con letra (`voz`); el subtítulo las muestra con números (`sub`).
 - Gancho en los primeros 30 s (pregunta o paradoja concreta, no una definición).
 - Cierre: «¿Te sirvió? Ve más videos en @UniversoCienciaDatos» + «Suscríbete y sigue aprendiendo».
   Alex dice: «¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete.» (componente `Cierre`).

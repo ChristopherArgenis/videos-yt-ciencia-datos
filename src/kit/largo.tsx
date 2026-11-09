@@ -26,6 +26,8 @@ export type EscenaGuion = {
   pantalla?: string;
   /** Frases de Alex en orden: { id: texto }. Los ids no se repiten en el video. */
   voz: Record<string, string>;
+  /** Texto del subtítulo cuando debe verse distinto a lo que dice Alex (cifras con números). */
+  sub?: Record<string, string>;
   /** Segundos de silencio al final de la escena. */
   pausa?: number;
   /** Duración mínima de la escena en segundos. */
@@ -45,6 +47,8 @@ export type Guion = {
 export type LineaPlan = {
   id: string;
   texto: string;
+  /** Lo que se lee en el subtítulo. */
+  subtitulo: string;
   /** Frame de inicio, relativo a la escena. */
   at: number;
   frames: number;
@@ -84,7 +88,7 @@ export const planificar = (g: Guion): Plan => {
       const real = dur[id] !== undefined;
       if (!real) vozCompleta = false;
       const frames = segAFrames(real ? dur[id] : estimar(e.voz[id]));
-      const l: LineaPlan = { id, texto: e.voz[id], at: t, frames, real };
+      const l: LineaPlan = { id, texto: e.voz[id], subtitulo: e.sub?.[id] ?? e.voz[id], at: t, frames, real };
       t += frames + (i < ids.length - 1 ? segAFrames(tiempos.entre) : 0);
       return l;
     });
@@ -183,7 +187,7 @@ const Subtitulos: React.FC<{ plan: Plan }> = ({ plan }) => {
     for (const l of e.lineas) {
       const a = e.from + l.at;
       if (frame < a || frame >= a + l.frames) continue;
-      const partes = trozos(l.texto);
+      const partes = trozos(l.subtitulo);
       const total = partes.reduce((s, p) => s + p.length, 0);
       let acc = 0;
       for (const p of partes) {

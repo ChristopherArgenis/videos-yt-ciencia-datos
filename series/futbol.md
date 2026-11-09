@@ -1,6 +1,6 @@
 # Serie: Fútbol con Datos (10 partes)
 
-**Estado:** plan propuesto, pendiente de aprobación. Nada se renderiza hasta aprobar cada guion.
+**Estado:** plan aprobado. Episodio 1 con StatsBomb (guion en `src/guiones/01-futbol-datos.json`, pendiente de aprobación). Nada se renderiza hasta aprobar cada guion.
 
 ## Idea
 Aprender ciencia de datos analizando fútbol real: de "qué es un evento" a analizar un partido
@@ -11,7 +11,7 @@ código mínimo para hacerlo (Python + `statsbombpy` + `mplsoccer`, gratis).
   Nivel principiante → intermedio.
 - **Por qué esta serie:** el mejor Short del canal ("3 métricas… analistas de fútbol") hizo 11,8×
   la mediana, y hay poca competencia en español.
-- **Formato:** 6–9 min, 1920×1080, voz de Alex, subtítulos, capítulos.
+- **Formato:** ~5 min de media (los más técnicos, hasta 6–7), 1920×1080, voz de Alex, subtítulos, capítulos.
 - **Lista de reproducción:** "Fútbol con Datos: curso de análisis de datos en el fútbol".
 - **Patrón de títulos:** tema + palabra clave al inicio; en pantalla y miniatura "FÚTBOL CON DATOS #N".
 
@@ -37,7 +37,7 @@ Reglas extra para esta serie: sin fotos, escudos ni imágenes de jugadores o clu
 y gráficas propias). Antes del primer video, confirmar la licencia en la página de figshare.
 
 ## Episodios
-| # | Título (≤ 60) | Palabra clave | Datos | Min |
+| # | Título (≤ 60) | Palabra clave | Datos | Min (objetivo ~5) |
 |---|---|---|---|---|
 | 1 | Cómo un partido de fútbol se convierte en datos | datos en el fútbol | Final Mundial 2018 (Wyscout) | 6 |
 | 2 | Qué es el xG en el fútbol, explicado con datos reales | xG fútbol | Tiros 5 ligas 2017/18: creamos el modelo | 9 |
