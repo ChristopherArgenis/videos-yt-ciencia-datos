@@ -1,0 +1,163 @@
+{
+  "_nota": "Fútbol con Datos #2. Cifras de StatsBomb Open Data, Mundial 2022 (64 partidos, sin tanda de penales). Generadas con scripts/futbol/ep02_datos.py.",
+  "id": "02-xg",
+  "titulo": "Qué es el xG en el fútbol, explicado con datos reales",
+  "aprobado": false,
+  "musica": "musica/curiosa.wav",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿Gol seguro o milagro?",
+      "pantalla": "Cancha: aparece el tiro de Mbappé (81') con '0.10 ✓ GOL'. Luego el de Kolo Muani (123') con '0.28 ✗'. Las dos cifras quedan lado a lado.",
+      "voz": {
+        "g1": "Minuto ochenta y uno de la final del Mundial. Mbappé remata de volea y empata el partido.",
+        "g2": "Ese tiro tenía solo un diez por ciento de probabilidad de ser gol.",
+        "g3": "En el último minuto, Kolo Muani tuvo una ocasión casi tres veces más clara. Y no entró.",
+        "g4": "¿Cómo sabemos si un tiro era gol seguro, o un milagro? Con un número: el equis ge.",
+        "g5": "Hoy lo entiendes. Y hasta construimos el nuestro con Python."
+      },
+      "sub": {
+        "g1": "Minuto 81 de la final del Mundial. Mbappé remata de volea y empata.",
+        "g2": "Ese tiro tenía solo un 10 % de probabilidad de ser gol.",
+        "g4": "¿Cómo sabemos si un tiro era gol seguro o un milagro? Con un número: el xG."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #2' con la fila de 10 episodios; se ilumina el 2.",
+      "voz": {
+        "s1": "Esto es Fútbol con Datos, episodio dos. Si no viste el primero, te lo dejo en la descripción."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "que",
+      "capitulo": "¿Qué es el xG?",
+      "pantalla": "Barra de 0 a 1 que se llena. Luego 100 balones: 78 se pintan de verde (penal = 0.78). Al final, los 23 penales del Mundial: 17 ✓ y 6 ✗.",
+      "voz": {
+        "q1": "Equis ge significa goles esperados.",
+        "q2": "Es la probabilidad de que un tiro termine en gol, de cero a uno.",
+        "q3": "Se calcula mirando miles de tiros parecidos: desde el mismo lugar y en la misma situación.",
+        "q4": "El ejemplo más fácil es el penal. Su equis ge es cero punto setenta y ocho: de cada cien penales, unos setenta y ocho son gol.",
+        "q5": "En el Mundial dos mil veintidós se cobraron veintitrés penales durante los partidos, y entraron diecisiete. El setenta y cuatro por ciento. Muy cerca."
+      },
+      "sub": {
+        "q1": "xG significa goles esperados (expected goals).",
+        "q2": "Es la probabilidad de que un tiro termine en gol, de 0 a 1.",
+        "q4": "El ejemplo más fácil: el penal. Su xG es 0.78: de cada 100 penales, unos 78 son gol.",
+        "q5": "En el Mundial 2022 hubo 23 penales en los partidos y entraron 17: el 74 %. Muy cerca."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "peligro",
+      "capitulo": "¿Qué hace peligroso un tiro?",
+      "pantalla": "Barras de % de gol por distancia (0–6 m 42 %, 6–11 m 18 %, 11–16 m 13 %, 16–22 m 5 %, +22 m 2 %). Luego un diagrama del ángulo: dos tiros a la misma distancia, uno de frente y otro desde el costado. Al final, ícono de cabeza vs pie.",
+      "voz": {
+        "p1": "Revisé los mil cuatrocientos treinta tiros del Mundial que no fueron penal.",
+        "p1b": "Y solo ciento cincuenta y dos fueron gol. Uno de cada diez. Marcar es mucho más difícil de lo que parece.",
+        "p2": "Desde menos de seis metros, entró el cuarenta y dos por ciento.",
+        "p3": "Entre seis y once metros, el dieciocho. Y desde más de veintidós metros, apenas el dos por ciento.",
+        "p4": "La distancia importa muchísimo. Pero también el ángulo: no es lo mismo tirar de frente, que desde un costado del área, donde la portería se ve pequeñita.",
+        "p5": "Y la parte del cuerpo: desde el mismo lugar, un cabezazo entra mucho menos que un tiro con el pie."
+      },
+      "sub": {
+        "p1": "Revisé los 1,430 tiros del Mundial que no fueron penal.",
+        "p2": "Desde menos de 6 metros, entró el 42 %.",
+        "p3": "Entre 6 y 11 metros, el 18 %. Desde más de 22 metros, apenas el 2 %.",
+        "p1b": "Solo 152 fueron gol: 1 de cada 10. Marcar es mucho más difícil de lo que parece."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "modelo",
+      "capitulo": "Creamos nuestro xG",
+      "pantalla": "Tres tarjetas (distancia, ángulo, ¿cabeza?) entran a una caja 'Regresión logística' que sale como un número 0–1. Luego la mitad de la cancha se pinta como mapa de probabilidad (rojo = peligroso, azul = casi imposible). Al final 'Correlación con StatsBomb: 0.82' y el sticker 'Short: regresión logística'.",
+      "voz": {
+        "m1": "Con eso ya podemos hacer nuestro propio modelo de equis ge.",
+        "m2": "Le damos a la computadora cada tiro con tres datos: la distancia, el ángulo, y si fue de cabeza. Y le decimos si terminó en gol o no.",
+        "m3": "Usamos una regresión logística: un modelo que aprende a convertir esos datos en una probabilidad entre cero y uno.",
+        "m4": "El resultado es este mapa. Cada punto de la cancha tiene su probabilidad de gol. Rojo, muy peligroso. Azul, casi imposible.",
+        "m4b": "Fíjate que la zona roja es pequeñísima: casi todo el peligro está cerca de la portería, y de frente.",
+        "m5": "¿Y qué tan bueno es? Se parece mucho al de StatsBomb: la correlación entre los dos es de cero punto ochenta y dos.",
+        "m6": "El suyo es más preciso, porque además sabe dónde estaban el portero y los defensas en cada tiro."
+      },
+      "sub": {
+        "m3": "Usamos una regresión logística: aprende a convertir esos datos en una probabilidad de 0 a 1.",
+        "m5": "¿Qué tan bueno es? Se parece mucho al de StatsBomb: correlación de 0.82."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "final",
+      "capitulo": "La final, explicada",
+      "pantalla": "Gráfica de escalones: xG acumulado de Argentina (celeste) y Francia (coral) del minuto 0 al 120. Cada escalón es un tiro; los goles se marcan con un balón. Se resaltan los 3 penales (escalones grandes) y la volea de Mbappé (escalón pequeño con gol).",
+      "voz": {
+        "f1": "Ahora sí, volvamos a la final.",
+        "f2": "Si sumamos el equis ge de todos sus tiros, Argentina generó dos punto setenta y seis goles esperados. Francia, dos punto veintisiete.",
+        "f3": "En esta gráfica, cada escalón es un tiro. Mientras más alto el escalón, más clara la ocasión.",
+        "f4": "Mira los penales: tres escalones enormes, de cero punto setenta y ocho cada uno.",
+        "f5": "Y la volea de Mbappé: un escalón pequeñito que terminó en gol.",
+        "f5b": "Y la ocasión más clara que no entró fue la de Kolo Muani, en el último minuto: cero punto veintiocho. La atajó el Dibu Martínez.",
+        "f6": "Los dos equipos crearon un peligro parecido. Según los datos, el empate tiene sentido."
+      },
+      "sub": {
+        "f2": "Sumando el xG de todos sus tiros: Argentina 2.76, Francia 2.27.",
+        "f4": "Mira los penales: tres escalones enormes, de 0.78 cada uno.",
+        "f5b": "La ocasión más clara que no entró: Kolo Muani en el último minuto, 0.28. La atajó el Dibu Martínez."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "sirve",
+      "capitulo": "¿Para qué sirve?",
+      "pantalla": "Barras dobles goles vs xG: Mbappé 8 vs 4.2, Messi 7 vs 6.0 (4 penales), Julián Álvarez 4 vs 1.9. Etiqueta '+ que lo esperado'. Al final: 'Talento… o suerte → mirar muchos partidos'.",
+      "voz": {
+        "u1": "El equis ge también sirve para medir a los delanteros.",
+        "u2": "Mbappé anotó ocho goles en el Mundial, con un equis ge de cuatro punto dos. Casi el doble de lo esperado.",
+        "u3": "Messi anotó siete, con un equis ge de seis. Ahí pesan sus cuatro penales.",
+        "u4": "Y Julián Álvarez: cuatro goles, con menos de dos de equis ge.",
+        "u5": "Cuando alguien anota mucho más que su equis ge, define muy bien, o tuvo suerte. Por eso los analistas lo miran en muchos partidos, no en uno solo.",
+        "u5b": "Y ojo: el equis ge no dice quién merecía ganar. Dice quién creó las ocasiones más claras."
+      },
+      "sub": {
+        "u1": "El xG también sirve para medir a los delanteros.",
+        "u2": "Mbappé: 8 goles con un xG de 4.2. Casi el doble de lo esperado.",
+        "u3": "Messi: 7 goles con un xG de 6.0. Ahí pesan sus 4 penales.",
+        "u4": "Julián Álvarez: 4 goles con menos de 2 de xG.",
+        "u5": "Si alguien anota mucho más que su xG, define muy bien… o tuvo suerte. Por eso se mira en muchos partidos.",
+        "u5b": "Ojo: el xG no dice quién merecía ganar. Dice quién creó las ocasiones más claras."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor de código: df = sb.events(match_id=3869685) / tiros = df[(df.type == 'Shot') & (df.period < 5)] / tiros.groupby('team').shot_statsbomb_xg.sum() → Argentina 2.76, France 2.27.",
+      "voz": {
+        "y1": "Calcularlo tú es muy fácil.",
+        "y2": "Cargas los eventos de la final, te quedas con los tiros, y sumas la columna del equis ge por equipo.",
+        "y2b": "La primera línea carga el partido. La segunda filtra los tiros, sin la tanda de penales. Y la tercera agrupa por equipo y suma.",
+        "y3": "Son tres líneas. Te dejo este código, y el de nuestro modelo, en la descripción."
+      },
+      "sub": {
+        "y2": "Cargas la final, te quedas con los tiros y sumas la columna del xG por equipo.",
+        "y3": "Son 3 líneas. El código y el de nuestro modelo están en la descripción."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #3 Mapa de tiros con Python'; luego el cierre estándar. Mitad derecha libre para la pantalla final de YouTube.",
+      "voz": {
+        "z1": "En el próximo episodio dibujamos un mapa de tiros con Python, y vemos desde dónde dispara un goleador.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

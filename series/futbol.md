@@ -1,6 +1,6 @@
 # Serie: Fútbol con Datos (10 partes)
 
-**Estado:** plan aprobado. Episodio 1 con StatsBomb (guion en `src/guiones/01-futbol-datos.json`, pendiente de aprobación). Nada se renderiza hasta aprobar cada guion.
+**Estado:** plan aprobado. Episodios 1 y 2 con StatsBomb (Mundial 2022). #1 renderizado; guion del #2 en `src/guiones/02-xg.json`. Nada se renderiza hasta aprobar cada guion.
 
 ## Idea
 Aprender ciencia de datos analizando fútbol real: de "qué es un evento" a analizar un partido
@@ -40,7 +40,7 @@ y gráficas propias). Antes del primer video, confirmar la licencia en la págin
 | # | Título (≤ 60) | Palabra clave | Datos | Min (objetivo ~5) |
 |---|---|---|---|---|
 | 1 | Cómo un partido de fútbol se convierte en datos | datos en el fútbol | Final Mundial 2018 (Wyscout) | 6 |
-| 2 | Qué es el xG en el fútbol, explicado con datos reales | xG fútbol | Tiros 5 ligas 2017/18: creamos el modelo | 9 |
+| 2 | Qué es el xG en el fútbol, explicado con datos reales | xG fútbol | StatsBomb: 1,453 tiros del Mundial 2022, creamos el modelo | 5 |
 | 3 | Mapa de tiros con Python: dónde dispara un goleador | mapa de tiros python | Messi, La Liga 2017/18 | 8 |
 | 4 | Redes de pases: quién es el cerebro del equipo | red de pases | Final Mundial 2018 | 8 |
 | 5 | Presión en el fútbol: cómo se mide con datos | presión fútbol datos | Eventos dinámicos SkillCorner | 7 |
