@@ -56,7 +56,7 @@ Títulos: «Tema | Fútbol con Datos #N», máximo 60 caracteres.
 **Datos:** StatsBomb Open Data, Mundial 2022 (64 partidos, 1,453 tiros). Logo en pantalla todo el video.
 **Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
 
-**Descripción:** `videos/02-xg/descripcion.txt` (los dos códigos verificados: 2.76/2.27 y correlación 0.82).
+**Descripción:** `videos/02-xg/descripcion.txt` (sin código: YouTube rechaza `<` `>`; remite al 03:59 del video y al 01:47 para el modelo).
 
 **#:** #cienciadedatos #futbol #xg #python #mundial2022
 **Comentario fijado:** ¿Qué tiro del Mundial te pareció un milagro? Dime el minuto y le calculo su xG 👇

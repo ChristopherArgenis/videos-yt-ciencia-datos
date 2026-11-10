@@ -9,7 +9,9 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
   `src/videos/<Video>.tsx`, motor en `src/kit/largo.tsx`, piezas en `src/kit/kit.tsx`.
 - **Voz:** Kokoro local: `python3 scripts/make_voice.py <video>`. Narración con números escritos con letra.
   El perfil sale del campo `"voz"` del guion (si falta, `alex`). Perfiles en `PERFILES` de `make_voice.py`:
-  `alex` (em_alex), `dora_latino_suave_calida` y `dora_espana_suave_calida` (ef_dora, acento es-419 / es).
+  `alex` (em_alex, la voz del canal), variantes de Alex para sonar menos robótico (`alex_pausas`, `alex_nicola`,
+  `alex_portugues`, `alex_santa`, `alex_michael`, `alex_calido`: mezclas de estilo + pausas naturales) y
+  `dora_latino_suave_calida` / `dora_espana_suave_calida` (descartadas por el dueño).
   Muestras para comparar: `python3 scripts/muestra_voz.py <perfil>` → `muestras/voz/<perfil>.mp3`.
 - **Música** en bucle (`public/musica/`) y efectos (`public/sfx/`), hechos con `scripts/make_audio.py`.
 - **Miniaturas** 1280×720 como `<Still>` en `src/miniaturas/Miniaturas.tsx` con `src/kit/miniatura.tsx`.
@@ -34,6 +36,10 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
 - Cierre: «¿Te sirvió? Ve más videos en @UniversoCienciaDatos» + «Suscríbete y sigue aprendiendo».
   Alex dice: «¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete.» (componente `Cierre`).
 - Aprovechar los Shorts ya hechos: el video largo profundiza un tema y se enlaza con su Short.
+- **Código:** solo en pantalla, corto y sencillo (unas 3–5 líneas, sin capturas largas: no es el punto).
+  La narración dice «pausa el video y cópialo», nunca «está en la descripción».
+  **Nada de código en la descripción**: YouTube rechaza símbolos como `<` y `>`. La descripción solo
+  indica el minuto donde aparece el código.
 
 ## Flujo (en orden, sin saltar pasos)
 1. **Plan:** público y nivel, palabra clave, gancho, capítulos con tiempos, estilo visual y música.
@@ -47,7 +53,8 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
    - **Título** ≤ 60 caracteres, palabra clave al inicio (2–3 variantes).
      Si el video es de una serie o curso: «Tema | Nombre de la serie #N» en TODOS los episodios.
    - **Descripción**: 2 primeras líneas dicen qué da el video con las palabras que la gente busca;
-     resumen; capítulos `00:00`; fuentes; suscripción; mención a TikTok @argenis2125 e Instagram @kriz2125.
+     resumen; capítulos `00:00`; minuto del código; fuentes; suscripción; mención a TikTok @argenis2125 e Instagram @kriz2125.
+     Sin código ni `<` `>` (revisar con `python3 scripts/titulo.py --desc`).
    - **#**: 3 a 5 hashtags (los 3 primeros salen sobre el título).
    - Comentario fijado sugerido.
 8. Registrar todo en `PUBLICAR.md`.

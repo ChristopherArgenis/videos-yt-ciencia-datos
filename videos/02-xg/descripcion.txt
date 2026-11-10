@@ -13,27 +13,12 @@ Capítulos:
 03:59 Tu turno: con Python
 04:23 Cierre
 
-Código: xG de la final por equipo
-from statsbombpy import sb
-df = sb.events(match_id=3869685)
-tiros = df[(df.type == "Shot") & (df.period < 5)]
-tiros.groupby("team").shot_statsbomb_xg.sum()   # Argentina 2.76 · France 2.27
+💻 Sobre el código
+En el video digo que el código está aquí, pero YouTube no permite algunos símbolos de programación en la descripción, así que no se puede pegar completo.
+👉 Cópialo directo del video: en el 03:59 pausa y verás las 3 líneas que calculan el xG de la final (librería statsbombpy).
+👉 Nuestro modelo de xG se explica paso a paso en el 01:47: usa la distancia, el ángulo y si fue de cabeza, con una regresión logística de scikit-learn.
 
-Código: nuestro modelo de xG (Mundial 2022, sin penales)
-import numpy as np
-from sklearn.linear_model import LogisticRegression
-ev = sb.competition_events(country="International", division="FIFA World Cup", season="2022", gender="male")
-t = ev[(ev.type == "Shot") & (ev.period < 5) & (ev.shot_type != "Penalty")].copy()
-x, y = t.location.str[0], t.location.str[1]
-dx, dy = 120 - x, y - 40
-t["dist"] = np.hypot(dx, dy) * 0.9144
-t["ang"] = np.degrees(np.arctan2(8 * dx, dx**2 + dy**2 - 16) % np.pi)
-t["cabeza"] = (t.shot_body_part == "Head").astype(int)
-X = t[["dist", "ang", "cabeza"]]
-modelo = LogisticRegression().fit(X, t.shot_outcome == "Goal")
-t["xg_nuestro"] = modelo.predict_proba(X)[:, 1]
-
-Datos: StatsBomb Open Data (Hudl StatsBomb) — github.com/statsbomb/open-data
+Datos: StatsBomb Open Data (Hudl StatsBomb), github.com/statsbomb/open-data
 El análisis y el modelo son propios y no representan la opinión de StatsBomb.
 
 Episodio anterior: Cómo un partido se convierte en datos | Fútbol con Datos #1

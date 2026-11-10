@@ -7,7 +7,7 @@ Reglas del canal (sustituye a yt-package/title.py, que no está en el repo):
 - Título de 60 caracteres o menos (YouTube corta cerca de ahí en móvil), máx. 100.
 - Sin abusar de MAYÚSCULAS ni de signos (!!!, ???).
 - Videos de una serie: «Tema | Nombre de la serie #N» (el #N con número no es hashtag).
-- Descripción: las 2 primeras líneas dicen qué da el video; 3 a 5 hashtags.
+- Descripción: las 2 primeras líneas dicen qué da el video; 3 a 5 hashtags; sin código ni < >.
 """
 import re, sys
 
@@ -38,7 +38,7 @@ def titulo(t):
 def descripcion(ruta):
     texto = open(ruta, encoding="utf-8").read()
     lineas = [l for l in texto.splitlines() if l.strip()]
-    tags = re.findall(r"#\w+", texto)
+    tags = re.findall(r"#[^\W\d]\w*", texto)
     print("Primeras líneas (se ven sin abrir la descripción):")
     for l in lineas[:2]:
         print("  " + l)
@@ -49,6 +49,13 @@ def descripcion(ruta):
         print(f"AVISO: {len(tags)} hashtags (usar de 3 a 5)")
     if not re.search(r"^0?0:00", texto, re.M):
         print("AVISO: faltan capítulos (el primero debe ser 00:00)")
+    if re.search(r"[<>]", texto):
+        print("AVISO: YouTube no acepta < ni > en la descripción")
+    codigo = [l for l in texto.splitlines() if re.search(r"^\s*(import |from \w+ import|\w+\s*=\s*\w+[.(\[])|\w+\.\w+\(.*\)\s*$", l)]
+    if codigo:
+        print("AVISO: parece haber código; el código va en pantalla, no en la descripción:")
+        for l in codigo[:3]:
+            print("   " + l.strip())
 
 
 if __name__ == "__main__":

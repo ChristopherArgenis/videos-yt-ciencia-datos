@@ -31,18 +31,52 @@ FILTRO_CALIDO = ("highpass=f=70,equalizer=f=160:t=q:w=1:g=1.5,equalizer=f=1500:t
                  "acompressor=threshold=-22dB:ratio=2:attack=15:release=200,"
                  "aecho=0.8:0.4:30:0.06,loudnorm=I=-16:TP=-1.5")
 
+# Filtro limpio para Alex: sin eco (el eco corto suena metálico), algo de cuerpo, menos "s" dura.
+FILTRO_ALEX_LIMPIO = ("highpass=f=70,equalizer=f=200:t=q:w=1:g=2,equalizer=f=3200:t=q:w=1.5:g=-1.5,"
+                      "highshelf=f=7000:g=-5,acompressor=threshold=-20dB:ratio=2:attack=12:release=180,"
+                      "loudnorm=I=-16:TP=-1.5")
+# Filtro cálido para Alex: más cuerpo y agudos más suaves (como el de Dora, pero más ligero).
+FILTRO_ALEX_CALIDO = ("highpass=f=70,equalizer=f=170:t=q:w=1:g=2,highshelf=f=1500:g=-1.5,highshelf=f=3000:g=-3.5,"
+                      "lowpass=f=7500,acompressor=threshold=-22dB:ratio=2:attack=15:release=200,"
+                      "aecho=0.8:0.4:25:0.05,loudnorm=I=-16:TP=-1.5")
+
 # Perfiles de voz. lang: "es" = España (z de "cinco"), "es-419" = Latinoamérica (s).
+# "voz" puede ser un nombre de Kokoro o una mezcla {voz: peso}: mezclar el estilo de Alex con otra
+# voz masculina cambia la entonación (suena menos plana) sin dejar de leer en español.
+# "pausas": silencio extra en comas (clause) y puntos (sentence), en segundos.
+PAUSAS_NATURALES = {"clause_pause": 0.15, "sentence_pause": 0.35}
 PERFILES = {
     "alex": {"voz": "em_alex", "lang": "es", "velocidad": 0.88, "filtro": FILTRO_ALEX},
+    "alex_pausas": {"voz": "em_alex", "lang": "es", "velocidad": 0.9, "filtro": FILTRO_ALEX_LIMPIO,
+                    "pausas": PAUSAS_NATURALES},
+    "alex_nicola": {"voz": {"em_alex": 0.7, "im_nicola": 0.3}, "lang": "es", "velocidad": 0.9,
+                    "filtro": FILTRO_ALEX_LIMPIO, "pausas": PAUSAS_NATURALES},
+    "alex_portugues": {"voz": {"em_alex": 0.6, "pm_alex": 0.4}, "lang": "es", "velocidad": 0.9,
+                       "filtro": FILTRO_ALEX_LIMPIO, "pausas": PAUSAS_NATURALES},
+    "alex_santa": {"voz": {"em_alex": 0.75, "em_santa": 0.25}, "lang": "es", "velocidad": 0.9,
+                   "filtro": FILTRO_ALEX_LIMPIO, "pausas": PAUSAS_NATURALES},
+    "alex_michael": {"voz": {"em_alex": 0.75, "am_michael": 0.25}, "lang": "es", "velocidad": 0.9,
+                     "filtro": FILTRO_ALEX_LIMPIO, "pausas": PAUSAS_NATURALES},
+    "alex_calido": {"voz": {"em_alex": 0.7, "im_nicola": 0.15, "em_santa": 0.15}, "lang": "es", "velocidad": 0.88,
+                    "filtro": FILTRO_ALEX_CALIDO, "pausas": PAUSAS_NATURALES},
     "dora_latino_suave_calida": {"voz": "ef_dora", "lang": "es-419", "velocidad": 0.91, "filtro": FILTRO_CALIDO},
     "dora_espana_suave_calida": {"voz": "ef_dora", "lang": "es", "velocidad": 0.91, "filtro": FILTRO_CALIDO},
 }
 
 
+def estilo(k, voz):
+    """Nombre de voz o mezcla {voz: peso} → lo que acepta Kokoro."""
+    if isinstance(voz, str):
+        return voz
+    total = sum(voz.values())
+    return sum(k.get_voice_style(n) * (w / total) for n, w in voz.items())
+
+
 def sintetizar(k, texto, perfil, destino):
     """Escribe `destino` (wav 44.1 kHz) con `texto` dicho por el perfil dado. Devuelve los segundos."""
     pf = PERFILES[perfil]
-    s, sr = k.create(texto, voice=pf["voz"], speed=pf["velocidad"], lang=pf["lang"])
+    s, sr = k.create(texto, voice=estilo(k, pf["voz"]), speed=pf["velocidad"], lang=pf["lang"],
+                     **pf.get("pausas", {}))
     crudo = destino + ".raw.wav"
     sf.write(crudo, s, sr)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", crudo, "-af", pf["filtro"], "-ar", "44100", destino], check=True)
