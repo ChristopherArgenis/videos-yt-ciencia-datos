@@ -13,7 +13,7 @@ código mínimo para hacerlo (Python + `statsbombpy` + `mplsoccer`, gratis).
   la mediana, y hay poca competencia en español.
 - **Formato:** ~5 min de media (los más técnicos, hasta 6–7), 1920×1080, voz de Alex, subtítulos, capítulos.
 - **Lista de reproducción:** "Fútbol con Datos: curso de análisis de datos en el fútbol".
-- **Patrón de títulos:** tema + palabra clave al inicio; en pantalla y miniatura "FÚTBOL CON DATOS #N".
+- **Patrón de títulos:** «Tema | Fútbol con Datos #N» (palabra clave al inicio, ≤ 60 caracteres). El sello "FÚTBOL CON DATOS #N" va también en pantalla y en la miniatura.
 
 ## Datos: fuentes comparadas (revisado el 9 nov 2026)
 | Fuente | Qué trae | Licencia | ¿Monetizar? |
@@ -37,18 +37,18 @@ Reglas extra para esta serie: sin fotos, escudos ni imágenes de jugadores o clu
 y gráficas propias). Antes del primer video, confirmar la licencia en la página de figshare.
 
 ## Episodios
-| # | Título (≤ 60) | Palabra clave | Datos | Min (objetivo ~5) |
+| # | Título (≤ 60, con «\| Fútbol con Datos #N») | Palabra clave | Datos | Min (objetivo ~5) |
 |---|---|---|---|---|
-| 1 | Cómo un partido de fútbol se convierte en datos | datos en el fútbol | Final Mundial 2018 (Wyscout) | 6 |
-| 2 | Qué es el xG en el fútbol, explicado con datos reales | xG fútbol | StatsBomb: 1,453 tiros del Mundial 2022, creamos el modelo | 5 |
-| 3 | Mapa de tiros con Python: dónde dispara un goleador | mapa de tiros python | Messi, La Liga 2017/18 | 8 |
-| 4 | Redes de pases: quién es el cerebro del equipo | red de pases | Final Mundial 2018 | 8 |
-| 5 | Presión en el fútbol: cómo se mide con datos | presión fútbol datos | Eventos dinámicos SkillCorner | 7 |
-| 6 | Mapas de calor en el fútbol con Python | mapa de calor fútbol | Tracking SkillCorner + Wyscout | 7 |
-| 7 | xA: el jugador que crea los goles (sin anotarlos) | asistencias esperadas | 5 ligas 2017/18 + nuestro xG | 7 |
-| 8 | Comparar jugadores con radares: ¿quién es mejor? | radar de jugadores | 5 ligas 2017/18, por 90 min | 8 |
-| 9 | Cómo fichan los clubes con datos (scouting) | scouting con datos | 5 ligas 2017/18 | 9 |
-| 10 | Analizo la final del Mundial 2018 con datos | análisis de partido | Francia–Croacia (o Mundial 2022 si StatsBomb da permiso) | 10 |
+| 1 | Cómo un partido se convierte en datos \| Fútbol con Datos #1 | datos en el fútbol | StatsBomb: final del Mundial 2022 | 5 |
+| 2 | Qué es el xG (goles esperados) \| Fútbol con Datos #2 | xG fútbol | StatsBomb: 1,453 tiros del Mundial 2022, creamos el modelo | 5 |
+| 3 | Mapa de tiros con Python \| Fútbol con Datos #3 | mapa de tiros python | Messi, La Liga 2017/18 | 8 |
+| 4 | Redes de pases: el cerebro del equipo \| Fútbol con Datos #4 | red de pases | Final Mundial 2018 | 8 |
+| 5 | Cómo medir la presión en el fútbol \| Fútbol con Datos #5 | presión fútbol datos | Eventos dinámicos SkillCorner | 7 |
+| 6 | Mapas de calor con Python \| Fútbol con Datos #6 | mapa de calor fútbol | Tracking SkillCorner + Wyscout | 7 |
+| 7 | xA: el jugador que crea los goles \| Fútbol con Datos #7 | asistencias esperadas | 5 ligas 2017/18 + nuestro xG | 7 |
+| 8 | Comparar jugadores con radares \| Fútbol con Datos #8 | radar de jugadores | 5 ligas 2017/18, por 90 min | 8 |
+| 9 | Cómo fichan los clubes con datos \| Fútbol con Datos #9 | scouting con datos | 5 ligas 2017/18 | 9 |
+| 10 | Analizo la final del Mundial \| Fútbol con Datos #10 | análisis de partido | Francia–Croacia (o Mundial 2022 si StatsBomb da permiso) | 10 |
 
 ## Detalle por episodio
 **1 · Del partido a los datos.** Gancho: "Esta final tuvo miles de momentos registrados. Te enseño a leerlos."

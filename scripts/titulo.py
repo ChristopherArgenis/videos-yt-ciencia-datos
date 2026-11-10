@@ -6,6 +6,7 @@
 Reglas del canal (sustituye a yt-package/title.py, que no está en el repo):
 - Título de 60 caracteres o menos (YouTube corta cerca de ahí en móvil), máx. 100.
 - Sin abusar de MAYÚSCULAS ni de signos (!!!, ???).
+- Videos de una serie: «Tema | Nombre de la serie #N» (el #N con número no es hashtag).
 - Descripción: las 2 primeras líneas dicen qué da el video; 3 a 5 hashtags.
 """
 import re, sys
@@ -23,8 +24,10 @@ def titulo(t):
         avisos.append("demasiadas mayúsculas")
     if re.search(r"[!?¡¿]{3,}", t):
         avisos.append("demasiados signos seguidos")
-    if "#" in t:
+    if re.search(r"#[^\W\d]", t):
         avisos.append("los hashtags van en la descripción, no en el título")
+    if re.search(r"\|\s*[^|#]+$", t):
+        avisos.append("parece de una serie pero falta el número: «| Serie #N»")
     print(f"[{n:>3}] {t}")
     for a in avisos:
         print(f"      AVISO: {a}")

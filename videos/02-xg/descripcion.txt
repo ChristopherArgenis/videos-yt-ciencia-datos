@@ -36,8 +36,8 @@ t["xg_nuestro"] = modelo.predict_proba(X)[:, 1]
 Datos: StatsBomb Open Data (Hudl StatsBomb) — github.com/statsbomb/open-data
 El análisis y el modelo son propios y no representan la opinión de StatsBomb.
 
-Episodio anterior: Cómo un partido de fútbol se convierte en datos
-Próximo episodio: Mapa de tiros con Python
+Episodio anterior: Cómo un partido se convierte en datos | Fútbol con Datos #1
+Próximo episodio: Mapa de tiros con Python | Fútbol con Datos #3
 
 Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
 TikTok: @argenis2125 · Instagram: @kriz2125

@@ -23,7 +23,7 @@ df["type"].value_counts()          # cuántos hay de cada tipo
 Datos: StatsBomb Open Data (Hudl StatsBomb) — github.com/statsbomb/open-data
 El análisis es propio y no representa la opinión de StatsBomb.
 
-Próximo episodio: ¿Qué es el xG? (goles esperados)
+Próximo episodio: Qué es el xG (goles esperados) | Fútbol con Datos #2
 
 Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
 TikTok: @argenis2125 · Instagram: @kriz2125

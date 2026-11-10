@@ -31,10 +31,11 @@ Plantilla por video:
 ---
 
 # Serie: Fútbol con Datos
+Títulos: «Tema | Fútbol con Datos #N», máximo 60 caracteres.
 
-## 01 · Cómo un partido de fútbol se convierte en datos (4:52)
-**Título:** Cómo un partido de fútbol se convierte en datos (47)
-**Alternativas:** La final del Mundial 2022 en 4,407 datos (40) · Así ve un analista de datos un partido de fútbol (48)
+## 01 · Cómo un partido se convierte en datos (4:52)
+**Título:** Cómo un partido se convierte en datos | Fútbol con Datos #1 (59)
+**Alternativa:** La final del Mundial en 4,407 datos | Fútbol con Datos #1
 **Miniatura:** `Mini-01-FutbolDatos` → "4,407 DATOS en una sola final"
 **Lista:** Fútbol con Datos: curso de análisis de datos en el fútbol
 **Short relacionado:** Short6-StatsBomb (repo shorts-ciencia-datos)
@@ -47,9 +48,9 @@ Plantilla por video:
 **Comentario fijado:** ¿Qué partido o jugador quieres que analicemos con datos? Lo puedo usar en un próximo episodio 👇
 **Pantalla final (últimos 20 s):** lista de la serie + botón de suscribirse (el episodio 2 cuando exista).
 
-## 02 · Qué es el xG en el fútbol, explicado con datos reales (4:43)
-**Título:** Qué es el xG en el fútbol, explicado con datos reales (53)
-**Alternativas:** xG: cómo saber si un tiro era gol seguro (40) · Goles esperados (xG): el número que usan los analistas (54)
+## 02 · Qué es el xG (4:43)
+**Título:** Qué es el xG (goles esperados) | Fútbol con Datos #2 (52)
+**Alternativa:** xG: ¿gol seguro o milagro? | Fútbol con Datos #2 (48)
 **Miniatura:** `Mini-02-Xg` → "10 % ¿GOL O MILAGRO?" sobre el mapa de probabilidad
 **Lista:** Fútbol con Datos · **Short relacionado:** regresión logística (SUP3, repo shorts-ciencia-datos)
 **Datos:** StatsBomb Open Data, Mundial 2022 (64 partidos, 1,453 tiros). Logo en pantalla todo el video.

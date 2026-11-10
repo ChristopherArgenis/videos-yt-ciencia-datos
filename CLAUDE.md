@@ -43,6 +43,7 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
    un solo foco visual, legible en pequeño.
 7. **Entregar en el chat, listo para copiar:**
    - **Título** ≤ 60 caracteres, palabra clave al inicio (2–3 variantes).
+     Si el video es de una serie o curso: «Tema | Nombre de la serie #N» en TODOS los episodios.
    - **Descripción**: 2 primeras líneas dicen qué da el video con las palabras que la gente busca;
      resumen; capítulos `00:00`; fuentes; suscripción; mención a TikTok @argenis2125 e Instagram @kriz2125.
    - **#**: 3 a 5 hashtags (los 3 primeros salen sobre el título).
