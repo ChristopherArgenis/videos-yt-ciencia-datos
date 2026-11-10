@@ -1,0 +1,161 @@
+{
+  "_nota": "Fútbol con Datos #6. StatsBomb Open Data, octavos del Mundial 2022: Marruecos 0–0 España (3–0 en penales), partido 3869220. Acciones con balón = pases, recepciones, conducciones, regates y tiros. Posesión = % de pases. Sin tanda de penales salvo donde se dice.",
+  "id": "06-mapas-calor",
+  "titulo": "Mapas de calor con Python | Fútbol con Datos #6",
+  "aprobado": false,
+  "musica": "musica/curiosa.wav",
+  "voz": "alex_nicola",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "75 % del balón… y perdió",
+      "pantalla": "Marcador 'ESPAÑA 0–0 MARRUECOS · Octavos'. Barra de posesión 75 % / 25 % y contador de pases 1,068. Luego 'Penales: 0–3' y un mapa de calor borroso con un signo de pregunta.",
+      "voz": {
+        "g1": "Octavos de final del Mundial. España contra Marruecos.",
+        "g2": "España tuvo el balón casi todo el partido: el setenta y cinco por ciento de los pases. Mil sesenta y ocho pases.",
+        "g3": "Y no anotó. Empataron cero a cero, y Marruecos ganó en los penales.",
+        "g4": "¿Cómo puede pasar? Un mapa de calor lo explica en una sola imagen.",
+        "g4b": "Y lo vamos a ver con dos mapas: el de España, y el de Marruecos."
+      },
+      "sub": {
+        "g2": "España tuvo el balón casi todo el partido: el 75 % de los pases. 1,068 pases.",
+        "g3": "Y no anotó. Empataron 0 a 0, y Marruecos ganó en los penales."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #6' con la fila de 10 episodios; se ilumina el 6.",
+      "voz": {
+        "s1": "Esto es Fútbol con Datos, episodio seis.",
+        "s1b": "Hoy pintamos la cancha según dónde pasa el juego."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "que",
+      "capitulo": "¿Qué es un mapa de calor?",
+      "pantalla": "Se construye paso a paso: aparecen puntos (acciones); sobre cada uno, una pequeña campana (vista 3D simple o círculos difuminados); las campanas se suman y la cancha se pinta de frío a caliente. Sticker: 'Short: distribución normal'. Al final: 'Estimación de densidad (KDE)'.",
+      "voz": {
+        "h1": "Un mapa de calor muestra en qué zonas de la cancha pasa más el juego.",
+        "h2": "Tomamos cada acción con balón: pases, recepciones, conducciones y tiros. Cada una es un punto.",
+        "h2b": "En este partido hubo casi cuatro mil.",
+        "h3": "Luego, sobre cada punto ponemos una pequeña campana. La misma campana de la distribución normal, del Short de matemáticas del canal.",
+        "h4": "Donde se juntan muchas campanas, la zona se calienta, y se pinta de amarillo y rojo. Donde hay pocas, queda fría.",
+        "h4b": "Es como mirar la cancha con una cámara térmica.",
+        "h5": "Eso se llama estimación de densidad. Y es la base de cualquier mapa de calor.",
+        "h5b": "Mientras más ancha es cada campana, más suave sale el mapa. Es un ajuste que tú eliges."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "espana",
+      "capitulo": "España: dueña del balón",
+      "pantalla": "Mapa de calor de España (ataca a la derecha). Contadores: casi 3,000 acciones · 66 % en campo rival. Se marca el último tercio: solo 26 %. Luego se resalta el mapa de Rodri (central): 615 acciones, más que nadie. Sticker: 'Balón sí… peligro no'.",
+      "voz": {
+        "e1": "Este es el mapa de calor de España.",
+        "e2": "Casi tres mil acciones con balón. Y el sesenta y seis por ciento, en campo de Marruecos.",
+        "e2b": "Y casi no fallaba: completó el noventa por ciento de sus pases.",
+        "e3": "Pero mira dónde está el calor: en el medio, lejos del área.",
+        "e3b": "El área de Marruecos casi no se calienta: ahí, España apenas llegó.",
+        "e4": "Solo una de cada cuatro acciones llegó al último tercio de la cancha.",
+        "e5": "Rodri, que jugó de central, tocó el balón seiscientas quince veces. Más que nadie en el partido.",
+        "e6": "España tenía el balón, pero no encontraba dónde hacer daño."
+      },
+      "sub": {
+        "e2": "Casi 3,000 acciones con balón. Y el 66 %, en campo de Marruecos.",
+        "e5": "Rodri, que jugó de central, tocó el balón 615 veces. Más que nadie en el partido.",
+        "e2b": "Y casi no fallaba: completó el 90 % de sus pases."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "marruecos",
+      "capitulo": "Marruecos: el muro",
+      "pantalla": "Mapa de calor de Marruecos con balón (mucho más pequeño): 906 acciones. Luego su mapa de presiones: 76 % en su propio campo, una mancha delante de su área. Se resalta Amrabat: 27 presiones, #1 del partido.",
+      "voz": {
+        "m1": "Ahora Marruecos.",
+        "m2": "Su mapa de calor con balón es mucho más pequeño: menos de mil acciones.",
+        "m2b": "Y fallaba más: completó solo el sesenta y ocho por ciento de sus pases.",
+        "m3": "Pero su mapa de presiones cuenta otra historia: el setenta y seis por ciento las hizo en su propio campo. Un muro delante de su área.",
+        "m4": "Y en medio del muro, Amrabat: veintisiete presiones, más que cualquier otro jugador del partido.",
+        "m5": "Marruecos no quería el balón. Quería que España no encontrara espacios."
+      },
+      "sub": {
+        "m3": "Pero su mapa de presiones cuenta otra historia: el 76 % en su propio campo. Un muro delante de su área.",
+        "m4": "Y en medio del muro, Amrabat: 27 presiones, más que nadie en el partido.",
+        "m2b": "Y fallaba más: completó solo el 68 % de sus pases."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "jugadores",
+      "capitulo": "Un jugador, un mapa",
+      "pantalla": "Dos mapas de calor individuales lado a lado: Pedri (España, 467 acciones, sobre todo en campo rival; 22 presiones, #1 de su equipo) y Hakimi (Marruecos, 167 acciones, todo el carril derecho). Sticker: 'El mapa te dice el rol'.",
+      "voz": {
+        "j1": "Un mapa de calor también sirve para un solo jugador.",
+        "j2": "Pedri, de España, fue de los más activos: cuatrocientas sesenta y siete acciones, casi siempre en campo rival. Y fue el que más presionó de su equipo.",
+        "j3": "Hakimi, el lateral de Marruecos, fue el que más tocó el balón en su equipo: ciento sesenta y siete veces.",
+        "j4": "Su mapa recorre todo el lado derecho: defiende atrás, y sube cuando puede.",
+        "j4b": "Dos jugadores del mismo partido, con mapas completamente distintos.",
+        "j5": "Con un mapa de calor, en segundos sabes el rol de cada jugador, sin ver el partido completo."
+      },
+      "sub": {
+        "j2": "Pedri: 467 acciones, casi siempre en campo rival. Y el que más presionó de España.",
+        "j3": "Hakimi, el lateral de Marruecos, fue el que más tocó el balón en su equipo: 167 veces."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ocasiones",
+      "capitulo": "¿Quién tuvo las ocasiones?",
+      "pantalla": "Comparativa: España 12 tiros · xG 0.49 vs Marruecos 6 tiros · xG 0.57 (barras). Luego la tanda: España ✗ ✗ ✗ (poste, atajado, atajado) · Marruecos ✓ ✓ ✗ ✓, y 'Hakimi · a lo Panenka'.",
+      "voz": {
+        "o1": "¿Y las ocasiones? Aquí volvemos al equis ge.",
+        "o2": "España hizo doce tiros, pero todos juntos sumaron solo cero punto cuarenta y nueve de equis ge.",
+        "o2b": "Su ocasión más clara llegó en el último minuto del alargue: Sarabia, con cero punto diez. Y la pelota pegó en el poste.",
+        "o3": "Marruecos, con la mitad de tiros, sumó cero punto cincuenta y siete. Un poco más de peligro, con mucho menos balón.",
+        "o3b": "La mejor de Marruecos fue un cabezazo de Aguerd antes del descanso, con cero punto veinticinco.",
+        "o4": "En los penales, España falló sus tres, el primero otra vez Sarabia, al poste. Y Hakimi, con un penal a lo Panenka, mandó a Marruecos a cuartos de final.",
+        "o5": "Tener el balón no es lo mismo que dominar el partido.",
+        "o5b": "El mapa de calor te dice dónde está el balón. El equis ge, dónde está el peligro."
+      },
+      "sub": {
+        "o1": "¿Y las ocasiones? Aquí volvemos al xG.",
+        "o2": "España hizo 12 tiros, pero todos juntos sumaron solo 0.49 de xG.",
+        "o3": "Marruecos, con la mitad de tiros, sumó 0.57. Un poco más de peligro, con mucho menos balón.",
+        "o2b": "Su ocasión más clara, en el último minuto del alargue: Sarabia, xG 0.10… al poste.",
+        "o3b": "La mejor de Marruecos: un cabezazo de Aguerd antes del descanso, xG 0.25.",
+        "o5b": "El mapa de calor te dice dónde está el balón. El xG, dónde está el peligro."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor con 5 líneas: df = sb.events(match_id=3869220) / esp = df[(df.team == 'Spain') & df.location.notna()] / pitch = Pitch() / fig, ax = pitch.draw() / pitch.kdeplot(x, y, ax=ax, fill=True). Al lado aparece el mapa de calor resultante.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Filtras las acciones de España que tienen ubicación, y la librería eme pe ele sóquer dibuja la densidad con una sola función.",
+        "y3": "Cambia el equipo, y tienes el mapa de Marruecos.",
+        "y3b": "Y si cambias el número del partido, tienes el mapa de cualquier partido del Mundial."
+      },
+      "sub": {
+        "y2": "Filtras las acciones de España con ubicación, y mplsoccer dibuja la densidad con una sola función."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #7 xA'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio vemos las asistencias esperadas: el jugador que crea los goles, sin anotarlos.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

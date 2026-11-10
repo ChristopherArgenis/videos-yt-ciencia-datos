@@ -1,6 +1,6 @@
 # Serie: Fútbol con Datos (10 partes)
 
-**Estado:** plan aprobado. Episodios 1 a 4 con StatsBomb (Mundial 2022). #1 y #2 renderizados; guiones del #3 y #4 en `src/guiones/`. Voz desde el #3: `alex_nicola`. Nada se renderiza hasta aprobar cada guion.
+**Estado:** plan aprobado. Episodios 1 a 6 con StatsBomb (Mundial 2022). #1 a #4 renderizados; guiones del #5 y #6 en `src/guiones/`. Voz desde el #3: `alex_nicola`. Nada se renderiza hasta aprobar cada guion.
 
 ## Idea
 Aprender ciencia de datos analizando fútbol real: de "qué es un evento" a analizar un partido
@@ -43,8 +43,8 @@ y gráficas propias). Antes del primer video, confirmar la licencia en la págin
 | 2 | Qué es el xG (goles esperados) \| Fútbol con Datos #2 | xG fútbol | StatsBomb: 1,453 tiros del Mundial 2022, creamos el modelo | 5 |
 | 3 | Mapa de tiros con Python \| Fútbol con Datos #3 | mapa de tiros python | StatsBomb: Messi vs Mbappé, Mundial 2022 | 5 |
 | 4 | Redes de pases: el cerebro del equipo \| Fútbol con Datos #4 | red de pases | StatsBomb: final del Mundial 2022 | 5 |
-| 5 | Cómo medir la presión en el fútbol \| Fútbol con Datos #5 | presión fútbol datos | Eventos dinámicos SkillCorner | 7 |
-| 6 | Mapas de calor con Python \| Fútbol con Datos #6 | mapa de calor fútbol | Tracking SkillCorner + Wyscout | 7 |
+| 5 | Cómo medir la presión en el fútbol \| Fútbol con Datos #5 | presión fútbol datos | StatsBomb: presiones de los 64 partidos del Mundial 2022 | 5 |
+| 6 | Mapas de calor con Python \| Fútbol con Datos #6 | mapa de calor fútbol | StatsBomb: España 0–0 Marruecos, octavos del Mundial 2022 | 5 |
 | 7 | xA: el jugador que crea los goles \| Fútbol con Datos #7 | asistencias esperadas | 5 ligas 2017/18 + nuestro xG | 7 |
 | 8 | Comparar jugadores con radares \| Fútbol con Datos #8 | radar de jugadores | 5 ligas 2017/18, por 90 min | 8 |
 | 9 | Cómo fichan los clubes con datos \| Fútbol con Datos #9 | scouting con datos | 5 ligas 2017/18 | 9 |
@@ -115,3 +115,13 @@ Ajustar el día y la hora con YouTube Studio → Estadísticas → "Cuándo est�
 - **CTR de la miniatura** (meta: ≥ 4–5 % en un canal pequeño).
 - **Retención a los 30 s** (si cae mucho, el gancho no funciona).
 - **% de espectadores que pasan al siguiente episodio** (si es bajo, revisar pantallas finales).
+
+## Shorts relacionados (repo shorts-ciencia-datos)
+| Episodio | Short | Por qué |
+|---|---|---|
+| #1 Del partido a los datos | Short6-StatsBomb | la misma fuente de datos |
+| #2 xG | SUP3-Logística | el modelo de xG es una regresión logística |
+| #3 Mapa de tiros | — | (se apoya en el #2) |
+| #4 Redes de pases | Algo8-Grafos | una red de pases es un grafo |
+| #5 Presión | Mates5-Correlación | posesión vs presiones (−0.66): correlación ≠ causalidad |
+| #6 Mapas de calor | Mates3-Normal | cada acción es una campana normal (KDE) |

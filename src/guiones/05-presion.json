@@ -1,0 +1,159 @@
+{
+  "_nota": "Fútbol con Datos #5. StatsBomb Open Data, Mundial 2022 (64 partidos, sin tanda de penales). Presiones por 90 min; campo rival = x ≥ 60; recuperaciones altas = x ≥ 80; posesión = % de pases.",
+  "id": "05-presion",
+  "titulo": "Cómo medir la presión en el fútbol | Fútbol con Datos #5",
+  "aprobado": false,
+  "musica": "musica/curiosa.wav",
+  "voz": "alex_nicola",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "El equipo que más presionó",
+      "pantalla": "Marcadores: 'Alemania 1–2 Japón' y 'Japón 2–1 España'. Barra de posesión de Japón: 35 %. Al final, Japón sube al #1 de un ranking con el texto 'Presiones'.",
+      "voz": {
+        "g1": "En el Mundial dos mil veintidós, Japón venció a Alemania. Y después, a España.",
+        "g2": "Dos de las selecciones con más balón del torneo. Y Japón casi no lo tuvo: solo el treinta y cinco por ciento de los pases.",
+        "g3": "¿Cómo lo hizo? Fue el equipo que más presionó de todo el Mundial.",
+        "g4": "Hoy aprendes a medir la presión con datos. Y vas a ver que no todo es presionar más."
+      },
+      "sub": {
+        "g1": "En el Mundial 2022, Japón venció a Alemania. Y después, a España.",
+        "g2": "Dos de las selecciones con más balón. Y Japón casi no lo tuvo: solo el 35 % de los pases."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #5' con la fila de 10 episodios; se ilumina el 5.",
+      "voz": {
+        "s1": "Esto es Fútbol con Datos, episodio cinco.",
+        "s1b": "Hoy miramos lo que pasa cuando no tienes el balón."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "que",
+      "capitulo": "¿Qué es una presión?",
+      "pantalla": "Animación simple en la cancha: un punto (rival con balón) y otro que corre hacia él; aparece la etiqueta 'Presión' con minuto y ubicación. Luego dos contadores de la final: Argentina 167 · Francia 194, y barra de pases 55 % / 45 %. Sticker: 'El que no tiene el balón, presiona'.",
+      "voz": {
+        "q1": "En los datos, una presión es cuando un jugador corre hacia el rival que tiene el balón, para quitárselo o apurarlo.",
+        "q2": "Cada una queda registrada, con su minuto y su lugar en la cancha.",
+        "q2b": "En todo el Mundial hubo más de dieciséis mil quinientas presiones. Unas doscientas sesenta por partido.",
+        "q3": "En la final, Argentina hizo ciento sesenta y siete presiones. Francia, ciento noventa y cuatro.",
+        "q4": "¿Francia presionó más que el campeón? Sí. Y tiene explicación: Argentina tuvo más el balón, el cincuenta y cinco por ciento de los pases.",
+        "q5": "Y aquí está la primera regla: el que no tiene el balón, presiona."
+      },
+      "sub": {
+        "q3": "En la final, Argentina hizo 167 presiones. Francia, 194.",
+        "q4": "¿Francia presionó más que el campeón? Sí: Argentina tuvo más el balón, el 55 % de los pases.",
+        "q2b": "En todo el Mundial hubo más de 16,500 presiones: unas 260 por partido."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ranking",
+      "capitulo": "¿Quién presionó más?",
+      "pantalla": "Ranking de presiones por 90 min: Japón 150, Marruecos 139, Irán 133 arriba; abajo España 96 e Inglaterra 89. Luego gráfica de dispersión de los 32 equipos (posesión vs presiones) con una línea que baja; etiqueta 'correlación −0.66' y sticker 'Short: correlación ≠ causalidad'.",
+      "voz": {
+        "r1": "Para comparar equipos, contamos las presiones por cada noventa minutos.",
+        "r2": "Arriba de todo, Japón: casi ciento cincuenta por partido. Después, Marruecos e Irán.",
+        "r2b": "Y así, sin el balón, ganó dos partidos de su grupo: a Alemania y a España, los dos por dos a uno.",
+        "r3": "Y abajo, las dos que menos presionaron: España e Inglaterra. Menos de cien por partido.",
+        "r4": "¿España, de las que menos presionó? Tiene lógica: tuvo el setenta y seis por ciento de los pases. Casi siempre tenía el balón.",
+        "r5": "Si juntamos a los treinta y dos equipos, se ve clarísimo: mientras más balón, menos presiones. La correlación es de menos cero punto sesenta y seis.",
+        "r5b": "Por ejemplo, Costa Rica tuvo la posesión más baja del Mundial, el treinta y uno por ciento, y fue cuarta en presiones.",
+        "r6": "Y ojo, como vimos en el Short de correlación: que dos cosas vayan juntas no significa que una cause a la otra."
+      },
+      "sub": {
+        "r2": "Arriba de todo, Japón: casi 150 por partido. Después, Marruecos e Irán.",
+        "r3": "Y abajo, las que menos presionaron: España e Inglaterra. Menos de 100 por partido.",
+        "r4": "¿España, de las que menos presionó? Tiene lógica: tuvo el 76 % de los pases.",
+        "r5": "Con los 32 equipos: mientras más balón, menos presiones. Correlación de −0.66.",
+        "r2b": "Así, sin el balón, ganó dos partidos de su grupo: a Alemania y a España, los dos 2 a 1.",
+        "r5b": "Costa Rica tuvo la posesión más baja, el 31 %, y fue cuarta en presiones."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "donde",
+      "capitulo": "No importa cuánto: importa dónde",
+      "pantalla": "Dos canchas lado a lado con las presiones como puntos: Alemania (68 % en campo rival, puntos arriba) y Marruecos (38 %, puntos cerca de su área). Etiquetas: 'Presión alta' y 'Bloque bajo'. Al final: 'Marruecos → semifinales'.",
+      "voz": {
+        "d1": "Pero contar presiones no basta. También importa dónde se hacen.",
+        "d2": "Alemania hizo el sesenta y ocho por ciento de sus presiones en campo rival. España, el sesenta y dos. Presionaban arriba, cerca del área contraria.",
+        "d3": "Marruecos, en cambio, solo el treinta y ocho por ciento. Presionaba mucho, pero atrás, en su propio campo.",
+        "d3b": "Por eso Marruecos casi no recuperó balones arriba: siete por partido. Alemania, más del doble.",
+        "d4": "Son dos estilos: presión alta, para recuperar cerca del gol. Y bloque bajo, para cerrar los espacios.",
+        "d4b": "En el mapa se ve clarísimo: los puntos de Alemania están arriba. Los de Marruecos, pegados a su área.",
+        "d5": "Y Marruecos, con su bloque bajo, llegó hasta las semifinales."
+      },
+      "sub": {
+        "d2": "Alemania hizo el 68 % de sus presiones en campo rival. España, el 62 %: presionaban arriba.",
+        "d3": "Marruecos, solo el 38 %. Presionaba mucho, pero atrás, en su propio campo.",
+        "d3b": "Por eso Marruecos casi no recuperó balones arriba: 7 por partido. Alemania, más del doble."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "contra",
+      "capitulo": "La contrapresión",
+      "pantalla": "Reloj de 5 segundos que corre tras una pérdida de balón; aparece la etiqueta 'Contrapresión'. Ranking de % de contrapresión: España 31 %, Inglaterra 28 %... y abajo Japón 13 %.",
+      "voz": {
+        "k1": "Hay una presión especial: la contrapresión. Es presionar justo después de perder el balón, en los primeros segundos.",
+        "k2": "Los datos la marcan aparte. Y aquí España fue la mejor: casi una de cada tres presiones fue de contrapresión.",
+        "k3": "Es la idea de: si lo pierdo, lo recupero enseguida, antes de que el rival se acomode.",
+        "k3c": "La idea es no dejar que el rival respire, ni que levante la cabeza para buscar un pase.",
+        "k3b": "En la final, Argentina hizo cuarenta y seis contrapresiones. Francia, treinta y cinco.",
+        "k4": "Inglaterra fue segunda. Y Japón, el que más presionó, casi no la usó: solo el trece por ciento."
+      },
+      "sub": {
+        "k4": "Inglaterra fue segunda. Y Japón, el que más presionó, casi no la usó: solo el 13 %.",
+        "k3b": "En la final, Argentina hizo 46 contrapresiones. Francia, 35."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "sirve",
+      "capitulo": "¿Presionar sirve?",
+      "pantalla": "Tarjeta de Alemania: 68 % de presiones arriba · 16 recuperaciones altas por partido (1.º del Mundial) · resultado: 'Eliminada en fase de grupos'. Cierre con los tres estilos: Japón (presiona sin balón), Marruecos (bloque bajo), España (contrapresión).",
+      "voz": {
+        "p1": "Entonces, ¿presionar arriba garantiza ganar? Veamos a Alemania.",
+        "p2": "Fue la que más presionó en campo rival, y la que más balones recuperó cerca del área contraria: dieciséis por partido.",
+        "p3": "Y aun así, quedó fuera en la fase de grupos.",
+        "p4": "La presión es una herramienta, no una garantía. Japón y Marruecos lo demostraron, cada uno a su manera.",
+        "p4b": "Lo importante es presionar con un plan: saber cuándo, dónde, y para qué."
+      },
+      "sub": {
+        "p2": "Fue la que más presionó en campo rival y la que más recuperó cerca del área contraria: 16 por partido."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor con 4 líneas: df = sb.events(match_id=3869685) / pres = df[df.type == 'Pressure'] / pres.groupby('team').size() → Argentina 167, France 194 / (pres.location.str[0] >= 60).groupby(pres.team).mean() → 0.40 y 0.48.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Filtras las presiones de la final, y las cuentas por equipo.",
+        "y3": "Y con la ubicación, sabes qué parte fue en campo rival: cuarenta por ciento Argentina, cuarenta y ocho Francia.",
+        "y3b": "Cambia el número del partido, y comparas la presión de cualquier selección."
+      },
+      "sub": {
+        "y3": "Y con la ubicación, sabes qué parte fue en campo rival: 40 % Argentina, 48 % Francia."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #6 Mapas de calor'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio vemos los mapas de calor, con un partido donde un equipo tuvo el balón tres cuartas partes del tiempo. Y perdió.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
