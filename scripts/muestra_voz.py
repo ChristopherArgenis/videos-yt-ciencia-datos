@@ -43,7 +43,7 @@ def main():
                     fh.write(f"file '{w}'\nfile '{silencio}'\n")
             mp3 = os.path.join(salida, perfil + ".mp3")
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lista,
-                            "-ac", "1", "-ar", "44100", "-c:a", "libmp3lame", "-b:a", "128k", mp3], check=True)
+                            "-ac", "1", "-ar", "48000", "-c:a", "libmp3lame", "-b:a", "160k", mp3], check=True)
             print(mp3)
 
 

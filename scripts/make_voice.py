@@ -22,17 +22,20 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 FILTRO_ALEX = ("highpass=f=70,equalizer=f=220:t=q:w=1:g=2,equalizer=f=3500:t=q:w=1.5:g=-2.5,"
                "highshelf=f=7000:g=-4,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=150,"
                "aecho=0.8:0.5:35:0.12,loudnorm=I=-16:TP=-1.5")
-# Filtro "suave y cálido" para Dora: más cuerpo en graves medios, menos brillo y sibilancia,
-# compresión ligera y un poco de sala.
-FILTRO_CALIDO = ("highpass=f=80,equalizer=f=250:t=q:w=1:g=3,equalizer=f=2800:t=q:w=1.5:g=-2,"
-                 "highshelf=f=6500:g=-5,acompressor=threshold=-22dB:ratio=2:attack=15:release=200,"
-                 "aecho=0.8:0.4:30:0.08,loudnorm=I=-16:TP=-1.5")
+# Filtro "suave y cálido" para Dora, ajustado a la muestra de referencia que aprobó el dueño
+# (muestras/voz/referencia_dora_espana_claude_chat.mp3): graves medios con cuerpo, agudos
+# bastante recortados (≈ −6 dB a 3 kHz y −9 dB a 6 kHz respecto a Dora sin filtro), compresión
+# ligera y un toque de sala (≈ −17 LUFS ya con pausas, como la referencia). Coincide con la referencia en ±0.7 dB por banda.
+FILTRO_CALIDO = ("highpass=f=70,equalizer=f=160:t=q:w=1:g=1.5,equalizer=f=1500:t=q:w=1:g=1.5,"
+                 "highshelf=f=1200:g=-1.5,highshelf=f=2600:g=-6.5,lowpass=f=5800,"
+                 "acompressor=threshold=-22dB:ratio=2:attack=15:release=200,"
+                 "aecho=0.8:0.4:30:0.06,loudnorm=I=-16:TP=-1.5")
 
 # Perfiles de voz. lang: "es" = España (z de "cinco"), "es-419" = Latinoamérica (s).
 PERFILES = {
     "alex": {"voz": "em_alex", "lang": "es", "velocidad": 0.88, "filtro": FILTRO_ALEX},
-    "dora_latino_suave_calida": {"voz": "ef_dora", "lang": "es-419", "velocidad": 0.86, "filtro": FILTRO_CALIDO},
-    "dora_espana_suave_calida": {"voz": "ef_dora", "lang": "es", "velocidad": 0.86, "filtro": FILTRO_CALIDO},
+    "dora_latino_suave_calida": {"voz": "ef_dora", "lang": "es-419", "velocidad": 0.91, "filtro": FILTRO_CALIDO},
+    "dora_espana_suave_calida": {"voz": "ef_dora", "lang": "es", "velocidad": 0.91, "filtro": FILTRO_CALIDO},
 }
 
 
