@@ -1,0 +1,45 @@
+Qué es el xG (goles esperados) en el fútbol: la probabilidad de que un tiro sea gol, explicada con los 1,453 tiros reales del Mundial 2022.
+Entiende por qué la volea de Mbappé en la final era casi un milagro y construye tu propio modelo de xG con Python.
+
+Episodio 2 de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Veremos qué hace peligroso un tiro (distancia, ángulo y cabeza), creamos un modelo con regresión logística, explicamos el 2.76 vs 2.27 de la final y usamos el xG para medir a Mbappé, Messi y Julián Álvarez.
+
+Capítulos:
+00:00 ¿Gol seguro o milagro?
+00:33 ¿Qué es el xG?
+01:07 ¿Qué hace peligroso un tiro?
+01:47 Creamos nuestro xG
+02:39 La final, explicada
+03:22 ¿Para qué sirve?
+03:59 Tu turno: con Python
+04:23 Cierre
+
+Código: xG de la final por equipo
+from statsbombpy import sb
+df = sb.events(match_id=3869685)
+tiros = df[(df.type == "Shot") & (df.period < 5)]
+tiros.groupby("team").shot_statsbomb_xg.sum()   # Argentina 2.76 · France 2.27
+
+Código: nuestro modelo de xG (Mundial 2022, sin penales)
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+ev = sb.competition_events(country="International", division="FIFA World Cup", season="2022", gender="male")
+t = ev[(ev.type == "Shot") & (ev.period < 5) & (ev.shot_type != "Penalty")].copy()
+x, y = t.location.str[0], t.location.str[1]
+dx, dy = 120 - x, y - 40
+t["dist"] = np.hypot(dx, dy) * 0.9144
+t["ang"] = np.degrees(np.arctan2(8 * dx, dx**2 + dy**2 - 16) % np.pi)
+t["cabeza"] = (t.shot_body_part == "Head").astype(int)
+X = t[["dist", "ang", "cabeza"]]
+modelo = LogisticRegression().fit(X, t.shot_outcome == "Goal")
+t["xg_nuestro"] = modelo.predict_proba(X)[:, 1]
+
+Datos: StatsBomb Open Data (Hudl StatsBomb) — github.com/statsbomb/open-data
+El análisis y el modelo son propios y no representan la opinión de StatsBomb.
+
+Episodio anterior: Cómo un partido de fútbol se convierte en datos
+Próximo episodio: Mapa de tiros con Python
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #xg #python #mundial2022

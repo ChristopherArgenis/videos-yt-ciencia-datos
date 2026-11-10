@@ -1,8 +1,9 @@
 import React from "react";
 import { AbsoluteFill, Easing, interpolate, Sequence, useCurrentFrame } from "remotion";
 import { Card, Sfx, Split, Stage, Sticker, useIn, Words } from "../kit/kit";
-import { Cierre, leerGuion, VideoLargo, type EscenaProps } from "../kit/largo";
+import { leerGuion, VideoLargo, type EscenaProps } from "../kit/largo";
 import { Cancha, CreditoStatsBomb, Flecha } from "../kit/cancha";
+import { Aparece, ARG, Chip, CierreFutbol, Codigo, COLOR_TIPO, fin, Fila, fmt, FRA, NOMBRE_TIPO, Num, SerieFutbol, useP } from "../kit/futbol";
 import { C, FONT, MONO } from "../kit/theme";
 import guion from "../guiones/01-futbol-datos.json";
 // Generado por scripts/futbol/ep01_datos.py (no se sube a git: licencia de StatsBomb).
@@ -11,94 +12,6 @@ import datos from "../datos/privado/ep01.json";
 // Fútbol con Datos #1 · Cómo un partido de fútbol se convierte en datos.
 // Datos: StatsBomb Open Data, final del Mundial 2022 (partido 3869685).
 
-const ARG = "#7cc6f2";
-const FRA = C.coral;
-
-const COLOR_TIPO: Record<string, string> = {
-  Pass: C.green,
-  Carry: C.blue,
-  Pressure: C.coral,
-  "Ball Receipt*": "#a3abd6",
-  Shot: C.yellow,
-};
-const NOMBRE_TIPO: Record<string, string> = {
-  Pass: "Pase",
-  "Ball Receipt*": "Recepción",
-  Carry: "Conducción",
-  Pressure: "Presión",
-  "Foul Committed": "Falta",
-  "Foul Won": "Falta recibida",
-  Shot: "Tiro",
-};
-
-/** 0 → 1 entre los frames a y b. */
-const useP = (a: number, b: number, ease = true) => {
-  const f = useCurrentFrame();
-  return interpolate(f, [a, b], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-    easing: ease ? Easing.out(Easing.cubic) : undefined,
-  });
-};
-
-const fmt = (n: number, dec = 0) =>
-  n.toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
-
-/** Número que cuenta con separador de miles. */
-const Num: React.FC<{ to: number; start: number; dur?: number; dec?: number; style?: React.CSSProperties }> = ({
-  to,
-  start,
-  dur = 30,
-  dec = 0,
-  style,
-}) => {
-  const p = useP(start, start + dur);
-  return <span style={{ fontVariantNumeric: "tabular-nums", ...style }}>{fmt(to * p, dec)}</span>;
-};
-
-/** Aparece (opacidad + subida) en el frame `at`. */
-const Aparece: React.FC<{ at: number; children: React.ReactNode; style?: React.CSSProperties }> = ({
-  at,
-  children,
-  style,
-}) => {
-  const p = useIn(at);
-  return (
-    <div
-      style={{
-        opacity: interpolate(p, [0, 0.35], [0, 1], { extrapolateRight: "clamp" }),
-        translate: `0px ${interpolate(p, [0, 1], [24, 0])}px`,
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  );
-};
-
-const Chip: React.FC<{ children: React.ReactNode; color?: string; bg?: string; size?: number }> = ({
-  children,
-  color = C.bg,
-  bg = C.green,
-  size = 28,
-}) => (
-  <span
-    style={{
-      fontFamily: MONO,
-      fontWeight: 700,
-      fontSize: size,
-      background: bg,
-      color,
-      borderRadius: 12,
-      padding: "6px 16px",
-      display: "inline-block",
-    }}
-  >
-    {children}
-  </span>
-);
-
-const fin = (l: { at: number; frames: number }) => l.at + l.frames;
 
 // ---------- Escenas ----------
 
@@ -153,59 +66,6 @@ const Gancho: React.FC<EscenaProps> = ({ lineas }) => {
     />
   );
 };
-
-const EPISODIOS = ["Datos", "xG", "Tiros", "Pases", "Presión", "Calor", "xA", "Radares", "Scouting", "La final"];
-
-const Serie: React.FC<EscenaProps> = () => (
-  <Stage gap={50}>
-    <Words text="FÚTBOL CON *DATOS*" size={120} accent={C.green} />
-    <div style={{ display: "flex", gap: 18 }}>
-      {EPISODIOS.map((e, i) => (
-        <Aparece key={e} at={12 + i * 3}>
-          <div
-            style={{
-              width: 140,
-              height: 120,
-              borderRadius: 18,
-              background: i === 0 ? C.green : `${C.bg2}dd`,
-              border: `3px solid ${i === 0 ? C.green : C.dim + "44"}`,
-              color: i === 0 ? C.bg : C.ink,
-              fontFamily: FONT,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 4,
-              scale: i === 0 ? "1.12" : "1",
-            }}
-          >
-            <span style={{ fontFamily: MONO, fontSize: 24, opacity: 0.8 }}>#{i + 1}</span>
-            <span style={{ fontWeight: 800, fontSize: 24 }}>{e}</span>
-          </div>
-        </Aparece>
-      ))}
-    </div>
-  </Stage>
-);
-
-const Fila: React.FC<{ at: number; k: string; v: string; color?: string }> = ({ at, k, v, color = C.ink }) => (
-  <Aparece at={at}>
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        gap: 30,
-        fontFamily: MONO,
-        fontSize: 30,
-        padding: "6px 0",
-        borderBottom: `1px solid ${C.dim}22`,
-      }}
-    >
-      <span style={{ color: C.dim }}>{k}</span>
-      <span style={{ color, fontWeight: 700 }}>{v}</span>
-    </div>
-  </Aparece>
-);
 
 const Evento: React.FC<EscenaProps> = ({ lineas }) => {
   const [, e2, e3, e4, e5, e5b, e6] = lineas;
@@ -637,37 +497,6 @@ const Equipos: React.FC<EscenaProps> = ({ lineas }) => {
   );
 };
 
-/** Línea de código que se escribe letra por letra. */
-const Codigo: React.FC<{ at: number; texto: string; dur?: number; resaltar?: string; resaltarDesde?: number }> = ({
-  at,
-  texto,
-  dur = 30,
-  resaltar,
-  resaltarDesde = 1e9,
-}) => {
-  const frame = useCurrentFrame();
-  const n = Math.floor(interpolate(frame, [at, at + dur], [0, texto.length], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
-  if (frame < at) return <div style={{ height: 50 }} />;
-  const vis = texto.slice(0, n);
-  const i = resaltar ? vis.indexOf(resaltar) : -1;
-  const on = frame >= resaltarDesde && i >= 0;
-  return (
-    <div style={{ fontFamily: MONO, fontSize: 32, color: C.ink, height: 50, whiteSpace: "pre" }}>
-      <span style={{ color: C.dim }}>&gt;&gt;&gt; </span>
-      {on ? (
-        <>
-          {vis.slice(0, i)}
-          <span style={{ background: C.yellow, color: C.bg, borderRadius: 6, padding: "0 4px" }}>{resaltar}</span>
-          {vis.slice(i + resaltar!.length)}
-        </>
-      ) : (
-        vis
-      )}
-      {n < texto.length && <span style={{ color: C.green }}>▍</span>}
-    </div>
-  );
-};
-
 const Python: React.FC<EscenaProps> = ({ lineas }) => {
   const [y1, y2, y2b, y3, y3b, y4] = lineas;
   const conteo: [string, number][] = [
@@ -749,26 +578,6 @@ const Python: React.FC<EscenaProps> = ({ lineas }) => {
   );
 };
 
-const CierreFutbol: React.FC<EscenaProps> = (props) => {
-  const [, z2] = props.lineas;
-  return (
-    <>
-      <Sequence durationInFrames={z2.at} layout="none">
-        <AbsoluteFill style={{ padding: "150px 120px 230px 120px", display: "flex", flexDirection: "column", justifyContent: "center", gap: 24 }}>
-          <Aparece at={0}>
-            <Chip bg={C.yellow}>PRÓXIMO EPISODIO · #2</Chip>
-          </Aparece>
-          <Words text="¿Qué es el *xG*?" size={120} align="left" accent={C.green} delay={6} />
-          <Words text="Por qué un tiro vale más que otro" size={52} weight={700} color={C.dim} align="left" delay={20} />
-        </AbsoluteFill>
-      </Sequence>
-      <Sequence from={z2.at} layout="none">
-        <Cierre {...props} />
-      </Sequence>
-    </>
-  );
-};
-
 export const V01 = leerGuion(guion);
 
 export const V01FutbolDatos: React.FC = () => (
@@ -776,7 +585,7 @@ export const V01FutbolDatos: React.FC = () => (
     guion={V01}
     escenas={{
       gancho: Gancho,
-      serie: Serie,
+      serie: () => <SerieFutbol n={1} />,
       evento: Evento,
       quien: Quien,
       cancha: CanchaPlano,
@@ -784,7 +593,9 @@ export const V01FutbolDatos: React.FC = () => (
       messi: Messi,
       equipos: Equipos,
       python: Python,
-      cierre: CierreFutbol,
+      cierre: (p) => (
+        <CierreFutbol {...p} n={2} titulo="¿Qué es el *xG*?" sub="Por qué un tiro vale más que otro" />
+      ),
     }}
     extra={<CreditoStatsBomb />}
   />

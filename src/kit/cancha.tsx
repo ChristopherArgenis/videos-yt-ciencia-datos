@@ -16,15 +16,19 @@ export const Cancha: React.FC<{
   children?: React.ReactNode;
   /** Opacidad de las líneas (0–1). */
   lineas?: number;
+  /** Solo la mitad de ataque (x de 60 a 120), con la portería a la derecha. */
+  mitad?: boolean;
   style?: React.CSSProperties;
-}> = ({ width, children, lineas = 1, style }) => {
+}> = ({ width, children, lineas = 1, mitad = false, style }) => {
   const m = 3; // margen alrededor de la cancha
+  const x0 = mitad ? 58 : -m;
+  const w = mitad ? LARGO + m - x0 : LARGO + 2 * m;
   return (
     <svg
       width={width}
-      height={(width * (ANCHO + 2 * m)) / (LARGO + 2 * m)}
-      viewBox={`${-m} ${-m} ${LARGO + 2 * m} ${ANCHO + 2 * m}`}
-      style={{ overflow: "visible", ...style }}
+      height={(width * (ANCHO + 2 * m)) / w}
+      viewBox={`${x0} ${-m} ${w} ${ANCHO + 2 * m}`}
+      style={{ overflow: mitad ? "hidden" : "visible", ...style }}
     >
       <rect x={-m} y={-m} width={LARGO + 2 * m} height={ANCHO + 2 * m} rx={2} fill={PASTO} />
       {Array.from({ length: 12 }).map((_, i) =>

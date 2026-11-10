@@ -2,7 +2,7 @@
   "_nota": "Fútbol con Datos #2. Cifras de StatsBomb Open Data, Mundial 2022 (64 partidos, sin tanda de penales). Generadas con scripts/futbol/ep02_datos.py.",
   "id": "02-xg",
   "titulo": "Qué es el xG en el fútbol, explicado con datos reales",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/curiosa.wav",
   "acento": "#3ddc84",
   "subtitulos": true,

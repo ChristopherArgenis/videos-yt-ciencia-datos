@@ -46,3 +46,17 @@ Plantilla por video:
 **#:** #cienciadedatos #futbol #python #analisisdedatos #mundial2022
 **Comentario fijado:** ¿Qué partido o jugador quieres que analicemos con datos? Lo puedo usar en un próximo episodio 👇
 **Pantalla final (últimos 20 s):** lista de la serie + botón de suscribirse (el episodio 2 cuando exista).
+
+## 02 · Qué es el xG en el fútbol, explicado con datos reales (4:43)
+**Título:** Qué es el xG en el fútbol, explicado con datos reales (53)
+**Alternativas:** xG: cómo saber si un tiro era gol seguro (40) · Goles esperados (xG): el número que usan los analistas (54)
+**Miniatura:** `Mini-02-Xg` → "10 % ¿GOL O MILAGRO?" sobre el mapa de probabilidad
+**Lista:** Fútbol con Datos · **Short relacionado:** regresión logística (SUP3, repo shorts-ciencia-datos)
+**Datos:** StatsBomb Open Data, Mundial 2022 (64 partidos, 1,453 tiros). Logo en pantalla todo el video.
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
+
+**Descripción:** `videos/02-xg/descripcion.txt` (los dos códigos verificados: 2.76/2.27 y correlación 0.82).
+
+**#:** #cienciadedatos #futbol #xg #python #mundial2022
+**Comentario fijado:** ¿Qué tiro del Mundial te pareció un milagro? Dime el minuto y le calculo su xG 👇
+**Pantalla final:** episodio 1 + lista de la serie + suscribirse. **Tarjeta:** al episodio 1 en 00:33 (cuando se menciona).

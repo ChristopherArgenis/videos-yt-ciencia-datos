@@ -41,6 +41,7 @@ export const MiniPlantilla: React.FC = () => (
 // ---------- Fútbol con Datos ----------
 import { Cancha } from "../kit/cancha";
 import datosEp01 from "../datos/privado/ep01.json";
+import datosEp02 from "../datos/privado/ep02.json";
 
 export const MiniFutbol01: React.FC = () => (
   <FondoMini accent={C.green}>
@@ -70,3 +71,37 @@ export const MiniFutbol01: React.FC = () => (
     </div>
   </FondoMini>
 );
+
+const probColor = (p: number) => {
+  const t = Math.min(1, p / 0.45);
+  const mix = (a: number[], b: number[], k: number) => a.map((v, i) => Math.round(v + (b[i] - v) * k));
+  const c = t < 0.5 ? mix([40, 70, 160], [255, 209, 102], t / 0.5) : mix([255, 209, 102], [255, 70, 60], (t - 0.5) / 0.5);
+  return `rgb(${c.join(",")})`;
+};
+
+export const MiniFutbol02: React.FC = () => {
+  const mb = datosEp02.final.find((t) => t.jugador === "Mbappé" && t.min === 81)!;
+  return (
+    <FondoMini accent={C.coral}>
+      <div style={{ position: "absolute", right: 40, top: 30 }}>
+        <Cancha width={470} mitad lineas={0.9}>
+          {datosEp02.rejilla.map((fila, i) =>
+            fila.map((p, k) => <rect key={`${i}-${k}`} x={60 + i * 2} y={k * 2} width={2.05} height={2.05} fill={probColor(p)} opacity={0.85} />),
+          )}
+          <line x1={mb.x} y1={mb.y} x2={120} y2={40} stroke="#fff" strokeWidth={0.8} strokeDasharray="1.5 1" />
+          <circle cx={mb.x} cy={mb.y} r={2.6} fill="#fff" stroke={C.bg} strokeWidth={0.6} />
+        </Cancha>
+      </div>
+      <div style={{ position: "absolute", left: 60, top: 80, display: "flex", flexDirection: "column", gap: 14 }}>
+        <ChipMini bg={C.green}>FÚTBOL CON DATOS #2</ChipMini>
+        <Grande size={250} color={C.yellow}>
+          10 %
+        </Grande>
+        <Grande size={96}>¿GOL O</Grande>
+        <Grande size={96} color={C.coral}>
+          MILAGRO?
+        </Grande>
+      </div>
+    </FondoMini>
+  );
+};
