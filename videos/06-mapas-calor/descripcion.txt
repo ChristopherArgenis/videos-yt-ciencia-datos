@@ -1,0 +1,28 @@
+Mapas de calor en el fútbol con Python: cómo se hacen y qué revelan. España tuvo el 75 % del balón contra Marruecos en el Mundial 2022… y perdió.
+Aprende la idea detrás de un heatmap (estimación de densidad con campanas normales) y léelo con datos reales del partido.
+
+Episodio 6 de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Construimos los mapas de calor de España y Marruecos en los octavos de final, vemos dónde estuvo el balón y dónde no, comparamos a Pedri y a Hakimi, y usamos el xG para ver quién tuvo las ocasiones.
+
+Capítulos:
+00:00 75 % del balón… y perdió
+00:33 ¿Qué es un mapa de calor?
+01:20 España: dueña del balón
+01:58 Marruecos: el muro
+02:31 Un jugador, un mapa
+03:08 ¿Quién tuvo las ocasiones?
+04:00 Tu turno: con Python
+04:20 Cierre
+
+💻 El código para dibujar el mapa de calor (librería mplsoccer) aparece en el video en el 04:00.
+🔔 La campana normal detrás de cada mapa de calor: mira el Short del canal sobre la distribución normal.
+
+Datos: StatsBomb Open Data (Hudl StatsBomb), github.com/statsbomb/open-data
+El análisis es propio y no representa la opinión de StatsBomb. Partido: Marruecos 0–0 España (3–0 en penales).
+
+Episodio anterior: Cómo medir la presión en el fútbol | Fútbol con Datos #5
+Próximo episodio: xA: el jugador que crea los goles | Fútbol con Datos #7
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #mundial2022 #python #espana

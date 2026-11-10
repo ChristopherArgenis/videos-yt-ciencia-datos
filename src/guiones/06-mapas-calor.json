@@ -2,7 +2,7 @@
   "_nota": "Fútbol con Datos #6. StatsBomb Open Data, octavos del Mundial 2022: Marruecos 0–0 España (3–0 en penales), partido 3869220. Acciones con balón = pases, recepciones, conducciones, regates y tiros. Posesión = % de pases. Sin tanda de penales salvo donde se dice.",
   "id": "06-mapas-calor",
   "titulo": "Mapas de calor con Python | Fútbol con Datos #6",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/curiosa.wav",
   "voz": "alex_nicola",
   "acento": "#3ddc84",

@@ -1,0 +1,28 @@
+Cómo medir la presión en el fútbol con datos: qué es una presión, la contrapresión y por qué Japón, el equipo que más presionó del Mundial 2022, venció a Alemania y a España.
+Datos reales de los 64 partidos: quién presiona más, dónde lo hace y si presionar alto garantiza ganar.
+
+Episodio 5 de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Comparamos presiones por partido, presión alta contra bloque bajo (Alemania y Marruecos), la contrapresión de España y la relación entre posesión y presión (correlación de −0.66).
+
+Capítulos:
+00:00 El equipo que más presionó
+00:32 ¿Qué es una presión?
+01:12 ¿Quién presionó más?
+02:09 No importa cuánto: importa dónde
+02:57 La contrapresión
+03:37 ¿Presionar sirve?
+04:05 Tu turno: con Python
+04:25 Cierre
+
+💻 El código para contar las presiones de un partido aparece en el video en el 04:05.
+📊 ¿Correlación o causalidad? Mira el Short del canal sobre correlación.
+
+Datos: StatsBomb Open Data (Hudl StatsBomb), github.com/statsbomb/open-data
+El análisis es propio y no representa la opinión de StatsBomb. Sin tandas de penales; presiones por 90 minutos.
+
+Episodio anterior: Redes de pases: el cerebro del equipo | Fútbol con Datos #4
+Próximo episodio: Mapas de calor con Python | Fútbol con Datos #6
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #mundial2022 #analisisdedatos #python

@@ -83,3 +83,26 @@ Títulos: «Tema | Fútbol con Datos #N», máximo 60 caracteres.
 **#:** #cienciadedatos #futbol #mundial2022 #python #analisisdedatos
 **Comentario fijado:** ¿De qué partido quieres ver la red de pases? 👇
 **Pantalla final:** episodio 3 + lista de la serie. **Tarjeta:** al Short de grafos (Algo8) en 00:29.
+
+## 05 · La presión: Japón, el que más presionó (4:45)
+**Título:** Cómo medir la presión en el fútbol | Fútbol con Datos #5 (56)
+**Alternativa:** Japón presionó más que nadie | Fútbol con Datos #5 (50)
+**Miniatura:** `Mini-05-Presion` → "JAPÓN 150 presiones por partido", marcadores vs Alemania y España, silueta japonesa presionando
+**Voz:** alex_nicola · **Datos:** StatsBomb Open Data, 64 partidos del Mundial 2022. Logo en pantalla.
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
+**Descripción:** `videos/05-presion/descripcion.txt` (sin código; remite al 04:05).
+**#:** #cienciadedatos #futbol #mundial2022 #analisisdedatos #python
+**Comentario fijado:** ¿Tu equipo presiona arriba o espera atrás? 👇
+**Short relacionado:** Mates5-Correlación (tarjeta en 01:12). **Pantalla final:** episodio 4 + lista.
+
+## 06 · Mapas de calor: España 75 % del balón… y perdió (4:40)
+**Título:** Mapas de calor con Python | Fútbol con Datos #6 (47)
+**Alternativa:** 75 % del balón y perdió | Fútbol con Datos #6 (45)
+**Miniatura:** `Mini-06-MapasCalor` → "75 % DEL BALÓN… Y PERDIÓ" sobre el mapa de calor de España
+**Voz:** alex_nicola · **Datos:** StatsBomb Open Data, Marruecos 0–0 España (octavos). Logo en pantalla.
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
+**Descripción:** `videos/06-mapas-calor/descripcion.txt` (sin código; remite al 04:00).
+**#:** #cienciadedatos #futbol #mundial2022 #python #espana
+**Comentario fijado:** ¿De qué partido quieres ver el mapa de calor? 👇
+**Short relacionado:** Mates3-Normal (tarjeta en 00:33). **Pantalla final:** episodio 5 + lista.
+**Colores:** España rojo, Marruecos verde (los dos visten de rojo; se usa el verde de su bandera para distinguirlos).

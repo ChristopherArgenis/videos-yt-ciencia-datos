@@ -203,3 +203,9 @@ export const CierreFutbol: React.FC<EscenaProps & { n: number; titulo: string; s
     </>
   );
 };
+
+// Colores de selecciones (los reales; ver CLAUDE.md). Rellenos y texto sobre fondo oscuro.
+export const ESP = "#e23b3b"; // España: rojo
+export const MAR = "#22a35a"; // Marruecos: verde (su otro color; los dos visten de rojo)
+export const JPN = "#3b6fe0"; // Japón: azul
+export const ALE = "#e8e8e8"; // Alemania: blanco

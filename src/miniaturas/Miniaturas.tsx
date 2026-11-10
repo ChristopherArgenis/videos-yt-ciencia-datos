@@ -59,7 +59,10 @@ import datosEp01 from "../datos/privado/ep01.json";
 import datosEp02 from "../datos/privado/ep02.json";
 import datosEp04 from "../datos/privado/ep04.json";
 import { Red } from "../videos/V04RedPases";
-import { FRA, FRA_TEXTO } from "../kit/futbol";
+import { ESP, FRA, FRA_TEXTO, JPN, MAR } from "../kit/futbol";
+import datosEp05 from "../datos/privado/ep05.json";
+import datosEp06 from "../datos/privado/ep06.json";
+import { Calor } from "../kit/calor";
 
 export const MiniFutbol01: React.FC = () => (
   <FondoMini accent={C.green}>
@@ -213,7 +216,15 @@ const Jugador: React.FC<{
   rayas?: boolean;
   espejo?: boolean;
   alto?: number;
-}> = ({ color, halo, rayas = false, espejo = false, alto = 460 }) => {
+  numero?: string;
+}> = ({
+  color,
+  halo,
+  rayas = false,
+  espejo = false,
+  alto = 460,
+  numero = "10",
+}) => {
   const id = `torso-${color.replace("#", "")}`;
   const piel = "#0b1020";
   const borde = "#ffffff55";
@@ -359,7 +370,7 @@ const Jugador: React.FC<{
         paintOrder="stroke"
         transform={espejo ? "translate(224 0) scale(-1 1)" : undefined}
       >
-        10
+        {numero}
       </text>
     </svg>
   );
@@ -623,4 +634,194 @@ export const MiniFutbol04: React.FC = () => (
       </Grande>
     </div>
   </FondoMini>
+);
+
+/** Chip de marcador para miniaturas. */
+const MarcadorMini: React.FC<{ texto: string; color: string }> = ({
+  texto,
+  color,
+}) => (
+  <div
+    style={{
+      fontFamily: "Poppins",
+      fontWeight: 900,
+      fontSize: 34,
+      color: "#fff",
+      background: "#0b1020cc",
+      border: `4px solid ${color}`,
+      borderRadius: 14,
+      padding: "6px 18px",
+      boxShadow: "0 8px 20px #0008",
+    }}
+  >
+    {texto}
+  </div>
+);
+
+export const MiniFutbol05: React.FC = () => {
+  const jap = datosEp05.equipos.find((e) => e.en === "Japan")!;
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+      <svg width={1280} height={720} style={{ position: "absolute", inset: 0 }}>
+        <defs>
+          <linearGradient id="jap" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#2b5fd8" />
+            <stop offset="1" stopColor="#0b1d4d" />
+          </linearGradient>
+        </defs>
+        <polygon points="0,0 760,0 620,720 0,720" fill="url(#jap)" />
+        <text
+          x={320}
+          y={640}
+          textAnchor="middle"
+          fontFamily="Poppins"
+          fontWeight={900}
+          fontSize={420}
+          fill="#ffffff"
+          opacity={0.07}
+        >
+          #1
+        </text>
+        <polyline
+          points="760,0 700,250 740,250 660,470 705,470 620,720"
+          fill="none"
+          stroke="#ffd166"
+          strokeWidth={20}
+          opacity={0.3}
+        />
+        <polyline
+          points="760,0 700,250 740,250 660,470 705,470 620,720"
+          fill="none"
+          stroke="#fff6d5"
+          strokeWidth={7}
+        />
+      </svg>
+      <div
+        style={{
+          position: "absolute",
+          left: 44,
+          top: 40,
+          display: "flex",
+          flexDirection: "column",
+          gap: 6,
+        }}
+      >
+        <Nombre color="#ffffff" size={150}>
+          JAPÓN
+        </Nombre>
+        <div style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
+          <Nombre color="#ffd166" size={150}>
+            {Math.round(jap.pres90)}
+          </Nombre>
+          <span
+            style={{
+              fontFamily: "Poppins",
+              fontWeight: 900,
+              fontSize: 44,
+              color: "#fff",
+              textShadow: "0 4px 10px #000",
+              lineHeight: 1,
+            }}
+          >
+            PRESIONES
+            <br />
+            POR PARTIDO
+          </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+            marginTop: 14,
+          }}
+        >
+          <MarcadorMini texto="Japón 2–1 Alemania" color={C.ink} />
+          <MarcadorMini texto="Japón 2–1 España" color={ESP} />
+        </div>
+      </div>
+      <div style={{ position: "absolute", right: 330, bottom: -24 }}>
+        <Jugador color={JPN} halo="#5b8cff" numero="" />
+      </div>
+      <div
+        style={{ position: "absolute", right: 30, bottom: -24, opacity: 0.8 }}
+      >
+        <Jugador color="#9aa0b8" halo="#444" espejo alto={430} numero="" />
+      </div>
+      <div style={{ position: "absolute", right: 245, bottom: 22 }}>
+        <Balon size={70} />
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: 22,
+          display: "flex",
+          justifyContent: "center",
+          paddingRight: 420,
+        }}
+      >
+        <ChipMini bg={C.green}>FÚTBOL CON DATOS #5</ChipMini>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+export const MiniFutbol06: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <div
+      style={{
+        position: "absolute",
+        right: -60,
+        top: 120,
+        rotate: "-5deg",
+        opacity: 0.95,
+      }}
+    >
+      <Calor grid={datosEp06.espana.calor} width={860} />
+    </div>
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(90deg, #0b1020 30%, #0b102000 70%)",
+      }}
+    />
+    <div
+      style={{
+        position: "absolute",
+        left: 50,
+        top: 40,
+        display: "flex",
+        flexDirection: "column",
+        gap: 4,
+      }}
+    >
+      <ChipMini bg={C.green}>FÚTBOL CON DATOS #6</ChipMini>
+      <Nombre color={ESP} size={230}>
+        75 %
+      </Nombre>
+      <Nombre color="#ffffff" size={100}>
+        DEL BALÓN…
+      </Nombre>
+      <Nombre color="#ffd166" size={120}>
+        Y PERDIÓ
+      </Nombre>
+    </div>
+    <div
+      style={{
+        position: "absolute",
+        right: 40,
+        top: 30,
+        display: "flex",
+        gap: 14,
+      }}
+    >
+      <MarcadorMini texto="España 0–0 Marruecos" color={ESP} />
+    </div>
+    <div style={{ position: "absolute", right: 140, bottom: 40 }}>
+      <MarcadorMini texto="Penales 0–3" color={MAR} />
+    </div>
+  </AbsoluteFill>
 );
