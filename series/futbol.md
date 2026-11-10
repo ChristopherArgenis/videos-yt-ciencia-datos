@@ -1,6 +1,6 @@
 # Serie: Fútbol con Datos (10 partes)
 
-**Estado:** plan aprobado. Episodios 1 y 2 con StatsBomb (Mundial 2022). #1 renderizado; guion del #2 en `src/guiones/02-xg.json`. Nada se renderiza hasta aprobar cada guion.
+**Estado:** plan aprobado. Episodios 1 a 4 con StatsBomb (Mundial 2022). #1 y #2 renderizados; guiones del #3 y #4 en `src/guiones/`. Voz desde el #3: `alex_nicola`. Nada se renderiza hasta aprobar cada guion.
 
 ## Idea
 Aprender ciencia de datos analizando fútbol real: de "qué es un evento" a analizar un partido
@@ -41,8 +41,8 @@ y gráficas propias). Antes del primer video, confirmar la licencia en la págin
 |---|---|---|---|---|
 | 1 | Cómo un partido se convierte en datos \| Fútbol con Datos #1 | datos en el fútbol | StatsBomb: final del Mundial 2022 | 5 |
 | 2 | Qué es el xG (goles esperados) \| Fútbol con Datos #2 | xG fútbol | StatsBomb: 1,453 tiros del Mundial 2022, creamos el modelo | 5 |
-| 3 | Mapa de tiros con Python \| Fútbol con Datos #3 | mapa de tiros python | Messi, La Liga 2017/18 | 8 |
-| 4 | Redes de pases: el cerebro del equipo \| Fútbol con Datos #4 | red de pases | Final Mundial 2018 | 8 |
+| 3 | Mapa de tiros con Python \| Fútbol con Datos #3 | mapa de tiros python | StatsBomb: Messi vs Mbappé, Mundial 2022 | 5 |
+| 4 | Redes de pases: el cerebro del equipo \| Fútbol con Datos #4 | red de pases | StatsBomb: final del Mundial 2022 | 5 |
 | 5 | Cómo medir la presión en el fútbol \| Fútbol con Datos #5 | presión fútbol datos | Eventos dinámicos SkillCorner | 7 |
 | 6 | Mapas de calor con Python \| Fútbol con Datos #6 | mapa de calor fútbol | Tracking SkillCorner + Wyscout | 7 |
 | 7 | xA: el jugador que crea los goles \| Fútbol con Datos #7 | asistencias esperadas | 5 ligas 2017/18 + nuestro xG | 7 |

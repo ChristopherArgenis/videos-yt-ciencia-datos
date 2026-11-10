@@ -1,0 +1,154 @@
+{
+  "_nota": "Fútbol con Datos #4. StatsBomb Open Data, final del Mundial 2022. Pases completos de cada equipo hasta su primer cambio: Argentina hasta 63:51 (Di María), Francia hasta 40:32 (Dembélé).",
+  "id": "04-red-pases",
+  "titulo": "Redes de pases: el cerebro del equipo | Fútbol con Datos #4",
+  "aprobado": false,
+  "musica": "musica/curiosa.wav",
+  "voz": "alex_nicola",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "El cambio del minuto 41",
+      "pantalla": "Marcador 'ARG 2 – 0 FRA · 41''. Dos fichas salen de la cancha: Giroud y Dembélé. Luego aparece, borrosa, la red de pases de Francia con un signo de pregunta.",
+      "voz": {
+        "g1": "Final del Mundial. Minuto cuarenta y uno. Francia pierde dos a cero, y su técnico hace algo rarísimo.",
+        "g2": "Saca a dos delanteros, antes del medio tiempo.",
+        "g3": "¿Por qué? Los datos lo explican con una sola imagen: la red de pases.",
+        "g4": "Hoy aprendes a leerla. Y a descubrir quién es el cerebro de un equipo."
+      },
+      "sub": {
+        "g1": "Final del Mundial. Minuto 41. Francia pierde 2 a 0, y su técnico hace algo rarísimo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #4' con la fila de 10 episodios; se ilumina el 4.",
+      "voz": {
+        "s1": "Esto es Fútbol con Datos, episodio cuatro.",
+        "s1b": "Hoy dejamos los tiros, y miramos cómo se mueve el balón entre los jugadores."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "que",
+      "capitulo": "¿Qué es una red de pases?",
+      "pantalla": "Se arma una red de ejemplo paso a paso: círculos en la cancha (posición media), que crecen según los pases; líneas que se engrosan. Luego la red se 'despega' de la cancha y queda como grafo (puntos y líneas). Sticker: 'Short: grafos'. Al final: 'Solo pases completos · hasta el primer cambio'.",
+      "voz": {
+        "r1": "Una red de pases es un mapa del equipo.",
+        "r2": "Cada jugador es un círculo, ubicado en el lugar promedio desde donde dio sus pases.",
+        "r3": "Mientras más pases da y recibe, más grande es su círculo.",
+        "r4": "Y cada línea une a dos jugadores que se pasan el balón. Mientras más gruesa, más pases entre ellos.",
+        "r5": "En matemáticas, esto se llama un grafo: puntos unidos por líneas. La misma idea del Short de grafos del canal.",
+        "r6": "Usamos solo los pases completos, y cada equipo hasta su primer cambio, para ver siempre a los mismos once.",
+        "r6b": "Y solo dibujamos las parejas con al menos tres pases, para que el mapa se pueda leer."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "argentina",
+      "capitulo": "Argentina: la red completa",
+      "pantalla": "Red de pases de Argentina (hasta el 63'). Contador 317 pases · 5 por minuto. Se resaltan Enzo Fernández (82) y De Paul (79) en el centro; luego la línea gruesa Otamendi–Romero (21); al final Messi (58) más adelante.",
+      "voz": {
+        "a1": "Esta es Argentina en la final, hasta el minuto sesenta y tres.",
+        "a2": "Trescientos diecisiete pases completos. Unos cinco por minuto.",
+        "a3": "Mira el centro: Enzo Fernández y De Paul. Cada uno participó en unos ochenta pases. Por ahí pasaba casi todo.",
+        "a4": "El que más tocó fue Otamendi, el central. La salida empezaba por él, y la pareja que más se buscó fue él con Romero: veintiún pases.",
+        "a4b": "Di María, por la izquierda, fue la salida rápida: participó en cincuenta y seis pases, y anotó el segundo gol.",
+        "a5": "Y Messi, más adelante, con cincuenta y ocho. No necesita tocarla tanto: le basta con tocarla bien."
+      },
+      "sub": {
+        "a1": "Esta es Argentina en la final, hasta el minuto 63.",
+        "a2": "317 pases completos: unos 5 por minuto.",
+        "a3": "Mira el centro: Enzo Fernández y De Paul, unos 80 pases cada uno. Por ahí pasaba casi todo.",
+        "a4": "El que más tocó fue Otamendi. La pareja que más se buscó: Otamendi y Romero, 21 pases.",
+        "a5": "Y Messi, más adelante, con 58. No necesita tocarla tanto: le basta con tocarla bien.",
+        "a4b": "Di María, por la izquierda, fue la salida rápida: 56 pases y el segundo gol."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "francia",
+      "capitulo": "Francia: una red rota",
+      "pantalla": "Red de pases de Francia (hasta el 41'), mucho más delgada. Contador 116 pases · menos de 3 por minuto. Se resaltan Varane, Upamecano y Koundé atrás; arriba Mbappé (16), Griezmann (15) y Giroud (13), pequeños y aislados. Al final, flechas de cambio: Giroud → Thuram, Dembélé → Kolo Muani.",
+      "voz": {
+        "f1": "Ahora Francia, hasta el minuto cuarenta y uno.",
+        "f2": "Solo ciento dieciséis pases completos. Menos de tres por minuto.",
+        "f2b": "Y además fallaban más: completaron el setenta y seis por ciento de sus pases. Argentina, el ochenta y tres.",
+        "f3": "Y los que más tocaron el balón fueron sus defensas: Varane, Upamecano y Koundé.",
+        "f4": "Arriba, Mbappé, Griezmann y Giroud casi no aparecen: entre trece y dieciséis pases cada uno. Están aislados.",
+        "f4b": "Y en esos cuarenta y un minutos, Francia no hizo ni un solo tiro.",
+        "f5": "Francia no podía llevar el balón adelante. Por eso, en el minuto cuarenta y uno, Deschamps cambió a Giroud y a Dembélé."
+      },
+      "sub": {
+        "f1": "Ahora Francia, hasta el minuto 41.",
+        "f2": "Solo 116 pases completos: menos de 3 por minuto.",
+        "f4": "Arriba, Mbappé, Griezmann y Giroud casi no aparecen: entre 13 y 16 pases cada uno. Aislados.",
+        "f5": "Francia no podía llevar el balón adelante. Por eso, en el 41, Deschamps cambió a Giroud y a Dembélé.",
+        "f2b": "Además fallaban más: completaron el 76 % de sus pases. Argentina, el 83 %.",
+        "f4b": "Y en esos 41 minutos, Francia no hizo ni un solo tiro."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cambio",
+      "capitulo": "¿Funcionó el cambio?",
+      "pantalla": "Dos redes de Francia lado a lado: 'Antes (0–41')' delgada y 'Después (41'–70')' más gruesa. Contadores: pases por minuto 2.9 → 5.9; Mbappé 16 en 40 min → 16 en 30 min; tiros 0 → 10. Final: marcador 3–3.",
+      "voz": {
+        "k1": "¿Y funcionó el cambio? Comparemos la red de Francia antes y después.",
+        "k2": "Antes del cambio, Francia completaba menos de tres pases por minuto. Del minuto cuarenta y uno al setenta, casi seis.",
+        "k3": "Mbappé participó en dieciséis pases en los primeros cuarenta minutos. En los siguientes treinta, en otros dieciséis: casi el doble de ritmo.",
+        "k4": "Y Francia pasó de cero tiros, a diez. El resto ya lo sabes: empató el partido."
+      },
+      "sub": {
+        "k2": "Antes del cambio: menos de 3 pases completos por minuto. Del 41 al 70: casi 6.",
+        "k3": "Mbappé: 16 pases en los primeros 40 minutos. En los siguientes 30, otros 16.",
+        "k4": "Francia pasó de 0 tiros a 10. El resto ya lo sabes: empató el partido."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cerebro",
+      "capitulo": "¿Quién es el cerebro?",
+      "pantalla": "Se explica la intermediación con un mini grafo: un nodo central por el que pasan los caminos se ilumina. Luego ranking: Argentina — Otamendi, Tagliafico, De Paul; Francia — Varane, Upamecano, Koundé. Sticker final: 'El cerebro no siempre lleva el 10'.",
+      "voz": {
+        "c1": "Entonces, ¿quién es el cerebro de un equipo?",
+        "c2": "Hay una medida para eso: la intermediación. Cuenta cuántas veces un jugador es el puente entre otros dos.",
+        "c2b": "Imagina a tres amigos: si Ana solo habla con Luis a través de ti, tú eres el puente.",
+        "c3": "En Argentina, el puente principal fue Otamendi, un defensa. Después, Tagliafico y De Paul. El cerebro no siempre es el que lleva el diez.",
+        "c4": "En Francia, los puentes eran sus tres defensas. El balón daba vueltas atrás, y no llegaba adelante.",
+        "c4b": "Por eso los rivales estudian estas redes antes de un partido: si todo pasa por un jugador, lo presionas a él.",
+        "c5": "Así, una red de pases te dice en segundos cómo juega un equipo, y dónde se está atascando."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor con 3 líneas: df = sb.events(match_id=3869685) / pases = df[(df.type == 'Pass') & (df.team == 'Argentina') & df.pass_outcome.isna()] / pases.groupby(['player', 'pass_recipient']).size() → la salida muestra Otamendi → Romero 18 arriba.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Filtras los pases completos de Argentina, y los agrupas por quién pasó y quién recibió.",
+        "y3": "La pareja con más pases aparece sola: Otamendi a Romero, dieciocho veces en todo el partido.",
+        "y4": "Esas son las líneas de tu red. Y los círculos, el lugar promedio desde donde pasó cada jugador.",
+        "y4b": "Con eso, en unas pocas líneas más, dibujas la red completa."
+      },
+      "sub": {
+        "y3": "La pareja con más pases aparece sola: Otamendi → Romero, 18 veces en todo el partido."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #5 Cómo medir la presión'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio medimos la presión: qué equipo incomoda más a su rival.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

@@ -4,6 +4,7 @@
   "titulo": "Plantilla de video largo",
   "aprobado": false,
   "musica": "musica/explica.wav",
+  "voz": "alex",
   "acento": "#5b8cff",
   "subtitulos": true,
   "escenas": [

@@ -3,7 +3,7 @@
     python3 scripts/make_voice.py plantilla          # todo el video
     python3 scripts/make_voice.py plantilla g1 c2    # solo esas frases
 
-La voz sale del campo "voz" del guion (un perfil de PERFILES); si no está, se usa Alex.
+La voz sale del campo "voz" del guion (un perfil de PERFILES); si no está, se usa alex_nicola (la voz del canal).
 
 Lee src/guiones/<video>.json y escribe public/voz/<video>/<frase>.wav más
 src/voz-duraciones.json (segundos de cada frase; el video se acomoda a ellos).
@@ -100,7 +100,7 @@ def main():
     video, solo = sys.argv[1], set(sys.argv[2:])
     guion = json.load(open(os.path.join(ROOT, "src", "guiones", video + ".json"), encoding="utf-8"))
     frases = {k: v for e in guion["escenas"] for k, v in e["voz"].items()}
-    perfil = guion.get("voz", "alex")
+    perfil = guion.get("voz", "alex_nicola")
     if perfil not in PERFILES:
         sys.exit(f"Voz desconocida: {perfil}. Opciones: {', '.join(PERFILES)}")
     print(f"Voz: {perfil}")

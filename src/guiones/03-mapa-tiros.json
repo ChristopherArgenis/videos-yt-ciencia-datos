@@ -1,0 +1,178 @@
+{
+  "_nota": "Fútbol con Datos #3. StatsBomb Open Data, Mundial 2022, sin tanda de penales. 'Sin penales' = tiros de jugada. Área = x ≥ 102 y 18 ≤ y ≤ 62.",
+  "id": "03-mapa-tiros",
+  "titulo": "Mapa de tiros con Python | Fútbol con Datos #3",
+  "aprobado": false,
+  "musica": "musica/curiosa.wav",
+  "voz": "alex_nicola",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "Mismos goles, otro estilo",
+      "pantalla": "Dos tarjetas: MESSI 7 goles · MBAPPÉ 8 goles. Luego aparecen sus dos mapas de tiros lado a lado (media cancha cada uno): el de Mbappé con casi todo dentro del área y el de Messi con muchos puntos de lejos.",
+      "voz": {
+        "g1": "Messi y Mbappé fueron los dos máximos goleadores del Mundial dos mil veintidós. Siete y ocho goles.",
+        "g2": "Parecen números casi iguales. Pero mira esto.",
+        "g3": "Si dibujas cada uno de sus tiros en la cancha, aparecen dos delanteros completamente distintos.",
+        "g4": "Hoy aprendes a leer un mapa de tiros. Y a hacerlo con Python."
+      },
+      "sub": {
+        "g1": "Messi y Mbappé, los máximos goleadores del Mundial 2022: 7 y 8 goles."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #3' con la fila de 10 episodios; se ilumina el 3.",
+      "voz": {
+        "s1": "Esto es Fútbol con Datos, episodio tres.",
+        "s1b": "Si te perdiste el del equis ge, míralo primero: hoy lo usamos todo el tiempo."
+      },
+      "pausa": 0.5,
+      "sub": {
+        "s1b": "Si te perdiste el del xG, míralo primero: hoy lo usamos todo el tiempo."
+      }
+    },
+    {
+      "id": "leer",
+      "capitulo": "Cómo leer un mapa de tiros",
+      "pantalla": "Media cancha vertical con la portería arriba. Aparece un punto, se agranda según el xG, se rellena si fue gol (leyenda: tamaño = xG, relleno = gol). Al final se señala el gol de Messi a México: punto diminuto a 23 m, 'xG 0.03'. Sticker: 'Sin penales'.",
+      "voz": {
+        "l1": "Un mapa de tiros es la mitad de la cancha, vista desde arriba, con la portería arriba.",
+        "l2": "Cada punto es un tiro, dibujado justo donde se hizo.",
+        "l3": "El tamaño del punto es su equis ge: mientras más grande, más clara era la ocasión.",
+        "l4": "Y si el punto está relleno, fue gol.",
+        "l5": "Por ejemplo, este punto tan pequeño, a veintitrés metros, es el gol de Messi contra México. Tenía un equis ge de cero punto cero tres: entra tres de cada cien veces.",
+        "l6": "Vamos a dejar fuera los penales, porque siempre se tiran desde el mismo punto."
+      },
+      "sub": {
+        "l3": "El tamaño del punto es su xG: mientras más grande, más clara la ocasión.",
+        "l5": "Este punto pequeñito, a 23 metros, es el gol de Messi a México: xG 0.03. Entra 3 de cada 100 veces."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "todo",
+      "capitulo": "Todo el Mundial en un mapa",
+      "pantalla": "Mapa con los 1,430 tiros de jugada del Mundial (puntos tenues). Se iluminan los 542 de fuera del área con sus 12 goles; luego el área (140 goles, 92 %) y el área chica (33 de 116).",
+      "voz": {
+        "t1": "Antes de ver a los dos, miremos todo el Mundial: mil cuatrocientos treinta tiros de jugada.",
+        "t2": "Quinientos cuarenta y dos fueron desde fuera del área. Y solo doce terminaron en gol.",
+        "t3": "Desde dentro del área llegaron ciento cuarenta goles: más del noventa por ciento.",
+        "t4": "Y en el área chica, más de uno de cada cuatro tiros fue gol.",
+        "t5": "Con eso en mente, veamos a nuestros dos goleadores."
+      },
+      "sub": {
+        "t1": "Antes, todo el Mundial: 1,430 tiros de jugada.",
+        "t2": "542 fueron desde fuera del área. Solo 12 terminaron en gol.",
+        "t3": "Desde dentro del área llegaron 140 goles: más del 90 %."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "mbappe",
+      "capitulo": "Mbappé: el depredador del área",
+      "pantalla": "Mapa de tiros de Mbappé (29 tiros sin penales). Se ilumina el área: 23 puntos dentro. Los 6 goles (rellenos) brillan todos dentro del área. Tarjeta: 'xG 2.7 → 6 goles'.",
+      "voz": {
+        "b1": "Empecemos con Mbappé. Sin contar penales, tiró veintinueve veces.",
+        "b2": "Veintitrés de esos tiros fueron dentro del área. Casi ocho de cada diez.",
+        "b3": "Y sus seis goles de jugada, todos, llegaron desde adentro.",
+        "b3b": "Uno de ellos, incluso de cabeza, contra Australia.",
+        "b4": "Lo más impresionante: su equis ge sin penales era de dos punto siete. Y anotó seis. Más del doble de lo esperado.",
+        "b4b": "Y algunos fueron golazos: contra Polonia, en el minuto noventa y uno, marcó desde dieciocho metros, con un equis ge de cero punto cero cuatro.",
+        "b5": "Mbappé no dispara desde cualquier lado: espera su momento, y cuando entra al área, no perdona."
+      },
+      "sub": {
+        "b1": "Empecemos con Mbappé. Sin contar penales, tiró 29 veces.",
+        "b2": "23 de esos tiros fueron dentro del área. Casi 8 de cada 10.",
+        "b3": "Y sus 6 goles de jugada, todos, llegaron desde adentro.",
+        "b4": "Su xG sin penales era de 2.7. Y anotó 6: más del doble de lo esperado.",
+        "b4b": "Algunos fueron golazos: a Polonia, en el 91, desde 18 metros, con xG 0.04."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "messi",
+      "capitulo": "Messi: el que se atreve de lejos",
+      "pantalla": "Mapa de tiros de Messi (27 tiros sin penales). Se iluminan los 11 de fuera del área. Contador zurda 22/27. Luego tarjeta de penales: 5 tirados, 4 goles, 1 atajado (Polonia).",
+      "voz": {
+        "m1": "Ahora Messi. Sin penales, tiró veintisiete veces.",
+        "m2": "Pero once fueron desde fuera del área. Cuatro de cada diez.",
+        "m3": "Y casi todos con la zurda: veintidós de veintisiete.",
+        "m4": "De jugada, solo anotó tres goles. Los otros cuatro fueron de penal. Y falló uno, contra Polonia.",
+        "m4b": "Su gol más fácil fue el de la final, en el tiempo extra: a cuatro metros, con cero punto cuarenta y nueve.",
+        "m5": "Entonces, ¿Messi tuvo un mal Mundial? Para nada. Los datos dicen que su trabajo estaba en otro lado.",
+        "m5b": "Y ese tiro lejano contra México no fue cualquiera: abrió el marcador en un partido que Argentina estaba obligada a ganar."
+      },
+      "sub": {
+        "m1": "Ahora Messi. Sin penales, tiró 27 veces.",
+        "m2": "Pero 11 fueron desde fuera del área: 4 de cada 10.",
+        "m3": "Y casi todos con la zurda: 22 de 27.",
+        "m4": "De jugada solo anotó 3 goles. Los otros 4 fueron de penal, y falló uno contra Polonia.",
+        "m4b": "Su gol más fácil, en la final, tiempo extra: a 4 metros, xG 0.49."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cara",
+      "capitulo": "Cara a cara",
+      "pantalla": "Tabla comparativa con barras: % de tiros en el área 79 % vs 59 % · distancia media 16.5 m vs 17.4 m · goles sin penal 6 vs 3 · xG sin penal 2.7 vs 2.1 · pases que terminaron en tiro 11 vs 19 · asistencias 2 vs 3. Al final dos etiquetas: 'Definidor' (Mbappé) y 'Definidor + creador' (Messi).",
+      "voz": {
+        "c1": "Pongámoslos lado a lado.",
+        "c2": "Mbappé tiró más cerca de la portería, y convirtió mucho más de lo esperado.",
+        "c2b": "En promedio, cada tiro de Mbappé valía cero punto cero nueve de equis ge. Cada uno de Messi, cero punto cero ocho.",
+        "c3": "Messi tiró de más lejos, pero dio diecinueve pases que terminaron en tiro, el segundo mejor del torneo. Y tres asistencias.",
+        "c4": "Uno es un definidor. El otro, además de anotar, hace jugar a todo el equipo.",
+        "c4b": "Los dos fueron decisivos. Solo que de formas muy distintas.",
+        "c5": "Eso es lo poderoso de un mapa de tiros: en una sola imagen ves el estilo de un jugador."
+      },
+      "sub": {
+        "c3": "Messi tiró de más lejos, pero dio 19 pases que terminaron en tiro (2.º del torneo) y 3 asistencias.",
+        "c2b": "En promedio, cada tiro de Mbappé valía 0.09 de xG; cada uno de Messi, 0.08."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "sirve",
+      "capitulo": "¿Para qué sirve?",
+      "pantalla": "Los dos mapas lado a lado. Sobre el de Mbappé, una 'pared' de defensas cerca de la portería; sobre el de Messi, un defensa que le cierra la zurda fuera del área. Sticker: 'Describe… y ayuda a defender'.",
+      "voz": {
+        "u1": "¿Y esto para qué le sirve a un equipo?",
+        "u2": "Los analistas preparan los partidos con mapas así.",
+        "u3": "Si sabes que Mbappé casi siempre remata dentro del área, tu defensa se cierra cerca de la portería.",
+        "u4": "Y si sabes que Messi dispara de lejos con la zurda, no lo dejas acomodarse fuera del área.",
+        "u5": "Un mapa de tiros no solo describe. También ayuda a defender."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor con 4 líneas: tiros = ev[(ev.type == 'Shot') & ev.player.str.contains('Messi')] / pitch = VerticalPitch(half=True) / fig, ax = pitch.draw() / pitch.scatter(x, y, s=xg * 900, ax=ax). Al lado aparece el mapa que dibuja.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Con la librería eme pe ele sóquer, dibujas media cancha en una línea.",
+        "y3": "Filtras los tiros de Messi, y cada tiro se dibuja como un punto, con su tamaño según el equis ge.",
+        "y4": "Cambia el nombre, y tienes el mapa de cualquier jugador del Mundial.",
+        "y5": "Y este es el resultado: el mismo tipo de mapa que viste en el video."
+      },
+      "sub": {
+        "y2": "Con la librería mplsoccer dibujas media cancha en una línea.",
+        "y3": "Filtras los tiros de Messi y cada uno se dibuja como un punto, con tamaño según su xG."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #4 Redes de pases'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio vemos las redes de pases, y descubrimos quién es el cerebro de un equipo.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

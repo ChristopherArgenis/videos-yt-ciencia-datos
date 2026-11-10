@@ -8,8 +8,10 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
 - **Remotion 4.0.541**. Guion en `src/guiones/<video>.json` (única fuente del texto), escenas en
   `src/videos/<Video>.tsx`, motor en `src/kit/largo.tsx`, piezas en `src/kit/kit.tsx`.
 - **Voz:** Kokoro local: `python3 scripts/make_voice.py <video>`. Narración con números escritos con letra.
-  El perfil sale del campo `"voz"` del guion (si falta, `alex`). Perfiles en `PERFILES` de `make_voice.py`:
-  `alex` (em_alex, la voz del canal), variantes de Alex para sonar menos robótico (`alex_pausas`, `alex_nicola`,
+  **Voz del canal desde el episodio 3: `alex_nicola`** (70 % Alex + 30 % Nicola, pausas naturales). Cada guion
+  nuevo lleva `"voz": "alex_nicola"`; si falta el campo, también se usa esa. Los episodios 1, 2 y la plantilla
+  quedan fijados en `"voz": "alex"` (el Alex original). Perfiles en `PERFILES` de `make_voice.py`:
+  `alex` (em_alex), variantes de Alex para sonar menos robótico (`alex_pausas`, `alex_nicola`,
   `alex_portugues`, `alex_santa`, `alex_michael`, `alex_calido`: mezclas de estilo + pausas naturales) y
   `dora_latino_suave_calida` / `dora_espana_suave_calida` (descartadas por el dueño).
   Muestras para comparar: `python3 scripts/muestra_voz.py <perfil>` → `muestras/voz/<perfil>.mp3`.
@@ -37,7 +39,8 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
   Alex dice: «¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete.» (componente `Cierre`).
 - Aprovechar los Shorts ya hechos: el video largo profundiza un tema y se enlaza con su Short.
 - **Código:** solo en pantalla, corto y sencillo (unas 3–5 líneas, sin capturas largas: no es el punto).
-  La narración dice «pausa el video y cópialo», nunca «está en la descripción».
+  La narración solo dice algo como «este es el código»: no pide pausar ni copiar (no son tutoriales)
+  y nunca dice «está en la descripción».
   **Nada de código en la descripción**: YouTube rechaza símbolos como `<` y `>`. La descripción solo
   indica el minuto donde aparece el código.
 
