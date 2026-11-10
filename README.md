@@ -32,6 +32,16 @@ Su licencia prohíbe redistribuir los datos, así que no están en git. Antes de
 un episodio de la serie, genera sus datos: `python3 scripts/futbol/ep01_datos.py`
 (descarga a `datos/` y escribe `src/datos/privado/`). El logo oficial está en `public/logos/`.
 
+## Voces
+`scripts/make_voice.py` tiene perfiles de voz (Kokoro, gratis y local). Se elige con `"voz"` en el guion:
+| Perfil | Voz | Acento |
+| --- | --- | --- |
+| `alex` (por defecto) | em_alex | España |
+| `dora_latino_suave_calida` | ef_dora, más lenta y cálida | Latinoamérica (es-419) |
+| `dora_espana_suave_calida` | ef_dora, más lenta y cálida | España (es) |
+
+Muestras: `python3 scripts/muestra_voz.py dora_latino_suave_calida` → `muestras/voz/*.mp3`.
+
 ## Estructura
 - `src/guiones/<video>.json` guion: escenas, capítulo, qué se ve y frases de Alex. Es la única fuente
   del texto: de aquí salen la voz, los subtítulos, los tiempos y los capítulos.

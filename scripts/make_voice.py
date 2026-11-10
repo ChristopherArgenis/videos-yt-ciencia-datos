@@ -1,7 +1,9 @@
-"""Genera la narración de Alex (Kokoro, local y gratis) para un video largo.
+"""Genera la narración (Kokoro, local y gratis) para un video largo.
 
     python3 scripts/make_voice.py plantilla          # todo el video
     python3 scripts/make_voice.py plantilla g1 c2    # solo esas frases
+
+La voz sale del campo "voz" del guion (un perfil de PERFILES); si no está, se usa Alex.
 
 Lee src/guiones/<video>.json y escribe public/voz/<video>/<frase>.wav más
 src/voz-duraciones.json (segundos de cada frase; el video se acomoda a ellos).
@@ -15,11 +17,35 @@ import soundfile as sf
 from kokoro_onnx import Kokoro
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-VOZ = "em_alex"
-VELOCIDAD = 0.88  # más lento = menos robótico
-FILTRO = ("highpass=f=70,equalizer=f=220:t=q:w=1:g=2,equalizer=f=3500:t=q:w=1.5:g=-2.5,"
-          "highshelf=f=7000:g=-4,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=150,"
-          "aecho=0.8:0.5:35:0.12,loudnorm=I=-16:TP=-1.5")
+
+# Filtro de Alex (el de shorts-ciencia-datos).
+FILTRO_ALEX = ("highpass=f=70,equalizer=f=220:t=q:w=1:g=2,equalizer=f=3500:t=q:w=1.5:g=-2.5,"
+               "highshelf=f=7000:g=-4,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=150,"
+               "aecho=0.8:0.5:35:0.12,loudnorm=I=-16:TP=-1.5")
+# Filtro "suave y cálido" para Dora: más cuerpo en graves medios, menos brillo y sibilancia,
+# compresión ligera y un poco de sala.
+FILTRO_CALIDO = ("highpass=f=80,equalizer=f=250:t=q:w=1:g=3,equalizer=f=2800:t=q:w=1.5:g=-2,"
+                 "highshelf=f=6500:g=-5,acompressor=threshold=-22dB:ratio=2:attack=15:release=200,"
+                 "aecho=0.8:0.4:30:0.08,loudnorm=I=-16:TP=-1.5")
+
+# Perfiles de voz. lang: "es" = España (z de "cinco"), "es-419" = Latinoamérica (s).
+PERFILES = {
+    "alex": {"voz": "em_alex", "lang": "es", "velocidad": 0.88, "filtro": FILTRO_ALEX},
+    "dora_latino_suave_calida": {"voz": "ef_dora", "lang": "es-419", "velocidad": 0.86, "filtro": FILTRO_CALIDO},
+    "dora_espana_suave_calida": {"voz": "ef_dora", "lang": "es", "velocidad": 0.86, "filtro": FILTRO_CALIDO},
+}
+
+
+def sintetizar(k, texto, perfil, destino):
+    """Escribe `destino` (wav 44.1 kHz) con `texto` dicho por el perfil dado. Devuelve los segundos."""
+    pf = PERFILES[perfil]
+    s, sr = k.create(texto, voice=pf["voz"], speed=pf["velocidad"], lang=pf["lang"])
+    crudo = destino + ".raw.wav"
+    sf.write(crudo, s, sr)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", crudo, "-af", pf["filtro"], "-ar", "44100", destino], check=True)
+    os.remove(crudo)
+    info = sf.info(destino)
+    return info.frames / info.samplerate
 
 
 def modelo():
@@ -37,6 +63,10 @@ def main():
     video, solo = sys.argv[1], set(sys.argv[2:])
     guion = json.load(open(os.path.join(ROOT, "src", "guiones", video + ".json"), encoding="utf-8"))
     frases = {k: v for e in guion["escenas"] for k, v in e["voz"].items()}
+    perfil = guion.get("voz", "alex")
+    if perfil not in PERFILES:
+        sys.exit(f"Voz desconocida: {perfil}. Opciones: {', '.join(PERFILES)}")
+    print(f"Voz: {perfil}")
     k = Kokoro(*modelo())
     carpeta = os.path.join(ROOT, "public", "voz", video)
     os.makedirs(carpeta, exist_ok=True)
@@ -49,13 +79,7 @@ def main():
         if solo and id_ not in solo and id_ in previas and os.path.exists(final):
             dur[video][id_] = previas[id_]
             continue
-        s, sr = k.create(texto, voice=VOZ, speed=VELOCIDAD, lang="es")
-        crudo = os.path.join(carpeta, id_ + ".raw.wav")
-        sf.write(crudo, s, sr)
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", crudo, "-af", FILTRO, "-ar", "44100", final], check=True)
-        os.remove(crudo)
-        info = sf.info(final)
-        dur[video][id_] = round(info.frames / info.samplerate, 3)
+        dur[video][id_] = round(sintetizar(k, texto, perfil, final), 3)
         print(f"{id_}: {dur[video][id_]:.2f}s  {texto}")
     # Borra audios de frases que ya no están en el guion.
     for f in os.listdir(carpeta):

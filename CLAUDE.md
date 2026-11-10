@@ -7,8 +7,10 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
 `video-show` (el dueño pidió no usarla).
 - **Remotion 4.0.541**. Guion en `src/guiones/<video>.json` (única fuente del texto), escenas en
   `src/videos/<Video>.tsx`, motor en `src/kit/largo.tsx`, piezas en `src/kit/kit.tsx`.
-- **Voz:** Alex, Kokoro local (`em_alex`, 0.88): `python3 scripts/make_voice.py <video>`.
-  Narración con números escritos con letra.
+- **Voz:** Kokoro local: `python3 scripts/make_voice.py <video>`. Narración con números escritos con letra.
+  El perfil sale del campo `"voz"` del guion (si falta, `alex`). Perfiles en `PERFILES` de `make_voice.py`:
+  `alex` (em_alex), `dora_latino_suave_calida` y `dora_espana_suave_calida` (ef_dora, acento es-419 / es).
+  Muestras para comparar: `python3 scripts/muestra_voz.py <perfil>` → `muestras/voz/<perfil>.mp3`.
 - **Música** en bucle (`public/musica/`) y efectos (`public/sfx/`), hechos con `scripts/make_audio.py`.
 - **Miniaturas** 1280×720 como `<Still>` en `src/miniaturas/Miniaturas.tsx` con `src/kit/miniatura.tsx`.
 - `scripts/render.py` se niega a renderizar si el guion no tiene `"aprobado": true`.
