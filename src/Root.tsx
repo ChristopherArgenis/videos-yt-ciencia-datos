@@ -3,9 +3,11 @@ import { FPS, H, W } from "./kit/theme";
 import { planificar } from "./kit/largo";
 import { MINI_H, MINI_W } from "./kit/miniatura";
 import { Plantilla, PLANTILLA } from "./videos/Plantilla";
-import { MiniFutbol01, MiniFutbol02, MiniPlantilla } from "./miniaturas/Miniaturas";
+import { MiniFutbol01, MiniFutbol02, MiniFutbol03, MiniFutbol04, MiniPlantilla } from "./miniaturas/Miniaturas";
 import { V01, V01FutbolDatos } from "./videos/V01FutbolDatos";
 import { V02, V02Xg } from "./videos/V02Xg";
+import { V03, V03MapaTiros } from "./videos/V03MapaTiros";
+import { V04, V04RedPases } from "./videos/V04RedPases";
 
 // Cada video largo: <Composition id="NN-Nombre"> con la duración que sale de su guion.
 // Cada miniatura: <Still id="Mini-NN-Nombre"> de 1280×720.
@@ -37,11 +39,29 @@ export const RemotionRoot: React.FC = () => (
         width={W}
         height={H}
       />
+      <Composition
+        id="03-MapaTiros"
+        component={V03MapaTiros}
+        durationInFrames={planificar(V03).total}
+        fps={FPS}
+        width={W}
+        height={H}
+      />
+      <Composition
+        id="04-RedPases"
+        component={V04RedPases}
+        durationInFrames={planificar(V04).total}
+        fps={FPS}
+        width={W}
+        height={H}
+      />
     </Folder>
     <Folder name="Miniaturas">
       <Still id="Mini-00-Plantilla" component={MiniPlantilla} width={MINI_W} height={MINI_H} />
       <Still id="Mini-01-FutbolDatos" component={MiniFutbol01} width={MINI_W} height={MINI_H} />
       <Still id="Mini-02-Xg" component={MiniFutbol02} width={MINI_W} height={MINI_H} />
+      <Still id="Mini-03-MapaTiros" component={MiniFutbol03} width={MINI_W} height={MINI_H} />
+      <Still id="Mini-04-RedPases" component={MiniFutbol04} width={MINI_W} height={MINI_H} />
     </Folder>
   </>
 );

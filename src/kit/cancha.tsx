@@ -106,3 +106,37 @@ export const CreditoStatsBomb: React.FC<{ grande?: boolean }> = ({ grande = fals
     <span>Open Data</span>
   </div>
 );
+
+/**
+ * Media cancha vertical con la portería arriba (como los mapas de tiros de mplsoccer).
+ * `alto` es la altura en píxeles; los hijos se dibujan en coordenadas StatsBomb normales.
+ */
+export const MediaVertical: React.FC<{ alto: number; children?: React.ReactNode; lineas?: number }> = ({
+  alto,
+  children,
+  lineas = 1,
+}) => {
+  const ancho = (alto * 86) / 65; // la media cancha mide 86 × 65 unidades (con margen)
+  return (
+    <div style={{ width: ancho, height: alto, position: "relative" }}>
+      <div
+        style={{
+          position: "absolute",
+          left: (ancho - alto) / 2,
+          top: (alto - ancho) / 2,
+          width: alto,
+          height: ancho,
+          rotate: "-90deg",
+        }}
+      >
+        <Cancha width={alto} mitad lineas={lineas}>
+          {children}
+        </Cancha>
+      </div>
+    </div>
+  );
+};
+
+/** Rectángulos del área grande y del área chica (para resaltarlos). */
+export const AREA = { x: 102, y: 18, w: 18, h: 44 };
+export const AREA_CHICA = { x: 114, y: 30, w: 6, h: 20 };

@@ -149,12 +149,13 @@ export const Fila: React.FC<{ at: number; k: string; v: string; color?: string }
 );
 
 /** Línea de código que se escribe letra por letra. */
-export const Codigo: React.FC<{ at: number; texto: string; dur?: number; resaltar?: string; resaltarDesde?: number }> = ({
+export const Codigo: React.FC<{ at: number; texto: string; dur?: number; resaltar?: string; resaltarDesde?: number; prompt?: string }> = ({
   at,
   texto,
   dur = 30,
   resaltar,
   resaltarDesde = 1e9,
+  prompt = ">>> ",
 }) => {
   const frame = useCurrentFrame();
   const n = Math.floor(interpolate(frame, [at, at + dur], [0, texto.length], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
@@ -164,7 +165,7 @@ export const Codigo: React.FC<{ at: number; texto: string; dur?: number; resalta
   const on = frame >= resaltarDesde && i >= 0;
   return (
     <div style={{ fontFamily: MONO, fontSize: 32, color: C.ink, height: 50, whiteSpace: "pre" }}>
-      <span style={{ color: C.dim }}>&gt;&gt;&gt; </span>
+      <span style={{ color: C.dim }}>{prompt}</span>
       {on ? (
         <>
           {vis.slice(0, i)}

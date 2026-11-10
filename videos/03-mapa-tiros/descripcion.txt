@@ -1,0 +1,28 @@
+Mapa de tiros de Messi y Mbappé en el Mundial 2022: cómo leer un shot map de fútbol y qué revela de cada delantero.
+Mismos goles, estilos opuestos: Mbappé remata dentro del área y Messi se atreve de lejos. Datos reales y Python.
+
+Episodio 3 de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Aprendemos a leer un mapa de tiros (posición, tamaño según el xG y goles), vemos los 1,430 tiros de jugada del Mundial y comparamos a los dos máximos goleadores: dónde disparan, con qué pie, cuánto superan su xG y cómo crean juego.
+
+Capítulos:
+00:00 Mismos goles, otro estilo
+00:31 Cómo leer un mapa de tiros
+01:06 Todo el Mundial en un mapa
+01:33 Mbappé: el depredador del área
+02:15 Messi: el que se atreve de lejos
+02:56 Cara a cara
+03:36 ¿Para qué sirve?
+04:01 Tu turno: con Python
+04:24 Cierre
+
+💻 El código para dibujar el mapa de tiros (librería mplsoccer) aparece en el video en el 04:01.
+
+Datos: StatsBomb Open Data (Hudl StatsBomb), github.com/statsbomb/open-data
+El análisis es propio y no representa la opinión de StatsBomb. Tiros sin tanda de penales.
+
+Episodio anterior: Qué es el xG (goles esperados) | Fútbol con Datos #2
+Próximo episodio: Redes de pases: el cerebro del equipo | Fútbol con Datos #4
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #messi #mbappe #python

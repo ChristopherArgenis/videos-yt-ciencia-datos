@@ -2,7 +2,7 @@
   "_nota": "Fútbol con Datos #3. StatsBomb Open Data, Mundial 2022, sin tanda de penales. 'Sin penales' = tiros de jugada. Área = x ≥ 102 y 18 ≤ y ≤ 62.",
   "id": "03-mapa-tiros",
   "titulo": "Mapa de tiros con Python | Fútbol con Datos #3",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/curiosa.wav",
   "voz": "alex_nicola",
   "acento": "#3ddc84",

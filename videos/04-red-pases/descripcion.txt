@@ -1,0 +1,27 @@
+Redes de pases en la final del Mundial 2022: por qué Francia hizo dos cambios en el minuto 41, explicado con datos.
+Aprende a leer una red de pases y a encontrar al cerebro de un equipo con grafos e intermediación, con Python.
+
+Episodio 4 de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Construimos las redes de pases de Argentina y Francia en la final, vemos por dónde pasaba el juego (Enzo, De Paul y Otamendi), por qué la red de Francia estaba rota antes del minuto 41 y cómo cambió después de los cambios de Deschamps.
+
+Capítulos:
+00:00 El cambio del minuto 41
+00:29 ¿Qué es una red de pases?
+01:11 Argentina: la red completa
+01:52 Francia: una red rota
+02:34 ¿Funcionó el cambio?
+03:03 ¿Quién es el cerebro?
+03:50 Tu turno: con Python
+04:16 Cierre
+
+💻 El código para contar los pases entre jugadores aparece en el video en el 03:50.
+
+Datos: StatsBomb Open Data (Hudl StatsBomb), github.com/statsbomb/open-data
+El análisis es propio y no representa la opinión de StatsBomb. Pases completos de cada equipo hasta su primer cambio.
+
+Episodio anterior: Mapa de tiros con Python | Fútbol con Datos #3
+Próximo episodio: Cómo medir la presión en el fútbol | Fútbol con Datos #5
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #mundial2022 #python #analisisdedatos

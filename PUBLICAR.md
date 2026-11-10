@@ -61,3 +61,25 @@ Títulos: «Tema | Fútbol con Datos #N», máximo 60 caracteres.
 **#:** #cienciadedatos #futbol #xg #python #mundial2022
 **Comentario fijado:** ¿Qué tiro del Mundial te pareció un milagro? Dime el minuto y le calculo su xG 👇
 **Pantalla final:** episodio 1 + lista de la serie + suscribirse. **Tarjeta:** al episodio 1 en 00:33 (cuando se menciona).
+
+## 03 · Mapa de tiros: Messi vs Mbappé (4:44)
+**Título:** Mapa de tiros con Python | Fútbol con Datos #3 (46)
+**Alternativa:** Messi vs Mbappé: mapa de tiros | Fútbol con Datos #3 (52)
+**Miniatura:** `Mini-03-MapaTiros` → "MESSI vs MBAPPÉ" con sus dos mapas de tiros
+**Voz:** alex_nicola · **Datos:** StatsBomb Open Data, Mundial 2022 (sin tanda de penales). Logo en pantalla.
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
+**Descripción:** `videos/03-mapa-tiros/descripcion.txt` (sin código; remite al 04:01).
+**#:** #cienciadedatos #futbol #messi #mbappe #python
+**Comentario fijado:** ¿De qué jugador quieres ver su mapa de tiros? Dime el nombre 👇
+**Pantalla final:** episodio 2 + lista de la serie. **Tarjeta:** al episodio 2 (xG) en 00:31.
+
+## 04 · Redes de pases: el cambio del minuto 41 (4:36)
+**Título:** Redes de pases: el cerebro del equipo | Fútbol con Datos #4 (59)
+**Alternativa:** El cambio del minuto 41, en datos | Fútbol con Datos #4 (55)
+**Miniatura:** `Mini-04-RedPases` → "41' ¿POR QUÉ LOS SACÓ?" sobre la red de Francia
+**Voz:** alex_nicola · **Datos:** StatsBomb Open Data, final del Mundial 2022. Logo en pantalla.
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
+**Descripción:** `videos/04-red-pases/descripcion.txt` (sin código; remite al 03:50).
+**#:** #cienciadedatos #futbol #mundial2022 #python #analisisdedatos
+**Comentario fijado:** ¿De qué partido quieres ver la red de pases? 👇
+**Pantalla final:** episodio 3 + lista de la serie. **Tarjeta:** al Short de grafos (Algo8) en 00:29.
