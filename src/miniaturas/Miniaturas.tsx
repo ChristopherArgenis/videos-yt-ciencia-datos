@@ -1,4 +1,5 @@
 import React from "react";
+import { AbsoluteFill } from "remotion";
 import { C } from "../kit/theme";
 import { ChipMini, FondoMini, Grande, MiniSplit } from "../kit/miniatura";
 
@@ -197,12 +198,25 @@ export const MiniFutbol02: React.FC = () => {
   );
 };
 
-const MapaMini: React.FC<{ n: "Messi" | "Mbappé"; color: string }> = ({
+// Rivalidad: pantalla partida en diagonal, el 10 de fondo (los dos llevaban el 10),
+// rayo con "VS" en el centro. Sin fotos ni escudos (regla del canal).
+const CELESTE = "#7cc6f2";
+const ROJO = "#ff5a4e";
+
+const MapaRival: React.FC<{ n: "Messi" | "Mbappé"; color: string }> = ({
   n,
   color,
 }) => (
-  <div style={{ height: 215, overflow: "hidden", borderRadius: 14 }}>
-    <MediaVertical alto={270}>
+  <div
+    style={{
+      height: 190,
+      overflow: "hidden",
+      borderRadius: 16,
+      border: `4px solid ${color}`,
+      boxShadow: `0 0 30px ${color}88, 0 12px 30px #000a`,
+    }}
+  >
+    <MediaVertical alto={250}>
       {datosEp03.jugadores[n]
         .filter((t) => !t.penal)
         .map((t, i) => (
@@ -210,52 +224,221 @@ const MapaMini: React.FC<{ n: "Messi" | "Mbappé"; color: string }> = ({
             key={i}
             cx={t.x}
             cy={t.y}
-            r={1.4 + t.xg * 8}
-            fill={t.gol ? color : `${color}44`}
-            stroke={t.gol ? "#fff" : color}
-            strokeWidth={0.6}
+            r={1.6 + t.xg * 9}
+            fill={t.gol ? color : `${color}55`}
+            stroke="#fff"
+            strokeWidth={t.gol ? 0.8 : 0.3}
           />
         ))}
     </MediaVertical>
   </div>
 );
 
+const Nombre: React.FC<{
+  children: React.ReactNode;
+  color: string;
+  size?: number;
+}> = ({ children, color, size = 128 }) => (
+  <div
+    style={{
+      fontFamily: "Poppins",
+      fontWeight: 900,
+      fontSize: size,
+      lineHeight: 0.9,
+      color,
+      letterSpacing: -3,
+      WebkitTextStroke: "6px #0b1020",
+      paintOrder: "stroke fill",
+      textShadow: "0 10px 0 rgba(0,0,0,0.45), 0 0 40px rgba(0,0,0,0.5)",
+    }}
+  >
+    {children}
+  </div>
+);
+
 export const MiniFutbol03: React.FC = () => (
-  <FondoMini accent={C.blue}>
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    {/* Mitades en diagonal */}
+    <svg width={1280} height={720} style={{ position: "absolute", inset: 0 }}>
+      <defs>
+        <linearGradient id="izq" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#1f6fae" />
+          <stop offset="1" stopColor="#0c2a4a" />
+        </linearGradient>
+        <linearGradient id="der" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#b3262b" />
+          <stop offset="1" stopColor="#3a0d14" />
+        </linearGradient>
+      </defs>
+      <polygon points="0,0 720,0 560,720 0,720" fill="url(#izq)" />
+      <polygon points="720,0 1280,0 1280,720 560,720" fill="url(#der)" />
+      {/* "10" gigante de fondo en cada lado */}
+      <text
+        x={300}
+        y={600}
+        textAnchor="middle"
+        fontFamily="Poppins"
+        fontWeight={900}
+        fontSize={560}
+        fill="#ffffff"
+        opacity={0.08}
+      >
+        10
+      </text>
+      <text
+        x={1000}
+        y={600}
+        textAnchor="middle"
+        fontFamily="Poppins"
+        fontWeight={900}
+        fontSize={560}
+        fill="#ffffff"
+        opacity={0.08}
+      >
+        10
+      </text>
+      {/* Rayo en la línea divisoria */}
+      <polyline
+        points="720,0 660,250 700,250 620,470 665,470 560,720"
+        fill="none"
+        stroke="#ffd166"
+        strokeWidth={22}
+        opacity={0.35}
+      />
+      <polyline
+        points="720,0 660,250 700,250 620,470 665,470 560,720"
+        fill="none"
+        stroke="#fff6d5"
+        strokeWidth={8}
+      />
+    </svg>
+
+    {/* Lado Messi */}
     <div
       style={{
         position: "absolute",
-        left: 60,
-        top: 50,
+        left: 40,
+        top: 40,
         display: "flex",
         flexDirection: "column",
-        gap: 6,
+        gap: 4,
       }}
     >
-      <ChipMini bg={C.green}>FÚTBOL CON DATOS #3</ChipMini>
-      <Grande size={112} color="#7cc6f2">
-        MESSI
-      </Grande>
-      <Grande size={64}>vs</Grande>
-      <Grande size={112} color={C.coral}>
-        MBAPPÉ
-      </Grande>
+      <Nombre color={CELESTE}>MESSI</Nombre>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+        <Nombre color="#ffd166" size={110}>
+          7
+        </Nombre>
+        <span
+          style={{
+            fontFamily: "Poppins",
+            fontWeight: 900,
+            fontSize: 40,
+            color: "#fff",
+            textShadow: "0 4px 10px #000",
+          }}
+        >
+          GOLES
+        </span>
+      </div>
     </div>
+    <div style={{ position: "absolute", left: 50, bottom: 40 }}>
+      <MapaRival n="Messi" color={CELESTE} />
+    </div>
+
+    {/* Lado Mbappé */}
     <div
       style={{
         position: "absolute",
-        right: 30,
-        top: 0,
-        bottom: 0,
+        right: 40,
+        top: 40,
         display: "flex",
-        alignItems: "center",
-        gap: 14,
+        flexDirection: "column",
+        alignItems: "flex-end",
+        gap: 4,
       }}
     >
-      <MapaMini n="Messi" color="#7cc6f2" />
-      <MapaMini n="Mbappé" color={C.coral} />
+      <Nombre color={ROJO}>MBAPPÉ</Nombre>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+        <span
+          style={{
+            fontFamily: "Poppins",
+            fontWeight: 900,
+            fontSize: 40,
+            color: "#fff",
+            textShadow: "0 4px 10px #000",
+          }}
+        >
+          GOLES
+        </span>
+        <Nombre color="#ffd166" size={110}>
+          8
+        </Nombre>
+      </div>
     </div>
-  </FondoMini>
+    <div style={{ position: "absolute", right: 120, bottom: 40 }}>
+      <MapaRival n="Mbappé" color={ROJO} />
+    </div>
+
+    {/* Insignia VS en el centro */}
+    <div
+      style={{
+        position: "absolute",
+        left: 640 - 95,
+        top: 360 - 95,
+        width: 190,
+        height: 190,
+        borderRadius: 95,
+        background:
+          "radial-gradient(circle at 35% 30%, #fff3c4, #ffd166 45%, #e0a422)",
+        border: "8px solid #0b1020",
+        boxShadow: "0 0 60px #ffd166cc, 0 14px 30px #000c",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        rotate: "-8deg",
+      }}
+    >
+      <span
+        style={{
+          fontFamily: "Poppins",
+          fontWeight: 900,
+          fontSize: 92,
+          color: "#0b1020",
+          letterSpacing: -4,
+        }}
+      >
+        VS
+      </span>
+    </div>
+
+    {/* Sello de la serie */}
+    <div
+      style={{
+        position: "absolute",
+        left: -30,
+        right: 0,
+        bottom: 24,
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "Poppins",
+          fontWeight: 900,
+          fontSize: 26,
+          background: C.green,
+          color: "#0b1020",
+          padding: "6px 18px",
+          borderRadius: 12,
+          boxShadow: "0 8px 20px #0008",
+        }}
+      >
+        FÚTBOL CON DATOS #3
+      </div>
+    </div>
+  </AbsoluteFill>
 );
 
 export const MiniFutbol04: React.FC = () => (
