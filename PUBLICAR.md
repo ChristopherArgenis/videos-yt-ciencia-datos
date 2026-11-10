@@ -65,7 +65,7 @@ Títulos: «Tema | Fútbol con Datos #N», máximo 60 caracteres.
 ## 03 · Mapa de tiros: Messi vs Mbappé (4:44)
 **Título:** Mapa de tiros con Python | Fútbol con Datos #3 (46)
 **Alternativa:** Messi vs Mbappé: mapa de tiros | Fútbol con Datos #3 (52)
-**Miniatura:** `Mini-03-MapaTiros` → cara a cara: pantalla partida celeste/rojo, "MESSI 7 vs MBAPPÉ 8", el 10 de fondo, rayo y "VS", con sus mapas de tiros
+**Miniatura:** `Mini-03-MapaTiros` → cara a cara: pantalla partida celeste/rojo, "MESSI 7 vs MBAPPÉ 8", el 10 de fondo, rayo y "VS", y dos siluetas genéricas frente a frente con el 10 (sin rostros ni parecido real)
 **Voz:** alex_nicola · **Datos:** StatsBomb Open Data, Mundial 2022 (sin tanda de penales). Logo en pantalla.
 **Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
 **Descripción:** `videos/03-mapa-tiros/descripcion.txt` (sin código; remite al 04:01).

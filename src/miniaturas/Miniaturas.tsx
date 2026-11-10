@@ -57,9 +57,7 @@ export const MiniPlantilla: React.FC = () => (
 import { Cancha } from "../kit/cancha";
 import datosEp01 from "../datos/privado/ep01.json";
 import datosEp02 from "../datos/privado/ep02.json";
-import datosEp03 from "../datos/privado/ep03.json";
 import datosEp04 from "../datos/privado/ep04.json";
-import { MediaVertical } from "../kit/cancha";
 import { Red } from "../videos/V04RedPases";
 
 export const MiniFutbol01: React.FC = () => (
@@ -203,35 +201,186 @@ export const MiniFutbol02: React.FC = () => {
 const CELESTE = "#7cc6f2";
 const ROJO = "#ff5a4e";
 
-const MapaRival: React.FC<{ n: "Messi" | "Mbappé"; color: string }> = ({
-  n,
-  color,
-}) => (
-  <div
-    style={{
-      height: 190,
-      overflow: "hidden",
-      borderRadius: 16,
-      border: `4px solid ${color}`,
-      boxShadow: `0 0 30px ${color}88, 0 12px 30px #000a`,
-    }}
-  >
-    <MediaVertical alto={250}>
-      {datosEp03.jugadores[n]
-        .filter((t) => !t.penal)
-        .map((t, i) => (
-          <circle
-            key={i}
-            cx={t.x}
-            cy={t.y}
-            r={1.6 + t.xg * 9}
-            fill={t.gol ? color : `${color}55`}
-            stroke="#fff"
-            strokeWidth={t.gol ? 0.8 : 0.3}
-          />
-        ))}
-    </MediaVertical>
-  </div>
+/**
+ * Silueta de futbolista de perfil, mirando a la derecha (sin rostro: es una figura genérica,
+ * no un retrato). `rayas` dibuja la camiseta a rayas verticales.
+ */
+const Jugador: React.FC<{
+  color: string;
+  rayas?: boolean;
+  espejo?: boolean;
+  alto?: number;
+}> = ({ color, rayas = false, espejo = false, alto = 460 }) => {
+  const id = `torso-${color.replace("#", "")}`;
+  const piel = "#0b1020";
+  const borde = "#ffffff55";
+  const torso =
+    "M 74 106 Q 110 90 146 106 L 156 168 Q 154 212 144 242 L 78 242 Q 68 204 68 160 Z";
+  return (
+    <svg
+      width={(alto * 230) / 440}
+      height={alto}
+      viewBox="0 0 230 440"
+      style={{
+        overflow: "visible",
+        transform: espejo ? "scaleX(-1) rotate(5deg)" : "rotate(5deg)",
+        transformOrigin: "50% 95%",
+      }}
+    >
+      <defs>
+        <clipPath id={id}>
+          <path d={torso} />
+        </clipPath>
+        <filter
+          id={`brillo-${id}`}
+          x="-30%"
+          y="-30%"
+          width="160%"
+          height="160%"
+        >
+          <feGaussianBlur stdDeviation="10" />
+        </filter>
+      </defs>
+      {/* Halo del color del equipo */}
+      <ellipse
+        cx={112}
+        cy={230}
+        rx={110}
+        ry={210}
+        fill={color}
+        opacity={0.35}
+        filter={`url(#brillo-${id})`}
+      />
+      {/* Pierna de atrás */}
+      <line
+        x1={100}
+        y1={258}
+        x2={82}
+        y2={336}
+        stroke={piel}
+        strokeWidth={30}
+        strokeLinecap="round"
+      />
+      <line
+        x1={82}
+        y1={336}
+        x2={70}
+        y2={404}
+        stroke={color}
+        strokeWidth={25}
+        strokeLinecap="round"
+      />
+      <ellipse cx={80} cy={414} rx={24} ry={11} fill="#f5f5f5" />
+      {/* Brazo de atrás */}
+      <polyline
+        points="80,118 66,180 76,236"
+        fill="none"
+        stroke={piel}
+        strokeWidth={22}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {/* Short */}
+      <path
+        d="M 76 236 L 146 236 L 156 292 L 124 296 L 111 268 L 98 296 L 68 292 Z"
+        fill={rayas ? "#111a3a" : "#f5f5f5"}
+        stroke={borde}
+        strokeWidth={2}
+      />
+      {/* Pierna de adelante */}
+      <line
+        x1={120}
+        y1={260}
+        x2={152}
+        y2={332}
+        stroke={piel}
+        strokeWidth={31}
+        strokeLinecap="round"
+      />
+      <line
+        x1={152}
+        y1={332}
+        x2={164}
+        y2={400}
+        stroke={color}
+        strokeWidth={25}
+        strokeLinecap="round"
+      />
+      <ellipse cx={178} cy={410} rx={26} ry={11} fill="#f5f5f5" />
+      {/* Camiseta */}
+      <path d={torso} fill={color} stroke={borde} strokeWidth={2} />
+      {rayas && (
+        <g clipPath={`url(#${id})`}>
+          {[78, 104, 130].map((x) => (
+            <rect key={x} x={x} y={80} width={13} height={180} fill="#ffffff" />
+          ))}
+        </g>
+      )}
+      {/* Manga y brazo de adelante */}
+      <polyline
+        points="140,116 172,160 198,140"
+        fill="none"
+        stroke={piel}
+        strokeWidth={22}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle
+        cx={202}
+        cy={137}
+        r={14}
+        fill={piel}
+        stroke={borde}
+        strokeWidth={2}
+      />
+      <path d="M 128 108 Q 152 110 160 140 L 140 150 Z" fill={color} />
+      {/* Cuello y cabeza */}
+      <rect x={100} y={78} width={22} height={26} fill={piel} />
+      <path
+        d="M 114 25 A 31 31 0 1 0 128 84 L 136 78 Q 142 72 140 66 L 152 62 L 143 48 Q 141 34 130 28 Q 122 25 114 25 Z"
+        fill={piel}
+        stroke={borde}
+        strokeWidth={2}
+      />
+      {/* El 10 */}
+      <text
+        x={112}
+        y={198}
+        textAnchor="middle"
+        fontFamily="Poppins"
+        fontWeight={900}
+        fontSize={64}
+        fill="#ffd166"
+        stroke="#0b1020"
+        strokeWidth={6}
+        paintOrder="stroke"
+        transform={espejo ? "translate(224 0) scale(-1 1)" : undefined}
+      >
+        10
+      </text>
+    </svg>
+  );
+};
+
+/** Balón sencillo. */
+const Balon: React.FC<{ size?: number }> = ({ size = 90 }) => (
+  <svg width={size} height={size} viewBox="-50 -50 100 100">
+    <circle r={46} fill="#ffffff" stroke="#0b1020" strokeWidth={4} />
+    <polygon points="0,-16 15,-5 9,13 -9,13 -15,-5" fill="#0b1020" />
+    {[0, 72, 144, 216, 288].map((a) => (
+      <g key={a} transform={`rotate(${a})`}>
+        <line
+          x1={0}
+          y1={-16}
+          x2={0}
+          y2={-30}
+          stroke="#0b1020"
+          strokeWidth={3}
+        />
+        <path d="M -10 -44 L 0 -30 L 10 -44" fill="#0b1020" />
+      </g>
+    ))}
+  </svg>
 );
 
 const Nombre: React.FC<{
@@ -342,8 +491,8 @@ export const MiniFutbol03: React.FC = () => (
         </span>
       </div>
     </div>
-    <div style={{ position: "absolute", left: 50, bottom: 40 }}>
-      <MapaRival n="Messi" color={CELESTE} />
+    <div style={{ position: "absolute", left: 255, bottom: -24 }}>
+      <Jugador color={CELESTE} rayas />
     </div>
 
     {/* Lado Mbappé */}
@@ -376,8 +525,13 @@ export const MiniFutbol03: React.FC = () => (
         </Nombre>
       </div>
     </div>
-    <div style={{ position: "absolute", right: 120, bottom: 40 }}>
-      <MapaRival n="Mbappé" color={ROJO} />
+    <div style={{ position: "absolute", right: 255, bottom: -24 }}>
+      <Jugador color={ROJO} espejo />
+    </div>
+
+    {/* Balón entre los dos */}
+    <div style={{ position: "absolute", left: 640 - 42, bottom: 22 }}>
+      <Balon size={84} />
     </div>
 
     {/* Insignia VS en el centro */}
@@ -416,9 +570,9 @@ export const MiniFutbol03: React.FC = () => (
     <div
       style={{
         position: "absolute",
-        left: -30,
+        left: 0,
         right: 0,
-        bottom: 24,
+        top: 470,
         display: "flex",
         justifyContent: "center",
       }}
