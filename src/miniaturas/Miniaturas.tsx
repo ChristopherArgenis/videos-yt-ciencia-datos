@@ -59,6 +59,7 @@ import datosEp01 from "../datos/privado/ep01.json";
 import datosEp02 from "../datos/privado/ep02.json";
 import datosEp04 from "../datos/privado/ep04.json";
 import { Red } from "../videos/V04RedPases";
+import { FRA, FRA_TEXTO } from "../kit/futbol";
 
 export const MiniFutbol01: React.FC = () => (
   <FondoMini accent={C.green}>
@@ -199,7 +200,8 @@ export const MiniFutbol02: React.FC = () => {
 // Rivalidad: pantalla partida en diagonal, el 10 de fondo (los dos llevaban el 10),
 // rayo con "VS" en el centro. Sin fotos ni escudos (regla del canal).
 const CELESTE = "#7cc6f2";
-const ROJO = "#ff5a4e";
+const MARINO = "#1d2f6e"; // camiseta de Francia
+const MARINO_TEXTO = "#e8edff";
 
 /**
  * Silueta de futbolista de perfil, mirando a la derecha (sin rostro: es una figura genérica,
@@ -207,10 +209,11 @@ const ROJO = "#ff5a4e";
  */
 const Jugador: React.FC<{
   color: string;
+  halo?: string;
   rayas?: boolean;
   espejo?: boolean;
   alto?: number;
-}> = ({ color, rayas = false, espejo = false, alto = 460 }) => {
+}> = ({ color, halo, rayas = false, espejo = false, alto = 460 }) => {
   const id = `torso-${color.replace("#", "")}`;
   const piel = "#0b1020";
   const borde = "#ffffff55";
@@ -247,7 +250,7 @@ const Jugador: React.FC<{
         cy={230}
         rx={110}
         ry={210}
-        fill={color}
+        fill={halo ?? color}
         opacity={0.35}
         filter={`url(#brillo-${id})`}
       />
@@ -411,12 +414,12 @@ export const MiniFutbol03: React.FC = () => (
     <svg width={1280} height={720} style={{ position: "absolute", inset: 0 }}>
       <defs>
         <linearGradient id="izq" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#1f6fae" />
-          <stop offset="1" stopColor="#0c2a4a" />
+          <stop offset="0" stopColor="#4aa8e8" />
+          <stop offset="1" stopColor="#14466f" />
         </linearGradient>
         <linearGradient id="der" x1="1" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#b3262b" />
-          <stop offset="1" stopColor="#3a0d14" />
+          <stop offset="0" stopColor="#2a3f8f" />
+          <stop offset="1" stopColor="#0a1233" />
         </linearGradient>
       </defs>
       <polygon points="0,0 720,0 560,720 0,720" fill="url(#izq)" />
@@ -507,7 +510,7 @@ export const MiniFutbol03: React.FC = () => (
         gap: 4,
       }}
     >
-      <Nombre color={ROJO}>MBAPPÉ</Nombre>
+      <Nombre color={MARINO_TEXTO}>MBAPPÉ</Nombre>
       <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
         <span
           style={{
@@ -526,7 +529,7 @@ export const MiniFutbol03: React.FC = () => (
       </div>
     </div>
     <div style={{ position: "absolute", right: 255, bottom: -24 }}>
-      <Jugador color={ROJO} espejo />
+      <Jugador color={MARINO} halo="#5b7cff" espejo />
     </div>
 
     {/* Balón entre los dos */}
@@ -596,9 +599,9 @@ export const MiniFutbol03: React.FC = () => (
 );
 
 export const MiniFutbol04: React.FC = () => (
-  <FondoMini accent={C.coral}>
+  <FondoMini accent={FRA}>
     <div style={{ position: "absolute", right: 30, top: 150, opacity: 0.95 }}>
-      <Red red={datosEp04.francia_antes} width={700} color={C.coral} />
+      <Red red={datosEp04.francia_antes} width={700} color={FRA} />
     </div>
     <div
       style={{
@@ -615,7 +618,7 @@ export const MiniFutbol04: React.FC = () => (
         41&apos;
       </Grande>
       <Grande size={84}>¿POR QUÉ</Grande>
-      <Grande size={84} color={C.coral}>
+      <Grande size={84} color={FRA_TEXTO}>
         LOS SACÓ?
       </Grande>
     </div>

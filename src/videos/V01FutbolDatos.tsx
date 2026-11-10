@@ -3,7 +3,7 @@ import { AbsoluteFill, Easing, interpolate, Sequence, useCurrentFrame } from "re
 import { Card, Sfx, Split, Stage, Sticker, useIn, Words } from "../kit/kit";
 import { leerGuion, VideoLargo, type EscenaProps } from "../kit/largo";
 import { Cancha, CreditoStatsBomb, Flecha } from "../kit/cancha";
-import { Aparece, ARG, Chip, CierreFutbol, Codigo, COLOR_TIPO, fin, Fila, fmt, FRA, NOMBRE_TIPO, Num, SerieFutbol, useP } from "../kit/futbol";
+import { Aparece, ARG, Chip, CierreFutbol, Codigo, COLOR_TIPO, fin, Fila, fmt, FRA, FRA_TEXTO, NOMBRE_TIPO, Num, SerieFutbol, useP } from "../kit/futbol";
 import { C, FONT, MONO } from "../kit/theme";
 import guion from "../guiones/01-futbol-datos.json";
 // Generado por scripts/futbol/ep01_datos.py (no se sube a git: licencia de StatsBomb).
@@ -30,7 +30,7 @@ const Gancho: React.FC<EscenaProps> = ({ lineas }) => {
           <Aparece at={g1.at + 20}>
             <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 64, color: C.ink, lineHeight: 1.1 }}>
               <span style={{ color: ARG }}>Argentina</span> 3 <br />
-              <span style={{ color: FRA }}>Francia</span> 3
+              <span style={{ color: FRA_TEXTO }}>Francia</span> 3
             </div>
           </Aparece>
           <Aparece at={g2.at}>
@@ -457,7 +457,7 @@ const FilaEquipos: React.FC<{ at: number; label: string; a: number; b: number; d
           <div style={{ width: 380 }}>
             <div style={{ width: `${(b / max) * 100 * p}%`, height: 30, background: FRA, borderRadius: 15 }} />
           </div>
-          <span style={{ fontWeight: 900, fontSize: 52, color: FRA }}>
+          <span style={{ fontWeight: 900, fontSize: 52, color: FRA_TEXTO }}>
             <Num to={b} start={at} dur={35} dec={dec} />
             {suf}
           </span>
@@ -476,7 +476,7 @@ const Equipos: React.FC<EscenaProps> = ({ lineas }) => {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 300px 1fr", width: 1500, fontFamily: FONT, fontWeight: 900, fontSize: 56 }}>
         <span style={{ textAlign: "right", color: ARG }}>ARGENTINA</span>
         <span />
-        <span style={{ color: FRA }}>FRANCIA</span>
+        <span style={{ color: FRA_TEXTO }}>FRANCIA</span>
       </div>
       <FilaEquipos at={q2.at} label="Pases" a={A.pases} b={F.pases} />
       <FilaEquipos

@@ -38,6 +38,7 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
 - Cierre: «¿Te sirvió? Ve más videos en @UniversoCienciaDatos» + «Suscríbete y sigue aprendiendo».
   Alex dice: «¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete.» (componente `Cierre`).
 - Aprovechar los Shorts ya hechos: el video largo profundiza un tema y se enlaza con su Short.
+- **Colores de selecciones:** usar los reales. Francia = azul marino (`FRA` rellenos, `FRA_TEXTO` texto sobre fondo oscuro), Argentina = celeste (`ARG`). Nunca rojo para Francia.
 - **Código:** solo en pantalla, corto y sencillo (unas 3–5 líneas, sin capturas largas: no es el punto).
   La narración solo dice algo como «este es el código»: no pide pausar ni copiar (no son tutoriales)
   y nunca dice «está en la descripción».

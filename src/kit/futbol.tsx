@@ -6,7 +6,10 @@ import { C, FONT, MONO } from "./theme";
 
 // Piezas compartidas de la serie "Fútbol con Datos".
 export const ARG = "#7cc6f2";
-export const FRA = C.coral;
+// Francia juega de azul marino. FRA para rellenos (barras, círculos); FRA_TEXTO para texto
+// sobre el fondo oscuro, donde el azul marino puro casi no se ve.
+export const FRA = "#2b4cb3";
+export const FRA_TEXTO = "#8ea6ff";
 
 export const COLOR_TIPO: Record<string, string> = {
   Pass: C.green,

@@ -3,7 +3,7 @@ import { Sequence, useCurrentFrame } from "remotion";
 import { Card, Sfx, Split, Stage, Sticker, Words } from "../kit/kit";
 import { leerGuion, VideoLargo, type EscenaProps } from "../kit/largo";
 import { Cancha, CreditoStatsBomb } from "../kit/cancha";
-import { Aparece, ARG, Chip, CierreFutbol, Codigo, FRA, Num, SerieFutbol, useP } from "../kit/futbol";
+import { Aparece, ARG, Chip, CierreFutbol, Codigo, FRA, FRA_TEXTO, Num, SerieFutbol, useP } from "../kit/futbol";
 import { C, FONT, MONO } from "../kit/theme";
 import guion from "../guiones/04-red-pases.json";
 // Generado por scripts/futbol/ep04_datos.py (no se sube a git: licencia de StatsBomb).
@@ -123,7 +123,7 @@ const Gancho: React.FC<EscenaProps> = ({ lineas }) => {
         <div style={{ display: "flex", alignItems: "center", gap: 30, fontFamily: FONT, fontWeight: 900, fontSize: 64 }}>
           <span style={{ color: ARG }}>ARGENTINA</span>
           <span style={{ color: C.ink }}>2 – 0</span>
-          <span style={{ color: FRA }}>FRANCIA</span>
+          <span style={{ color: FRA_TEXTO }}>FRANCIA</span>
           <Chip bg={C.yellow}>41&apos;</Chip>
         </div>
       </Aparece>
@@ -253,7 +253,7 @@ const Francia: React.FC<EscenaProps> = ({ lineas }) => {
       ratio={0.3}
       left={
         <>
-          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 64, color: FRA, lineHeight: 1 }}>FRANCIA</div>
+          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 64, color: FRA_TEXTO, lineHeight: 1 }}>FRANCIA</div>
           <div style={{ fontFamily: MONO, fontSize: 26, color: C.dim }}>final · hasta el 41&apos;</div>
           <Aparece at={f2.at}>
             <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 80, color: C.ink, lineHeight: 1 }}>
@@ -265,7 +265,7 @@ const Francia: React.FC<EscenaProps> = ({ lineas }) => {
           </Aparece>
           <Aparece at={f2b.at}>
             <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 32, color: C.ink }}>
-              Acierto: <span style={{ color: FRA }}>{r.acierto} %</span> vs <span style={{ color: ARG }}>{datos.argentina.acierto} %</span>
+              Acierto: <span style={{ color: FRA_TEXTO }}>{r.acierto} %</span> vs <span style={{ color: ARG }}>{datos.argentina.acierto} %</span>
             </div>
           </Aparece>
           <Segun
@@ -301,7 +301,7 @@ const Cambio: React.FC<EscenaProps> = ({ lineas }) => {
         ].map((x) => (
           <Aparece key={x.t} at={x.at}>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-              <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 40, color: FRA }}>{x.t}</div>
+              <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 40, color: FRA_TEXTO }}>{x.t}</div>
               <Red red={x.r} width={660} color={FRA} />
             </div>
           </Aparece>
@@ -407,7 +407,7 @@ const Cerebro: React.FC<EscenaProps> = ({ lineas }) => {
         <Stage gap={30}>
           <div style={{ display: "flex", gap: 60 }}>
             <Ranking at={0} red={datos.argentina} color={ARG} titulo="Argentina" />
-            <Ranking at={c4.at - c3.at} red={datos.francia_antes} color={FRA} titulo="Francia (hasta el 41')" />
+            <Ranking at={c4.at - c3.at} red={datos.francia_antes} color={FRA_TEXTO} titulo="Francia (hasta el 41')" />
           </div>
           <Sticker delay={60} bg={C.yellow} size={36}>
             El cerebro no siempre lleva el 10

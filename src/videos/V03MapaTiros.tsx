@@ -3,7 +3,7 @@ import { Sequence, useCurrentFrame } from "remotion";
 import { Card, Sfx, Split, Stage, Sticker, Words } from "../kit/kit";
 import { leerGuion, VideoLargo, type EscenaProps } from "../kit/largo";
 import { AREA, AREA_CHICA, CreditoStatsBomb, MediaVertical } from "../kit/cancha";
-import { Aparece, ARG, CierreFutbol, Codigo, FRA, Num, SerieFutbol, useP } from "../kit/futbol";
+import { Aparece, ARG, CierreFutbol, Codigo, FRA, FRA_TEXTO, Num, SerieFutbol, useP } from "../kit/futbol";
 import { C, FONT, MONO } from "../kit/theme";
 import guion from "../guiones/03-mapa-tiros.json";
 // Generado por scripts/futbol/ep03_datos.py (no se sube a git: licencia de StatsBomb).
@@ -12,7 +12,7 @@ import datos from "../datos/privado/ep03.json";
 // Fútbol con Datos #3 · Mapa de tiros: Messi vs Mbappé. Datos: StatsBomb Open Data, Mundial 2022.
 
 type Tiro = (typeof datos.jugadores.Messi)[number];
-const COLOR: Record<string, string> = { Mbappé: FRA, Messi: ARG };
+const COLOR: Record<string, string> = { Mbappé: FRA_TEXTO, Messi: ARG };
 const jugada = (n: "Messi" | "Mbappé") => datos.jugadores[n].filter((t) => !t.penal);
 const enArea = (t: { x: number; y: number }) => t.x >= AREA.x && t.y >= AREA.y && t.y <= AREA.y + AREA.h;
 const buscar = (n: "Messi" | "Mbappé", rival: string, min: number) =>
@@ -233,7 +233,7 @@ const Mbappe: React.FC<EscenaProps> = ({ lineas }) => {
       ratio={0.4}
       left={
         <>
-          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 80, color: FRA, lineHeight: 1 }}>MBAPPÉ</div>
+          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 80, color: FRA_TEXTO, lineHeight: 1 }}>MBAPPÉ</div>
           <Aparece at={b1.at + 10}>
             <div style={{ fontFamily: FONT, fontSize: 40, color: C.ink }}>
               <b>{r.jp_tiros}</b> tiros de jugada
@@ -375,7 +375,7 @@ const FilaComp: React.FC<{ at: number; label: string; a: number; b: number; dec?
     <Aparece at={at}>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 420px 1fr", alignItems: "center", gap: 20, width: 1500 }}>
         <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 18 }}>
-          <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: 44, color: FRA }}>
+          <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: 44, color: FRA_TEXTO }}>
             {(a * p).toFixed(dec)}
             {suf}
           </span>
@@ -407,7 +407,7 @@ const Cara: React.FC<EscenaProps> = ({ lineas }) => {
   return (
     <Stage gap={14}>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 420px 1fr", width: 1500, fontFamily: FONT, fontWeight: 900, fontSize: 52 }}>
-        <span style={{ textAlign: "right", color: FRA }}>MBAPPÉ</span>
+        <span style={{ textAlign: "right", color: FRA_TEXTO }}>MBAPPÉ</span>
         <span />
         <span style={{ color: ARG }}>MESSI</span>
       </div>
@@ -440,7 +440,7 @@ const Sirve: React.FC<EscenaProps> = ({ lineas }) => {
     <Stage gap={16}>
       <div style={{ display: "flex", gap: 70 }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 44, color: FRA }}>Contra Mbappé</div>
+          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 44, color: FRA_TEXTO }}>Contra Mbappé</div>
           <MapaJugador n="Mbappé" alto={500} desde={-100} atenuar={() => p3 > 0}>
             {p3 > 0 && <rect x={AREA.x} y={AREA.y} width={AREA.w} height={AREA.h} fill={`${C.purple}33`} opacity={p3} />}
             {[26, 34, 42, 50].map((y, i) => (

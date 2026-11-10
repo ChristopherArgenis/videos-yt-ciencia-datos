@@ -3,7 +3,7 @@ import { Sequence, useCurrentFrame } from "remotion";
 import { Card, Sfx, Split, Stage, Sticker, Words } from "../kit/kit";
 import { leerGuion, VideoLargo, type EscenaProps } from "../kit/largo";
 import { Cancha, CreditoStatsBomb } from "../kit/cancha";
-import { Aparece, ARG, Chip, CierreFutbol, Codigo, FRA, Num, SerieFutbol, useP } from "../kit/futbol";
+import { Aparece, ARG, Chip, CierreFutbol, Codigo, FRA_TEXTO, Num, SerieFutbol, useP } from "../kit/futbol";
 import { C, FONT, MONO } from "../kit/theme";
 import guion from "../guiones/02-xg.json";
 // Generado por scripts/futbol/ep02_datos.py (no se sube a git: licencia de StatsBomb).
@@ -467,7 +467,7 @@ const Escalones: React.FC<{ dibujo: number; resaltar: (t: (typeof datos.final)[n
   };
   const equipos = [
     { nombre: "Argentina", color: ARG, ...serie("Argentina") },
-    { nombre: "France", color: FRA, ...serie("France") },
+    { nombre: "France", color: FRA_TEXTO, ...serie("France") },
   ];
   return (
     <svg width={W + 140} height={H + 70} viewBox={`-70 -10 ${W + 140} ${H + 70}`} style={{ overflow: "visible" }}>
@@ -542,7 +542,7 @@ const Final: React.FC<EscenaProps> = ({ lineas }) => {
       <div style={{ display: "flex", gap: 40, alignItems: "center", fontFamily: FONT, fontWeight: 900, fontSize: 46 }}>
         <span style={{ color: ARG }}>Argentina</span>
         <span style={{ color: C.dim, fontSize: 36 }}>xG acumulado</span>
-        <span style={{ color: FRA }}>Francia</span>
+        <span style={{ color: FRA_TEXTO }}>Francia</span>
       </div>
       <Escalones dibujo={dibujo} resaltar={resaltar} />
       <div style={{ height: 60 }}>
@@ -650,7 +650,7 @@ const Python: React.FC<EscenaProps> = ({ lineas }) => {
           <div style={{ fontFamily: MONO, fontSize: 32, marginTop: 12, lineHeight: 1.5 }}>
             <span style={{ color: ARG }}>Argentina    2.76</span>
             <br />
-            <span style={{ color: FRA }}>France       2.27</span>
+            <span style={{ color: FRA_TEXTO }}>France       2.27</span>
           </div>
         </Aparece>
       </div>
