@@ -1,0 +1,29 @@
+Cómo comparar jugadores de fútbol con radares: Julián Álvarez vs Giroud, los dos con 4 goles en el Mundial 2022 y estilos opuestos.
+Aprende a usar estadísticas por 90 minutos y percentiles, y a leer un radar como un analista. Datos reales y Python.
+
+Episodio 8 de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Comparamos a los dos delanteros de la final contra los 20 delanteros centro del Mundial: Giroud, el nueve del área y el mejor cabeceador; Julián, el que más presionó y más eficaz frente al gol.
+
+Capítulos:
+00:00 Mismos goles, ¿mismo delantero?
+00:35 Primero: por cada 90 minutos
+01:13 Después: percentiles
+01:47 Cómo leer un radar
+02:18 Giroud: el nueve clásico
+02:47 Julián: presión y eficacia
+03:20 Cara a cara
+03:50 Tu turno: con Python
+04:14 Cierre
+
+💻 El código para dibujar el radar (librería mplsoccer) aparece en el video en el 03:50.
+📊 Percentil 50 = mediana: mira el Short del canal sobre promedio vs mediana.
+
+Datos: StatsBomb Open Data (Hudl StatsBomb), github.com/statsbomb/open-data
+El análisis es propio y no representa la opinión de StatsBomb. Delanteros centro con 270+ minutos; sin tandas de penales.
+
+Episodio anterior: xA: el jugador que crea los goles | Fútbol con Datos #7
+Próximo episodio: Cómo fichan los clubes con datos | Fútbol con Datos #9
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #mundial2022 #python #analisisdedatos

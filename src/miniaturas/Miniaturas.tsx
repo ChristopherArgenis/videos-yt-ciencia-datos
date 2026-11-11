@@ -63,6 +63,9 @@ import { ESP, FRA, FRA_TEXTO, JPN, MAR } from "../kit/futbol";
 import datosEp05 from "../datos/privado/ep05.json";
 import datosEp06 from "../datos/privado/ep06.json";
 import { Calor } from "../kit/calor";
+import datosEp07 from "../datos/privado/ep07.json";
+import datosEp08 from "../datos/privado/ep08.json";
+import { Radar } from "../videos/V08Radares";
 
 export const MiniFutbol01: React.FC = () => (
   <FondoMini accent={C.green}>
@@ -822,6 +825,224 @@ export const MiniFutbol06: React.FC = () => (
     </div>
     <div style={{ position: "absolute", right: 140, bottom: 40 }}>
       <MarcadorMini texto="Penales 0–3" color={MAR} />
+    </div>
+  </AbsoluteFill>
+);
+
+export const MiniFutbol07: React.FC = () => {
+  const g = datosEp07.ranking.find((r) => r.jugador === "Griezmann")!;
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+      <svg width={1280} height={720} style={{ position: "absolute", inset: 0 }}>
+        <defs>
+          <linearGradient id="fra7" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#2a3f8f" />
+            <stop offset="1" stopColor="#0a1233" />
+          </linearGradient>
+        </defs>
+        <polygon points="800,0 1280,0 1280,720 690,720" fill="url(#fra7)" />
+        <text
+          x={980}
+          y={640}
+          textAnchor="middle"
+          fontFamily="Poppins"
+          fontWeight={900}
+          fontSize={600}
+          fill="#ffffff"
+          opacity={0.08}
+        >
+          7
+        </text>
+        <polyline
+          points="800,0 750,250 790,250 720,470 760,470 690,720"
+          fill="none"
+          stroke="#ffd166"
+          strokeWidth={20}
+          opacity={0.3}
+        />
+        <polyline
+          points="800,0 750,250 790,250 720,470 760,470 690,720"
+          fill="none"
+          stroke="#fff6d5"
+          strokeWidth={7}
+        />
+      </svg>
+      <div
+        style={{
+          position: "absolute",
+          left: 50,
+          top: 50,
+          display: "flex",
+          flexDirection: "column",
+          gap: 8,
+        }}
+      >
+        <ChipMini bg={C.green}>FÚTBOL CON DATOS #7</ChipMini>
+        <Nombre color={MARINO_TEXTO} size={110}>
+          GRIEZMANN
+        </Nombre>
+        <Nombre color={C.coral} size={165}>
+          {g.goles} GOLES
+        </Nombre>
+        <Nombre color="#ffd166" size={110}>
+          #1 EN CREAR
+        </Nombre>
+      </div>
+      <div style={{ position: "absolute", right: 110, bottom: -24 }}>
+        <Jugador color={MARINO} halo="#5b7cff" numero="7" />
+      </div>
+      <div style={{ position: "absolute", right: 60, top: 60 }}>
+        <MarcadorMini
+          texto={`xA ${g.xa.toFixed(2)} · ${g.kp} pases a tiro`}
+          color={FRA_TEXTO}
+        />
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+export const MiniFutbol08: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <svg width={1280} height={720} style={{ position: "absolute", inset: 0 }}>
+      <defs>
+        <linearGradient id="arg8" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#4aa8e8" />
+          <stop offset="1" stopColor="#14466f" />
+        </linearGradient>
+        <linearGradient id="fra8" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#2a3f8f" />
+          <stop offset="1" stopColor="#0a1233" />
+        </linearGradient>
+      </defs>
+      <polygon points="0,0 720,0 560,720 0,720" fill="url(#arg8)" />
+      <polygon points="720,0 1280,0 1280,720 560,720" fill="url(#fra8)" />
+      <text
+        x={290}
+        y={640}
+        textAnchor="middle"
+        fontFamily="Poppins"
+        fontWeight={900}
+        fontSize={600}
+        fill="#ffffff"
+        opacity={0.08}
+      >
+        9
+      </text>
+      <text
+        x={1010}
+        y={640}
+        textAnchor="middle"
+        fontFamily="Poppins"
+        fontWeight={900}
+        fontSize={600}
+        fill="#ffffff"
+        opacity={0.08}
+      >
+        9
+      </text>
+    </svg>
+    <div
+      style={{
+        position: "absolute",
+        left: 40,
+        top: 40,
+        display: "flex",
+        flexDirection: "column",
+        gap: 4,
+      }}
+    >
+      <Nombre color={CELESTE} size={120}>
+        JULIÁN
+      </Nombre>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+        <Nombre color="#ffd166" size={110}>
+          4
+        </Nombre>
+        <span
+          style={{
+            fontFamily: "Poppins",
+            fontWeight: 900,
+            fontSize: 40,
+            color: "#fff",
+            textShadow: "0 4px 10px #000",
+          }}
+        >
+          GOLES
+        </span>
+      </div>
+    </div>
+    <div
+      style={{
+        position: "absolute",
+        right: 40,
+        top: 40,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-end",
+        gap: 4,
+      }}
+    >
+      <Nombre color={MARINO_TEXTO} size={120}>
+        GIROUD
+      </Nombre>
+      <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+        <span
+          style={{
+            fontFamily: "Poppins",
+            fontWeight: 900,
+            fontSize: 40,
+            color: "#fff",
+            textShadow: "0 4px 10px #000",
+          }}
+        >
+          GOLES
+        </span>
+        <Nombre color="#ffd166" size={110}>
+          4
+        </Nombre>
+      </div>
+    </div>
+    <div
+      style={{
+        position: "absolute",
+        left: 640 - 230,
+        top: 200,
+        width: 460,
+        height: 460,
+        borderRadius: 230,
+        background: "#0b1020ee",
+        border: "8px solid #ffd166",
+        boxShadow: "0 0 60px #ffd16688",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Radar
+        series={[
+          {
+            pct: datosEp08.giroud.pct,
+            color: MARINO_TEXTO,
+            p: 1,
+            relleno: `${FRA}cc`,
+          },
+          { pct: datosEp08.julian.pct, color: CELESTE, p: 1 },
+        ]}
+        size={420}
+        etiquetas={false}
+      />
+    </div>
+    <div
+      style={{
+        position: "absolute",
+        left: 0,
+        right: 0,
+        bottom: 20,
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <ChipMini bg={C.green}>FÚTBOL CON DATOS #8</ChipMini>
     </div>
   </AbsoluteFill>
 );

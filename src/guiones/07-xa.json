@@ -2,7 +2,7 @@
   "_nota": "Fútbol con Datos #7. StatsBomb Open Data, Mundial 2022 (sin tanda de penales). xA de un pase = xG del tiro que generó (pass.assisted_shot_id). Pases a tiro = pases con tiro asistido.",
   "id": "07-xa",
   "titulo": "xA: el jugador que crea los goles | Fútbol con Datos #7",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/curiosa.wav",
   "voz": "alex_nicola",
   "acento": "#3ddc84",
@@ -55,18 +55,18 @@
     {
       "id": "ejemplos",
       "capitulo": "Tres asistencias de Messi",
-      "pantalla": "Tres medias canchas con flecha de pase + tiro: Países Bajos (pase entre defensas a Molina, xA 0.43), México (pase corto a Enzo lejos del área, xA 0.04) y Croacia (tras dos regates a Gvardiol, a Julián, xA 0.33). Todas con la etiqueta 'Asistencia ✓'.",
+      "pantalla": "Tres medias canchas con flecha de pase + tiro: Países Bajos (pase entre defensas a Molina, xA 0.43), México (pase corto a Enzo en un costado del área, casi sin ángulo, xA 0.04) y Croacia (tras dos regates a Gvardiol, a Julián, xA 0.33). Todas con la etiqueta 'Asistencia ✓'.",
       "voz": {
         "e1": "Mira estas tres asistencias de Messi en el Mundial.",
         "e2": "Contra Países Bajos, un pase entre los defensas que dejó solo a Molina. Equis a de cero punto cuarenta y tres: una ocasión clarísima.",
-        "e3": "Contra México, un pase corto a Enzo Fernández, lejos del área. Equis a de cero punto cero cuatro.",
+        "e3": "Contra México, un pase corto a Enzo Fernández, en un costado del área, casi sin ángulo. Equis a de cero punto cero cuatro.",
         "e3b": "Y contra Croacia, después de dejar atrás dos veces a Gvardiol, le dio a Julián Álvarez una de cero punto treinta y tres.",
         "e4": "Todas cuentan igual como asistencia. Pero en la de Países Bajos el mérito fue de Messi. En la de México, del golazo de Enzo.",
         "e5": "Eso es lo que el equis a separa: el pase, del remate."
       },
       "sub": {
         "e2": "Contra Países Bajos, un pase entre los defensas que dejó solo a Molina: xA 0.43. Clarísima.",
-        "e3": "Contra México, un pase corto a Enzo Fernández, lejos del área: xA 0.04.",
+        "e3": "Contra México, un pase corto a Enzo Fernández, en un costado del área, casi sin ángulo: xA 0.04.",
         "e5": "Eso es lo que el xA separa: el pase, del remate.",
         "e3b": "Y contra Croacia, tras dejar atrás dos veces a Gvardiol, le dio a Julián una de 0.33.",
         "e4": "Todas cuentan igual como asistencia. Pero en la de Países Bajos el mérito fue de Messi; en la de México, del golazo de Enzo."

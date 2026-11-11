@@ -1,0 +1,28 @@
+Qué es el xA (asistencias esperadas) en el fútbol: cómo medir a los jugadores que crean goles, aunque no los anoten.
+Griezmann no marcó ni un gol en el Mundial 2022… y fue el que más ocasiones creó, más que Messi. Datos reales y Python.
+
+Episodio 7 de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Explicamos el xA con tres asistencias de Messi, vemos el ranking de creadores del Mundial, qué tipo de pase vale más (el pase filtrado: tres veces más que uno normal), quiénes tuvieron mala suerte y las dos asistencias de Griezmann contra Inglaterra.
+
+Capítulos:
+00:00 El genio sin goles
+00:32 ¿Qué es el xA?
+01:06 Tres asistencias de Messi
+01:48 Los que más crearon
+02:26 ¿Qué pase vale más?
+02:59 Mala suerte en los datos
+03:34 Griezmann contra Inglaterra
+04:09 Tu turno: con Python
+04:25 Cierre
+
+💻 El código para calcular el xA de cada jugador aparece en el video en el 04:09.
+
+Datos: StatsBomb Open Data (Hudl StatsBomb), github.com/statsbomb/open-data
+El análisis es propio y no representa la opinión de StatsBomb. Sin tandas de penales.
+
+Episodio anterior: Mapas de calor con Python | Fútbol con Datos #6
+Próximo episodio: Comparar jugadores con radares | Fútbol con Datos #8
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #griezmann #mundial2022 #python

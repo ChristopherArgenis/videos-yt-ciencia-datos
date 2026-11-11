@@ -52,3 +52,43 @@ def densidad(puntos, ancho=3.0, nx=60, ny=40):
         d += np.exp(-((gx - x) ** 2 + (gy - y) ** 2) / (2 * ancho ** 2))
     d /= d.max()
     return np.round(d, 3).tolist()
+
+
+def minutos(ev):
+    """Minutos jugados por jugador en un partido (titulares desde 0, cambios y expulsiones), sin tanda de penales."""
+    fin = max(e["minute"] + e["second"] / 60 for e in ev if e["period"] <= 4)
+    dentro, mins = {}, {}
+    for e in ev:
+        if e["type"]["name"] == "Starting XI":
+            for p in e["tactics"]["lineup"]:
+                dentro[p["player"]["name"]] = 0.0
+    for e in ev:
+        t = e["minute"] + e["second"] / 60
+        if e["type"]["name"] == "Substitution":
+            sale, entra = e["player"]["name"], e["substitution"]["replacement"]["name"]
+            if sale in dentro:
+                mins[sale] = mins.get(sale, 0) + t - dentro.pop(sale)
+            dentro[entra] = t
+        tarjeta = e.get("bad_behaviour", {}).get("card", {}).get("name", "") or e.get("foul_committed", {}).get("card", {}).get("name", "")
+        if tarjeta in ("Red Card", "Second Yellow") and e.get("player", {}).get("name") in dentro:
+            n = e["player"]["name"]
+            mins[n] = mins.get(n, 0) + t - dentro.pop(n)
+    for n, t in dentro.items():
+        mins[n] = mins.get(n, 0) + fin - t
+    return mins
+
+
+CORTOS = {
+    "Antoine Griezmann": "Griezmann", "Lionel Andrés Messi Cuccittini": "Messi", "Leroy Sané": "Sané",
+    "Raphael Dias Belloli": "Raphinha", "Harry Kane": "Kane", "Ousmane Dembélé": "Dembélé",
+    "Mateo Kovačić": "Kovačić", "Bruno Miguel Borges Fernandes": "Bruno Fernandes", "Ivan Perišić": "Perišić",
+    "Nahuel Molina Lucero": "Molina", "Enzo Fernandez": "Enzo", "Julián Álvarez": "Julián Álvarez",
+    "Aurélien Djani Tchouaméni": "Tchouaméni", "Olivier Giroud": "Giroud", "Kylian Mbappé Lottin": "Mbappé",
+    "Alexis Mac Allister": "Mac Allister", "Ángel Fabián Di María Hernández": "Di María",
+    "Cody Mathès Gakpo": "Gakpo", "Richarlison de Andrade": "Richarlison", "Youssef En-Nesyri": "En-Nesyri",
+    "Mehdi Taremi": "Taremi", "Alvaro Borja Morata Martín": "Morata", "Gonçalo Matias Ramos": "Gonçalo Ramos",
+}
+
+
+def corto(n):
+    return CORTOS.get(n, n)

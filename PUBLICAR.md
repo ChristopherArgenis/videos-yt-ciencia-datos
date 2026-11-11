@@ -106,3 +106,26 @@ Títulos: «Tema | Fútbol con Datos #N», máximo 60 caracteres.
 **Comentario fijado:** ¿De qué partido quieres ver el mapa de calor? 👇
 **Short relacionado:** Mates3-Normal (tarjeta en 00:33). **Pantalla final:** episodio 5 + lista.
 **Colores:** España rojo, Marruecos verde (los dos visten de rojo; se usa el verde de su bandera para distinguirlos).
+
+## 07 · xA: Griezmann, 0 goles y el que más creó (4:45)
+**Título:** xA: el jugador que crea los goles | Fútbol con Datos #7 (54)
+**Alternativa:** Griezmann: 0 goles y el mejor | Fútbol con Datos #7 (50)
+**Miniatura:** `Mini-07-Xa` → "GRIEZMANN · 0 GOLES · #1 EN CREAR", silueta azul marino con el 7
+**Voz:** alex_nicola · **Datos:** StatsBomb Open Data, Mundial 2022. Logo en pantalla.
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
+**Descripción:** `videos/07-xa/descripcion.txt` (sin código; remite al 04:09).
+**#:** #cienciadedatos #futbol #griezmann #mundial2022 #python
+**Comentario fijado:** ¿Qué jugador crees que crea más de lo que se ve en los goles? 👇
+**Relacionado:** episodio 2 (xG), tarjeta en 00:32. **Pantalla final:** episodio 6 + lista.
+**Nota:** el guion aprobado decía "lejos del área" para el pase de Messi a Enzo; se corrigió a "en un costado del área, casi sin ángulo" (según los datos, Enzo remató dentro del área).
+
+## 08 · Radares: Julián vs Giroud (4:34)
+**Título:** Comparar jugadores con radares | Fútbol con Datos #8 (52)
+**Alternativa:** Julián vs Giroud: 4 goles, 2 estilos | Fútbol con Datos #8 (57)
+**Miniatura:** `Mini-08-Radares` → "JULIÁN 4 · GIROUD 4", pantalla partida celeste/azul marino, el 9 de fondo y el radar comparado
+**Voz:** alex_nicola · **Datos:** StatsBomb Open Data, Mundial 2022 (20 delanteros centro con 270+ min). Logo en pantalla.
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
+**Descripción:** `videos/08-radares/descripcion.txt` (sin código; remite al 03:50).
+**#:** #cienciadedatos #futbol #mundial2022 #python #analisisdedatos
+**Comentario fijado:** ¿Qué dos jugadores quieres que comparemos con un radar? 👇
+**Short relacionado:** Mates1-Mediana (tarjeta en 01:13). **Pantalla final:** episodio 7 + lista.
