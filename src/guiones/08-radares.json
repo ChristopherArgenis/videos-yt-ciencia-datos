@@ -1,0 +1,167 @@
+{
+  "_nota": "Fútbol con Datos #8. StatsBomb Open Data, Mundial 2022 (sin tanda de penales). Comparación entre los 20 delanteros centro con al menos 270 minutos (posición más frecuente en los eventos). Estadísticas por 90 min y percentiles dentro de ese grupo. 'Balones en el área' = recepciones completas dentro del área.",
+  "id": "08-radares",
+  "titulo": "Comparar jugadores con radares | Fútbol con Datos #8",
+  "aprobado": false,
+  "musica": "musica/curiosa.wav",
+  "voz": "alex_nicola",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "Mismos goles, ¿mismo delantero?",
+      "pantalla": "Dos tarjetas frente a frente: JULIÁN ÁLVAREZ · 4 goles (celeste) y OLIVIER GIROUD · 4 goles (azul marino). Luego, entre ellas, aparecen dos radares con formas muy distintas.",
+      "voz": {
+        "g1": "En la final del Mundial jugaron dos delanteros con exactamente los mismos goles en el torneo: cuatro.",
+        "g2": "Julián Álvarez, de Argentina. Y Olivier Giroud, de Francia.",
+        "g3": "Mismos goles. Pero cuando los pones en un radar, parecen dos jugadores completamente distintos.",
+        "g3b": "Uno vive en el área. El otro persigue a los defensas.",
+        "g4": "Hoy aprendes a comparar jugadores como lo hacen los analistas."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #8' con la fila de 10 episodios; se ilumina el 8.",
+      "voz": {
+        "s1": "Esto es Fútbol con Datos, episodio ocho.",
+        "s1b": "Hoy juntamos todo lo que ya vimos: goles, equis ge, presión y pases."
+      },
+      "sub": {
+        "s1b": "Hoy juntamos todo lo que ya vimos: goles, xG, presión y pases."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "por90",
+      "capitulo": "Primero: por cada 90 minutos",
+      "pantalla": "Dos barras de minutos jugados: Julián 485 · Giroud 433. Luego la fórmula 'valor ÷ minutos × 90' y el resultado: goles por 90 → Giroud 0.83 · Julián 0.74.",
+      "voz": {
+        "n1": "Para comparar, el primer paso es ser justos: no todos jugaron lo mismo.",
+        "n2": "Julián jugó unos cuatrocientos ochenta y cinco minutos. Giroud, unos cuatrocientos treinta y tres.",
+        "n3": "Por eso dividimos todo entre los minutos, y lo pasamos a noventa: estadísticas por partido completo.",
+        "n3b": "Si no lo hacemos, el que jugó más minutos siempre parece mejor.",
+        "n4": "Así, Giroud marcó cero punto ochenta y tres goles por cada noventa minutos. Julián, cero punto setenta y cuatro.",
+        "n5": "Y lo mismo para tiros, presiones o pases: todo, por cada noventa minutos."
+      },
+      "sub": {
+        "n2": "Julián jugó unos 485 minutos. Giroud, unos 433.",
+        "n3": "Por eso dividimos entre los minutos y lo pasamos a 90: estadísticas por partido completo.",
+        "n4": "Así, Giroud marcó 0.83 goles por cada 90 minutos. Julián, 0.74."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "percentil",
+      "capitulo": "Después: percentiles",
+      "pantalla": "Fila de 20 puntos (los delanteros centro del Mundial) ordenados de menor a mayor; un punto se resalta y aparece 'percentil 85'. Marca en el medio: 'percentil 50 = mediana' con sticker 'Short: promedio vs mediana'.",
+      "voz": {
+        "p1": "El segundo paso es compararlos con los demás.",
+        "p2": "Tomamos a los veinte delanteros centro del Mundial que jugaron al menos tres partidos completos.",
+        "p3": "Y para cada número calculamos su percentil: qué porcentaje de esos delanteros está por debajo, o igual.",
+        "p3b": "Por ejemplo, Julián tiene percentil ochenta y cinco en goles: está por encima, o igual, que diecisiete de los veinte.",
+        "p4": "Percentil cincuenta es la mediana, justo en medio, como vimos en el Short de promedio contra mediana. Percentil cien, el mejor de todos."
+      },
+      "sub": {
+        "p2": "Tomamos a los 20 delanteros centro del Mundial que jugaron al menos 3 partidos completos.",
+        "p4": "Percentil 50 es la mediana, justo en medio (Short de promedio vs mediana). Percentil 100, el mejor de todos.",
+        "p3b": "Por ejemplo, Julián tiene percentil 85 en goles: por encima, o igual, que 17 de los 20."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "leer",
+      "capitulo": "Cómo leer un radar",
+      "pantalla": "Se dibuja un radar vacío con 8 ejes que aparecen uno por uno: Goles, xG sin penales, Tiros, Balones en el área, Cabezazos, Presiones, Pases a tiro, xA. Anillos de 0 a 100.",
+      "voz": {
+        "a1": "Un radar junta todos esos percentiles en una sola figura.",
+        "a2": "Cada eje es una estadística. Mientras más lejos del centro, mejor está el jugador en eso.",
+        "a3": "Usamos ocho: goles, equis ge sin penales, tiros, balones recibidos en el área, cabezazos, presiones, pases a tiro, y equis a.",
+        "a4": "Y la forma del radar te dice el estilo del jugador.",
+        "a5": "Un radar grande y redondo es un jugador completo. Uno con picos, es un especialista."
+      },
+      "sub": {
+        "a3": "Usamos 8: goles, xG sin penales, tiros, balones en el área, cabezazos, presiones, pases a tiro y xA."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "giroud",
+      "capitulo": "Giroud: el nueve clásico",
+      "pantalla": "Radar de Giroud (azul marino) que se llena: picos en Cabezazos (100), Goles (95), xG (90), Tiros (90), Balones en el área (85). Etiquetas con sus números: 17 tiros, 8 cabezazos, xG sin penales 3.0.",
+      "voz": {
+        "o1": "Este es Giroud.",
+        "o2": "Su radar se estira hacia el área: recibió unos tres balones y medio por partido dentro del área, e hizo diecisiete tiros en el torneo.",
+        "o3": "Y fue el mejor cabeceador de todos: ocho cabezazos. Percentil cien.",
+        "o4": "Su equis ge sin penales, tres punto cero, está entre los más altos. Giroud vive en el área, y espera su balón.",
+        "o5": "En presión, en cambio, queda a la mitad de la tabla: percentil cincuenta y cinco."
+      },
+      "sub": {
+        "o2": "Su radar se estira hacia el área: unos 3.5 balones por partido dentro del área y 17 tiros en el torneo.",
+        "o3": "Y fue el mejor cabeceador de todos: 8 cabezazos. Percentil 100.",
+        "o4": "Su xG sin penales, 3.0, está entre los más altos. Giroud vive en el área, y espera su balón.",
+        "o5": "En presión, en cambio, queda a la mitad de la tabla: percentil 55."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "julian",
+      "capitulo": "Julián: presión y eficacia",
+      "pantalla": "Radar de Julián (celeste): pico enorme en Presiones (100) y Goles (85); más chico en tiros y cabezazos. Etiquetas: 118 presiones (≈22 por partido), 11 tiros, xG 1.9 → 4 goles.",
+      "voz": {
+        "j1": "Ahora, Julián Álvarez.",
+        "j2": "Su radar es otra figura: se dispara hacia la presión. Ciento dieciocho presiones, casi veintidós por partido. Ningún delantero centro presionó más.",
+        "j3": "Y fue muy eficaz: con solo once tiros y uno punto nueve de equis ge, metió cuatro goles. Más del doble de lo esperado.",
+        "j3b": "En tiros y balones en el área, en cambio, queda por debajo de la mitad: percentil cuarenta y cuarenta y cinco.",
+        "j4": "Julián defiende desde adelante. Y cuando le llega, no perdona."
+      },
+      "sub": {
+        "j2": "Su radar se dispara hacia la presión: 118 presiones, casi 22 por partido. Ningún delantero centro presionó más.",
+        "j3": "Y fue muy eficaz: con solo 11 tiros y 1.9 de xG, metió 4 goles. Más del doble de lo esperado.",
+        "j3b": "En tiros y balones en el área, queda por debajo de la mitad: percentil 40 y 45."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cara",
+      "capitulo": "Cara a cara",
+      "pantalla": "Los dos radares superpuestos (celeste y azul marino, semitransparentes). Se resaltan los ejes donde gana cada uno. Sticker final: 'Un radar no da un ganador: muestra el estilo'.",
+      "voz": {
+        "c1": "Pongamos los dos radares uno encima del otro.",
+        "c2": "Giroud gana en el área: tiros, balones recibidos y cabezazos.",
+        "c3": "Julián gana en la presión. Y en la eficacia.",
+        "c4": "¿Quién es mejor? Depende de lo que necesite tu equipo. Un radar no da un ganador: muestra el estilo.",
+        "c4b": "Si tu equipo centra mucho, Giroud es tu delantero. Si quieres presionar desde arriba, Julián.",
+        "c5": "Por eso los clubes los usan para fichar: buscan un perfil, no solo los goles."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor con 4 líneas: from mplsoccer import Radar / radar = Radar(params, minimos, maximos) / fig, ax = radar.setup_axis() / radar.draw_radar_compare(julian, giroud, ax=ax). Al lado, el radar comparado.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Con la librería eme pe ele sóquer, le das los nombres de las estadísticas, sus rangos, y los valores de cada jugador.",
+        "y2b": "Los rangos van de cero a cien, porque usamos percentiles. Y con una línea más, el radar dibuja a los dos jugadores, uno encima del otro.",
+        "y3": "Con percentiles de cero a cien, comparas a cualquier par de jugadores."
+      },
+      "sub": {
+        "y2": "Con la librería mplsoccer, le das los nombres de las estadísticas, sus rangos y los valores de cada jugador.",
+        "y3": "Con percentiles de 0 a 100, comparas a cualquier par de jugadores."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #9 Scouting con datos'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio usamos todo esto para fichar: buscamos un jugador con datos, sin ver un solo partido.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

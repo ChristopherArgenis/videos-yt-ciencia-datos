@@ -1,6 +1,6 @@
 # Serie: Fútbol con Datos (10 partes)
 
-**Estado:** plan aprobado. Episodios 1 a 6 con StatsBomb (Mundial 2022). #1 a #4 renderizados; guiones del #5 y #6 en `src/guiones/`. Voz desde el #3: `alex_nicola`. Nada se renderiza hasta aprobar cada guion.
+**Estado:** plan aprobado. Episodios 1 a 8 con StatsBomb (Mundial 2022). #1 a #6 renderizados; guiones del #7 y #8 en `src/guiones/`. Voz desde el #3: `alex_nicola`. Nada se renderiza hasta aprobar cada guion.
 
 ## Idea
 Aprender ciencia de datos analizando fútbol real: de "qué es un evento" a analizar un partido
@@ -45,8 +45,8 @@ y gráficas propias). Antes del primer video, confirmar la licencia en la págin
 | 4 | Redes de pases: el cerebro del equipo \| Fútbol con Datos #4 | red de pases | StatsBomb: final del Mundial 2022 | 5 |
 | 5 | Cómo medir la presión en el fútbol \| Fútbol con Datos #5 | presión fútbol datos | StatsBomb: presiones de los 64 partidos del Mundial 2022 | 5 |
 | 6 | Mapas de calor con Python \| Fútbol con Datos #6 | mapa de calor fútbol | StatsBomb: España 0–0 Marruecos, octavos del Mundial 2022 | 5 |
-| 7 | xA: el jugador que crea los goles \| Fútbol con Datos #7 | asistencias esperadas | 5 ligas 2017/18 + nuestro xG | 7 |
-| 8 | Comparar jugadores con radares \| Fútbol con Datos #8 | radar de jugadores | 5 ligas 2017/18, por 90 min | 8 |
+| 7 | xA: el jugador que crea los goles \| Fútbol con Datos #7 | asistencias esperadas | StatsBomb: los 1,039 pases a tiro del Mundial 2022 | 5 |
+| 8 | Comparar jugadores con radares \| Fútbol con Datos #8 | radar de jugadores | StatsBomb: Julián vs Giroud, 20 delanteros centro del Mundial 2022 | 5 |
 | 9 | Cómo fichan los clubes con datos \| Fútbol con Datos #9 | scouting con datos | 5 ligas 2017/18 | 9 |
 | 10 | Analizo la final del Mundial \| Fútbol con Datos #10 | análisis de partido | Francia–Croacia (o Mundial 2022 si StatsBomb da permiso) | 10 |
 
@@ -125,3 +125,5 @@ Ajustar el día y la hora con YouTube Studio → Estadísticas → "Cuándo est�
 | #4 Redes de pases | Algo8-Grafos | una red de pases es un grafo |
 | #5 Presión | Mates5-Correlación | posesión vs presiones (−0.66): correlación ≠ causalidad |
 | #6 Mapas de calor | Mates3-Normal | cada acción es una campana normal (KDE) |
+| #7 xA | — | (se apoya en el #2: el xA es el xG del tiro que generó el pase) |
+| #8 Radares | Mates1-Mediana | percentil 50 = mediana |

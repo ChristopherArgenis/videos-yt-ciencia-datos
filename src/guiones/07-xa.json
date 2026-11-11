@@ -1,0 +1,182 @@
+{
+  "_nota": "Fútbol con Datos #7. StatsBomb Open Data, Mundial 2022 (sin tanda de penales). xA de un pase = xG del tiro que generó (pass.assisted_shot_id). Pases a tiro = pases con tiro asistido.",
+  "id": "07-xa",
+  "titulo": "xA: el jugador que crea los goles | Fútbol con Datos #7",
+  "aprobado": false,
+  "musica": "musica/curiosa.wav",
+  "voz": "alex_nicola",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "El genio sin goles",
+      "pantalla": "Tarjeta 'GRIEZMANN · 7 partidos · 0 goles'. Luego aparece un ranking con Griezmann #1 por encima de Messi, titulado 'Ocasiones creadas'. Al final, el sello 'xA'.",
+      "voz": {
+        "g1": "Antoine Griezmann jugó los siete partidos de Francia en el Mundial dos mil veintidós, hasta la final. Y no metió ni un solo gol.",
+        "g2": "Pero los datos dicen que fue el jugador que más ocasiones creó en todo el torneo. Más que Messi.",
+        "g3": "¿Cómo se mide eso? Con las asistencias esperadas: el equis a.",
+        "g4": "Hoy aprendes a medir el talento de los que hacen jugar al equipo."
+      },
+      "sub": {
+        "g1": "Griezmann jugó los 7 partidos de Francia en el Mundial 2022, hasta la final. Y no metió ni un gol.",
+        "g3": "¿Cómo se mide eso? Con las asistencias esperadas: el xA."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #7' con la fila de 10 episodios; se ilumina el 7.",
+      "voz": {
+        "s1": "Esto es Fútbol con Datos, episodio siete.",
+        "s1b": "Hoy usamos el equis ge del episodio dos, pero del otro lado: el del pase."
+      },
+      "sub": {
+        "s1b": "Hoy usamos el xG del episodio 2, pero del otro lado: el del pase."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "que",
+      "capitulo": "¿Qué es el xA?",
+      "pantalla": "Media cancha: una flecha de pase y un tiro que pega en el poste; el contador 'Asistencias: 0' no se mueve. Luego el mismo pase con la etiqueta 'xA = xG del tiro = 0.40'. Ejemplo simplificado.",
+      "voz": {
+        "q1": "Una asistencia es el pase que termina en gol. Pero tiene un problema: depende de que tu compañero meta el gol.",
+        "q2": "Si das un pase perfecto y tu delantero lo falla, no cuenta como asistencia.",
+        "q3": "El equis a lo arregla: a cada pase que termina en tiro, le pone el equis ge de ese tiro.",
+        "q4": "Así medimos qué tan buena era la ocasión que creaste, sin importar si tu compañero la metió.",
+        "q4b": "Un pase que deja al delantero solo frente al portero vale mucho. Un pase lejos del área, casi nada."
+      },
+      "sub": {
+        "q3": "El xA lo arregla: a cada pase que termina en tiro, le pone el xG de ese tiro."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ejemplos",
+      "capitulo": "Tres asistencias de Messi",
+      "pantalla": "Tres medias canchas con flecha de pase + tiro: Países Bajos (pase entre defensas a Molina, xA 0.43), México (pase corto a Enzo lejos del área, xA 0.04) y Croacia (tras dos regates a Gvardiol, a Julián, xA 0.33). Todas con la etiqueta 'Asistencia ✓'.",
+      "voz": {
+        "e1": "Mira estas tres asistencias de Messi en el Mundial.",
+        "e2": "Contra Países Bajos, un pase entre los defensas que dejó solo a Molina. Equis a de cero punto cuarenta y tres: una ocasión clarísima.",
+        "e3": "Contra México, un pase corto a Enzo Fernández, lejos del área. Equis a de cero punto cero cuatro.",
+        "e3b": "Y contra Croacia, después de dejar atrás dos veces a Gvardiol, le dio a Julián Álvarez una de cero punto treinta y tres.",
+        "e4": "Todas cuentan igual como asistencia. Pero en la de Países Bajos el mérito fue de Messi. En la de México, del golazo de Enzo.",
+        "e5": "Eso es lo que el equis a separa: el pase, del remate."
+      },
+      "sub": {
+        "e2": "Contra Países Bajos, un pase entre los defensas que dejó solo a Molina: xA 0.43. Clarísima.",
+        "e3": "Contra México, un pase corto a Enzo Fernández, lejos del área: xA 0.04.",
+        "e5": "Eso es lo que el xA separa: el pase, del remate.",
+        "e3b": "Y contra Croacia, tras dejar atrás dos veces a Gvardiol, le dio a Julián una de 0.33.",
+        "e4": "Todas cuentan igual como asistencia. Pero en la de Países Bajos el mérito fue de Messi; en la de México, del golazo de Enzo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ranking",
+      "capitulo": "Los que más crearon",
+      "pantalla": "Ranking de xA del Mundial: Griezmann 2.54 (20 pases a tiro), Messi 2.45 (19)… Fila de 'asistencias: 3' para Griezmann, Messi, Kane, Bruno Fernandes y Perišić. Al final: 'Messi 7 goles · Griezmann 0'.",
+      "voz": {
+        "r1": "Sumemos el equis a de todo el Mundial.",
+        "r2": "Primero, Griezmann: dos punto cincuenta y cuatro. Y veinte pases que terminaron en tiro, más que nadie.",
+        "r3": "Segundo, Messi, muy cerca: dos punto cuarenta y cinco, con diecinueve pases a tiro.",
+        "r4": "Los dos dieron tres asistencias, igual que Harry Kane, Bruno Fernandes y Perišić.",
+        "r5": "Pero Messi, además, metió siete goles. Griezmann, ninguno. Su trabajo era otro: hacer jugar a Francia.",
+        "r5b": "Y si lo medimos por cada noventa minutos, Griezmann también es el primero: casi cero punto cuarenta de equis a por partido."
+      },
+      "sub": {
+        "r1": "Sumemos el xA de todo el Mundial.",
+        "r2": "Primero, Griezmann: 2.54. Y 20 pases que terminaron en tiro, más que nadie.",
+        "r3": "Segundo, Messi, muy cerca: 2.45, con 19 pases a tiro.",
+        "r4": "Los dos dieron 3 asistencias, igual que Kane, Bruno Fernandes y Perišić.",
+        "r5": "Pero Messi, además, metió 7 goles. Griezmann, ninguno. Su trabajo: hacer jugar a Francia.",
+        "r5b": "Por cada 90 minutos, Griezmann también es el primero: casi 0.40 de xA por partido."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "tipos",
+      "capitulo": "¿Qué pase vale más?",
+      "pantalla": "Barras de xA medio por tipo de pase: normal 0.07 · centro 0.13 · pase atrás 0.15 · pase filtrado 0.22 (la más alta, con '×3'). Arriba el contador: 1,039 pases que terminaron en tiro.",
+      "voz": {
+        "t1": "Y no todos los pases crean lo mismo.",
+        "t2": "En el Mundial hubo mil treinta y nueve pases que terminaron en tiro. Separémoslos por tipo.",
+        "t3": "Un pase normal creó, en promedio, cero punto cero siete de equis a.",
+        "t4": "Un centro, casi el doble: cero punto trece. Y un pase atrás, cero punto quince.",
+        "t5": "Pero el rey es el pase filtrado, entre los defensas: cero punto veintidós. Tres veces más que un pase normal.",
+        "t6": "Por eso el pase de Messi a Molina valía tanto: era un pase filtrado."
+      },
+      "sub": {
+        "t2": "En el Mundial hubo 1,039 pases que terminaron en tiro. Separémoslos por tipo.",
+        "t3": "Un pase normal creó, en promedio, 0.07 de xA.",
+        "t4": "Un centro, casi el doble: 0.13. Y un pase atrás, 0.15.",
+        "t5": "Pero el rey es el pase filtrado, entre los defensas: 0.22. Tres veces más que uno normal."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "suerte",
+      "capitulo": "Mala suerte en los datos",
+      "pantalla": "Dos tarjetas: Raphinha (Brasil) xA 1.40 → asistencias 0; Kovačić (Croacia) xA 1.27 → asistencias 0. Sticker final: 'El pase es tuyo. El gol, no.'",
+      "voz": {
+        "m1": "El equis a también muestra a los que tuvieron mala suerte.",
+        "m2": "Raphinha, de Brasil, creó ocasiones por uno punto cuatro goles esperados. Y terminó con cero asistencias.",
+        "m2b": "De todos los jugadores del Mundial sin ninguna asistencia, Raphinha fue el que más ocasiones creó.",
+        "m3": "Lo mismo Kovačić, de Croacia: uno punto tres de equis a, y ninguna asistencia.",
+        "m4": "No es que pasaran mal. Es que sus compañeros no las metieron.",
+        "m5": "Por eso los analistas miran el equis a, y no solo las asistencias: el pase es tuyo, el gol no."
+      },
+      "sub": {
+        "m1": "El xA también muestra a los que tuvieron mala suerte.",
+        "m2": "Raphinha, de Brasil, creó ocasiones por 1.4 goles esperados. Y terminó con 0 asistencias.",
+        "m3": "Lo mismo Kovačić, de Croacia: 1.3 de xA, y ninguna asistencia.",
+        "m5": "Por eso se mira el xA, y no solo las asistencias: el pase es tuyo, el gol no."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "inglaterra",
+      "capitulo": "Griezmann contra Inglaterra",
+      "pantalla": "Marcador 'Inglaterra 1–2 Francia · Cuartos'. Media cancha con las dos asistencias de Griezmann: pase raso a Tchouaméni (tiro desde 25 m, xA 0.03) y centro a Giroud (cabezazo, xA 0.15).",
+      "voz": {
+        "k1": "El mejor ejemplo es Griezmann en los cuartos de final, contra Inglaterra.",
+        "k2": "Dio las dos asistencias de Francia: un pase a Tchouaméni, que remató desde veinticinco metros, y un centro que Giroud cabeceó para el dos a uno.",
+        "k3": "La primera valía apenas cero punto cero tres de equis a: el golazo fue de Tchouaméni. La segunda, cero punto quince.",
+        "k4": "Francia ganó dos a uno, y siguió hasta la final.",
+        "k5": "Y en la final, el que más creó fue Mac Allister: su pase para el gol de Di María valía cero punto treinta."
+      },
+      "sub": {
+        "k2": "Dio las dos asistencias de Francia: a Tchouaméni, que remató desde 25 metros, y un centro que Giroud cabeceó para el 2 a 1.",
+        "k3": "La primera valía apenas 0.03 de xA: el golazo fue de Tchouaméni. La segunda, 0.15.",
+        "k4": "Francia ganó 2 a 1, y siguió hasta la final.",
+        "k5": "Y en la final, el que más creó fue Mac Allister: su pase para el gol de Di María valía 0.30."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor con 4 líneas: tiros = ev[ev.type == 'Shot'].set_index('id').shot_statsbomb_xg / pases = ev[ev.pass_assisted_shot_id.notna()] / xa = pases.pass_assisted_shot_id.map(tiros) / xa.groupby(pases.player).sum().nlargest(3) → Griezmann 2.54, Messi 2.45, Sané 1.40.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Cada pase que termina en tiro guarda el identificador de ese tiro. Unes cada pase con su tiro, y sumas el equis ge por jugador.",
+        "y3": "Y ahí está: Griezmann, Messi, y Sané, los que más crearon."
+      },
+      "sub": {
+        "y2": "Cada pase que termina en tiro guarda el id de ese tiro. Unes cada pase con su tiro y sumas el xG por jugador."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #8 Radares'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio comparamos jugadores con radares: dos delanteros con los mismos goles, y estilos opuestos.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
