@@ -47,8 +47,8 @@ y gráficas propias). Antes del primer video, confirmar la licencia en la págin
 | 6 | Mapas de calor con Python \| Fútbol con Datos #6 | mapa de calor fútbol | StatsBomb: España 0–0 Marruecos, octavos del Mundial 2022 | 5 |
 | 7 | xA: el jugador que crea los goles \| Fútbol con Datos #7 | asistencias esperadas | StatsBomb: los 1,039 pases a tiro del Mundial 2022 | 5 |
 | 8 | Comparar jugadores con radares \| Fútbol con Datos #8 | radar de jugadores | StatsBomb: Julián vs Giroud, 20 delanteros centro del Mundial 2022 | 5 |
-| 9 | Cómo fichan los clubes con datos \| Fútbol con Datos #9 | scouting con datos | 5 ligas 2017/18 | 9 |
-| 10 | Analizo la final del Mundial \| Fútbol con Datos #10 | análisis de partido | Francia–Croacia (o Mundial 2022 si StatsBomb da permiso) | 10 |
+| 9 | Cómo fichan los clubes con datos \| Fútbol con Datos #9 | scouting con datos (puntaje z + similitud coseno) | Mundial 2022: 52 mediocampistas | 9 |
+| 10 | Analizo la final del Mundial \| Fútbol con Datos #10 | análisis de partido por fases | Final del Mundial 2022 | 10 |
 
 ## Detalle por episodio
 **1 · Del partido a los datos.** Gancho: "Esta final tuvo miles de momentos registrados. Te enseño a leerlos."
@@ -127,3 +127,5 @@ Ajustar el día y la hora con YouTube Studio → Estadísticas → "Cuándo est�
 | #6 Mapas de calor | Mates3-Normal | cada acción es una campana normal (KDE) |
 | #7 xA | — | (se apoya en el #2: el xA es el xG del tiro que generó el pase) |
 | #8 Radares | Mates1-Mediana | percentil 50 = mediana |
+| #9 Scouting | Mates3-Normal + Mates7-Vectores | puntaje z para comparar justo; similitud coseno entre vectores |
+| #10 La final | Short6-StatsBomb | cierra con la misma final del #1 (4,407 datos) |

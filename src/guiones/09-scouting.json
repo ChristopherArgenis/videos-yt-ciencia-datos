@@ -1,0 +1,169 @@
+{
+  "_nota": "Fútbol con Datos #9. StatsBomb Open Data, Mundial 2022 (sin tanda de penales). Grupo: 52 mediocampistas (posición más frecuente) con 270+ min. 12 estadísticas por 90 min, estandarizadas (puntaje z) y similitud coseno con Enzo Fernández. Pase hacia adelante = pase completo que avanza 10+ yardas y termina en campo rival. El fichaje de Enzo (Chelsea, enero de 2023, 121 millones de euros, récord en Inglaterra en ese momento) no sale de los datos.",
+  "id": "09-scouting",
+  "titulo": "Cómo fichan los clubes con datos | Fútbol con Datos #9",
+  "aprobado": false,
+  "musica": "musica/curiosa.wav",
+  "voz": "alex_nicola",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "El fichaje de 121 millones",
+      "pantalla": "Tarjeta 'ENZO FERNÁNDEZ · Mejor jugador joven del Mundial'. Luego un cheque gigante: '121 millones de euros · Chelsea · enero 2023'. Al final, una lupa sobre una fila de siluetas con un signo de pregunta.",
+      "voz": {
+        "g1": "Enzo Fernández empezó el Mundial dos mil veintidós en el banco. Y lo terminó como el mejor jugador joven del torneo.",
+        "g2": "Semanas después, el Chelsea pagó por él ciento veintiún millones de euros. En ese momento, el fichaje más caro de la historia del fútbol inglés.",
+        "g3": "Pero, ¿había otro jugador como él, que casi nadie estaba mirando?",
+        "g4": "Hoy lo buscamos con datos. Sin ver un solo partido."
+      },
+      "sub": {
+        "g1": "Enzo Fernández empezó el Mundial 2022 en el banco. Y lo terminó como el mejor jugador joven del torneo.",
+        "g2": "Semanas después, el Chelsea pagó por él 121 millones de euros: entonces, el fichaje más caro del fútbol inglés."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #9' con la fila de 10 episodios; se ilumina el 9.",
+      "voz": {
+        "s1": "Esto es Fútbol con Datos, episodio nueve.",
+        "s1b": "Hoy usamos todo lo de la serie para hacer lo que hacen los clubes: buscar jugadores."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "perfil",
+      "capitulo": "Paso 1: el perfil de Enzo",
+      "pantalla": "Ficha 'Perfil de Enzo · por 90 minutos' que se llena fila por fila: 70 pases · 9 pases hacia adelante · 14 pases al último tercio · 4.5 conducciones que avanzan · 16 presiones · 3 entradas. Sticker: 'No es goleador: mueve al equipo'.",
+      "voz": {
+        "p1": "Primero hay que saber qué buscamos. ¿Cómo juega Enzo?",
+        "p2": "Por cada noventa minutos, dio unos setenta pases. Nueve de ellos, hacia adelante, hasta el campo rival. Y catorce llegaron al último tercio de la cancha.",
+        "p3": "Además, llevó el balón hacia adelante unas cuatro veces y media por partido.",
+        "p4": "Y no solo ataca: hizo dieciséis presiones y tres entradas por partido.",
+        "p5": "Enzo no es un goleador. Es el que mueve al equipo, de un área a la otra."
+      },
+      "sub": {
+        "p2": "Por 90 minutos: unos 70 pases. 9 hacia adelante, hasta campo rival. Y 14 al último tercio.",
+        "p3": "Además, llevó el balón hacia adelante unas 4.5 veces por partido.",
+        "p4": "Y no solo ataca: 16 presiones y 3 entradas por partido."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "comparar",
+      "capitulo": "Paso 2: comparar justo",
+      "pantalla": "52 círculos (los mediocampistas con 270+ min). Una tabla de 12 columnas se llena. Luego una campana con la escala del puntaje z (−2 · 0 · +2) y el sticker 'Short: distribución normal y puntaje z'.",
+      "voz": {
+        "c1": "Ahora, ¿con quién lo comparamos? Con los cincuenta y dos mediocampistas del Mundial que jugaron al menos tres partidos completos.",
+        "c2": "A cada uno le calculamos las mismas doce estadísticas, por noventa minutos, como en el episodio de radares.",
+        "c2b": "Por ejemplo, en pases por partido, Enzo fue el octavo de los cincuenta y dos.",
+        "c3": "Pero hay un problema: setenta pases y tres entradas no se pueden comparar directo. Están en escalas distintas.",
+        "c4": "Por eso usamos el puntaje zeta: cuántas desviaciones estándar está cada jugador arriba o abajo del promedio. Lo vimos en el Short de la distribución normal.",
+        "c5": "Así, todas las estadísticas quedan en la misma escala."
+      },
+      "sub": {
+        "c1": "¿Con quién lo comparamos? Con los 52 mediocampistas del Mundial con al menos 3 partidos completos.",
+        "c2": "A cada uno le calculamos las mismas 12 estadísticas, por 90 minutos, como en el episodio de radares.",
+        "c3": "Pero 70 pases y 3 entradas no se comparan directo: están en escalas distintas.",
+        "c4": "Por eso usamos el puntaje z: cuántas desviaciones está cada uno sobre o bajo el promedio (Short de la distribución normal).",
+        "c2b": "Por ejemplo, en pases por partido, Enzo fue el 8.º de los 52."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "coseno",
+      "capitulo": "Paso 3: similitud coseno",
+      "pantalla": "Cada jugador se convierte en una flecha (dibujo en 2D como ilustración de las 12 dimensiones). La flecha de Enzo fija; otras flechas giran y aparece el ángulo. Escala: 1 = idéntico · 0 = nada que ver · −1 = opuesto. Sticker: 'Short: vectores y similitud'.",
+      "voz": {
+        "k1": "Con esos doce números, cada jugador es una flecha. Un vector, como en el Short de vectores y similitud.",
+        "k2": "Si dos flechas apuntan al mismo lado, los dos jugadores juegan parecido. Si apuntan a lados opuestos, juegan al revés.",
+        "k3": "La similitud coseno mide ese ángulo. Uno es idéntico. Cero, nada que ver. Menos uno, completamente opuesto.",
+        "k4": "Es lo mismo que usan las apps de música para recomendarte canciones. Hoy la usamos para recomendar jugadores."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "gemelo",
+      "capitulo": "El gemelo de Enzo",
+      "pantalla": "Ranking de similitud con Enzo: 1. Kovačić (Croacia) 0.67 · 2. Frenkie de Jong (Países Bajos) 0.50 · 3. Paquetá (Brasil) 0.45 · 4. Gavi (España) 0.44. Al final, abajo del todo: Morita (Japón) −0.55, 'el más distinto'. Nota final: 'Kovačić ya jugaba en el Chelsea'.",
+      "voz": {
+        "m1": "Y este es el resultado.",
+        "m2": "El jugador más parecido a Enzo en todo el Mundial fue Mateo Kovačić, de Croacia, con una similitud de cero punto sesenta y siete.",
+        "m2b": "Cero punto sesenta y siete es alto: con doce estadísticas a la vez, sus flechas apuntan casi al mismo lado.",
+        "m3": "Después, Frenkie de Jong, de Países Bajos. Luego Paquetá, de Brasil, y Gavi, de España.",
+        "m4": "Y el más distinto de todos fue Morita, de Japón: menos cero punto cincuenta y cinco. Juega casi al revés.",
+        "m5": "Croacia llegó a semifinales. Y su mediocampista jugaba casi igual que el fichaje de ciento veintiún millones.",
+        "m6": "Y un detalle curioso: en ese momento, Kovačić ya jugaba en el Chelsea."
+      },
+      "sub": {
+        "m2": "El más parecido a Enzo en todo el Mundial: Mateo Kovačić, de Croacia, con similitud de 0.67.",
+        "m4": "Y el más distinto: Morita, de Japón, con −0.55. Juega casi al revés.",
+        "m5": "Croacia llegó a semifinales. Y su mediocampista jugaba casi igual que el fichaje de 121 millones.",
+        "m2b": "0.67 es alto: con 12 estadísticas a la vez, sus flechas apuntan casi al mismo lado."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "kovacic",
+      "capitulo": "Enzo contra Kovačić",
+      "pantalla": "Barras dobles por 90 min, Enzo (celeste) vs Kovačić (rojo y blanco de Croacia): pases 70 vs 63 · hacia adelante 9 vs 10.5 · al último tercio 14 vs 16.5 · conducciones 4.5 vs 6.4 · presiones 16 vs 19 · entradas 3 vs 3.5.",
+      "voz": {
+        "v1": "Pongámoslos lado a lado.",
+        "v1b": "Los dos jugaron casi lo mismo: Enzo, seiscientos un minutos. Kovačić, seiscientos cincuenta.",
+        "v2": "Enzo dio un poco más de pases: setenta contra sesenta y tres.",
+        "v3": "Pero Kovačić llevó más balones al último tercio, condujo más hacia adelante, y presionó más.",
+        "v3b": "Y en entradas, casi iguales: tres contra tres y medio.",
+        "v4": "Son dos mediocampistas que hacen lo mismo: mover el balón, avanzar, y ayudar a recuperar. Con matices, pero el mismo perfil."
+      },
+      "sub": {
+        "v2": "Enzo dio un poco más de pases: 70 contra 63.",
+        "v1b": "Los dos jugaron casi lo mismo: Enzo, 601 minutos. Kovačić, 650.",
+        "v3b": "Y en entradas, casi iguales: 3 contra 3.5."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "limites",
+      "capitulo": "Lo que los datos no ven",
+      "pantalla": "Tarjetas de edad: Kovačić 28 · Enzo 21. Lista que aparece con íconos: edad · precio y contrato · lesiones · idioma y adaptación · carácter. Luego el embudo: '52 jugadores → datos → lista corta de 4 → video y scouts → fichaje'.",
+      "voz": {
+        "l1": "Ojo: esto no significa que un club deba fichar solo con números.",
+        "l2": "Los datos no ven la edad, el precio, las lesiones, el idioma, ni el carácter de un jugador.",
+        "l2b": "Por ejemplo, en el Mundial, Kovačić tenía veintiocho años. Enzo, veintiuno. Para un club, eso cambia todo.",
+        "l3": "Por eso los clubes usan los datos para hacer la lista corta: de cincuenta y dos jugadores a cuatro.",
+        "l4": "Y después, los scouts ven esos partidos con lupa. Los datos encuentran. Los ojos deciden."
+      },
+      "sub": {
+        "l3": "Por eso los clubes usan los datos para la lista corta: de 52 jugadores a 4.",
+        "l2b": "Por ejemplo: en el Mundial, Kovačić tenía 28 años. Enzo, 21. Para un club, eso cambia todo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor con 3 líneas (X = tabla por 90 de los mediocampistas): z = (X - X.mean()) / X.std() / sim = cosine_similarity(z, z.loc[['Enzo Fernandez']]) / pd.Series(sim[:, 0], index=z.index).nlargest(5) → Enzo 1.00, Kovačić 0.67, De Jong 0.50, Paquetá 0.45, Gavi 0.44.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Con la tabla de estadísticas por noventa minutos, calculas el puntaje zeta, y la similitud coseno de todos contra Enzo.",
+        "y3": "Cambia el nombre, y encuentras el gemelo de cualquier jugador."
+      },
+      "sub": {
+        "y2": "Con la tabla por 90 minutos, calculas el puntaje z y la similitud coseno de todos contra Enzo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #10 La final, con datos'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el último episodio usamos todo lo de la serie para contar la final del Mundial, solo con datos.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

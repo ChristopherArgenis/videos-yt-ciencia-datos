@@ -1,0 +1,173 @@
+{
+  "_nota": "Fútbol con Datos #10 (final de la serie). StatsBomb Open Data, final del Mundial 2022 (partido 3869685). Fases por minuto de juego; xG incluye penales de jugada (no la tanda). Hat-trick de Mbappé: primero en una final desde 1966 (dato histórico, no de StatsBomb).",
+  "id": "10-final",
+  "titulo": "Analizo la final del Mundial | Fútbol con Datos #10",
+  "aprobado": false,
+  "musica": "musica/tension.wav",
+  "voz": "alex_nicola",
+  "acento": "#3ddc84",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "La mejor final, en datos",
+      "pantalla": "Marcador 'ARGENTINA 3–3 FRANCIA · penales 4–2'. Montaje rápido de lo visto en la serie: los 4,407 puntos, la gráfica de xG, un mapa de tiros, una red de pases, un mapa de calor, un radar.",
+      "voz": {
+        "g1": "Seis goles. Ciento veinte minutos. Y penales.",
+        "g2": "Para muchos, la final del Mundial dos mil veintidós fue la mejor final de la historia.",
+        "g3": "En esta serie aprendimos a leer el fútbol con datos. Hoy usamos todo, para contar esa final de principio a fin.",
+        "g4": "¿Quién mereció ganarla? Hoy lo respondemos con números."
+      },
+      "sub": {
+        "g2": "Para muchos, la final del Mundial 2022 fue la mejor de la historia."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'FÚTBOL CON DATOS #10' con la fila de 10 episodios; se iluminan todos, el 10 al final.",
+      "voz": {
+        "s1": "Esto es Fútbol con Datos, episodio diez. El último de la serie."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "fase1",
+      "capitulo": "0' a 36': Argentina arrasa",
+      "pantalla": "Gráfica de xG acumulado hasta el 36' (solo sube la línea de Argentina). Contadores: tiros 6 vs 0 · xG 1.29 vs 0. Marcas: 23' penal de Messi (falta de Dembélé a Di María) y 36' gol de Di María con la etiqueta 'pase de Mac Allister · xA 0.30'. Contador de presiones: Francia 43 · Argentina 27.",
+      "voz": {
+        "a1": "Los primeros treinta y seis minutos fueron de Argentina.",
+        "a2": "Hizo seis tiros, con uno punto tres de equis ge. Francia: cero tiros.",
+        "a2b": "Y eso que Francia presionó más: cuarenta y tres presiones contra veintisiete. Presionaba, pero no llegaba.",
+        "a3": "En el veintitrés, Dembélé derriba a Di María en el área. Messi anota el penal.",
+        "a4": "Y en el treinta y seis llega el contraataque perfecto: el pase de Mac Allister, que vimos en el episodio del equis a, y el gol de Di María. Dos a cero."
+      },
+      "sub": {
+        "a2": "Hizo 6 tiros, con 1.3 de xG. Francia: 0 tiros.",
+        "a3": "En el 23, Dembélé derriba a Di María en el área. Messi anota el penal.",
+        "a4": "En el 36, el contraataque perfecto: pase de Mac Allister (episodio de xA) y gol de Di María. 2 a 0.",
+        "a2b": "Y eso que Francia presionó más: 43 presiones contra 27. Presionaba, pero no llegaba."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "fase2",
+      "capitulo": "41' a 81': el cambio y 95 segundos",
+      "pantalla": "La red de pases de Francia antes y después del 41' (episodio 4). Contador de pases del 36' al 80': Francia 274 vs Argentina 234. Luego el reloj: 80' penal de Mbappé (Kolo Muani lo provoca) y 81' volea (xG 0.10), con '95 segundos' entre los dos. Marcador 2–2.",
+      "voz": {
+        "b1": "En el cuarenta y uno, Deschamps hace el doble cambio que vimos en las redes de pases: entran Kolo Muani y Thuram.",
+        "b2": "Y Francia empieza a tener el balón: del minuto treinta y seis al ochenta dio más pases que Argentina.",
+        "b3": "En el ochenta, Kolo Muani, uno de los que entraron, provoca un penal. Mbappé lo anota.",
+        "b4": "Y noventa y cinco segundos después, la volea de Mbappé. Un tiro de cero punto diez de equis ge.",
+        "b5": "En menos de dos minutos, la final pasó de dos a cero, a dos a dos."
+      },
+      "sub": {
+        "b1": "En el 41, el doble cambio que vimos en las redes de pases: entran Kolo Muani y Thuram.",
+        "b2": "Y Francia toma el balón: del 36 al 80 dio más pases que Argentina (274 contra 234).",
+        "b3": "En el 80, Kolo Muani, uno de los que entraron, provoca un penal. Mbappé lo anota.",
+        "b4": "Y 95 segundos después, la volea de Mbappé: un tiro de xG 0.10.",
+        "b5": "En menos de dos minutos, la final pasó de 2 a 0, a 2 a 2."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "fase3",
+      "capitulo": "Tiempo extra: Messi y Mbappé",
+      "pantalla": "Mapa de tiros del tiempo extra: Messi 108' a 4 m (xG 0.49, gol), Mbappé penal 118' (gol, hat-trick), Kolo Muani 123' (xG 0.28) con la etiqueta 'atajada del Dibu'. Cuatro tiros de Lautaro (104', 105', 107', 122') en gris, sin gol. Marcador 3–3.",
+      "voz": {
+        "c1": "En el tiempo extra, Messi aparece donde más vale: a cuatro metros de la portería, con cero punto cuarenta y nueve de equis ge. Tres a dos.",
+        "c2": "En el ciento dieciocho, una mano de Montiel en el área. Mbappé anota otro penal: su tercer gol. El primer hat-trick en una final desde mil novecientos sesenta y seis.",
+        "c2b": "Y Argentina tuvo para ganarla antes: Lautaro Martínez hizo cuatro tiros en el tiempo extra. Ninguno entró.",
+        "c3": "Y en el último minuto, la ocasión más clara que no entró: Kolo Muani, solo, con cero punto veintiocho. La ataja el Dibu Martínez."
+      },
+      "sub": {
+        "c1": "En el tiempo extra, Messi aparece donde más vale: a 4 metros, con xG 0.49. 3 a 2.",
+        "c2": "En el 118, mano de Montiel. Mbappé anota otro penal: su tercer gol, el primer hat-trick en una final desde 1966.",
+        "c3": "Y en el último minuto, la más clara que no entró: Kolo Muani, xG 0.28. La ataja el Dibu Martínez.",
+        "c2b": "Y Argentina tuvo para ganarla antes: Lautaro Martínez hizo 4 tiros en el tiempo extra. Ninguno entró."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "xg",
+      "capitulo": "¿Quién mereció ganar?",
+      "pantalla": "La gráfica completa de escalones del xG (episodio 2): Argentina 2.76 · Francia 2.27. Luego barras de xG en tres fases: 0'–36' (1.29 vs 0) · 36'–81' (0.26 vs 1.03) · 81' al final (1.21 vs 1.24).",
+      "voz": {
+        "x1": "Si sumamos todo el partido, Argentina generó dos punto setenta y seis de equis ge. Francia, dos punto veintisiete.",
+        "x2": "Pero mira cómo cambió por partes. Hasta el treinta y seis, todo fue de Argentina: uno punto veintinueve contra cero.",
+        "x2b": "Del treinta y seis al ochenta y uno, fue de Francia: uno punto cero tres contra cero punto veintiséis.",
+        "x2c": "Y del ochenta y uno al final, casi un empate perfecto: uno punto veintiuno contra uno punto veinticuatro.",
+        "x3": "Los datos dicen que fue un partido parejo, con momentos para cada uno. Por eso terminó tres a tres."
+      },
+      "sub": {
+        "x1": "En todo el partido: Argentina 2.76 de xG. Francia, 2.27.",
+        "x2": "Pero mira cómo cambió por partes. Hasta el 36, todo de Argentina: 1.29 contra 0.",
+        "x2b": "Del 36 al 81, de Francia: 1.03 contra 0.26.",
+        "x2c": "Y del 81 al final, casi un empate perfecto: 1.21 contra 1.24.",
+        "x3": "Los datos dicen: partido parejo, con momentos para cada uno. Por eso terminó 3 a 3."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "penales",
+      "capitulo": "Los penales",
+      "pantalla": "Fila de la tanda: Francia ✓ Mbappé · ✗ Coman (atajado) · ✗ Tchouaméni (afuera) · ✓ Kolo Muani; Argentina ✓ Messi · ✓ Dybala · ✓ Paredes · ✓ Montiel. Marcador 4–2. Al final, destacado: 'Montiel: cometió el penal del 118… y metió el que ganó el Mundial'.",
+      "voz": {
+        "n1": "Y llegaron los penales. Un penal vale cero punto setenta y ocho de equis ge: de cada cuatro, se espera que entren unos tres.",
+        "n2": "Argentina metió los cuatro: Messi, Dybala, Paredes y Montiel.",
+        "n3": "Francia, solo dos. El Dibu le atajó a Coman, y Tchouaméni la mandó afuera.",
+        "n3b": "Y no fue casualidad: en todo el partido, el Dibu ya había hecho dos atajadas. Con la de la tanda, fueron tres.",
+        "n4": "Y el último penal lo pateó Montiel. El mismo que había cometido la mano del tres a tres. Esta vez no falló: Argentina, campeona del mundo."
+      },
+      "sub": {
+        "n1": "Y llegaron los penales. Un penal vale 0.78 de xG: de cada 4, se espera que entren unos 3.",
+        "n4": "El último lo pateó Montiel, el de la mano del 3 a 3. Esta vez no falló: Argentina, campeona del mundo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "Tu turno: con Python",
+      "pantalla": "Editor con 3 líneas (ev = eventos de la final): tiros = ev[(ev.type == 'Shot') & (ev.period < 5)] / fase = pd.cut(tiros.minute, [0, 36, 81, 130], right=False) / tiros.groupby([fase, 'team']).shot_statsbomb_xg.sum() → la tabla de las tres fases.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Tomas los tiros sin la tanda de penales, los cortas en fases por minuto, y sumas el equis ge de cada equipo.",
+        "y3": "Cambia los minutos, y cuentas cualquier partido por capítulos."
+      },
+      "sub": {
+        "y2": "Tomas los tiros sin la tanda, los cortas en fases por minuto y sumas el xG de cada equipo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "repaso",
+      "capitulo": "Lo que aprendimos",
+      "pantalla": "Mosaico de 10 tarjetas, una por episodio, que se iluminan una a una: eventos · xG · mapa de tiros · red de pases · presión · mapa de calor · xA · radares · scouting · la final.",
+      "voz": {
+        "r1": "En diez episodios convertimos un partido en datos, y aprendimos a leerlos.",
+        "r2": "El equis ge para medir ocasiones. Los mapas de tiros y de calor para ver dónde pasa el juego. Las redes de pases para entender a un equipo. La presión, el equis a, los radares, y cómo buscar jugadores.",
+        "r3": "Y todo con datos abiertos, y unas pocas líneas de Python. Lo mismo que usan los analistas de los clubes, en tus manos.",
+        "r4": "Si te perdiste alguno, empieza por el primero: ahí convertimos esta misma final en cuatro mil cuatrocientos siete datos."
+      },
+      "sub": {
+        "r2": "El xG para medir ocasiones. Mapas de tiros y de calor. Redes de pases. La presión, el xA, los radares y cómo buscar jugadores.",
+        "r4": "Si te perdiste alguno, empieza por el primero: ahí convertimos esta misma final en 4,407 datos."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'FIN DE LA SERIE · ¿Qué serie sigue?' con la pregunta para comentarios; luego el cierre estándar. Mitad derecha libre para la pantalla final (lista completa de la serie).",
+      "voz": {
+        "z1": "Gracias por acompañar la serie. Dime en los comentarios qué serie quieres ver después.",
+        "z1b": "Los diez episodios están en una lista, en orden.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20,
+      "sub": {
+        "z1b": "Los 10 episodios están en una lista, en orden."
+      }
+    }
+  ]
+}
