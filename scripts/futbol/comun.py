@@ -86,7 +86,9 @@ CORTOS = {
     "Aurélien Djani Tchouaméni": "Tchouaméni", "Olivier Giroud": "Giroud", "Kylian Mbappé Lottin": "Mbappé",
     "Alexis Mac Allister": "Mac Allister", "Ángel Fabián Di María Hernández": "Di María",
     "Cody Mathès Gakpo": "Gakpo", "Richarlison de Andrade": "Richarlison", "Youssef En-Nesyri": "En-Nesyri",
-    "Mehdi Taremi": "Taremi", "Alvaro Borja Morata Martín": "Morata", "Gonçalo Matias Ramos": "Gonçalo Ramos",
+    "Mehdi Taremi": "Taremi", "Kingsley Coman": "Coman", "Paulo Bruno Exequiel Dybala": "Dybala",
+    "Leandro Daniel Paredes": "Paredes", "Randal Kolo Muani": "Kolo Muani", "Gonzalo Ariel Montiel": "Montiel",
+    "Lautaro Javier Martínez": "Lautaro", "Marcus Thuram": "Thuram", "Emiliano Martínez": "Dibu Martínez", "Alvaro Borja Morata Martín": "Morata", "Gonçalo Matias Ramos": "Gonçalo Ramos",
 }
 
 

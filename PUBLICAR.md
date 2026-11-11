@@ -129,3 +129,27 @@ Títulos: «Tema | Fútbol con Datos #N», máximo 60 caracteres.
 **#:** #cienciadedatos #futbol #mundial2022 #python #analisisdedatos
 **Comentario fijado:** ¿Qué dos jugadores quieres que comparemos con un radar? 👇
 **Short relacionado:** Mates1-Mediana (tarjeta en 01:13). **Pantalla final:** episodio 7 + lista.
+
+## 09 · Scouting: el gemelo de Enzo (4:47)
+**Título:** Cómo fichan los clubes con datos | Fútbol con Datos #9 (54)
+**Alternativa:** El gemelo de Enzo Fernández | Fútbol con Datos #9 (49)
+**Miniatura:** `Mini-09-Scouting` → "€121M · ¿SU GEMELO?" con "0.67 similitud" al centro; siluetas genéricas celeste (24) y roja de Croacia (8)
+**Voz:** alex_nicola · **Datos:** StatsBomb Open Data, Mundial 2022 (52 mediocampistas con 270+ min). Logo en pantalla.
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
+**Descripción:** `videos/09-scouting/descripcion.txt` (sin código; remite al 04:11).
+**#:** #cienciadedatos #futbol #scouting #python #mundial2022
+**Comentario fijado:** ¿De qué jugador quieres que busquemos su gemelo estadístico? 👇
+**Shorts relacionados:** Mates3-Normal (tarjeta en 01:30, puntaje z) y Mates7-Vectores (tarjeta en 01:52). **Pantalla final:** episodio 8 + lista.
+**Fuera de StatsBomb:** fichaje de 121 M€ (Chelsea, enero 2023), mejor jugador joven, edades (Kovačić 28, Enzo 21); se indica en pantalla.
+
+## 10 · La final, con datos (4:31)
+**Título:** Analizo la final del Mundial | Fútbol con Datos #10 (51)
+**Alternativa:** Argentina 3–3 Francia: ¿quién mereció? | Fútbol con Datos #10 (58)
+**Miniatura:** `Mini-10-Final` → "3–3 ¿QUIÉN MERECÍA?" con xG 2.76 · 2.27; siluetas genéricas celeste y azul marino frente a frente
+**Voz:** alex_nicola · **Datos:** StatsBomb Open Data, final del Mundial 2022. Logo en pantalla.
+**Monetización:** NO monetizar hasta tener permiso escrito de StatsBomb.
+**Descripción:** `videos/10-final/descripcion.txt` (sin código; remite al 03:21).
+**#:** #cienciadedatos #futbol #mundial2022 #messi #python
+**Comentario fijado:** Terminó la serie 🙌 ¿Qué serie quieres ver después? Te leo 👇
+**Short relacionado:** Short6-StatsBomb (cierra con la misma final del #1). **Pantalla final:** episodio 1 + lista completa de la serie.
+**Nota:** el subtítulo de pases del 36' al 80' quedó en 274 contra 237 (el guion decía 234; el dato recalculado es 237).

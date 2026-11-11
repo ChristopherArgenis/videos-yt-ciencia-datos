@@ -1,0 +1,29 @@
+Cómo fichan los clubes con datos: buscamos al gemelo estadístico de Enzo Fernández, el fichaje de 121 millones del Chelsea, entre 52 mediocampistas del Mundial 2022.
+Aprende scouting con datos: estadísticas por 90 minutos, puntaje z y similitud coseno, con datos reales y Python.
+
+Episodio 9 de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Convertimos a cada mediocampista en un vector de 12 estadísticas, las ponemos en la misma escala y medimos quién juega más parecido a Enzo. El resultado: Mateo Kovačić, de Croacia. Y también vemos lo que los datos no ven.
+
+Capítulos:
+00:00 El fichaje de 121 millones
+00:35 Paso 1: el perfil de Enzo
+01:06 Paso 2: comparar justo
+01:50 Paso 3: similitud coseno
+02:21 El gemelo de Enzo
+03:06 Enzo contra Kovačić
+03:40 Lo que los datos no ven
+04:11 Tu turno: con Python
+04:27 Cierre
+
+💻 El código (pandas y scikit-learn) aparece en el video en el 04:11.
+📊 Puntaje z: mira el Short del canal sobre la distribución normal. Similitud coseno: el Short sobre vectores y similitud.
+
+Datos: StatsBomb Open Data (Hudl StatsBomb), github.com/statsbomb/open-data
+El análisis es propio y no representa la opinión de StatsBomb. Mediocampistas con 270+ minutos; sin tandas de penales. El precio del fichaje, el premio y las edades son datos públicos, no de StatsBomb.
+
+Episodio anterior: Comparar jugadores con radares | Fútbol con Datos #8
+Próximo episodio: Analizo la final del Mundial | Fútbol con Datos #10
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #scouting #python #mundial2022

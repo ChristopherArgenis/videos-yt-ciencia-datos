@@ -12,6 +12,8 @@ import {
   MiniFutbol06,
   MiniFutbol07,
   MiniFutbol08,
+  MiniFutbol09,
+  MiniFutbol10,
   MiniPlantilla,
 } from "./miniaturas/Miniaturas";
 import { V01, V01FutbolDatos } from "./videos/V01FutbolDatos";
@@ -22,6 +24,8 @@ import { V05, V05Presion } from "./videos/V05Presion";
 import { V06, V06MapasCalor } from "./videos/V06MapasCalor";
 import { V07, V07Xa } from "./videos/V07Xa";
 import { V08, V08Radares } from "./videos/V08Radares";
+import { V09, V09Scouting } from "./videos/V09Scouting";
+import { V10, V10Final } from "./videos/V10Final";
 
 // Cada video largo: <Composition id="NN-Nombre"> con la duración que sale de su guion.
 // Cada miniatura: <Still id="Mini-NN-Nombre"> de 1280×720.
@@ -101,6 +105,22 @@ export const RemotionRoot: React.FC = () => (
         width={W}
         height={H}
       />
+      <Composition
+        id="09-Scouting"
+        component={V09Scouting}
+        durationInFrames={planificar(V09).total}
+        fps={FPS}
+        width={W}
+        height={H}
+      />
+      <Composition
+        id="10-Final"
+        component={V10Final}
+        durationInFrames={planificar(V10).total}
+        fps={FPS}
+        width={W}
+        height={H}
+      />
     </Folder>
     <Folder name="Miniaturas">
       <Still
@@ -154,6 +174,18 @@ export const RemotionRoot: React.FC = () => (
       <Still
         id="Mini-08-Radares"
         component={MiniFutbol08}
+        width={MINI_W}
+        height={MINI_H}
+      />
+      <Still
+        id="Mini-09-Scouting"
+        component={MiniFutbol09}
+        width={MINI_W}
+        height={MINI_H}
+      />
+      <Still
+        id="Mini-10-Final"
+        component={MiniFutbol10}
         width={MINI_W}
         height={MINI_H}
       />

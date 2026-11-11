@@ -1,0 +1,29 @@
+Analizo la final del Mundial 2022, Argentina vs Francia, solo con datos: xG por fases, el cambio del minuto 41, los 95 segundos de Mbappé y los penales.
+¿Quién mereció ganar la mejor final de la historia? Lo respondemos con xG, presiones, pases y Python.
+
+Episodio 10 y final de "Fútbol con Datos", la serie para aprender ciencia de datos analizando fútbol real. Contamos la final en tres fases: Argentina dominó hasta el 36, Francia del 36 al 81, y desde ahí fue casi un empate perfecto de xG. Al final, un repaso de todo lo que aprendimos en la serie.
+
+Capítulos:
+00:00 La mejor final, en datos
+00:26 0' a 36': Argentina arrasa
+00:58 41' a 81': el cambio y 95 segundos
+01:30 Tiempo extra: Messi y Mbappé
+02:07 ¿Quién mereció ganar?
+02:45 Los penales
+03:21 Tu turno: con Python
+03:36 Lo que aprendimos
+04:11 Cierre
+
+💻 El código (pandas) para calcular el xG por fases aparece en el video en el 03:21.
+📊 ¿Empiezas la serie? El episodio 1 convierte esta misma final en 4,407 datos.
+
+Datos: StatsBomb Open Data (Hudl StatsBomb), github.com/statsbomb/open-data
+El análisis es propio y no representa la opinión de StatsBomb. xG sin la tanda de penales. El dato del hat-trick en una final (el primero desde 1966) es histórico, no de StatsBomb.
+
+Episodio anterior: Cómo fichan los clubes con datos | Fútbol con Datos #9
+Serie completa: lista de reproducción "Fútbol con Datos".
+
+Suscríbete a @UniversoCienciaDatos para más ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#cienciadedatos #futbol #mundial2022 #messi #python

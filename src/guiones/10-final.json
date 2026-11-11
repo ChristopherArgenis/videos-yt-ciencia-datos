@@ -2,7 +2,7 @@
   "_nota": "Fútbol con Datos #10 (final de la serie). StatsBomb Open Data, final del Mundial 2022 (partido 3869685). Fases por minuto de juego; xG incluye penales de jugada (no la tanda). Hat-trick de Mbappé: primero en una final desde 1966 (dato histórico, no de StatsBomb).",
   "id": "10-final",
   "titulo": "Analizo la final del Mundial | Fútbol con Datos #10",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/tension.wav",
   "voz": "alex_nicola",
   "acento": "#3ddc84",
@@ -53,7 +53,7 @@
     {
       "id": "fase2",
       "capitulo": "41' a 81': el cambio y 95 segundos",
-      "pantalla": "La red de pases de Francia antes y después del 41' (episodio 4). Contador de pases del 36' al 80': Francia 274 vs Argentina 234. Luego el reloj: 80' penal de Mbappé (Kolo Muani lo provoca) y 81' volea (xG 0.10), con '95 segundos' entre los dos. Marcador 2–2.",
+      "pantalla": "La red de pases de Francia antes y después del 41' (episodio 4). Contador de pases del 36' al 80': Francia 274 vs Argentina 237. Luego el reloj: 80' penal de Mbappé (Kolo Muani lo provoca) y 81' volea (xG 0.10), con '95 segundos' entre los dos. Marcador 2–2.",
       "voz": {
         "b1": "En el cuarenta y uno, Deschamps hace el doble cambio que vimos en las redes de pases: entran Kolo Muani y Thuram.",
         "b2": "Y Francia empieza a tener el balón: del minuto treinta y seis al ochenta dio más pases que Argentina.",
@@ -63,7 +63,7 @@
       },
       "sub": {
         "b1": "En el 41, el doble cambio que vimos en las redes de pases: entran Kolo Muani y Thuram.",
-        "b2": "Y Francia toma el balón: del 36 al 80 dio más pases que Argentina (274 contra 234).",
+        "b2": "Y Francia toma el balón: del 36 al 80 dio más pases que Argentina (274 contra 237).",
         "b3": "En el 80, Kolo Muani, uno de los que entraron, provoca un penal. Mbappé lo anota.",
         "b4": "Y 95 segundos después, la volea de Mbappé: un tiro de xG 0.10.",
         "b5": "En menos de dos minutos, la final pasó de 2 a 0, a 2 a 2."

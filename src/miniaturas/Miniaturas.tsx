@@ -1046,3 +1046,106 @@ export const MiniFutbol08: React.FC = () => (
     </div>
   </AbsoluteFill>
 );
+
+const ROJO_CRO = "#d8262f"; // Croacia: rojo de su camiseta a cuadros
+
+/** Fondo partido en diagonal con dos degradados. */
+const FondoDuelo: React.FC<{ id: string; a: [string, string]; b: [string, string] }> = ({ id, a, b }) => (
+  <svg width={1280} height={720} style={{ position: "absolute", inset: 0 }}>
+    <defs>
+      <linearGradient id={`${id}a`} x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor={a[0]} />
+        <stop offset="1" stopColor={a[1]} />
+      </linearGradient>
+      <linearGradient id={`${id}b`} x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0" stopColor={b[0]} />
+        <stop offset="1" stopColor={b[1]} />
+      </linearGradient>
+    </defs>
+    <polygon points="0,0 720,0 560,720 0,720" fill={`url(#${id}a)`} />
+    <polygon points="720,0 1280,0 1280,720 560,720" fill={`url(#${id}b)`} />
+  </svg>
+);
+
+/** #9 Scouting: "€121M" contra su gemelo estadístico (siluetas genéricas, sin rostros). */
+export const MiniFutbol09: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <FondoDuelo id="g9" a={["#4aa8e8", "#14466f"]} b={["#e0414a", "#5a0d14"]} />
+    <div style={{ position: "absolute", left: 40, bottom: -30 }}>
+      <Jugador color={CELESTE} rayas numero="24" alto={500} />
+    </div>
+    <div style={{ position: "absolute", right: 40, bottom: -30 }}>
+      <Jugador color={ROJO_CRO} halo="#ffffff" espejo numero="8" alto={500} />
+    </div>
+    <div style={{ position: "absolute", left: 40, top: 36, display: "flex", flexDirection: "column", gap: 6 }}>
+      <Nombre color="#ffd166" size={130}>
+        €121M
+      </Nombre>
+      <Nombre color={CELESTE} size={64}>
+        ENZO
+      </Nombre>
+    </div>
+    <div style={{ position: "absolute", right: 40, top: 36, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
+      <Nombre color="#ffffff" size={100}>
+        ¿SU
+      </Nombre>
+      <Nombre color="#ffffff" size={100}>
+        GEMELO?
+      </Nombre>
+    </div>
+    <div
+      style={{
+        position: "absolute",
+        left: 640 - 150,
+        top: 300,
+        width: 300,
+        height: 300,
+        borderRadius: 150,
+        background: "#0b1020ee",
+        border: "8px solid #ffd166",
+        boxShadow: "0 0 60px #ffd16688",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <span style={{ fontFamily: "Poppins", fontWeight: 900, fontSize: 110, color: "#ffd166", lineHeight: 1 }}>0.67</span>
+      <span style={{ fontFamily: "Poppins", fontWeight: 800, fontSize: 30, color: "#fff" }}>similitud</span>
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 20, display: "flex", justifyContent: "center" }}>
+      <ChipMini bg={C.green}>FÚTBOL CON DATOS #9</ChipMini>
+    </div>
+  </AbsoluteFill>
+);
+
+/** #10 La final: 3–3 y la pregunta, con las dos siluetas frente a frente. */
+export const MiniFutbol10: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <FondoDuelo id="g10" a={["#4aa8e8", "#14466f"]} b={["#2a3f8f", "#0a1233"]} />
+    <div style={{ position: "absolute", left: 20, bottom: -40 }}>
+      <Jugador color={CELESTE} rayas alto={520} />
+    </div>
+    <div style={{ position: "absolute", right: 20, bottom: -40 }}>
+      <Jugador color={MARINO} halo="#5b7cff" espejo alto={520} />
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, top: 40, display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+      <Nombre color="#ffffff" size={250}>
+        3–3
+      </Nombre>
+      <Nombre color="#ffd166" size={88}>
+        ¿QUIÉN MERECÍA?
+      </Nombre>
+    </div>
+    <div style={{ position: "absolute", left: 640 - 210, top: 440, display: "flex", gap: 20 }}>
+      <MarcadorMini texto="xG 2.76" color={CELESTE} />
+      <MarcadorMini texto="xG 2.27" color="#5b7cff" />
+    </div>
+    <div style={{ position: "absolute", left: 640 - 42, top: 525 }}>
+      <Balon size={84} />
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 20, display: "flex", justifyContent: "center" }}>
+      <ChipMini bg={C.green}>FÚTBOL CON DATOS #10 · FINAL</ChipMini>
+    </div>
+  </AbsoluteFill>
+);

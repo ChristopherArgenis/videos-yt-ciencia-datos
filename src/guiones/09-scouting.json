@@ -2,7 +2,7 @@
   "_nota": "Fútbol con Datos #9. StatsBomb Open Data, Mundial 2022 (sin tanda de penales). Grupo: 52 mediocampistas (posición más frecuente) con 270+ min. 12 estadísticas por 90 min, estandarizadas (puntaje z) y similitud coseno con Enzo Fernández. Pase hacia adelante = pase completo que avanza 10+ yardas y termina en campo rival. El fichaje de Enzo (Chelsea, enero de 2023, 121 millones de euros, récord en Inglaterra en ese momento) no sale de los datos.",
   "id": "09-scouting",
   "titulo": "Cómo fichan los clubes con datos | Fútbol con Datos #9",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/curiosa.wav",
   "voz": "alex_nicola",
   "acento": "#3ddc84",
