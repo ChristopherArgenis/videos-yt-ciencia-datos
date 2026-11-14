@@ -25,7 +25,8 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
 
 ## Reglas del dueño (heredadas)
 - **Todo 100 % gratuito.** Nada con costo, créditos o prueba que luego cobra. Si hay duda, preguntar.
-  Aprobadas: Remotion, Kokoro local, Whisper local, ffmpeg, Python (numpy/scipy, scikit-learn).
+  Aprobadas: Remotion, Kokoro local, Whisper local, ffmpeg, Python (numpy/scipy, scikit-learn),
+  KaTeX (fórmulas en pantalla) y SymPy (verificar cuentas y código en pantalla).
   No usar: ElevenLabs, HeyGen, Remotion Lambda, servicios en la nube de pago.
 - Sin cara. Datos reales con fuente en pantalla; ejemplos marcados como "Ejemplo simplificado".
 - Nada con derechos de autor ni imágenes/audio de internet.
@@ -67,3 +68,9 @@ Este repo ya tiene el motor de los Shorts adaptado a 16:9 (ver `README.md`). No 
 Cuando se pida un curso o serie: decidir si conviene serie o video único; proponer episodios,
 orden, nivel, palabra clave por episodio, lista de reproducción, enlaces entre videos
 (pantalla final, tarjetas, Shorts relacionados) y calendario de publicación.
+
+## Curso Cálculo Diferencial (`series/calculo.md`)
+- Títulos «Tema | Cálculo Diferencial #N». Plantilla pedagógica de `series/calculo.md`.
+- **El énfasis es la matemática** (video general, sirve a cualquier estudiante). La parte de Ciencia de Datos
+  es un **plus** corto (~30 s, chip "Plus: Ciencia de Datos"), no el centro del video.
+- Toda cuenta del guion se verifica con SymPy antes de mostrarla.

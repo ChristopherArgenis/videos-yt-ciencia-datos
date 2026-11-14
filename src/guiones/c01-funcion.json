@@ -1,0 +1,219 @@
+{
+  "_nota": "Cálculo Diferencial #1. Énfasis matemático; la Ciencia de Datos va como plus corto. Ejemplos con números inventados (taxi, casa) marcados como 'Ejemplo simplificado'. Cuentas verificadas con SymPy. Fórmulas con KaTeX.",
+  "id": "c01-funcion",
+  "titulo": "Qué es una función | Cálculo Diferencial #1",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿Es una función?",
+      "pantalla": "Una máquina dibujada (caja con embudo de entrada y salida). Entra 3 → sale 9. Entra −3 → sale 9. Pregunta grande: '¿Es una función?'. Luego otra máquina: entra 9 → salen 3 y −3, con un signo de pregunta.",
+      "voz": {
+        "g1": "Una máquina: le metes un tres, y sale un nueve. Le metes menos tres, y también sale un nueve.",
+        "g2": "Otra máquina: le metes un nueve, y salen dos números: tres, y menos tres.",
+        "g3": "Una de las dos es una función. La otra, no. ¿Cuál?",
+        "g4": "Al final de este video lo vas a saber. Y vas a entender la idea sobre la que se construye todo el cálculo."
+      },
+      "sub": {
+        "g1": "Una máquina: le metes 3, y sale 9. Le metes −3, y también sale 9.",
+        "g2": "Otra máquina: le metes 9, y salen dos números: 3 y −3."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #1' con el mapa de los 12 temas (Función → Límites → … → Descenso de gradiente); se ilumina 'Función'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio uno. Un curso desde cero, paso a paso.",
+        "s2": "Solo necesitas álgebra básica: sustituir y hacer operaciones."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "objetivo",
+      "capitulo": "Objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas que se marcan: 1. Decir qué es una función · 2. Evaluarla · 3. Reconocerla en una gráfica.",
+      "voz": {
+        "o1": "Al final de este video vas a poder hacer tres cosas.",
+        "o2": "Decir qué es una función. Evaluarla, o sea, calcular su resultado. Y reconocer en una gráfica si algo es o no es una función."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "que_es",
+      "capitulo": "¿Qué es una función?",
+      "pantalla": "La máquina otra vez: entrada (azul) → regla → salida (verde). Definición en tarjeta: 'A cada entrada le corresponde exactamente UNA salida'. Ejemplos de la vida diaria con flechas: minutos hablando → costo de la llamada; lado del cuadrado → área; hora del día → temperatura.",
+      "voz": {
+        "q1": "Una función es una regla que transforma una cosa en otra.",
+        "q2": "Entra un valor, la regla hace su trabajo, y sale un resultado.",
+        "q3": "Pero hay una condición, y es la más importante de todo el video: a cada entrada le corresponde exactamente una salida. Nunca dos.",
+        "q4": "Está en todas partes. El lado de un cuadrado determina su área. La hora del día determina la temperatura. Y los minutos de una llamada determinan cuánto pagas.",
+        "q5": "Siempre que una cantidad depende de otra, hay una función."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "notacion",
+      "capitulo": "Cómo se escribe: f(x)",
+      "pantalla": "Fórmula KaTeX grande: f(x) = 2x + 3, con colores: f (blanco, 'el nombre'), x (azul, 'la entrada'), f(x) (verde, 'la salida'), 2x + 3 (amarillo, 'la regla'). Ejemplo simplificado: taxi C(k) = 30 + 10k.",
+      "voz": {
+        "n1": "En matemáticas, una función se escribe así: efe de equis, igual a dos equis más tres.",
+        "n2": "Efe es el nombre de la función. Equis es la entrada. Y efe de equis es la salida: lo que resulta.",
+        "n3": "Y lo que está del otro lado del igual es la regla: qué hacerle a la entrada.",
+        "n4": "Un ejemplo: un taxi cobra treinta pesos por subirte, y diez por cada kilómetro. Su función es: ce de ka, igual a treinta más diez ka.",
+        "n5": "La letra cambia, pero la idea es la misma: una entrada, una regla, una salida."
+      },
+      "sub": {
+        "n1": "En matemáticas, una función se escribe así: f(x) = 2x + 3.",
+        "n2": "f es el nombre de la función. x es la entrada. Y f(x) es la salida: lo que resulta.",
+        "n4": "Un taxi cobra 30 pesos por subirte y 10 por kilómetro. Su función: C(k) = 30 + 10k.",
+        "n5": "La letra cambia, pero la idea es la misma: entrada, regla, salida."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "evaluar",
+      "capitulo": "Cómo se calcula: evaluar",
+      "pantalla": "Ejemplo resuelto en 3 pasos con KaTeX: 1) f(4) = 2(4) + 3 → la x se reemplaza por 4 (resaltado azul). 2) = 8 + 3. 3) = 11 (verde). Luego taxi: C(5) = 30 + 10·5 = 80 pesos. Al final, tabla x: 0, 1, 2, 3 → f(x): 3, 5, 7, 9.",
+      "voz": {
+        "e1": "Calcular una función se llama evaluarla. Y se hace en tres pasos.",
+        "e2": "Paso uno: cambia la equis por el número. Si quieres efe de cuatro, escribes dos por cuatro, más tres.",
+        "e3": "Paso dos: haz las operaciones. Dos por cuatro es ocho, más tres.",
+        "e4": "Paso tres: el resultado. Efe de cuatro es igual a once.",
+        "e5": "Con el taxi: un viaje de cinco kilómetros cuesta treinta más diez por cinco. Ochenta pesos.",
+        "e6": "Si evaluamos varias entradas, tenemos una tabla: cero da tres, uno da cinco, dos da siete, tres da nueve."
+      },
+      "sub": {
+        "e2": "Paso 1: cambia la x por el número. Para f(4): 2 · 4 + 3.",
+        "e3": "Paso 2: haz las operaciones. 2 · 4 = 8, más 3.",
+        "e4": "Paso 3: el resultado. f(4) = 11.",
+        "e5": "Con el taxi: 5 km cuestan 30 + 10 · 5 = 80 pesos.",
+        "e6": "Varias entradas forman una tabla: 0 → 3, 1 → 5, 2 → 7, 3 → 9."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "grafica",
+      "capitulo": "La gráfica",
+      "pantalla": "Plano cartesiano: los puntos de la tabla (0,3), (1,5), (2,7), (3,9) aparecen uno a uno; luego se unen en la recta y = 2x + 3. Etiquetas: eje horizontal = entrada x (azul), eje vertical = salida f(x) (verde).",
+      "voz": {
+        "r1": "Cada fila de la tabla es un punto: la entrada en el eje horizontal, y la salida en el vertical.",
+        "r2": "Si unimos todos los puntos posibles, aparece la gráfica de la función. En este caso, una recta.",
+        "r3": "La gráfica es la función entera en un dibujo: de un vistazo ves qué sale para cada entrada."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "linea_vertical",
+      "capitulo": "La prueba de la línea vertical",
+      "pantalla": "Una línea vertical amarilla barre la gráfica de una parábola y = x²: toca un punto a la vez ✓. Luego barre un círculo x² + y² = 9: en x = 0 toca dos puntos (0, 3) y (0, −3) ✗. Vuelven las dos máquinas del inicio: x² ✓ función; 'raíz con ±' ✗ no es función.",
+      "voz": {
+        "v1": "¿Cómo sabes si una gráfica es una función? Con la prueba de la línea vertical.",
+        "v2": "Pasa una línea vertical por toda la gráfica. Si en algún lugar toca dos puntos, no es función: esa entrada tendría dos salidas.",
+        "v3": "La parábola, equis al cuadrado, pasa la prueba. El círculo, no: en equis igual a cero toca dos puntos, tres y menos tres.",
+        "v4": "Y así respondemos la pregunta del inicio. La máquina que convierte tres y menos tres en nueve es una función: equis al cuadrado. Que dos entradas den la misma salida está permitido.",
+        "v5": "La que convierte nueve en tres y en menos tres, no lo es: una entrada con dos salidas rompe la regla."
+      },
+      "sub": {
+        "v3": "La parábola, x², pasa la prueba. El círculo, no: en x = 0 toca dos puntos, 3 y −3.",
+        "v4": "La pregunta del inicio: la máquina que convierte 3 y −3 en 9 sí es función: x². Dos entradas con la misma salida está permitido.",
+        "v5": "La que convierte 9 en 3 y en −3, no: una entrada con dos salidas rompe la regla."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "dominio",
+      "capitulo": "Dominio y rango",
+      "pantalla": "Dos tarjetas. DOMINIO (azul): 'qué entradas se permiten'. Ejemplos KaTeX: 1/x → x ≠ 0 (no se divide entre cero); √x → x ≥ 0. RANGO (verde): 'qué salidas pueden salir'. Ejemplo: x² → solo valores ≥ 0, con la parábola sombreada sobre el eje.",
+      "voz": {
+        "d1": "Dos palabras más que vas a escuchar todo el curso: dominio y rango.",
+        "d2": "El dominio son las entradas permitidas. En uno entre equis, el cero no se permite, porque no se puede dividir entre cero. Y en la raíz cuadrada de equis, solo entran números mayores o iguales a cero.",
+        "d3": "El rango son las salidas que pueden salir. Equis al cuadrado nunca da un número negativo: su rango es del cero hacia arriba."
+      },
+      "sub": {
+        "d2": "Dominio: las entradas permitidas. En 1/x, el 0 no entra (no se divide entre cero). En √x, solo x ≥ 0.",
+        "d3": "Rango: las salidas posibles. x² nunca es negativa: su rango es de 0 hacia arriba."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "tipos",
+      "capitulo": "Para qué se usan: tipos de funciones",
+      "pantalla": "Tres mini gráficas con su fórmula KaTeX y un uso: LINEAL f(x) = 2x + 3 · 'crece siempre igual' · el taxi. CUADRÁTICA f(x) = x² · 'curva que baja y sube' · área, la trayectoria de un balón. EXPONENCIAL f(x) = 2ˣ · 'crece cada vez más rápido' · intereses, contagios.",
+      "voz": {
+        "t1": "Las funciones sirven para describir cómo cambia el mundo. Y hay familias que vas a ver una y otra vez.",
+        "t2": "La lineal crece siempre al mismo ritmo, como el taxi: cada kilómetro suma lo mismo.",
+        "t3": "La cuadrática forma una curva: describe áreas, y la trayectoria de un balón en el aire.",
+        "t4": "Y la exponencial crece cada vez más rápido: así crecen los intereses de una deuda, o un contagio.",
+        "t5": "Reconocer la forma de una función ya te dice mucho de lo que describe."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Puntos de casas (tamaño vs precio, 'Ejemplo simplificado') y una recta que pasa entre ellos: ŷ = f(x). Etiqueta: 'un modelo es una función'.",
+      "voz": {
+        "p1": "Un plus, si te interesa la ciencia de datos.",
+        "p2": "Un modelo que predice el precio de una casa es una función: entra el tamaño, y sale un precio estimado.",
+        "p3": "Entrenar un modelo es buscar la mejor función para los datos. Y para encontrarla, se usa justo lo que veremos en este curso: derivadas."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 3 líneas: def f(x): return 2*x + 3 / f(4) → 11 / f(np.array([0, 1, 2, 3])) → [3 5 7 9].",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Defines la regla una vez, y la evalúas en un número, o en muchos a la vez.",
+        "y3": "Con la tabla de antes, la computadora hace en un instante lo que hicimos a mano: cero da tres, uno da cinco, dos da siete, tres da nueve."
+      },
+      "pausa": 1.4,
+      "sub": {
+        "y3": "Lo que hicimos a mano, en un instante: 0 → 3, 1 → 5, 2 → 7, 3 → 9."
+      }
+    },
+    {
+      "id": "error",
+      "capitulo": "Error común",
+      "pantalla": "Sticker '¡CUIDADO!'. f(x) ≠ f · x. Luego KaTeX: f(2 + 3) = f(5) = 13, pero f(2) + f(3) = 7 + 9 = 16. Resultado: ≠ en rojo.",
+      "voz": {
+        "x1": "Cuidado con un error muy común: efe de equis no significa efe por equis. Los paréntesis aquí no multiplican: dicen a qué valor se le aplica la regla.",
+        "x2": "Y otro: efe de dos más tres no es lo mismo que efe de dos más efe de tres. El primero es efe de cinco: trece. El segundo es siete más nueve: dieciséis."
+      },
+      "sub": {
+        "x1": "Error común: f(x) no significa «f por x». El paréntesis dice a qué valor se le aplica la regla.",
+        "x2": "Y otro: f(2 + 3) no es f(2) + f(3). El primero es f(5) = 13. El segundo, 7 + 9 = 16."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': si f(x) = x² − 1, ¿cuánto vale f(3)? 'Respuesta en el próximo video · déjala en los comentarios'. Luego 3 tarjetas de resumen: 1. Función = a cada entrada, una sola salida. 2. Evaluar = cambiar x por el número y operar. 3. Gráfica: la prueba de la línea vertical.",
+      "voz": {
+        "w1": "Un reto: si efe de equis es igual a equis al cuadrado menos uno, ¿cuánto vale efe de tres? Déjalo en los comentarios. La respuesta, en el próximo video.",
+        "w2": "En resumen: una función le da a cada entrada una sola salida. Evaluar es cambiar la equis por el número, y operar. Y en una gráfica, la prueba de la línea vertical te dice si es función."
+      },
+      "sub": {
+        "w1": "Reto: si f(x) = x² − 1, ¿cuánto vale f(3)? Déjalo en los comentarios: la respuesta, en el próximo video."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #2 Límites: acercarse sin llegar'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio: los límites. Qué pasa cuando te acercas a un valor… sin llegar nunca.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
