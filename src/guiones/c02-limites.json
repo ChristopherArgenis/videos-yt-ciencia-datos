@@ -1,0 +1,211 @@
+{
+  "_nota": "Cálculo Diferencial #2. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #1: f(3) = 8.",
+  "id": "c02-limites",
+  "titulo": "Límites: acercarse sin llegar | Cálculo Diferencial #2",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿Cuánto vale en x = 2?",
+      "pantalla": "Fórmula KaTeX f(x) = (x² − 4)/(x − 2). Una calculadora dibujada: 'f(2) = ?' → pantalla 'ERROR' (0/0). Luego la gráfica: una recta con un hueco en x = 2, y el hueco brilla a la altura 4. Pregunta: '¿Error… o 4?'",
+      "voz": {
+        "g1": "Esta función: equis al cuadrado menos cuatro, entre equis menos dos. ¿Cuánto vale en equis igual a dos?",
+        "g2": "Si lo metes a la calculadora, da error: cero entre cero.",
+        "g3": "Pero si dibujas la gráfica, ves una recta, con un hueco justo ahí. Y el hueco está a la altura cuatro.",
+        "g4": "Entonces, ¿es error, o es cuatro? Para responder hace falta una idea nueva: el límite."
+      },
+      "sub": {
+        "g1": "Esta función: (x² − 4) / (x − 2). ¿Cuánto vale en x = 2?",
+        "g2": "En la calculadora, da error: 0 entre 0.",
+        "g3": "Pero la gráfica es una recta con un hueco justo ahí. Y el hueco está a la altura 4.",
+        "g4": "Entonces, ¿es error o es 4? Para responder hace falta una idea nueva: el límite."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #2' con el mapa de los 12 temas; se ilumina 'Límites'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio dos."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': función = a cada entrada, una sola salida. Luego 'RESPUESTA DEL RETO': f(x) = x² − 1 → f(3) = 3² − 1 = 9 − 1 = 8 (paso a paso, el 3 en azul y el 8 en verde).",
+      "voz": {
+        "r1": "En el episodio anterior vimos qué es una función: una regla que a cada entrada le da una sola salida.",
+        "r2": "Y el reto: si efe de equis es equis al cuadrado menos uno, efe de tres es tres al cuadrado, nueve, menos uno. Ocho. Si pusiste ocho, acertaste."
+      },
+      "sub": {
+        "r2": "El reto: si f(x) = x² − 1, entonces f(3) = 3² − 1 = 9 − 1 = 8. Si pusiste 8, acertaste."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Explicar qué es un límite · 2. Calcularlo (tres métodos) · 3. Saber cuándo no existe.",
+      "voz": {
+        "o1": "Al final de este video vas a poder explicar qué es un límite, calcularlo de tres formas, y saber cuándo no existe."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "que_es",
+      "capitulo": "¿Qué es un límite?",
+      "pantalla": "La gráfica con el hueco en (2, 4). Un punto azul se acerca a x = 2 por la izquierda (1.9, 1.99, 1.999) y otro por la derecha (2.1, 2.01, 2.001); en el eje vertical, sus salidas verdes se acercan a 4. Tabla de dos columnas que se llena a la par. Al final, la notación KaTeX: lím_{x→2} f(x) = 4.",
+      "voz": {
+        "q1": "Un límite responde una pregunta: ¿a qué valor se acerca una función, cuando la entrada se acerca a un número?",
+        "q2": "Acerquémonos a dos por la izquierda. Con uno punto nueve, la función da tres punto nueve. Con uno punto noventa y nueve, tres punto noventa y nueve. Con uno punto novecientos noventa y nueve, tres punto novecientos noventa y nueve.",
+        "q3": "Y por la derecha: dos punto uno da cuatro punto uno. Dos punto cero uno da cuatro punto cero uno.",
+        "q4": "Por los dos lados, la salida se acerca a cuatro. Nunca usamos el dos, solo nos acercamos.",
+        "q5": "Eso se escribe así: el límite, cuando equis tiende a dos, de efe de equis, es igual a cuatro.",
+        "q6": "La respuesta del inicio: en dos, la función no existe. Pero su límite, sí: es cuatro."
+      },
+      "sub": {
+        "q2": "Por la izquierda: 1.9 → 3.9 · 1.99 → 3.99 · 1.999 → 3.999",
+        "q3": "Por la derecha: 2.1 → 4.1 · 2.01 → 4.01",
+        "q4": "Por los dos lados, la salida se acerca a 4. Nunca usamos el 2: solo nos acercamos.",
+        "q5": "Se escribe: lím de f(x) cuando x → 2 es igual a 4.",
+        "q6": "La respuesta del inicio: en 2, la función no existe. Pero su límite sí: es 4."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "calcular",
+      "capitulo": "Cómo se calcula",
+      "pantalla": "Tres métodos en tarjetas numeradas. 1) TABLA (la de antes, en miniatura). 2) SUSTITUCIÓN DIRECTA: lím_{x→3} (2x + 1) = 2(3) + 1 = 7. 3) FACTORIZAR el 0/0: (x² − 4)/(x − 2) = (x − 2)(x + 2)/(x − 2) → se tachan los (x − 2) en amarillo → x + 2 → 2 + 2 = 4.",
+      "voz": {
+        "c1": "Hacer tablas siempre funciona, pero es lento. Hay dos métodos más rápidos.",
+        "c2": "El primero: sustitución directa. Si al cambiar la equis por el número sale un resultado normal, ese es el límite. El límite de dos equis más uno, cuando equis tiende a tres, es dos por tres más uno: siete.",
+        "c3": "El segundo es para cuando sale cero entre cero. Eso no es una respuesta: es una señal de que hay que simplificar.",
+        "c4": "Equis al cuadrado menos cuatro se factoriza como equis menos dos, por equis más dos.",
+        "c5": "Ahora se cancela el equis menos dos de arriba con el de abajo, y queda solo equis más dos.",
+        "c6": "Y ahí sí sustituimos: dos más dos, cuatro. El mismo resultado que la tabla, en tres pasos."
+      },
+      "sub": {
+        "c2": "Primero: sustitución directa. Si sale un número normal, ese es el límite. lím (2x + 1) con x → 3 = 2 · 3 + 1 = 7.",
+        "c3": "Segundo: cuando sale 0/0. No es una respuesta: es una señal de que hay que simplificar.",
+        "c4": "x² − 4 se factoriza como (x − 2)(x + 2).",
+        "c5": "Se cancela el (x − 2) de arriba con el de abajo, y queda x + 2.",
+        "c6": "Ahora sí sustituimos: 2 + 2 = 4. El mismo resultado que la tabla, en tres pasos."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "laterales",
+      "capitulo": "Límites laterales: cuándo no existe",
+      "pantalla": "Gráfica de f(x) = |x|/x: un escalón, −1 a la izquierda del 0 y +1 a la derecha (círculos abiertos en x = 0). Flecha azul por la izquierda → −1 (lím_{x→0⁻} = −1); flecha por la derecha → 1 (lím_{x→0⁺} = 1). Sello rojo: 'NO EXISTE'. Regla en tarjeta: 'izquierda = derecha → existe'.",
+      "voz": {
+        "l1": "Un límite existe solo si por la izquierda y por la derecha llegas al mismo lugar.",
+        "l2": "Mira esta función: valor absoluto de equis, entre equis. A la izquierda del cero siempre vale menos uno. A la derecha, siempre vale uno.",
+        "l3": "Acercándote por la izquierda llegas a menos uno. Por la derecha, a uno. No coinciden.",
+        "l4": "Entonces, el límite en cero no existe. Se dice que hay un salto."
+      },
+      "sub": {
+        "l2": "Esta función: |x| / x. A la izquierda del 0 siempre vale −1. A la derecha, siempre vale 1.",
+        "l3": "Por la izquierda llegas a −1. Por la derecha, a 1. No coinciden.",
+        "l4": "Entonces, el límite en 0 no existe: hay un salto."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "infinito",
+      "capitulo": "Límites al infinito",
+      "pantalla": "Gráfica de f(x) = 1/x. Hacia la derecha: tabla 10 → 0.1, 100 → 0.01, 1000 → 0.001 y la curva pegándose al eje: lím_{x→∞} 1/x = 0 (asíntota horizontal, línea punteada). Cerca del cero por la derecha la curva se dispara hacia arriba: lím_{x→0⁺} 1/x = ∞ (asíntota vertical).",
+      "voz": {
+        "i1": "Los límites también describen qué pasa a lo lejos.",
+        "i2": "Uno entre equis: con diez da cero punto uno. Con cien, cero punto cero uno. Con mil, cero punto cero cero uno.",
+        "i3": "Mientras más grande es equis, más se acerca a cero, sin tocarlo nunca. El límite cuando equis tiende a infinito es cero. Esa línea a la que se pega la curva se llama asíntota.",
+        "i4": "Y cerca del cero pasa lo contrario: la función crece sin parar. Su límite es infinito."
+      },
+      "sub": {
+        "i2": "1/x: con 10 da 0.1. Con 100, 0.01. Con 1000, 0.001.",
+        "i3": "Mientras más grande es x, más se acerca a 0 sin tocarlo. lím 1/x con x → ∞ = 0. Esa línea se llama asíntota.",
+        "i4": "Y cerca del 0 pasa lo contrario: la función crece sin parar. Su límite es ∞."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué sirven?",
+      "pantalla": "Un velocímetro dibujado: 'velocidad en un instante' = distancia / tiempo con el tiempo acercándose a 0. Flecha hacia el mapa del curso: 'Límite → #4 Derivada'.",
+      "voz": {
+        "u1": "¿Y para qué sirve todo esto? El velocímetro de un auto te dice la velocidad en un instante. Pero la velocidad es distancia entre tiempo, y en un instante, el tiempo es casi cero.",
+        "u2": "Para calcularla, hay que acercarse a ese cero sin llegar. Eso es un límite. Y es exactamente la idea de la derivada, que veremos en el episodio cuatro."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Curva de la sigmoide σ(x) = 1/(1 + e^(−x)) con asíntotas punteadas en 0 y en 1. Etiquetas: 'lím_{x→∞} σ(x) = 1', 'lím_{x→−∞} σ(x) = 0'. Texto: 'probabilidades entre 0 y 1'.",
+      "voz": {
+        "p1": "Un plus para ciencia de datos: muchos modelos que calculan probabilidades usan esta curva, la sigmoide.",
+        "p2": "Su límite hacia la derecha es uno, y hacia la izquierda, cero. Por eso siempre da un número entre cero y uno: una probabilidad, que nunca llega a estar segura del todo."
+      },
+      "sub": {
+        "p2": "Su límite hacia la derecha es 1, y hacia la izquierda, 0. Por eso siempre da un número entre 0 y 1: una probabilidad."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 3 líneas (SymPy): x = sp.symbols('x') / sp.limit((x**2 - 4)/(x - 2), x, 2) → 4 / sp.limit(1/x, x, sp.oo) → 0.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Con la librería SimPy, le dices la función y hacia dónde tiende equis, y te da el límite: cuatro, en el ejemplo del inicio.",
+        "y3": "Y con infinito también funciona: uno entre equis da cero."
+      },
+      "sub": {
+        "y2": "Con SymPy le das la función y hacia dónde tiende x, y te da el límite: 4, como al inicio.",
+        "y3": "Y con infinito también funciona: 1/x da 0."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Error común",
+      "pantalla": "Sticker '¡CUIDADO!'. Dos tarjetas: 1) 'El límite NO es el valor en el punto': f(2) no existe, pero lím = 4. 2) '0/0 no es 0 ni 1: es indeterminado' (con un signo de pregunta amarillo).",
+      "voz": {
+        "x1": "Cuidado con dos errores muy comunes. El primero: creer que el límite es el valor de la función en el punto. Aquí, efe de dos ni siquiera existe, y el límite es cuatro.",
+        "x2": "El segundo: pensar que cero entre cero es cero, o uno. No es ninguno. Es una indeterminación: una señal de que falta simplificar."
+      },
+      "sub": {
+        "x1": "Error 1: creer que el límite es el valor en el punto. Aquí f(2) ni existe, y el límite es 4.",
+        "x2": "Error 2: pensar que 0/0 es 0, o 1. No es ninguno: es una indeterminación, una señal de que falta simplificar."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': lím_{x→3} (x² − 9)/(x − 3) = ? 'Respuesta en el próximo video · déjala en los comentarios'. Luego 3 tarjetas de resumen: 1. Límite = a qué valor se acerca f(x), sin llegar · 2. Si sale 0/0, simplifica · 3. Existe solo si izquierda = derecha.",
+      "voz": {
+        "w1": "El reto: el límite, cuando equis tiende a tres, de equis al cuadrado menos nueve, entre equis menos tres. Una pista: sale cero entre cero. Déjalo en los comentarios.",
+        "w2": "En resumen: un límite es el valor al que se acerca una función, sin necesidad de llegar. Si sale cero entre cero, simplifica. Y el límite existe solo si por la izquierda y por la derecha llegas al mismo valor."
+      },
+      "sub": {
+        "w1": "Reto: lím de (x² − 9)/(x − 3) cuando x → 3. Pista: sale 0/0. Déjalo en los comentarios.",
+        "w2": "Resumen: un límite es a qué valor se acerca la función, sin llegar. Si sale 0/0, simplifica. Existe solo si izquierda y derecha coinciden."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #3 Continuidad'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio: la continuidad. Qué significa dibujar una función sin levantar el lápiz, y por qué importa tanto.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

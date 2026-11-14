@@ -160,6 +160,8 @@ Títulos: «Tema | Fútbol con Datos #N», máximo 60 caracteres.
 Títulos: «Tema | Cálculo Diferencial #N». Plantilla pedagógica (`series/calculo.md`); la matemática es el centro
 y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 
+**Descripción de la lista de reproducción:** `series/calculo_lista.txt`
+
 ## C01 · Qué es una función (6:09)
 **Título:** Qué es una función | Cálculo Diferencial #1 (43)
 **Alternativas:** Funciones matemáticas desde cero | Cálculo Diferencial #1 (55) · ¿Esto es una función? | Cálculo Diferencial #1 (45)

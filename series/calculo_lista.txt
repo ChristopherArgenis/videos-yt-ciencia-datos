@@ -1,0 +1,19 @@
+Curso de Cálculo Diferencial desde cero, en español: funciones, límites, continuidad, derivadas, máximos y mínimos, gradiente y descenso de gradiente. Solo necesitas álgebra básica.
+
+Cada video es una clase de unos 5 minutos con la misma estructura: qué es el concepto, cómo se calcula con un ejemplo resuelto paso a paso, qué significa el resultado, para qué se usa, el error más común y un reto para practicar (la respuesta llega en el siguiente video). Al final de cada clase, un plus: dónde aparece ese tema en la ciencia de datos y la inteligencia artificial.
+
+Temario (12 clases, en orden):
+1. Qué es una función
+2. Límites
+3. Continuidad
+4. Qué es la derivada
+5. Reglas de derivación
+6. Derivada exponencial y logaritmo
+7. Regla del producto y del cociente
+8. Regla de la cadena
+9. Máximos y mínimos
+10. Segunda derivada y concavidad
+11. Derivadas parciales y gradiente
+12. Descenso de gradiente: cómo aprende un modelo
+
+Nueva clase cada semana. Suscríbete a @UniversoCienciaDatos para no perderte ninguna.
