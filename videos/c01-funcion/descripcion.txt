@@ -1,0 +1,32 @@
+Qué es una función en matemáticas, explicado desde cero: cómo se escribe f(x), cómo se evalúa, cómo leer su gráfica y la prueba de la línea vertical.
+Primer episodio del curso de Cálculo Diferencial: dominio, rango y los tipos de funciones (lineal, cuadrática y exponencial), con ejemplos resueltos paso a paso.
+
+Episodio 1 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. En cada video: qué es el concepto, cómo se calcula, qué obtenemos, para qué se usa, un error común y un reto. Y como plus, dónde aparece en ciencia de datos.
+
+Capítulos:
+00:00 ¿Es una función?
+00:33 Objetivo
+00:47 ¿Qué es una función?
+01:20 Cómo se escribe: f(x)
+01:53 Cómo se calcula: evaluar
+02:28 La gráfica
+02:48 La prueba de la línea vertical
+03:30 Dominio y rango
+03:57 Para qué se usan: tipos de funciones
+04:28 Plus: en Ciencia de Datos
+04:49 En Python
+05:06 Error común
+05:27 Reto y resumen
+05:49 Cierre
+
+💻 El código en Python aparece en el video en el 04:49.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 2.
+
+Los ejemplos del taxi y de las casas usan números inventados (ejemplo simplificado).
+
+Próximo episodio: Límites: acercarse sin llegar | Cálculo Diferencial #2
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #funciones #calculodiferencial #cienciadedatos

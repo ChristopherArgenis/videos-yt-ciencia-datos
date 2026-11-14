@@ -153,3 +153,21 @@ Títulos: «Tema | Fútbol con Datos #N», máximo 60 caracteres.
 **Comentario fijado:** Terminó la serie 🙌 ¿Qué serie quieres ver después? Te leo 👇
 **Short relacionado:** Short6-StatsBomb (cierra con la misma final del #1). **Pantalla final:** episodio 1 + lista completa de la serie.
 **Nota:** el subtítulo de pases del 36' al 80' quedó en 274 contra 237 (el guion decía 234; el dato recalculado es 237).
+
+---
+
+# Curso: Cálculo Diferencial
+Títulos: «Tema | Cálculo Diferencial #N». Plantilla pedagógica (`series/calculo.md`); la matemática es el centro
+y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
+
+## C01 · Qué es una función (6:09)
+**Título:** Qué es una función | Cálculo Diferencial #1 (43)
+**Alternativas:** Funciones matemáticas desde cero | Cálculo Diferencial #1 (55) · ¿Esto es una función? | Cálculo Diferencial #1 (45)
+**Miniatura:** `Mini-C01-Funcion` → f(x) gigante + "¿CUÁL SÍ?" con las dos máquinas (3, −3 → 9 y 9 → 3, −3), sin revelar la respuesta
+**Lista:** Cálculo Diferencial para Ciencia de Datos: curso desde cero
+**Voz:** alex_nicola · Fórmulas con KaTeX · Ejemplos del taxi y las casas: "Ejemplo simplificado".
+**Descripción:** `videos/c01-funcion/descripcion.txt` (sin código; remite al 04:49).
+**#:** #calculo #matematicas #funciones #calculodiferencial #cienciadedatos
+**Comentario fijado:** 🧩 Reto: si f(x) = x² − 1, ¿cuánto vale f(3)? Escribe tu respuesta 👇 (la solución, en el episodio 2)
+**Respuesta del reto (para el #2):** f(3) = 8.
+**Pantalla final:** lista del curso + suscribirse (el #2 cuando exista).

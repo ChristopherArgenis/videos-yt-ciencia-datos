@@ -66,6 +66,7 @@ import { Calor } from "../kit/calor";
 import datosEp07 from "../datos/privado/ep07.json";
 import datosEp08 from "../datos/privado/ep08.json";
 import { Radar } from "../videos/V08Radares";
+import { Formula } from "../kit/curso";
 
 export const MiniFutbol01: React.FC = () => (
   <FondoMini accent={C.green}>
@@ -1146,6 +1147,71 @@ export const MiniFutbol10: React.FC = () => (
     </div>
     <div style={{ position: "absolute", left: 0, right: 0, bottom: 20, display: "flex", justifyContent: "center" }}>
       <ChipMini bg={C.green}>FÚTBOL CON DATOS #10 · FINAL</ChipMini>
+    </div>
+  </AbsoluteFill>
+);
+
+// ---------- Curso Cálculo Diferencial ----------
+// Formato fijo: número del episodio gigante, el símbolo del tema y 2–3 palabras.
+
+/** Mapeo flechas (entradas → salidas) para la miniatura del #1. */
+const Mapeo: React.FC<{ de: string[]; a: string[]; ok: boolean }> = ({ de, a, ok }) => {
+  const color = ok ? C.blue : "#c792ea";
+  return (
+    <div
+      style={{
+        background: "#0b1020ee",
+        border: `7px solid ${color}`,
+        borderRadius: 26,
+        padding: "16px 26px",
+        display: "flex",
+        alignItems: "center",
+        gap: 18,
+        fontFamily: "Poppins",
+        fontWeight: 900,
+        fontSize: 64,
+        boxShadow: `0 0 40px ${color}55`,
+      }}
+    >
+      <div style={{ display: "flex", flexDirection: "column", color: C.blue, lineHeight: 1.05 }}>
+        {de.map((d) => (
+          <span key={d}>{d}</span>
+        ))}
+      </div>
+      <span style={{ color: "#a3abd6" }}>→</span>
+      <div style={{ display: "flex", flexDirection: "column", color: C.green, lineHeight: 1.05 }}>
+        {a.map((d) => (
+          <span key={d}>{d}</span>
+        ))}
+      </div>
+      <span style={{ fontSize: 96, color: "#ffd166", marginLeft: 10 }}>?</span>
+    </div>
+  );
+};
+
+export const MiniCalculo01: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "radial-gradient(circle at 30% 40%, #1c3a8a 0%, #0b1020 60%)",
+      }}
+    />
+    <div style={{ position: "absolute", left: 50, top: 120 }}>
+      <Formula tex={"\\ent{f}(\\ent{x})"} size={230} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
+    </div>
+    <div style={{ position: "absolute", right: 50, top: 40, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 26 }}>
+      <Nombre color="#ffd166" size={120}>
+        ¿CUÁL SÍ?
+      </Nombre>
+      <Mapeo de={["3", "−3"]} a={["9"]} ok />
+      <Mapeo de={["9"]} a={["3", "−3"]} ok={false} />
+    </div>
+    <div style={{ position: "absolute", left: 50, bottom: 30 }}>
+      <ChipMini bg={C.blue} color="#ffffff">
+        CÁLCULO DIFERENCIAL #1
+      </ChipMini>
     </div>
   </AbsoluteFill>
 );

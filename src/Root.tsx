@@ -14,6 +14,7 @@ import {
   MiniFutbol08,
   MiniFutbol09,
   MiniFutbol10,
+  MiniCalculo01,
   MiniPlantilla,
 } from "./miniaturas/Miniaturas";
 import { V01, V01FutbolDatos } from "./videos/V01FutbolDatos";
@@ -26,6 +27,7 @@ import { V07, V07Xa } from "./videos/V07Xa";
 import { V08, V08Radares } from "./videos/V08Radares";
 import { V09, V09Scouting } from "./videos/V09Scouting";
 import { V10, V10Final } from "./videos/V10Final";
+import { C01, C01Funcion } from "./videos/C01Funcion";
 
 // Cada video largo: <Composition id="NN-Nombre"> con la duración que sale de su guion.
 // Cada miniatura: <Still id="Mini-NN-Nombre"> de 1280×720.
@@ -122,6 +124,16 @@ export const RemotionRoot: React.FC = () => (
         height={H}
       />
     </Folder>
+    <Folder name="Calculo">
+      <Composition
+        id="C01-Funcion"
+        component={C01Funcion}
+        durationInFrames={planificar(C01).total}
+        fps={FPS}
+        width={W}
+        height={H}
+      />
+    </Folder>
     <Folder name="Miniaturas">
       <Still
         id="Mini-00-Plantilla"
@@ -186,6 +198,12 @@ export const RemotionRoot: React.FC = () => (
       <Still
         id="Mini-10-Final"
         component={MiniFutbol10}
+        width={MINI_W}
+        height={MINI_H}
+      />
+      <Still
+        id="Mini-C01-Funcion"
+        component={MiniCalculo01}
         width={MINI_W}
         height={MINI_H}
       />

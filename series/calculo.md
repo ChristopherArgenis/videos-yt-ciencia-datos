@@ -41,6 +41,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 ## Los 12 episodios
 
 ### 1 · Qué es una función | Cálculo Diferencial #1
+- **Estado:** ✅ hecho (6:09, `out/C01-Funcion.mp4`). Guion: `src/guiones/c01-funcion.json`.
 - **Gancho:** "Netflix, el banco y el clima usan lo mismo para decidir: una función."
 - **Qué es:** una regla que a cada entrada le da una sola salida (una máquina: entra x, sale f(x)).
 - **Cómo se calcula:** evaluar. f(x) = 2x + 3 → f(4) = 11. Dominio, rango y gráfica.
