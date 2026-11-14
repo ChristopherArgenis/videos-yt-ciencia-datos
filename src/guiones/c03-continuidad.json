@@ -1,0 +1,198 @@
+{
+  "_nota": "Cálculo Diferencial #3. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #2: 6. Estacionamiento: ejemplo simplificado (20 pesos por hora o fracción).",
+  "id": "c03-continuidad",
+  "titulo": "Continuidad de una función | Cálculo Diferencial #3",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿Por qué un minuto cuesta 20 pesos?",
+      "pantalla": "Un ticket de estacionamiento dibujado: '20 pesos por hora o fracción'. Reloj: 59 min → 20 pesos (verde). Reloj: 61 min → 40 pesos (coral). Luego la gráfica en escalera: escalones de 20 en 20, con el salto en 60 minutos resaltado. Pregunta: '¿Qué tiene de especial ese punto?'",
+      "voz": {
+        "g1": "Un estacionamiento cobra veinte pesos por cada hora, o fracción.",
+        "g2": "Si te quedas cincuenta y nueve minutos, pagas veinte. Si te quedas sesenta y uno, pagas cuarenta.",
+        "g3": "Dos minutos de diferencia, y el doble de precio. Si dibujas cuánto pagas, la gráfica no sube poco a poco: da brincos.",
+        "g4": "Esos brincos tienen nombre en matemáticas, y saber detectarlos es el siguiente paso del cálculo."
+      },
+      "sub": {
+        "g1": "Un estacionamiento cobra 20 pesos por cada hora, o fracción.",
+        "g2": "Si te quedas 59 minutos, pagas 20. Si te quedas 61, pagas 40.",
+        "g3": "2 minutos de diferencia, y el doble de precio. La gráfica no sube poco a poco: da brincos."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #3' con el mapa de los 12 temas; se ilumina 'Continuidad'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio tres."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': límite = a qué valor se acerca f(x), sin llegar. 'RESPUESTA DEL RETO': lím_{x→3} (x² − 9)/(x − 3) = lím (x − 3)(x + 3)/(x − 3) = lím (x + 3) = 6.",
+      "voz": {
+        "r1": "En el episodio anterior vimos los límites: el valor al que se acerca una función, aunque nunca llegue.",
+        "r2": "Y el reto: equis al cuadrado menos nueve se factoriza como equis menos tres, por equis más tres. Se cancela el equis menos tres, queda equis más tres, y con equis igual a tres: seis."
+      },
+      "sub": {
+        "r2": "El reto: x² − 9 = (x − 3)(x + 3). Se cancela el (x − 3), queda x + 3, y con x = 3: 6."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Decir si una función es continua · 2. Comprobarlo con 3 condiciones · 3. Reconocer los 3 tipos de discontinuidad.",
+      "voz": {
+        "o1": "Hoy vas a poder decir si una función es continua, comprobarlo con tres condiciones, y reconocer los tres tipos de brinco."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "que_es",
+      "capitulo": "¿Qué es la continuidad?",
+      "pantalla": "Un lápiz dibuja la parábola y = x² de corrido (sin levantarse, trazo animado). Luego intenta dibujar la escalera del estacionamiento: el lápiz se levanta en cada salto (icono de lápiz que sube, en coral). Etiquetas: 'continua ✓' / 'discontinua ✕'.",
+      "voz": {
+        "q1": "La idea es muy sencilla: una función es continua si puedes dibujar su gráfica sin levantar el lápiz.",
+        "q2": "La parábola, equis al cuadrado, se dibuja de un solo trazo. Es continua.",
+        "q3": "La escalera del estacionamiento, no: en cada hora tienes que levantar el lápiz y bajarlo más arriba. Es discontinua.",
+        "q4": "Pero el lápiz no es una definición matemática. Para estar seguros, necesitamos algo que se pueda comprobar."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "condiciones",
+      "capitulo": "Cómo se comprueba: 3 condiciones",
+      "pantalla": "Tres casillas en tarjeta con KaTeX: 1) f(a) existe · 2) lím_{x→a} f(x) existe · 3) lím_{x→a} f(x) = f(a). Ejemplo resuelto con f(x) = x² en a = 3: 1) f(3) = 9 ✓ · 2) lím = 9 ✓ · 3) 9 = 9 ✓ → 'continua en x = 3'.",
+      "voz": {
+        "c1": "Una función es continua en un punto, a, si se cumplen tres condiciones.",
+        "c2": "Uno: la función existe en ese punto. O sea, efe de a da un número.",
+        "c3": "Dos: el límite existe. Por la izquierda y por la derecha te acercas al mismo valor.",
+        "c4": "Y tres: el límite y el valor de la función son iguales. A donde te acercas es justo a donde llegas.",
+        "c5": "Probemos con equis al cuadrado en equis igual a tres. Efe de tres es nueve: existe. El límite también es nueve: existe. Y nueve es igual a nueve. Las tres se cumplen: es continua.",
+        "c6": "Si falla aunque sea una de las tres, la función es discontinua en ese punto."
+      },
+      "sub": {
+        "c2": "1. La función existe en el punto: f(a) da un número.",
+        "c3": "2. El límite existe: por la izquierda y por la derecha llegas al mismo valor.",
+        "c4": "3. El límite y f(a) son iguales: a donde te acercas es justo a donde llegas.",
+        "c5": "Con x² en x = 3: f(3) = 9 ✓. El límite es 9 ✓. Y 9 = 9 ✓. Es continua.",
+        "c6": "Si falla una sola de las tres, es discontinua en ese punto."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "tipos",
+      "capitulo": "Los 3 tipos de discontinuidad",
+      "pantalla": "Tres mini gráficas con su nombre y qué condición falla (en coral): HUECO (x² − 4)/(x − 2) en x = 2 · 'falla la 1: f(2) no existe; el límite sí (4)'. SALTO |x|/x en x = 0 (y la escalera) · 'falla la 2: izquierda −1, derecha 1'. INFINITA 1/x en x = 0 · 'el límite se va a ∞'.",
+      "voz": {
+        "t1": "Hay tres formas de romper la continuidad.",
+        "t2": "La primera es un hueco. Como la función del episodio anterior: en dos no existe, pero el límite sí, es cuatro. Falla la condición uno.",
+        "t3": "La segunda es un salto: por la izquierda llegas a un valor, y por la derecha a otro. Como el estacionamiento, o valor absoluto de equis entre equis. Falla la condición dos.",
+        "t4": "Y la tercera es infinita: la función se dispara hacia arriba o hacia abajo, como uno entre equis cerca del cero. No hay a dónde llegar."
+      },
+      "sub": {
+        "t2": "1. HUECO: como la función del episodio anterior. En 2 no existe, pero el límite sí (4). Falla la condición 1.",
+        "t3": "2. SALTO: izquierda y derecha llegan a valores distintos, como el estacionamiento o |x|/x. Falla la condición 2.",
+        "t4": "3. INFINITA: la función se dispara, como 1/x cerca del 0. No hay a dónde llegar."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reparar",
+      "capitulo": "¿Qué obtenemos? Reparar un hueco",
+      "pantalla": "La recta con hueco en (2, 4). Una 'pieza' amarilla rellena el hueco: definición a trozos KaTeX: g(x) = (x² − 4)/(x − 2) si x ≠ 2; 4 si x = 2. Sello verde: 'ahora es continua'. Abajo: 'hueco = evitable · salto e infinita = no se reparan'.",
+      "voz": {
+        "f1": "Saber qué tipo de brinco es te dice algo útil: si se puede arreglar.",
+        "f2": "El hueco se repara: basta con decir que, en dos, la función vale cuatro, que es su límite. Y ya es continua. Por eso se llama discontinuidad evitable.",
+        "f3": "El salto y la infinita, en cambio, no tienen arreglo: no hay un solo valor que tape el brinco."
+      },
+      "sub": {
+        "f2": "El hueco se repara: basta con decir que en 2 la función vale 4, su límite. Ya es continua: discontinuidad evitable."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué sirve?",
+      "pantalla": "Termómetro dibujado: 6:00 → 10 °C, 14:00 → 25 °C. La curva de temperatura (continua) cruza la línea punteada de 20 °C; se marca el punto. Tarjeta: 'Teorema del valor intermedio'.",
+      "voz": {
+        "u1": "¿Y para qué sirve? Un ejemplo: a las seis de la mañana hay diez grados, y a las dos de la tarde, veinticinco.",
+        "u2": "Como la temperatura cambia de forma continua, sin brincos, puedes asegurar que en algún momento hubo exactamente veinte grados, aunque nadie lo haya medido.",
+        "u3": "Eso es el teorema del valor intermedio. Y lo usan las computadoras para encontrar soluciones de ecuaciones que no se pueden despejar."
+      },
+      "sub": {
+        "u1": "Un ejemplo: a las 6 de la mañana hay 10 grados, y a las 2 de la tarde, 25.",
+        "u2": "Como la temperatura cambia sin brincos, en algún momento hubo exactamente 20 grados, aunque nadie lo midiera."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Dos gráficas lado a lado: función ESCALÓN (salta de 0 a 1 en x = 0, el perceptrón original) ✕ y SIGMOIDE (continua, sube suave) ✓. Texto: 'ajustes pequeños → cambios pequeños'.",
+      "voz": {
+        "p1": "Un plus para ciencia de datos: las primeras neuronas artificiales usaban una función escalón: de cero, saltaban a uno.",
+        "p2": "El problema: con un salto, un cambio pequeño no cambia nada, o lo cambia todo. Por eso hoy se usan funciones continuas, como la sigmoide, que permiten aprender poco a poco."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 3 líneas (SymPy): f = x**2 / sp.limit(f, x, 3) == f.subs(x, 3) → True / g = (x**2 - 4)/(x - 2); g.subs(x, 2) → nan.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Comparas el límite con el valor de la función: si son iguales, la condición tres se cumple.",
+        "y3": "Y si la función no existe en el punto, SimPy te responde que no es un número."
+      },
+      "sub": {
+        "y2": "Comparas el límite con el valor de la función: si son iguales, se cumple la condición 3.",
+        "y3": "Y si la función no existe en el punto, SymPy responde nan: «no es un número»."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Error común",
+      "pantalla": "Sticker '¡CUIDADO!'. Gráfica de |x|: una V con el pico en el origen, trazada de corrido (continua ✓). En el pico, un signo de alerta: 'continua no es lo mismo que suave'. Adelanto: 'esto lo veremos en el #4'.",
+      "voz": {
+        "x1": "Cuidado: continua no significa suave. El valor absoluto de equis se dibuja sin levantar el lápiz: es continua.",
+        "x2": "Pero en el cero tiene un pico. Y en los picos pasa algo con la derivada, que vemos en el próximo episodio."
+      },
+      "sub": {
+        "x1": "Cuidado: continua no significa suave. |x| se dibuja sin levantar el lápiz: es continua."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': f(x) = (x² − 1)/(x − 1) en x = 1: ¿es continua? ¿qué tipo de discontinuidad? ¿qué valor la repara? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. Continua = sin levantar el lápiz · 2. Tres condiciones: f(a) existe, el límite existe y son iguales · 3. Hueco (se repara), salto e infinita.",
+      "voz": {
+        "w1": "El reto: la función equis al cuadrado menos uno, entre equis menos uno, en equis igual a uno. ¿Es continua? Si no, ¿qué tipo de discontinuidad tiene, y qué valor la repara? Déjalo en los comentarios.",
+        "w2": "En resumen: continua es poder dibujarla sin levantar el lápiz. Se comprueba con tres condiciones: la función existe, el límite existe, y los dos son iguales. Y hay tres tipos de discontinuidad: hueco, que se repara, salto e infinita."
+      },
+      "sub": {
+        "w1": "Reto: f(x) = (x² − 1)/(x − 1) en x = 1. ¿Es continua? Si no, ¿qué tipo de discontinuidad es, y qué valor la repara?"
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #4 Qué es la derivada'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio, por fin: la derivada. Cómo medir qué tan rápido cambia algo, en un solo instante.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

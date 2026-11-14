@@ -1,0 +1,207 @@
+{
+  "_nota": "Cálculo Diferencial #4. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #3: hueco, se repara con f(1) = 2. Auto: ejemplo simplificado.",
+  "id": "c04-derivada",
+  "titulo": "Qué es la derivada | Cálculo Diferencial #4",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿Velocidad en un instante?",
+      "pantalla": "Un auto (silueta) en una carretera: 'recorrió 100 km en 1 hora → 100 km/h en promedio'. El velocímetro marca 120 en un momento. Luego el reloj se congela en un instante: 'distancia = 0, tiempo = 0 → 0/0'. Pregunta: '¿Cómo sabe el velocímetro?'",
+      "voz": {
+        "g1": "Un auto recorre cien kilómetros en una hora. Su velocidad promedio fue de cien kilómetros por hora.",
+        "g2": "Pero en un momento, el velocímetro marcó ciento veinte. ¿Cómo se calcula la velocidad de un solo instante?",
+        "g3": "En un instante no pasa tiempo, ni recorres distancia. Cero entre cero.",
+        "g4": "Ya sabes qué hacer con un cero entre cero: tomar un límite. Y ese límite tiene nombre: la derivada."
+      },
+      "sub": {
+        "g1": "Un auto recorre 100 km en 1 hora. Su velocidad promedio: 100 km/h.",
+        "g2": "Pero en un momento, el velocímetro marcó 120. ¿Cómo se calcula la velocidad de un solo instante?",
+        "g3": "En un instante no pasa tiempo, ni recorres distancia: 0 entre 0."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #4' con el mapa de los 12 temas; se ilumina 'Derivada'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio cuatro. El corazón del curso."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': continua = f(a) existe, el límite existe y son iguales. 'RESPUESTA DEL RETO': (x² − 1)/(x − 1) = (x − 1)(x + 1)/(x − 1) = x + 1 → en x = 1 no existe, pero el límite es 2: es un HUECO, se repara con f(1) = 2.",
+      "voz": {
+        "r1": "En el episodio anterior vimos la continuidad: la función existe, el límite existe, y los dos son iguales.",
+        "r2": "El reto: equis al cuadrado menos uno, entre equis menos uno, se simplifica a equis más uno. En uno no existe, pero el límite es dos. Es un hueco, y se repara diciendo que en uno vale dos."
+      },
+      "sub": {
+        "r2": "El reto: (x² − 1)/(x − 1) se simplifica a x + 1. En 1 no existe, pero el límite es 2: es un hueco, y se repara con f(1) = 2."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Explicar qué es la derivada · 2. Calcularla con la definición · 3. Leer qué dice su signo.",
+      "voz": {
+        "o1": "Hoy vas a poder explicar qué es la derivada, calcularla con su definición, y leer lo que te dice su signo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "promedio",
+      "capitulo": "La pendiente promedio",
+      "pantalla": "Parábola y = x². Dos puntos (3, 9) y (5, 25) unidos por una recta coral (la SECANTE). Triángulo con Δx = 2 (azul) y Δy = 16 (verde). KaTeX: pendiente = Δy/Δx = (25 − 9)/(5 − 3) = 16/2 = 8.",
+      "voz": {
+        "a1": "Empecemos por algo que ya sabes calcular: el cambio promedio.",
+        "a2": "Toma la parábola, equis al cuadrado, y dos puntos: en tres vale nueve, y en cinco vale veinticinco.",
+        "a3": "La recta que los une se llama secante. Su pendiente es cuánto subió, entre cuánto avanzó: veinticinco menos nueve, dieciséis, entre cinco menos tres, dos. La pendiente es ocho.",
+        "a4": "Eso es el cambio promedio entre tres y cinco. Como la velocidad promedio del auto."
+      },
+      "sub": {
+        "a2": "La parábola x², y dos puntos: en 3 vale 9, y en 5 vale 25.",
+        "a3": "La recta que los une es la secante. Su pendiente: (25 − 9) / (5 − 3) = 16 / 2 = 8.",
+        "a4": "Eso es el cambio promedio entre 3 y 5, como la velocidad promedio del auto."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "tangente",
+      "capitulo": "¿Qué es la derivada?",
+      "pantalla": "El segundo punto se desliza hacia (3, 9); la secante gira y se convierte en la recta TANGENTE (amarilla) que solo toca la curva en x = 3. Tabla al lado: h = 1 → 7 · h = 0.1 → 6.1 · h = 0.01 → 6.01 · h → 0 → 6. Definición en tarjeta: 'derivada = pendiente de la tangente = cambio en un instante'.",
+      "voz": {
+        "d1": "Ahora acerquemos el segundo punto al primero.",
+        "d2": "Si está a una unidad, la pendiente es siete. A cero punto uno, seis punto uno. A cero punto cero uno, seis punto cero uno.",
+        "d3": "Mientras más se acerca, más se parece la secante a una recta que solo toca la curva en un punto: la tangente. Y su pendiente se acerca a seis.",
+        "d4": "Eso es la derivada: la pendiente de la tangente. El cambio, no entre dos puntos, sino en un solo instante. Para la parábola en tres, la derivada es seis."
+      },
+      "sub": {
+        "d2": "A distancia 1, la pendiente es 7. A 0.1, es 6.1. A 0.01, es 6.01.",
+        "d3": "La secante se vuelve la tangente: una recta que solo toca la curva en un punto. Su pendiente se acerca a 6.",
+        "d4": "Eso es la derivada: la pendiente de la tangente, el cambio en un solo instante. Para x² en 3, la derivada es 6."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "definicion",
+      "capitulo": "Cómo se calcula: la definición",
+      "pantalla": "Fórmula KaTeX grande con colores: f'(x) = lím_{h→0} [f(x + h) − f(x)] / h. Etiquetas: h = el paso (amarillo) · f(x + h) − f(x) = cuánto subió (verde) · dividir entre h = pendiente · h → 0 = un instante. Luego, los 4 pasos con f(x) = x²: 1) f(x + h) = x² + 2xh + h² · 2) f(x + h) − f(x) = 2xh + h² · 3) ÷ h → 2x + h · 4) h → 0 → f'(x) = 2x. Y al final: f'(3) = 2 · 3 = 6 ✓.",
+      "voz": {
+        "e1": "Todo esto cabe en una fórmula. Efe prima de equis es el límite, cuando hache tiende a cero, de efe de equis más hache, menos efe de equis, entre hache.",
+        "e2": "Hache es el paso que das. Arriba está cuánto subió la función. Dividir entre hache da la pendiente. Y hacer hache cero la vuelve un instante.",
+        "e3": "Calculémosla para equis al cuadrado, en cuatro pasos. Paso uno: efe de equis más hache es equis más hache al cuadrado: equis al cuadrado, más dos equis hache, más hache al cuadrado.",
+        "e4": "Paso dos: le restamos efe de equis. Se va el equis al cuadrado, y queda dos equis hache, más hache al cuadrado.",
+        "e5": "Paso tres: dividimos entre hache. Queda dos equis, más hache.",
+        "e6": "Paso cuatro: hacemos hache igual a cero. La derivada es dos equis.",
+        "e7": "Y si la evaluamos en tres: dos por tres, seis. Lo mismo que vimos en la tabla. Pero ahora sirve para cualquier punto."
+      },
+      "sub": {
+        "e1": "La definición: f'(x) = lím cuando h → 0 de [f(x + h) − f(x)] / h.",
+        "e2": "h es el paso. Arriba, cuánto subió. ÷ h da la pendiente. Y h → 0 la vuelve un instante.",
+        "e3": "Para x², en 4 pasos. Paso 1: f(x + h) = (x + h)² = x² + 2xh + h².",
+        "e4": "Paso 2: le restamos f(x). Se va el x², y queda 2xh + h².",
+        "e5": "Paso 3: dividimos entre h. Queda 2x + h.",
+        "e6": "Paso 4: h → 0. La derivada es 2x.",
+        "e7": "En x = 3: 2 · 3 = 6. Lo mismo que la tabla, pero ahora sirve para cualquier punto."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "signo",
+      "capitulo": "¿Qué obtenemos? El signo",
+      "pantalla": "La parábola con tres tangentes animadas: en x = −2 (pendiente −4, baja, coral), en x = 0 (pendiente 0, horizontal, amarilla), en x = 3 (pendiente 6, sube, verde). Tarjetas: f' > 0 → sube · f' < 0 → baja · f' = 0 → plano. Abajo, notación: f'(x) = dy/dx.",
+      "voz": {
+        "n1": "¿Y qué nos dice ese número? Primero, su signo.",
+        "n2": "En menos dos, la derivada es menos cuatro: negativa, la función va bajando.",
+        "n3": "En cero, la derivada es cero: la tangente queda horizontal. Es justo el fondo de la curva.",
+        "n4": "Y en tres, es seis: positiva, la función va subiendo. Y como seis es más grande que cuatro, ahí sube más rápido de lo que bajaba antes.",
+        "n5": "También vas a ver la derivada escrita como de ye entre de equis: un cambio muy pequeño de ye, entre un cambio muy pequeño de equis. Es lo mismo."
+      },
+      "sub": {
+        "n2": "En −2, la derivada es −4: negativa, la función baja.",
+        "n3": "En 0, la derivada es 0: la tangente es horizontal. Es el fondo de la curva.",
+        "n4": "En 3, es 6: positiva, la función sube. Y como 6 es mayor que 4, sube más rápido de lo que bajaba.",
+        "n5": "También se escribe dy/dx: un cambio muy pequeño de y, entre uno muy pequeño de x. Es lo mismo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué se usa?",
+      "pantalla": "Tres tarjetas con ícono: VELOCIDAD = derivada de la posición (el velocímetro del inicio) · COSTO MARGINAL = cuánto cuesta producir una unidad más · CRECIMIENTO = qué tan rápido crece una población o un contagio.",
+      "voz": {
+        "u1": "La derivada aparece en todos lados. La velocidad es la derivada de la posición: eso responde la pregunta del inicio. El velocímetro te muestra una derivada.",
+        "u2": "En economía, el costo marginal es la derivada del costo: cuánto cuesta producir una unidad más. Y en biología, la derivada de una población dice qué tan rápido está creciendo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Curva del error de un modelo (forma de U, morada) en función de un peso w. Un punto en la ladera con su tangente: 'derivada > 0 → mueve w a la izquierda'. Flecha hacia el fondo. 'Así se entrena un modelo (#12)'.",
+      "voz": {
+        "p1": "Un plus para ciencia de datos: el error de un modelo depende de sus parámetros, como una curva.",
+        "p2": "La derivada dice hacia dónde sube el error. Si es positiva, mueves el parámetro hacia el otro lado, y el error baja. Repetir eso miles de veces es entrenar un modelo, y lo veremos al final del curso."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 3 líneas: f = lambda x: x**2 / h = 1e-5; (f(3 + h) - f(3)) / h → 6.00001 / sp.diff(x**2, x) → 2*x.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Con un paso muy pequeño, la computadora aproxima la derivada en tres: seis, casi exacto.",
+        "y3": "Y con SimPy obtienes la derivada exacta, para cualquier equis: dos equis."
+      },
+      "sub": {
+        "y2": "Con un paso muy pequeño, la computadora aproxima la derivada en 3: 6, casi exacto.",
+        "y3": "Y con SymPy, la derivada exacta para cualquier x: 2x."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Error común",
+      "pantalla": "Sticker '¡CUIDADO!'. Dos columnas en la parábola en x = 3: f(3) = 9 'la altura' (verde) vs f'(3) = 6 'la inclinación' (coral). Luego la V de |x| con dos tangentes distintas en el pico: 'en un pico, no hay derivada'.",
+      "voz": {
+        "x1": "Cuidado con confundir la derivada con el valor de la función. Efe de tres es nueve: qué tan alto está el punto. Efe prima de tres es seis: qué tan inclinado está.",
+        "x2": "Y recuerda el pico del valor absoluto: por la izquierda la pendiente es menos uno, y por la derecha, uno. No coinciden, así que en el pico no hay derivada. Continua, pero no derivable."
+      },
+      "sub": {
+        "x1": "No confundas la derivada con el valor: f(3) = 9 es qué tan alto está. f'(3) = 6 es qué tan inclinado.",
+        "x2": "En el pico de |x|: por la izquierda la pendiente es −1, por la derecha 1. No coinciden: no hay derivada. Continua, pero no derivable."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': si f(x) = x², ¿cuánto vale f'(5)? ¿Y f'(−1)? ¿Sube o baja en cada punto? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. Derivada = pendiente de la tangente (cambio en un instante) · 2. f'(x) = lím_{h→0} [f(x + h) − f(x)]/h · 3. Signo: + sube, − baja, 0 plano.",
+      "voz": {
+        "w1": "El reto: si efe de equis es equis al cuadrado, ¿cuánto vale la derivada en cinco? ¿Y en menos uno? ¿Sube o baja en cada punto? Déjalo en los comentarios.",
+        "w2": "En resumen: la derivada es la pendiente de la tangente, el cambio en un instante. Se calcula con un límite, cuando el paso tiende a cero. Y su signo te dice si la función sube, baja, o está plana."
+      },
+      "sub": {
+        "w1": "Reto: si f(x) = x², ¿cuánto vale f'(5)? ¿Y f'(−1)? ¿Sube o baja en cada punto?"
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #5 Reglas de derivación'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "Calcular con la definición cada vez es lento. En el próximo episodio: los atajos, las reglas de derivación.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
