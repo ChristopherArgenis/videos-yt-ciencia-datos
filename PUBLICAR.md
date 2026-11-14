@@ -184,3 +184,26 @@ y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 **Comentario fijado:** 🧩 Reto: ¿cuánto vale el límite de (x² − 9)/(x − 3) cuando x tiende a 3? Pista: sale 0/0 👇 (la solución, en el episodio 3)
 **Respuesta del reto (para el #3):** 6.
 **Pantalla final:** episodio 1 + lista del curso. **Tarjeta:** al episodio 1 en 00:28 (Recuerda).
+
+## C03 · Continuidad (5:11)
+**Título:** Continuidad de una función | Cálculo Diferencial #3 (51)
+**Alternativas:** Funciones continuas y discontinuas | Cálculo Diferencial #3 (57) · ¿Por qué un minuto cuesta el doble? | Cálculo Diferencial #3 (59)
+**Miniatura:** `Mini-C03-Continuidad` → escalera con el salto marcado + "¿POR QUÉ SALTA?" + 59 min $20 / 61 min $40
+**Voz:** alex_nicola · Fórmulas con KaTeX · Estacionamiento y temperatura: "Ejemplo simplificado".
+**Descripción:** `videos/c03-continuidad/descripcion.txt` (sin código; remite al 03:52).
+**#:** #calculo #matematicas #continuidad #calculodiferencial #cienciadedatos
+**Comentario fijado:** 🧩 Reto: ¿(x² − 1)/(x − 1) es continua en x = 1? ¿Qué tipo de discontinuidad es y qué valor la repara? 👇 (la solución, en el episodio 4)
+**Respuesta del reto (para el #4):** hueco; se repara con f(1) = 2.
+**Pantalla final:** episodio 2 + lista del curso. **Tarjeta:** al episodio 2 en 00:30.
+**Curso de YouTube:** con este episodio ya hay 3 videos: crear el curso gratuito en Studio (Crear → Curso).
+
+## C04 · Qué es la derivada (5:36)
+**Título:** Qué es la derivada | Cálculo Diferencial #4 (43)
+**Alternativas:** La derivada explicada desde cero | Cálculo Diferencial #4 (54) · Derivada por definición, paso a paso | Cálculo Diferencial #4 (60)
+**Miniatura:** `Mini-C04-Derivada` → f'(x) gigante + "¿EN UN INSTANTE?" + parábola con su tangente
+**Voz:** alex_nicola · Fórmulas con KaTeX · Auto y error del modelo: "Ejemplo simplificado".
+**Descripción:** `videos/c04-derivada/descripcion.txt` (sin código; remite al 04:15).
+**#:** #calculo #matematicas #derivadas #calculodiferencial #cienciadedatos
+**Comentario fijado:** 🧩 Reto: si f(x) = x², ¿cuánto valen f'(5) y f'(−1)? ¿Sube o baja en cada punto? 👇 (la solución, en el episodio 5)
+**Respuesta del reto (para el #5):** f'(5) = 10, sube; f'(−1) = −2, baja.
+**Pantalla final:** episodio 3 + lista del curso. **Tarjeta:** al episodio 2 (límites) en 00:00–00:31.

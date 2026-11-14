@@ -68,6 +68,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** lím x→3 de (x² − 9)/(x − 3). (6)
 
 ### 3 · Continuidad de una función | Cálculo Diferencial #3
+- **Estado:** ✅ hecho (5:11, `out/C03-Continuidad.mp4`). Guion: `src/guiones/c03-continuidad.json`.
 - **Gancho:** "¿Por qué una red neuronal no puede aprender con un interruptor de sí o no?"
 - **Qué es:** se dibuja sin levantar el lápiz. Tres condiciones: f(a) existe, el límite existe y son iguales.
 - **Cómo se calcula:** revisar las 3 condiciones; tipos de discontinuidad: salto, hueco, infinita.
@@ -80,6 +81,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** ¿f(x) = 1/x es continua en x = 0? (No: f(0) no existe.)
 
 ### 4 · Qué es la derivada | Cálculo Diferencial #4
+- **Estado:** ✅ hecho (5:36, `out/C04-Derivada.mp4`). Guion: `src/guiones/c04-derivada.json`.
 - **Gancho:** "Si subo el precio un peso, ¿cuántas ventas pierdo? Eso es una derivada."
 - **Qué es:** la tasa de cambio instantánea; la pendiente de la recta tangente (la secante que se encoge).
 - **Cómo se calcula:** f'(x) = lím h→0 de [f(x + h) − f(x)] / h. Con f(x) = x²: f'(x) = 2x, y f'(3) = 6.

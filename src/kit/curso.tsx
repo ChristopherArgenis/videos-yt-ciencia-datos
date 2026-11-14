@@ -225,23 +225,26 @@ export const Plano: React.FC<{
   x: [number, number];
   y: [number, number];
   paso?: number;
+  /** Paso de las marcas del eje vertical (por defecto, el mismo que el horizontal). */
+  pasoY?: number;
   etiquetaX?: string;
   etiquetaY?: string;
   children?: (e: Ejes) => React.ReactNode;
-}> = ({ w, h, x, y, paso = 1, etiquetaX = "x", etiquetaY = "f(x)", children }) => {
+}> = ({ w, h, x, y, paso = 1, pasoY, etiquetaX = "x", etiquetaY = "f(x)", children }) => {
   const X = (v: number) => ((v - x[0]) / (x[1] - x[0])) * w;
   const Y = (v: number) => h - ((v - y[0]) / (y[1] - y[0])) * h;
-  const marcas = (a: number, b: number) => {
+  const marcas = (a: number, b: number, pp = paso) => {
     const r: number[] = [];
-    for (let v = Math.ceil(a / paso) * paso; v <= b + 1e-9; v += paso) r.push(Math.round(v * 1000) / 1000);
+    for (let v = Math.ceil(a / pp) * pp; v <= b + 1e-9; v += pp) r.push(Math.round(v * 1000) / 1000);
     return r;
   };
+  const py = pasoY ?? paso;
   return (
     <svg width={w + 120} height={h + 90} viewBox={`-70 -40 ${w + 120} ${h + 90}`} style={{ overflow: "visible" }}>
       {marcas(x[0], x[1]).map((v) => (
         <line key={`gx${v}`} x1={X(v)} y1={0} x2={X(v)} y2={h} stroke={`${C.dim}1f`} strokeWidth={2} />
       ))}
-      {marcas(y[0], y[1]).map((v) => (
+      {marcas(y[0], y[1], py).map((v) => (
         <line key={`gy${v}`} x1={0} y1={Y(v)} x2={w} y2={Y(v)} stroke={`${C.dim}1f`} strokeWidth={2} />
       ))}
       <line x1={0} y1={Y(Math.max(y[0], Math.min(0, y[1])))} x2={w} y2={Y(Math.max(y[0], Math.min(0, y[1])))} stroke={COL.entrada} strokeWidth={4} />
@@ -253,7 +256,7 @@ export const Plano: React.FC<{
             {v}
           </text>
         ))}
-      {marcas(y[0], y[1])
+      {marcas(y[0], y[1], py)
         .filter((v) => v !== 0)
         .map((v) => (
           <text key={`ty${v}`} x={X(Math.max(x[0], Math.min(0, x[1]))) - 14} y={Y(v) + 8} textAnchor="end" fontFamily={MONO} fontSize={24} fill={C.dim}>

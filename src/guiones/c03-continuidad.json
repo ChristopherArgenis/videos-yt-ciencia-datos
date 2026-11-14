@@ -2,7 +2,7 @@
   "_nota": "Cálculo Diferencial #3. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #2: 6. Estacionamiento: ejemplo simplificado (20 pesos por hora o fracción).",
   "id": "c03-continuidad",
   "titulo": "Continuidad de una función | Cálculo Diferencial #3",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/explica.wav",
   "voz": "alex_nicola",
   "acento": "#5b8cff",

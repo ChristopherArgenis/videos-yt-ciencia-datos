@@ -167,7 +167,7 @@ export const Codigo: React.FC<{ at: number; texto: string; dur?: number; resalta
   const i = resaltar ? vis.indexOf(resaltar) : -1;
   const on = frame >= resaltarDesde && i >= 0;
   return (
-    <div style={{ fontFamily: MONO, fontSize: 32, color: C.ink, height: 50, whiteSpace: "pre" }}>
+    <div style={{ fontFamily: MONO, fontSize: 32, color: C.ink, height: 50, whiteSpace: "pre", fontVariantLigatures: "none" }}>
       <span style={{ color: C.dim }}>{prompt}</span>
       {on ? (
         <>

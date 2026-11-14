@@ -1,0 +1,31 @@
+Qué es la continuidad de una función, explicada desde cero: las 3 condiciones para que una función sea continua y los 3 tipos de discontinuidad (hueco, salto e infinita).
+Episodio 3 del curso de Cálculo Diferencial: por qué un minuto de más te puede costar el doble, con ejemplos resueltos paso a paso.
+
+Episodio 3 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. Vemos qué significa dibujar una función sin levantar el lápiz, cómo comprobarlo con límites, cómo reparar un hueco (discontinuidad evitable) y el teorema del valor intermedio. Y como plus, dónde aparece en ciencia de datos.
+
+Capítulos:
+00:00 ¿Por qué un minuto cuesta 20 pesos?
+00:30 Recuerda y objetivo
+01:00 ¿Qué es la continuidad?
+01:28 Cómo se comprueba: 3 condiciones
+02:08 Los 3 tipos de discontinuidad
+02:41 ¿Qué obtenemos? Reparar un hueco
+03:04 ¿Para qué sirve?
+03:31 Plus: en Ciencia de Datos
+03:52 En Python
+04:06 Error común
+04:22 Reto y resumen
+04:51 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 03:52.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 4.
+
+Los ejemplos del estacionamiento y de la temperatura usan números inventados (ejemplo simplificado).
+
+Episodio anterior: Límites: acercarse sin llegar | Cálculo Diferencial #2
+Próximo episodio: Qué es la derivada | Cálculo Diferencial #4
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #continuidad #calculodiferencial #cienciadedatos

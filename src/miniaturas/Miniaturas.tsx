@@ -1244,3 +1244,74 @@ export const MiniCalculo02: React.FC = () => (
     </div>
   </AbsoluteFill>
 );
+
+export const MiniCalculo03: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 30% 55%, #1c3a8a 0%, #0b1020 62%)" }} />
+    <svg width={640} height={460} viewBox="0 0 640 460" style={{ position: "absolute", left: 40, top: 150 }}>
+      <line x1={30} y1={430} x2={620} y2={430} stroke={C.blue} strokeWidth={6} />
+      <line x1={40} y1={440} x2={40} y2={10} stroke={C.green} strokeWidth={6} />
+      {[0, 1, 2, 3].map((k) => (
+        <g key={k}>
+          <line x1={40 + k * 140} y1={350 - k * 95} x2={180 + k * 140} y2={350 - k * 95} stroke="#ffd166" strokeWidth={14} strokeLinecap="round" />
+          <circle cx={40 + k * 140} cy={350 - k * 95} r={15} fill="#0b1020" stroke="#ffd166" strokeWidth={7} />
+        </g>
+      ))}
+      <line x1={180} y1={335} x2={180} y2={270} stroke={C.coral} strokeWidth={8} strokeDasharray="14 10" />
+      <circle cx={180} cy={302} r={60} fill="none" stroke={C.coral} strokeWidth={8} />
+    </svg>
+    <div style={{ position: "absolute", right: 50, top: 50, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8 }}>
+      <Nombre color="#ffffff" size={130}>
+        ¿POR QUÉ
+      </Nombre>
+      <Nombre color={C.coral} size={150}>
+        SALTA?
+      </Nombre>
+    </div>
+    <div style={{ position: "absolute", right: 60, top: 400, display: "flex", gap: 20 }}>
+      <MarcadorMini texto="59 min · $20" color={C.green} />
+      <MarcadorMini texto="61 min · $40" color={C.coral} />
+    </div>
+    <div style={{ position: "absolute", left: 50, bottom: 30 }}>
+      <ChipMini bg={C.blue} color="#ffffff">
+        CÁLCULO DIFERENCIAL #3
+      </ChipMini>
+    </div>
+  </AbsoluteFill>
+);
+
+export const MiniCalculo04: React.FC = () => {
+  // Parábola y su tangente en un punto (pendiente 2a en x = a).
+  const X = (x: number) => 40 + x * 110;
+  const Y = (y: number) => 430 - y * 40;
+  const pts = Array.from({ length: 41 }, (_, i) => -0.2 + (i * 3.4) / 40).map((x) => `${X(x)},${Y(x * x)}`);
+  const a = 2;
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 70% 50%, #1c3a8a 0%, #0b1020 62%)" }} />
+      <div style={{ position: "absolute", left: 50, top: 70 }}>
+        <Formula tex={"\\der{f'}(\\ent{x})"} size={210} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
+      </div>
+      <div style={{ position: "absolute", left: 60, top: 400, display: "flex", flexDirection: "column", gap: 4 }}>
+        <Nombre color="#ffffff" size={92}>
+          ¿EN UN
+        </Nombre>
+        <Nombre color="#ffd166" size={92}>
+          INSTANTE?
+        </Nombre>
+      </div>
+      <svg width={560} height={470} viewBox="0 0 560 470" style={{ position: "absolute", right: 40, top: 90 }}>
+        <line x1={20} y1={430} x2={540} y2={430} stroke={C.blue} strokeWidth={6} />
+        <line x1={40} y1={445} x2={40} y2={0} stroke={C.green} strokeWidth={6} />
+        <polyline points={pts.join(" ")} fill="none" stroke="#ffd166" strokeWidth={12} strokeLinecap="round" />
+        <line x1={X(a - 1.3)} y1={Y(a * a + 2 * a * -1.3)} x2={X(a + 1.3)} y2={Y(a * a + 2 * a * 1.3)} stroke={C.coral} strokeWidth={10} strokeLinecap="round" />
+        <circle cx={X(a)} cy={Y(a * a)} r={20} fill="#ffffff" stroke="#0b1020" strokeWidth={6} />
+      </svg>
+      <div style={{ position: "absolute", right: 50, bottom: 30 }}>
+        <ChipMini bg={C.blue} color="#ffffff">
+          CÁLCULO DIFERENCIAL #4
+        </ChipMini>
+      </div>
+    </AbsoluteFill>
+  );
+};

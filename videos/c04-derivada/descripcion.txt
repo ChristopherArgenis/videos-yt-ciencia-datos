@@ -1,0 +1,31 @@
+Qué es la derivada, explicada desde cero: la pendiente de la recta tangente, cómo calcularla con la definición por límites paso a paso y qué significa su signo.
+Episodio 4 del curso de Cálculo Diferencial: de la velocidad promedio a la velocidad en un instante, con la derivada de x² resuelta en 4 pasos.
+
+Episodio 4 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. Vemos la recta secante y la tangente, la definición formal de la derivada, la notación f'(x) y dy/dx, y para qué se usa en física y economía. Y como plus, cómo la usa la ciencia de datos para entrenar modelos.
+
+Capítulos:
+00:00 ¿Velocidad en un instante?
+00:31 Recuerda y objetivo
+01:00 La pendiente promedio
+01:30 ¿Qué es la derivada?
+02:02 Cómo se calcula: la definición
+02:57 ¿Qué obtenemos? El signo
+03:31 ¿Para qué se usa?
+03:55 Plus: en Ciencia de Datos
+04:15 En Python
+04:29 Error común
+04:53 Reto y resumen
+05:16 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 04:15.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 5.
+
+Los ejemplos del auto y del error de un modelo usan números inventados (ejemplo simplificado).
+
+Episodio anterior: Continuidad de una función | Cálculo Diferencial #3
+Próximo episodio: Reglas de derivación | Cálculo Diferencial #5
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #derivadas #calculodiferencial #cienciadedatos
