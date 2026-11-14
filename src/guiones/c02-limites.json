@@ -2,7 +2,7 @@
   "_nota": "Cálculo Diferencial #2. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #1: f(3) = 8.",
   "id": "c02-limites",
   "titulo": "Límites: acercarse sin llegar | Cálculo Diferencial #2",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/explica.wav",
   "voz": "alex_nicola",
   "acento": "#5b8cff",

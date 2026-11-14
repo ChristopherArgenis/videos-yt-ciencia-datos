@@ -49,7 +49,7 @@ export const Formula: React.FC<{ tex: string; size?: number; color?: string; sty
 }) => (
   <span
     style={{ fontSize: size, color, lineHeight: 1.2, whiteSpace: "nowrap", ...style }}
-    dangerouslySetInnerHTML={{ __html: katex.renderToString(tex, { throwOnError: true, macros: { ...MACROS } }) }}
+    dangerouslySetInnerHTML={{ __html: katex.renderToString(`\\displaystyle ${tex}`, { throwOnError: true, macros: { ...MACROS } }) }}
   />
 );
 
@@ -407,3 +407,74 @@ export const Nota: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 );
 
 export { useP };
+
+/** Paso numerado de un ejemplo resuelto (fórmula + nota). `on` lo resalta. */
+export const Paso: React.FC<{ at: number; n: number | string; tex: string; nota?: string; on?: boolean; ancho?: number; size?: number }> = ({
+  at,
+  n,
+  tex,
+  nota,
+  on = true,
+  ancho = 720,
+  size = 76,
+}) => (
+  <Aparece at={at}>
+    <div style={{ display: "flex", alignItems: "center", gap: 30, opacity: on ? 1 : 0.45 }}>
+      <div
+        style={{
+          width: 70,
+          height: 70,
+          borderRadius: 35,
+          background: on ? C.yellow : C.bg2,
+          color: C.bg,
+          fontFamily: FONT,
+          fontWeight: 900,
+          fontSize: 40,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+        }}
+      >
+        {n}
+      </div>
+      <div style={{ width: ancho }}>
+        <Formula tex={tex} size={size} />
+      </div>
+      {nota && <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: 32, color: C.dim }}>{nota}</span>}
+    </div>
+  </Aparece>
+);
+
+/** Tarjeta "Recuerda" + respuesta del reto del episodio anterior. */
+export const Recuerda: React.FC<{ at: number; idea: React.ReactNode; atReto: number; reto: React.ReactNode }> = ({ at, idea, atReto, reto }) => (
+  <Stage gap={34}>
+    <Aparece at={at}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+        <Chip bg={C.blue} color={C.ink} size={30}>
+          RECUERDA
+        </Chip>
+        <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 46, color: C.ink, textAlign: "center" }}>{idea}</div>
+      </div>
+    </Aparece>
+    <Aparece at={atReto}>
+      <div
+        style={{
+          background: `${C.bg2}dd`,
+          border: `3px solid ${C.yellow}88`,
+          borderRadius: 28,
+          padding: "26px 44px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 14,
+        }}
+      >
+        <Chip bg={C.yellow} size={28}>
+          RESPUESTA DEL RETO
+        </Chip>
+        {reto}
+      </div>
+    </Aparece>
+  </Stage>
+);

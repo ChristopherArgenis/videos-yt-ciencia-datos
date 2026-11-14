@@ -173,3 +173,14 @@ y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 **Comentario fijado:** 🧩 Reto: si f(x) = x² − 1, ¿cuánto vale f(3)? Escribe tu respuesta 👇 (la solución, en el episodio 2)
 **Respuesta del reto (para el #2):** f(3) = 8.
 **Pantalla final:** lista del curso + suscribirse (el #2 cuando exista).
+
+## C02 · Límites: acercarse sin llegar (5:26)
+**Título:** Límites: acercarse sin llegar | Cálculo Diferencial #2 (54)
+**Alternativas:** Qué es un límite (desde cero) | Cálculo Diferencial #2 (52) · ¿0/0 es error? Los límites | Cálculo Diferencial #2 (50)
+**Miniatura:** `Mini-C02-Limites` → "lím 0/0" + "¿ERROR O 4?" con la recta con hueco
+**Voz:** alex_nicola · Fórmulas con KaTeX.
+**Descripción:** `videos/c02-limites/descripcion.txt` (sin código; remite al 04:04).
+**#:** #calculo #matematicas #limites #calculodiferencial #cienciadedatos
+**Comentario fijado:** 🧩 Reto: ¿cuánto vale el límite de (x² − 9)/(x − 3) cuando x tiende a 3? Pista: sale 0/0 👇 (la solución, en el episodio 3)
+**Respuesta del reto (para el #3):** 6.
+**Pantalla final:** episodio 1 + lista del curso. **Tarjeta:** al episodio 1 en 00:28 (Recuerda).

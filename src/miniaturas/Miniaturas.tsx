@@ -1215,3 +1215,32 @@ export const MiniCalculo01: React.FC = () => (
     </div>
   </AbsoluteFill>
 );
+
+export const MiniCalculo02: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 28% 45%, #1c3a8a 0%, #0b1020 62%)" }} />
+    <div style={{ position: "absolute", left: 60, top: 130 }}>
+      <Formula tex={"\\lim_{\\ent{x} \\to 2} \\dfrac{\\der{0}}{\\der{0}}"} size={125} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
+    </div>
+    <div style={{ position: "absolute", right: 60, top: 60, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 10 }}>
+      <Nombre color={C.coral} size={150}>
+        ¿ERROR
+      </Nombre>
+      <Nombre color="#ffd166" size={150}>
+        O 4?
+      </Nombre>
+    </div>
+    <svg width={520} height={230} viewBox="0 0 520 230" style={{ position: "absolute", right: 70, bottom: 110 }}>
+      <line x1={10} y1={210} x2={510} y2={210} stroke={C.blue} strokeWidth={5} />
+      <line x1={40} y1={220} x2={40} y2={10} stroke={C.green} strokeWidth={5} />
+      <line x1={40} y1={190} x2={255} y2={105} stroke="#ffd166" strokeWidth={9} strokeLinecap="round" />
+      <line x1={295} y1={89} x2={500} y2={10} stroke="#ffd166" strokeWidth={9} strokeLinecap="round" />
+      <circle cx={275} cy={97} r={20} fill="#0b1020" stroke="#ffd166" strokeWidth={8} />
+    </svg>
+    <div style={{ position: "absolute", left: 50, bottom: 30 }}>
+      <ChipMini bg={C.blue} color="#ffffff">
+        CÁLCULO DIFERENCIAL #2
+      </ChipMini>
+    </div>
+  </AbsoluteFill>
+);

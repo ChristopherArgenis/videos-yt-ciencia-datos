@@ -54,6 +54,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** si f(x) = x² − 1, ¿cuánto vale f(3)? (8)
 
 ### 2 · Límites: acercarse sin llegar | Cálculo Diferencial #2
+- **Estado:** ✅ hecho (5:26, `out/C02-Limites.mp4`). Guion: `src/guiones/c02-limites.json`.
 - **Gancho:** "Una probabilidad de un modelo nunca llega a 1. ¿Por qué?"
 - **Qué es:** el valor al que se acerca f(x) cuando x se acerca a un punto (aunque nunca llegue).
 - **Cómo se calcula:** tabla de valores, sustitución directa y factorizar el 0/0:

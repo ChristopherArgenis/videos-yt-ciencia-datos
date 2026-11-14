@@ -1,0 +1,29 @@
+Qué es un límite en cálculo, explicado desde cero: cómo calcularlo con tablas, sustitución directa y factorizando el 0/0, límites laterales y límites al infinito.
+Episodio 2 del curso de Cálculo Diferencial: por qué la calculadora da error y el límite da 4, con ejemplos resueltos paso a paso.
+
+Episodio 2 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. Vemos qué significa acercarse a un valor sin llegar, cuándo un límite no existe, qué es una asíntota, y por qué los límites son la base de la derivada. Y como plus, dónde aparecen en ciencia de datos.
+
+Capítulos:
+00:00 ¿Cuánto vale en x = 2?
+00:28 Recuerda y objetivo
+00:55 ¿Qué es un límite?
+01:42 Cómo se calcula
+02:27 Límites laterales: cuándo no existe
+02:53 Límites al infinito
+03:23 ¿Para qué sirven?
+03:46 Plus: en Ciencia de Datos
+04:04 En Python
+04:20 Error común
+04:40 Reto y resumen
+05:06 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 04:04.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 3.
+
+Episodio anterior: Qué es una función | Cálculo Diferencial #1
+Próximo episodio: Continuidad de una función | Cálculo Diferencial #3
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #limites #calculodiferencial #cienciadedatos
