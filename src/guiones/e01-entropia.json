@@ -1,0 +1,251 @@
+{
+  "_nota": "Video especial de fisicoquímica: ejercicio resuelto de cambio de entropía. 1 mol (18 g) de hielo a −10 °C → vapor a 110 °C, a 1 atm, en 5 etapas. Datos de tablas estándar (Atkins, Química Física; CRC Handbook): Cp,m hielo 37.6, agua líquida 75.3, vapor 33.6 J/(mol·K); ΔHfus 6.01 kJ/mol (273.15 K); ΔHvap 40.7 kJ/mol (373.15 K). Supuesto: Cp constante en cada tramo. Cuentas verificadas en Python: ΔS total = 156.86 J/K. Espontaneidad: fusión con entorno a 25 °C (simplificación de libro).",
+  "id": "e01-entropia",
+  "titulo": "Cambio de entropía: ejercicio resuelto paso a paso",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿Por qué el hielo se derrite solo?",
+      "pantalla": "Un vaso con un cubo de hielo que se derrite (animación sencilla) junto a un termómetro en 25 °C: '✓ pasa solo'. Al lado, la película al revés: el agua se congela sola a 25 °C: '✕ nunca pasa'. En medio: 'la energía se conserva en los dos casos'. Pregunta grande: '¿Qué decide la dirección?'",
+      "voz": {
+        "g1": "Deja un hielo en un vaso, a veinticinco grados, y se derrite solo.",
+        "g2": "Pero nunca has visto el agua de un vaso congelarse sola a esa temperatura. Y en los dos casos, la energía se conserva igual.",
+        "g3": "Entonces, ¿qué decide hacia dónde van las cosas? Una cantidad llamada entropía.",
+        "g4": "Hoy resolvemos, paso a paso, un ejercicio clásico de fisicoquímica: cuánto cambia la entropía al convertir hielo en vapor. Y al final respondemos esta pregunta con números."
+      },
+      "sub": {
+        "g1": "Deja un hielo en un vaso, a 25 °C, y se derrite solo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "capitulo": "Objetivo",
+      "pantalla": "Chip 'FISICOQUÍMICA · EJERCICIO RESUELTO'. Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Explicar qué mide la entropía · 2. Calcular ΔS al calentar y al cambiar de fase · 3. Decidir si un proceso es espontáneo.",
+      "voz": {
+        "o1": "Al final de este video vas a poder explicar qué mide la entropía, calcular su cambio cuando algo se calienta o cambia de fase, y decidir si un proceso ocurre solo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "que_es",
+      "capitulo": "¿Qué es la entropía?",
+      "pantalla": "Tres cajas con moléculas animadas: SÓLIDO (ordenadas, vibrando en su lugar) → LÍQUIDO (se deslizan) → GAS (vuelan por toda la caja). Una flecha 'S aumenta' debajo. Tarjeta: 'Entropía = cuántas formas hay de repartir la energía'. Luego la Segunda Ley en KaTeX: ΔS_universo ≥ 0.",
+      "voz": {
+        "q1": "La entropía mide de cuántas formas distintas se pueden acomodar las partículas y su energía.",
+        "q2": "En un sólido, las moléculas están fijas en su lugar: hay pocas formas. En un líquido, se deslizan: hay más. Y en un gas, vuelan por todos lados: hay muchísimas.",
+        "q3": "Por eso la entropía crece de sólido a líquido, y de líquido a gas.",
+        "q4": "Y la Segunda Ley de la termodinámica dice: en un proceso que ocurre solo, la entropía del universo aumenta. Nunca disminuye."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "formulas",
+      "capitulo": "Las dos fórmulas que necesitas",
+      "pantalla": "Definición KaTeX: dS = δq_rev / T. Dos tarjetas: CALENTAR (a presión constante): δq = n·Cp·dT → integrando: ΔS = n·Cp·ln(T₂/T₁). CAMBIO DE FASE (a temperatura constante): ΔS = n·ΔH / T. Sello amarillo: 'T SIEMPRE EN KELVIN'.",
+      "voz": {
+        "f1": "La definición: un cambio pequeño de entropía es el calor que entra, de forma reversible, entre la temperatura.",
+        "f2": "De ahí salen las dos fórmulas del ejercicio. Primera: al calentar a presión constante, el calor es ene, por la capacidad calorífica, por el cambio de temperatura. Si integramos, queda: delta ese es igual a ene por ce pe, por el logaritmo natural de te dos entre te uno.",
+        "f3": "Segunda: en un cambio de fase, como fundir o hervir, la temperatura no cambia. Entonces, delta ese es simplemente el calor del cambio de fase, entre la temperatura.",
+        "f4": "Y una regla de oro: la temperatura, siempre en kelvin."
+      },
+      "sub": {
+        "f1": "La definición: dS = δq_rev / T. El calor que entra, de forma reversible, entre la temperatura.",
+        "f2": "1. Al calentar a presión constante: δq = n·Cp·dT. Integrando: ΔS = n·Cp·ln(T₂/T₁).",
+        "f3": "2. En un cambio de fase la temperatura no cambia: ΔS = n·ΔH / T.",
+        "f4": "Regla de oro: la temperatura, siempre en kelvin."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "enunciado",
+      "capitulo": "El ejercicio",
+      "pantalla": "Tarjeta de enunciado: 'Calcula ΔS al convertir 18 g (1 mol) de hielo a −10 °C en vapor de agua a 110 °C, a 1 atm.' Tabla de datos con fuente: Cp hielo 37.6 · Cp agua 75.3 · Cp vapor 33.6 J/(mol·K) · ΔH fusión 6.01 kJ/mol a 0 °C · ΔH vaporización 40.7 kJ/mol a 100 °C. Nota: 'Datos: tablas estándar (Atkins, CRC). Supuesto: Cp constante en cada tramo'.",
+      "voz": {
+        "e1": "El ejercicio: calcula el cambio de entropía al convertir dieciocho gramos de hielo, o sea un mol, a menos diez grados, en vapor de agua a ciento diez grados, a una atmósfera.",
+        "e2": "Los datos: la capacidad calorífica del hielo es treinta y siete punto seis joules por mol kelvin. La del agua líquida, setenta y cinco punto tres. Y la del vapor, treinta y tres punto seis.",
+        "e3": "El calor de fusión es seis punto cero uno kilojoules por mol, a cero grados. Y el de vaporización, cuarenta punto siete kilojoules por mol, a cien grados.",
+        "e4": "Vamos a suponer que cada capacidad calorífica es constante en su tramo. Es la simplificación de siempre, y funciona muy bien."
+      },
+      "sub": {
+        "e1": "El ejercicio: ΔS al convertir 18 g (1 mol) de hielo a −10 °C en vapor a 110 °C, a 1 atm.",
+        "e2": "Datos: Cp hielo = 37.6 J/(mol·K). Cp agua líquida = 75.3. Cp vapor = 33.6.",
+        "e3": "ΔH fusión = 6.01 kJ/mol a 0 °C. ΔH vaporización = 40.7 kJ/mol a 100 °C.",
+        "e4": "Supuesto: cada Cp es constante en su tramo. La simplificación de siempre, y funciona muy bien."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plan",
+      "capitulo": "El plan: 5 etapas",
+      "pantalla": "Curva de calentamiento (temperatura vs. calor agregado): rampa 1 (hielo, −10 → 0 °C), meseta 2 (fusión a 0 °C), rampa 3 (líquido, 0 → 100 °C), meseta 4 (vaporización a 100 °C, la más larga), rampa 5 (vapor, 100 → 110 °C). Cada tramo numerado y con su fórmula: rampas → n·Cp·ln(T₂/T₁), mesetas → ΔH/T. Conversión a kelvin: −10 °C = 263.15 K · 0 °C = 273.15 K · 100 °C = 373.15 K · 110 °C = 383.15 K.",
+      "voz": {
+        "p1": "La clave es no hacerlo de golpe. El camino tiene cinco etapas.",
+        "p2": "Uno: calentar el hielo de menos diez a cero. Dos: fundirlo a cero. Tres: calentar el agua de cero a cien. Cuatro: hervirla a cien. Y cinco: calentar el vapor de cien a ciento diez.",
+        "p3": "Las rampas usan la fórmula del logaritmo, y las mesetas, la del cambio de fase.",
+        "p4": "Y antes de empezar, todo a kelvin: menos diez grados son doscientos sesenta y tres punto quince kelvin. Cero son doscientos setenta y tres punto quince. Cien, trescientos setenta y tres punto quince. Y ciento diez, trescientos ochenta y tres punto quince."
+      },
+      "sub": {
+        "p2": "1: calentar el hielo de −10 a 0 °C. 2: fundirlo. 3: calentar el agua de 0 a 100 °C. 4: hervirla. 5: calentar el vapor de 100 a 110 °C.",
+        "p3": "Las rampas usan n·Cp·ln(T₂/T₁). Las mesetas, ΔH/T.",
+        "p4": "Todo a kelvin: −10 °C = 263.15 K · 0 °C = 273.15 K · 100 °C = 373.15 K · 110 °C = 383.15 K."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "etapa1",
+      "capitulo": "Etapas 1 y 2: el hielo",
+      "pantalla": "La curva con el tramo 1 iluminado. KaTeX paso a paso: ΔS₁ = (1)(37.6) ln(273.15 / 263.15) = 37.6 × 0.0373 = 1.40 J/K. Luego tramo 2 iluminado: ΔS₂ = 6010 / 273.15 = 22.00 J/K (con nota: '6.01 kJ = 6010 J'). Contador acumulado: 23.40 J/K.",
+      "voz": {
+        "a1": "Etapa uno: calentar el hielo. Delta ese uno es uno, por treinta y siete punto seis, por el logaritmo de doscientos setenta y tres punto quince, entre doscientos sesenta y tres punto quince.",
+        "a2": "El logaritmo da cero punto cero tres siete tres. Y el resultado: uno punto cuarenta joules por kelvin. Pequeño, porque el hielo apenas se calentó diez grados.",
+        "a3": "Etapa dos: fundir el hielo. Ojo con las unidades: seis punto cero uno kilojoules son seis mil diez joules. Entre doscientos setenta y tres punto quince: veintidós joules por kelvin.",
+        "a4": "Fundirse aumenta la entropía casi dieciséis veces más que calentarse. Las moléculas, por fin, se sueltan."
+      },
+      "sub": {
+        "a1": "Etapa 1: ΔS₁ = 1 · 37.6 · ln(273.15 / 263.15).",
+        "a2": "ln da 0.0373. Resultado: ΔS₁ = 1.40 J/K. Pequeño: el hielo apenas se calentó 10 grados.",
+        "a3": "Etapa 2: 6.01 kJ = 6010 J. ΔS₂ = 6010 / 273.15 = 22.00 J/K.",
+        "a4": "Fundirse aumenta la entropía casi 16 veces más que calentarse: las moléculas se sueltan."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "etapa3",
+      "capitulo": "Etapa 3: el agua líquida",
+      "pantalla": "La curva con el tramo 3 iluminado. KaTeX: ΔS₃ = (1)(75.3) ln(373.15 / 273.15) = 75.3 × 0.3120 = 23.49 J/K. Contador acumulado: 46.89 J/K.",
+      "voz": {
+        "b1": "Etapa tres: calentar el agua líquida de cero a cien grados.",
+        "b2": "Delta ese tres es setenta y cinco punto tres, por el logaritmo de trescientos setenta y tres punto quince, entre doscientos setenta y tres punto quince.",
+        "b3": "El logaritmo da cero punto tres uno dos, y el resultado: veintitrés punto cuarenta y nueve joules por kelvin. Parecido a la fusión, porque aquí subimos cien grados completos."
+      },
+      "sub": {
+        "b2": "Etapa 3: ΔS₃ = 75.3 · ln(373.15 / 273.15).",
+        "b3": "ln da 0.312. Resultado: ΔS₃ = 23.49 J/K. Parecido a la fusión: aquí subimos 100 grados."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "etapa4",
+      "capitulo": "Etapas 4 y 5: el vapor",
+      "pantalla": "La curva con la meseta 4 iluminada (la más larga). KaTeX: ΔS₄ = 40 700 / 373.15 = 109.07 J/K (con nota '40.7 kJ = 40 700 J'). Luego tramo 5: ΔS₅ = 33.6 ln(383.15 / 373.15) = 0.89 J/K. Contador acumulado: 156.86 J/K.",
+      "voz": {
+        "c1": "Etapa cuatro: hervir el agua. Cuarenta punto siete kilojoules son cuarenta mil setecientos joules. Entre trescientos setenta y tres punto quince: ciento nueve punto cero siete joules por kelvin.",
+        "c2": "Es, por mucho, el número más grande. Al pasar a gas, cada molécula tiene todo el espacio para moverse.",
+        "c3": "Y la etapa cinco: calentar el vapor diez grados. Treinta y tres punto seis, por el logaritmo de trescientos ochenta y tres punto quince entre trescientos setenta y tres punto quince: cero punto ochenta y nueve joules por kelvin."
+      },
+      "sub": {
+        "c1": "Etapa 4: 40.7 kJ = 40 700 J. ΔS₄ = 40 700 / 373.15 = 109.07 J/K.",
+        "c2": "Es, por mucho, el más grande: al pasar a gas, cada molécula tiene todo el espacio.",
+        "c3": "Etapa 5: ΔS₅ = 33.6 · ln(383.15 / 373.15) = 0.89 J/K."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "total",
+      "capitulo": "El resultado",
+      "pantalla": "KaTeX de la suma: ΔS = 1.40 + 22.00 + 23.49 + 109.07 + 0.89 = 156.86 J/K (≈ 157 J/K), resaltado en verde. Luego barras horizontales por etapa con su porcentaje: hielo 0.9 % · fusión 14.0 % · líquido 15.0 % · vaporización 69.5 % · vapor 0.6 %. Sticker: 'ΔS > 0: el sistema ganó formas de acomodarse'.",
+      "voz": {
+        "t1": "Ahora sumamos las cinco etapas: uno punto cuarenta, más veintidós, más veintitrés punto cuarenta y nueve, más ciento nueve punto cero siete, más cero punto ochenta y nueve.",
+        "t2": "El cambio total de entropía es ciento cincuenta y seis punto ochenta y seis joules por kelvin. Unos ciento cincuenta y siete.",
+        "t3": "Y mira de dónde sale: casi el setenta por ciento viene solo de hervir el agua. Calentar el hielo y el vapor casi no cuenta.",
+        "t4": "El resultado es positivo, como esperábamos: el agua pasó del estado más ordenado al más disperso."
+      },
+      "sub": {
+        "t1": "Sumamos: 1.40 + 22.00 + 23.49 + 109.07 + 0.89.",
+        "t2": "El cambio total: ΔS = 156.86 J/K. Unos 157.",
+        "t3": "Casi el 70 % viene solo de hervir el agua. Calentar el hielo y el vapor casi no cuenta."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "universo",
+      "capitulo": "Respuesta: ¿por qué se derrite solo?",
+      "pantalla": "Vuelve el vaso a 25 °C. Tres tarjetas en KaTeX: SISTEMA (el hielo al fundirse a 0 °C): ΔS = +6010/273.15 = +22.00 J/K · ENTORNO (el aire a 25 °C cede ese calor): ΔS = −6010/298.15 = −20.16 J/K · UNIVERSO: +22.00 − 20.16 = +1.84 J/K > 0 → ✓ espontáneo. Luego al revés (congelarse): −1.84 J/K < 0 → ✕ nunca pasa solo. Nota: 'simplificación: solo la fusión'.",
+      "voz": {
+        "u1": "Y ahora sí, la pregunta del inicio. Cuando el hielo se funde en el vaso, gana veintidós joules por kelvin, como en la etapa dos.",
+        "u2": "Pero ese calor sale del aire, que está a veinticinco grados: doscientos noventa y ocho punto quince kelvin. El entorno pierde seis mil diez entre doscientos noventa y ocho punto quince: veinte punto dieciséis joules por kelvin.",
+        "u3": "El universo, en total: veintidós menos veinte punto dieciséis. Uno punto ochenta y cuatro, positivo. Por eso el hielo se derrite solo.",
+        "u4": "Y al revés, congelarse a veinticinco grados daría menos uno punto ochenta y cuatro. Negativo. La Segunda Ley lo prohíbe: por eso nunca lo ves."
+      },
+      "sub": {
+        "u1": "La pregunta del inicio: al fundirse, el hielo gana 22.00 J/K, como en la etapa 2.",
+        "u2": "Ese calor sale del aire, a 25 °C = 298.15 K. El entorno pierde 6010 / 298.15 = 20.16 J/K.",
+        "u3": "El universo: 22.00 − 20.16 = +1.84 J/K. Positivo: por eso el hielo se derrite solo.",
+        "u4": "Al revés, congelarse a 25 °C daría −1.84 J/K. Negativo: la Segunda Ley lo prohíbe."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 4 líneas (NumPy): cal = lambda Cp, T1, T2: Cp * np.log(T2 / T1) / s = cal(37.6, 263.15, 273.15) + 6010 / 273.15 / s += cal(75.3, 273.15, 373.15) + 40700 / 373.15 / s += cal(33.6, 373.15, 383.15) → 156.86.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Una función para las rampas, el calor entre la temperatura para las mesetas, y se suman las cinco etapas.",
+        "y3": "Ciento cincuenta y seis punto ochenta y seis. El mismo resultado que a mano."
+      },
+      "sub": {
+        "y2": "Una función para las rampas, ΔH/T para las mesetas, y se suman las 5 etapas.",
+        "y3": "156.86 J/K: el mismo resultado que a mano."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Errores comunes",
+      "pantalla": "Sticker '¡CUIDADO!'. Tarjeta 1: usar °C en el logaritmo: ln(100/0) → división entre cero ✕; ln(110/−10) → logaritmo de un negativo ✕. 'Siempre kelvin'. Tarjeta 2: mezclar kJ con J: 40.7/373.15 = 0.109 ✕ vs 40 700/373.15 = 109.07 ✓.",
+      "voz": {
+        "x1": "Dos errores que cuestan puntos en el examen. El primero: usar grados Celsius. En la etapa tres te quedaría el logaritmo de cien entre cero: imposible. Siempre kelvin.",
+        "x2": "El segundo: mezclar kilojoules con joules. Si divides cuarenta punto siete entre la temperatura, te sale cero punto uno cero nueve, mil veces menos. Pasa todo a joules antes de dividir."
+      },
+      "sub": {
+        "x1": "Error 1: usar °C. En la etapa 3 quedaría ln(100 / 0): imposible. Siempre kelvin.",
+        "x2": "Error 2: mezclar kJ y J. 40.7 / 373.15 = 0.109, mil veces menos. Todo a joules antes de dividir."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: entropía en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Fórmula de Shannon en KaTeX: H = −Σ p·log₂ p. Dos monedas: justa (50/50) → H = 1 bit; cargada (90/10) → H = 0.47 bits. Mini árbol de decisión: 'elige la pregunta que más baja la entropía'.",
+      "voz": {
+        "p1": "Un plus: en ciencia de datos existe otra entropía, la de Shannon, con la misma idea de fondo: cuántas posibilidades hay, o qué tan impredecible es algo.",
+        "p2": "Una moneda justa tiene un bit de entropía. Una cargada, que cae cara nueve de cada diez veces, solo cero punto cuarenta y siete. Los árboles de decisión la usan para elegir qué pregunta hacer primero."
+      },
+      "sub": {
+        "p1": "Un plus: en ciencia de datos existe la entropía de Shannon, con la misma idea: qué tan impredecible es algo.",
+        "p2": "Una moneda justa: 1 bit. Una cargada (90/10): 0.47 bits. Los árboles de decisión la usan para elegir la mejor pregunta."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': ΔS al convertir 1 mol de agua líquida a 25 °C en vapor a 100 °C, a 1 atm. 'Pista: son 2 etapas. Déjalo en los comentarios'. Luego 3 tarjetas de resumen: 1. Calentar: ΔS = n·Cp·ln(T₂/T₁) · 2. Cambio de fase: ΔS = n·ΔH/T · 3. Espontáneo si ΔS_universo > 0.",
+      "voz": {
+        "w1": "Un reto para practicar: calcula el cambio de entropía al convertir un mol de agua líquida a veinticinco grados en vapor a cien grados. Pista: son dos etapas. Déjalo en los comentarios.",
+        "w2": "En resumen: al calentar, la entropía cambia según el logaritmo de las temperaturas. En un cambio de fase, es el calor entre la temperatura. Y un proceso ocurre solo si la entropía del universo aumenta."
+      },
+      "sub": {
+        "w1": "Reto: ΔS al convertir 1 mol de agua líquida a 25 °C en vapor a 100 °C. Pista: son 2 etapas. Déjalo en los comentarios."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'¿MÁS EJERCICIOS DE FISICOQUÍMICA?' con la invitación a comentar; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "¿Quieres más ejercicios resueltos de fisicoquímica? Dime en los comentarios cuál te cuesta más.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
