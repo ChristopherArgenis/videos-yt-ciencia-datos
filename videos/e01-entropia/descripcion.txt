@@ -1,0 +1,32 @@
+Cambio de entropía, ejercicio resuelto paso a paso: cuánto cambia la entropía al convertir 1 mol de hielo a −10 °C en vapor a 110 °C. Fisicoquímica y termodinámica explicadas desde cero.
+Aprende a calcular ΔS al calentar una sustancia y en un cambio de fase (fusión y vaporización), y a decidir si un proceso es espontáneo con la Segunda Ley.
+
+Resolvemos un ejercicio clásico de fisicoquímica en 5 etapas: calentar el hielo, fundirlo, calentar el agua, hervirla y calentar el vapor. Usamos ΔS = n·Cp·ln(T2/T1) para las rampas y ΔS = ΔH/T para los cambios de fase. El resultado: 156.86 J/K, y casi el 70 % viene solo de la vaporización. Al final respondemos por qué el hielo se derrite solo a 25 °C, pero el agua nunca se congela sola: la entropía del universo.
+
+Capítulos:
+00:00 ¿Por qué el hielo se derrite solo?
+00:31 Objetivo
+00:43 ¿Qué es la entropía?
+01:14 Las dos fórmulas que necesitas
+01:54 El ejercicio
+02:37 El plan: 5 etapas
+03:17 Etapas 1 y 2: el hielo
+04:00 Etapa 3: el agua líquida
+04:27 Etapas 4 y 5: el vapor
+05:03 El resultado
+05:39 Respuesta: ¿por qué se derrite solo?
+06:22 En Python
+06:37 Errores comunes
+07:02 Plus: entropía en Ciencia de Datos
+07:26 Reto y resumen
+07:53 Cierre
+
+💻 El código en Python (NumPy) que comprueba el resultado aparece en el video en el 06:22.
+🧩 Reto: deja tu respuesta en los comentarios.
+
+Datos: valores de tablas estándar (Atkins, Química Física; CRC Handbook of Chemistry and Physics), a 1 atm. Se supone Cp constante en cada tramo.
+
+Suscríbete a @UniversoCienciaDatos para más ciencia, matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#fisicoquimica #entropia #termodinamica #quimica #cienciadedatos

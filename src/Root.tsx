@@ -18,6 +18,7 @@ import {
   MiniCalculo02,
   MiniCalculo03,
   MiniCalculo04,
+  MiniEntropia,
   MiniPlantilla,
 } from "./miniaturas/Miniaturas";
 import { V01, V01FutbolDatos } from "./videos/V01FutbolDatos";
@@ -34,6 +35,7 @@ import { C01, C01Funcion } from "./videos/C01Funcion";
 import { C02, C02Limites } from "./videos/C02Limites";
 import { C03, C03Continuidad } from "./videos/C03Continuidad";
 import { C04, C04Derivada } from "./videos/C04Derivada";
+import { E01, E01Entropia } from "./videos/E01Entropia";
 
 // Cada video largo: <Composition id="NN-Nombre"> con la duración que sale de su guion.
 // Cada miniatura: <Still id="Mini-NN-Nombre"> de 1280×720.
@@ -164,6 +166,16 @@ export const RemotionRoot: React.FC = () => (
         height={H}
       />
     </Folder>
+    <Folder name="Especiales">
+      <Composition
+        id="E01-Entropia"
+        component={E01Entropia}
+        durationInFrames={planificar(E01).total}
+        fps={FPS}
+        width={W}
+        height={H}
+      />
+    </Folder>
     <Folder name="Miniaturas">
       <Still
         id="Mini-00-Plantilla"
@@ -252,6 +264,12 @@ export const RemotionRoot: React.FC = () => (
       <Still
         id="Mini-C04-Derivada"
         component={MiniCalculo04}
+        width={MINI_W}
+        height={MINI_H}
+      />
+      <Still
+        id="Mini-E01-Entropia"
+        component={MiniEntropia}
         width={MINI_W}
         height={MINI_H}
       />

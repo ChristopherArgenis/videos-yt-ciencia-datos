@@ -207,3 +207,18 @@ y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 **Comentario fijado:** 🧩 Reto: si f(x) = x², ¿cuánto valen f'(5) y f'(−1)? ¿Sube o baja en cada punto? 👇 (la solución, en el episodio 5)
 **Respuesta del reto (para el #5):** f'(5) = 10, sube; f'(−1) = −2, baja.
 **Pantalla final:** episodio 3 + lista del curso. **Tarjeta:** al episodio 2 (límites) en 00:00–00:31.
+
+---
+
+# Especiales
+
+## E01 · Cambio de entropía: ejercicio resuelto (8:13)
+**Título:** Cambio de entropía: ejercicio resuelto paso a paso (50)
+**Alternativas:** Entropía: de hielo a vapor, paso a paso (39) · ¿Por qué el hielo se derrite solo? Entropía (42)
+**Miniatura:** `Mini-E01-Entropia` → "HIELO → VAPOR" + "ΔS = ?" con cubo de hielo y vapor
+**Voz:** alex_nicola · Fórmulas con KaTeX · Datos de tablas estándar (Atkins, CRC), Cp constante por tramo.
+**Descripción:** `videos/e01-entropia/descripcion.txt` (sin código; remite al 06:22).
+**#:** #fisicoquimica #entropia #termodinamica #quimica #cienciadedatos
+**Comentario fijado:** 🧩 Reto: ¿cuánto cambia la entropía al convertir 1 mol de agua líquida a 25 °C en vapor a 100 °C? Pista: son 2 etapas 👇
+**Respuesta del reto:** 75.3·ln(373.15/298.15) + 40 700/373.15 = 16.90 + 109.07 = 125.97 J/K.
+**Lista sugerida:** "Fisicoquímica: ejercicios resueltos" (si se hacen más).

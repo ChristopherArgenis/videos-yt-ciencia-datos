@@ -1315,3 +1315,42 @@ export const MiniCalculo04: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+// ---------- Especiales ----------
+
+export const MiniEntropia: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(110deg, #13366e 0%, #0b1020 50%, #5a1a1a 100%)" }} />
+    {/* Cubo de hielo */}
+    <svg width={250} height={250} viewBox="0 0 330 330" style={{ position: "absolute", left: 40, top: 300 }}>
+      <rect x={40} y={40} width={250} height={250} rx={40} fill="#dff3ff" stroke="#9fd3f5" strokeWidth={12} />
+      <path d="M 80 90 L 150 90" stroke="#ffffff" strokeWidth={18} strokeLinecap="round" />
+      <path d="M 80 130 L 115 130" stroke="#ffffff" strokeWidth={18} strokeLinecap="round" />
+    </svg>
+    {/* Vapor */}
+    <svg width={250} height={290} viewBox="0 0 330 360" style={{ position: "absolute", right: 40, top: 270 }}>
+      {[60, 150, 240].map((x, i) => (
+        <path
+          key={x}
+          d={`M ${x} 330 C ${x - 50} 270, ${x + 50} 220, ${x} 160 S ${x - 50} 60, ${x} 20`}
+          fill="none"
+          stroke="#ffb3a7"
+          strokeWidth={22}
+          strokeLinecap="round"
+          opacity={0.9 - i * 0.15}
+        />
+      ))}
+    </svg>
+    <div style={{ position: "absolute", left: 0, right: 0, top: 40, display: "flex", justifyContent: "center" }}>
+      <Nombre color="#ffffff" size={118}>
+        HIELO → VAPOR
+      </Nombre>
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, top: 230, display: "flex", justifyContent: "center" }}>
+      <Formula tex={"\\Delta S = ?"} size={165} color={C.green} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.5)" }} />
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 30, display: "flex", justifyContent: "center" }}>
+      <ChipMini bg="#ffd166">EJERCICIO RESUELTO · FISICOQUÍMICA</ChipMini>
+    </div>
+  </AbsoluteFill>
+);

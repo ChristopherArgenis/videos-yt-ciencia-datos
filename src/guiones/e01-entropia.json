@@ -2,7 +2,7 @@
   "_nota": "Video especial de fisicoquímica: ejercicio resuelto de cambio de entropía. 1 mol (18 g) de hielo a −10 °C → vapor a 110 °C, a 1 atm, en 5 etapas. Datos de tablas estándar (Atkins, Química Física; CRC Handbook): Cp,m hielo 37.6, agua líquida 75.3, vapor 33.6 J/(mol·K); ΔHfus 6.01 kJ/mol (273.15 K); ΔHvap 40.7 kJ/mol (373.15 K). Supuesto: Cp constante en cada tramo. Cuentas verificadas en Python: ΔS total = 156.86 J/K. Espontaneidad: fusión con entorno a 25 °C (simplificación de libro).",
   "id": "e01-entropia",
   "titulo": "Cambio de entropía: ejercicio resuelto paso a paso",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/explica.wav",
   "voz": "alex_nicola",
   "acento": "#5b8cff",
@@ -215,12 +215,12 @@
       "capitulo": "Plus: entropía en Ciencia de Datos",
       "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Fórmula de Shannon en KaTeX: H = −Σ p·log₂ p. Dos monedas: justa (50/50) → H = 1 bit; cargada (90/10) → H = 0.47 bits. Mini árbol de decisión: 'elige la pregunta que más baja la entropía'.",
       "voz": {
-        "p1": "Un plus: en ciencia de datos existe otra entropía, la de Shannon, con la misma idea de fondo: cuántas posibilidades hay, o qué tan impredecible es algo.",
-        "p2": "Una moneda justa tiene un bit de entropía. Una cargada, que cae cara nueve de cada diez veces, solo cero punto cuarenta y siete. Los árboles de decisión la usan para elegir qué pregunta hacer primero."
+        "k1": "Un plus: en ciencia de datos existe otra entropía, la de Shannon, con la misma idea de fondo: cuántas posibilidades hay, o qué tan impredecible es algo.",
+        "k2": "Una moneda justa tiene un bit de entropía. Una cargada, que cae cara nueve de cada diez veces, solo cero punto cuarenta y siete. Los árboles de decisión la usan para elegir qué pregunta hacer primero."
       },
       "sub": {
-        "p1": "Un plus: en ciencia de datos existe la entropía de Shannon, con la misma idea: qué tan impredecible es algo.",
-        "p2": "Una moneda justa: 1 bit. Una cargada (90/10): 0.47 bits. Los árboles de decisión la usan para elegir la mejor pregunta."
+        "k1": "Un plus: en ciencia de datos existe la entropía de Shannon, con la misma idea: qué tan impredecible es algo.",
+        "k2": "Una moneda justa: 1 bit. Una cargada (90/10): 0.47 bits. Los árboles de decisión la usan para elegir la mejor pregunta."
       },
       "pausa": 1.4
     },
