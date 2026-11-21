@@ -1,0 +1,215 @@
+{
+  "_nota": "Cálculo Diferencial #5. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #4: f'(5) = 10 (sube), f'(−1) = −2 (baja). Caída libre: s(t) = 4.9t² (g ≈ 9.8 m/s²). Plus: ejemplo simplificado con x = 2, y = 6, w = 1.",
+  "id": "c05-reglas",
+  "titulo": "Reglas de derivación | Cálculo Diferencial #5",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿Derivar x¹⁰ con la definición?",
+      "pantalla": "Recuerdo rápido: la derivada de x² con la definición, 4 pasos en gris. Luego aparece f(x) = x¹⁰ y la expansión de (x + h)¹⁰ que no cabe en la pantalla: '11 términos'. Corte: una sola línea, 'f'(x) = 10x⁹', con un rayo. Pregunta: '¿Cómo?'",
+      "voz": {
+        "g1": "En el episodio anterior, derivar equis al cuadrado con la definición nos tomó cuatro pasos.",
+        "g2": "Ahora imagina equis a la diez. Equis más hache, a la diez, tiene once términos. Es una pesadilla.",
+        "g3": "Pero hay un atajo: la derivada es diez equis a la nueve. En una sola línea.",
+        "g4": "Hoy aprendes las reglas que hacen eso posible. Con ellas, derivas cualquier polinomio en segundos."
+      },
+      "sub": {
+        "g2": "Ahora imagina x¹⁰. (x + h)¹⁰ tiene 11 términos: una pesadilla.",
+        "g3": "Pero hay un atajo: la derivada es 10x⁹. En una sola línea."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #5' con el mapa de los 12 temas; se ilumina 'Reglas'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio cinco."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': derivada = pendiente de la tangente; para x², f'(x) = 2x. 'RESPUESTA DEL RETO': f'(5) = 2·5 = 10 → sube · f'(−1) = 2·(−1) = −2 → baja, con dos mini tangentes.",
+      "voz": {
+        "r1": "Recuerda: la derivada es la pendiente de la tangente. Y para equis al cuadrado, es dos equis.",
+        "r2": "El reto: la derivada en cinco es dos por cinco, diez. Positiva: ahí la función sube. Y en menos uno, es menos dos. Negativa: ahí baja."
+      },
+      "sub": {
+        "r1": "Recuerda: la derivada es la pendiente de la tangente. Para x², es 2x.",
+        "r2": "El reto: f'(5) = 2 · 5 = 10, positiva: sube. f'(−1) = −2, negativa: baja."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Usar la regla de la potencia · 2. Derivar sumas y constantes · 3. Derivar cualquier polinomio.",
+      "voz": {
+        "o1": "Hoy vas a poder usar la regla de la potencia, derivar sumas y constantes, y con eso, derivar cualquier polinomio."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "patron",
+      "capitulo": "El patrón",
+      "pantalla": "Tabla que se llena fila por fila (calculadas con la definición): x → 1 · x² → 2x · x³ → 3x². Flechas animadas: el exponente 'baja' al frente y al exponente se le resta 1. Pregunta: 'x⁴ → ?' y se llena 4x³.",
+      "voz": {
+        "a1": "Si calculas varias derivadas con la definición, aparece un patrón.",
+        "a2": "La derivada de equis es uno. La de equis al cuadrado, dos equis. La de equis al cubo, tres equis al cuadrado.",
+        "a3": "¿Lo ves? El exponente baja al frente, y al exponente se le resta uno.",
+        "a4": "Entonces, la derivada de equis a la cuarta debería ser cuatro equis al cubo. Y sí: la definición lo confirma."
+      },
+      "sub": {
+        "a2": "La derivada de x es 1. La de x², 2x. La de x³, 3x².",
+        "a3": "El exponente baja al frente, y al exponente se le resta 1.",
+        "a4": "Entonces, la derivada de x⁴ debería ser 4x³. Y la definición lo confirma."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "potencia",
+      "capitulo": "Regla de la potencia",
+      "pantalla": "Fórmula grande KaTeX con colores: d/dx (xⁿ) = n·xⁿ⁻¹ (el n baja en amarillo, el n − 1 en coral). Tres ejemplos: x¹⁰ → 10x⁹ · 1/x = x⁻¹ → −x⁻² = −1/x² · √x = x^(1/2) → (1/2)x^(−1/2) = 1/(2√x). Sticker: 'sirve para exponentes negativos y fracciones'.",
+      "voz": {
+        "b1": "Esa es la regla de la potencia: la derivada de equis a la ene es ene, por equis a la ene menos uno.",
+        "b2": "Con ella, la derivada de equis a la diez es diez equis a la nueve. Lo del inicio, en un paso.",
+        "b3": "Y funciona también con exponentes negativos. Uno entre equis es equis a la menos uno. Su derivada: menos uno, por equis a la menos dos. O sea, menos uno entre equis al cuadrado.",
+        "b4": "Y con fracciones: la raíz de equis es equis a la un medio. Su derivada es un medio, por equis a la menos un medio: uno entre dos raíz de equis."
+      },
+      "sub": {
+        "b1": "La regla de la potencia: la derivada de xⁿ es n · xⁿ⁻¹.",
+        "b2": "Con ella, la derivada de x¹⁰ es 10x⁹. Lo del inicio, en un paso.",
+        "b3": "También con exponentes negativos: 1/x = x⁻¹. Su derivada: −1 · x⁻² = −1/x².",
+        "b4": "Y con fracciones: √x = x^(1/2). Su derivada: (1/2) · x^(−1/2) = 1 / (2√x)."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "otras",
+      "capitulo": "Constantes y sumas",
+      "pantalla": "Tres tarjetas KaTeX con una mini gráfica cada una: CONSTANTE d/dx (c) = 0 (una recta horizontal y = 7: pendiente 0) · MÚLTIPLO d/dx (c·f) = c·f' (5x³ → 15x²) · SUMA d/dx (f ± g) = f' ± g' (x² + x³ → 2x + 3x²).",
+      "voz": {
+        "c1": "Faltan tres reglas, y son muy naturales.",
+        "c2": "Uno: la derivada de una constante es cero. Una recta horizontal, como ye igual a siete, no sube ni baja: su pendiente es cero.",
+        "c3": "Dos: un número que multiplica se queda afuera. La derivada de cinco equis al cubo es cinco, por tres equis al cuadrado: quince equis al cuadrado.",
+        "c4": "Y tres: la derivada de una suma es la suma de las derivadas. Cada término se deriva por separado."
+      },
+      "sub": {
+        "c2": "1. La derivada de una constante es 0. Una recta horizontal, como y = 7, no sube ni baja.",
+        "c3": "2. Un número que multiplica se queda afuera: la derivada de 5x³ es 5 · 3x² = 15x².",
+        "c4": "3. La derivada de una suma es la suma de las derivadas: cada término por separado."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ejemplo",
+      "capitulo": "Ejemplo resuelto",
+      "pantalla": "f(x) = 3x⁴ − 5x² + 7, cada término en una caja de color. Paso 1: 3x⁴ → 3·4x³ = 12x³ · Paso 2: −5x² → −5·2x = −10x · Paso 3: 7 → 0 (tachado). Resultado: f'(x) = 12x³ − 10x. Luego evaluación: f'(1) = 12 − 10 = 2 y la tangente en x = 1 sobre la gráfica.",
+      "voz": {
+        "e1": "Probemos con un polinomio completo: tres equis a la cuarta, menos cinco equis al cuadrado, más siete.",
+        "e2": "Término por término. Tres equis a la cuarta: el cuatro baja y multiplica al tres. Doce equis al cubo.",
+        "e3": "Menos cinco equis al cuadrado: el dos baja. Menos diez equis.",
+        "e4": "Y el siete es una constante: su derivada es cero, desaparece.",
+        "e5": "La derivada es doce equis al cubo, menos diez equis. Y si quieres la pendiente en uno: doce menos diez, dos."
+      },
+      "sub": {
+        "e1": "Un polinomio completo: f(x) = 3x⁴ − 5x² + 7.",
+        "e2": "Término por término. 3x⁴: el 4 baja y multiplica al 3. Queda 12x³.",
+        "e3": "−5x²: el 2 baja. Queda −10x.",
+        "e4": "El 7 es una constante: su derivada es 0, desaparece.",
+        "e5": "La derivada: f'(x) = 12x³ − 10x. En x = 1: 12 − 10 = 2."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué se usa?",
+      "pantalla": "Una pelota cae (animación) con su fórmula: s(t) = 4.9t² (metros). Derivada: v(t) = 9.8t (m/s). Tarjetas: en 1 s → 9.8 m/s · en 2 s → 19.6 m/s. Sticker: '9.8 = la gravedad'.",
+      "voz": {
+        "u1": "¿Para qué sirve? Cuando sueltas una pelota, la distancia que cae es cuatro punto nueve, por te al cuadrado, en metros.",
+        "u2": "Con la regla de la potencia, su velocidad es la derivada: nueve punto ocho, por te. Al primer segundo va a nueve punto ocho metros por segundo, y al segundo, a diecinueve punto seis.",
+        "u3": "Y ese nueve punto ocho no es casualidad: es la aceleración de la gravedad. Salió de derivar."
+      },
+      "sub": {
+        "u1": "Cuando sueltas una pelota, la distancia que cae es s(t) = 4.9t², en metros.",
+        "u2": "Su velocidad es la derivada: v(t) = 9.8t. Al primer segundo, 9.8 m/s. Al segundo, 19.6 m/s.",
+        "u3": "Ese 9.8 es la aceleración de la gravedad. Salió de derivar."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. El error de un modelo de una sola variable: L(w) = (y − wx)², expandido: y² − 2wxy + w²x². Derivada término por término: dL/dw = −2xy + 2wx² = −2x(y − wx). Ejemplo simplificado: x = 2, y = 6, w = 1 → L = 16, dL/dw = −16 → 'negativa: sube w'.",
+      "voz": {
+        "p1": "Un plus para ciencia de datos: el error de un modelo sencillo es ye menos doble ve equis, al cuadrado. Si lo desarrollas, es un polinomio en doble ve.",
+        "p2": "Y con las reglas de hoy, su derivada sale en un paso. Con datos de ejemplo, da menos dieciséis: negativa, así que conviene subir doble ve para que el error baje."
+      },
+      "sub": {
+        "p1": "Un plus: el error de un modelo sencillo es L(w) = (y − wx)². Desarrollado, es un polinomio en w.",
+        "p2": "Con las reglas de hoy, su derivada sale en un paso. Con datos de ejemplo da −16: negativa, conviene subir w."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 3 líneas (SymPy): f = 3*x**4 - 5*x**2 + 7 / d = sp.diff(f, x) → 12*x**3 - 10*x / d.subs(x, 1) → 2.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "SimPy aplica las mismas reglas y te da la derivada: doce equis al cubo, menos diez equis.",
+        "y3": "Y la evalúas en uno: dos. Igual que a mano."
+      },
+      "sub": {
+        "y2": "SymPy aplica las mismas reglas: 12x³ − 10x.",
+        "y3": "Y la evalúas en 1: 2. Igual que a mano."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Errores comunes",
+      "pantalla": "Sticker '¡CUIDADO!'. Tres tarjetas: 1) d/dx (7) = 0, no 7 · 2) d/dx (x³) = 3x², no 3x³ (el exponente baja Y se resta) · 3) d/dx (2ˣ) ≠ x·2ˣ⁻¹: 'la regla de la potencia es para xⁿ, no para nˣ → episodio 6'.",
+      "voz": {
+        "x1": "Tres errores muy comunes. Uno: la derivada de una constante no es la constante, es cero.",
+        "x2": "Dos: al exponente hay que restarle uno. La derivada de equis al cubo es tres equis al cuadrado, no tres equis al cubo.",
+        "x3": "Y tres: la regla de la potencia es para la equis en la base. Si la equis está en el exponente, como dos a la equis, no funciona. Eso es lo que vemos en el próximo episodio."
+      },
+      "sub": {
+        "x1": "Error 1: la derivada de una constante no es la constante: es 0.",
+        "x2": "Error 2: al exponente se le resta 1. La derivada de x³ es 3x², no 3x³.",
+        "x3": "Error 3: la regla es para x en la base. Con x en el exponente, como 2ˣ, no funciona. Eso, en el próximo episodio."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': f(x) = 4x³ + 2x − 9 → ¿f'(x)? ¿y f'(1)? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. Potencia: (xⁿ)' = n·xⁿ⁻¹ · 2. Constante → 0, el múltiplo se queda afuera · 3. Suma: término por término.",
+      "voz": {
+        "w1": "El reto: deriva cuatro equis al cubo, más dos equis, menos nueve. Y evalúa la derivada en uno. Déjalo en los comentarios.",
+        "w2": "En resumen: para derivar equis a la ene, el exponente baja y se le resta uno. Las constantes desaparecen, y los números que multiplican se quedan afuera. Y una suma se deriva término por término."
+      },
+      "sub": {
+        "w1": "Reto: deriva f(x) = 4x³ + 2x − 9, y evalúa f'(1). Déjalo en los comentarios.",
+        "w2": "Resumen: (xⁿ)' = n·xⁿ⁻¹. Las constantes desaparecen y los números que multiplican se quedan afuera. Las sumas, término por término."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #6 Derivada exponencial y logaritmo'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio: la función más especial del cálculo, la única que es su propia derivada. La exponencial.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
