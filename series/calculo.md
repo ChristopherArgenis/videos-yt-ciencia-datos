@@ -107,7 +107,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** derivada de 4x³ + 2x. (12x² + 2)
 
 ### 6 · Derivada exponencial y logaritmo | Cálculo Diferencial #6
-- **Estado:** ✅ hecho (5:37, `out/C06-ExpLog.mp4`). Guion: `src/guiones/c06-exp-log.json`. Nota: el plan original ponía producto/cociente en el #6; se intercambió (exp y log van antes).
+- **Estado:** ✅ hecho (5:37, `out/C06-ExpLog.mp4`). Guion: `src/guiones/c06-exp-log.json`.
 - **Gancho:** "¿Por qué los modelos suman logaritmos en vez de multiplicar probabilidades?"
 - **Qué es:** eˣ es su propia derivada; la derivada de ln x es 1/x.
 - **Cómo se calcula:** (3eˣ)' = 3eˣ; (ln x)' en x = 2 → 0.5.
