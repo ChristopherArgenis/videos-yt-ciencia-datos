@@ -2,7 +2,7 @@
   "_nota": "Cálculo Diferencial #6. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #5: f'(x) = 12x² + 2, f'(1) = 14. Banco: ejemplo simplificado (1 peso al 100 % anual). Crecimiento: P(t) = P₀·e^{kt}.",
   "id": "c06-exp-log",
   "titulo": "Derivada exponencial y logaritmo | Cálculo Diferencial #6",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/explica.wav",
   "voz": "alex_nicola",
   "acento": "#5b8cff",
@@ -50,7 +50,7 @@
     },
     {
       "id": "objetivo",
-      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Explicar qué es el número e · 2. Derivar eˣ y ln x · 3. Derivar cualquier exponencial aˣ.",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Explicar qué es el número e · 2. Derivar e^x y ln x · 3. Derivar cualquier exponencial a^x.",
       "voz": {
         "o1": "Hoy vas a poder explicar qué es el número e, derivar la exponencial y el logaritmo natural, y derivar cualquier exponencial."
       },
@@ -74,8 +74,8 @@
     },
     {
       "id": "exp",
-      "capitulo": "La derivada de eˣ",
-      "pantalla": "Gráfica de y = eˣ. Un punto recorre la curva con su tangente; al lado, dos números iguales: 'altura' y 'pendiente' (x = 0 → 1 y 1 · x = 1 → 2.72 y 2.72 · x = 2 → 7.39 y 7.39). Fórmula grande KaTeX: d/dx (eˣ) = eˣ con un sello 'su propia derivada'.",
+      "capitulo": "La derivada de e^x",
+      "pantalla": "Gráfica de y = e^x. Un punto recorre la curva con su tangente; al lado, dos números iguales: 'altura' y 'pendiente' (x = 0 → 1 y 1 · x = 1 → 2.72 y 2.72 · x = 2 → 7.39 y 7.39). Fórmula grande KaTeX: d/dx (e^x) = e^x con un sello 'su propia derivada'.",
       "voz": {
         "x1": "Ahora, la función e a la equis. Mira su gráfica, y la tangente en cada punto.",
         "x2": "En cero, la altura es uno, y la pendiente también es uno. En uno, la altura es dos punto setenta y dos, y la pendiente, dos punto setenta y dos. En dos, siete punto treinta y nueve, y siete punto treinta y nueve.",
@@ -83,32 +83,32 @@
         "x4": "Mientras más grande es, más rápido crece. Eso es crecer en proporción a sí mismo."
       },
       "sub": {
-        "x1": "Ahora, la función eˣ. Mira su gráfica, y la tangente en cada punto.",
+        "x1": "Ahora, la función e^x. Mira su gráfica, y la tangente en cada punto.",
         "x2": "En 0: altura 1, pendiente 1. En 1: altura 2.72, pendiente 2.72. En 2: 7.39 y 7.39.",
-        "x3": "La pendiente es igual a la altura. Por eso, la derivada de eˣ es eˣ: su propia derivada."
+        "x3": "La pendiente es igual a la altura. Por eso, la derivada de e^x es e^x: su propia derivada."
       },
       "pausa": 1.4
     },
     {
       "id": "otras_bases",
-      "capitulo": "¿Y 2ˣ? Otras bases",
-      "pantalla": "KaTeX: d/dx (aˣ) = aˣ · ln a. Ejemplo: d/dx (2ˣ) = 2ˣ · ln 2 ≈ 0.693 · 2ˣ (tachado al lado: 'x · 2ˣ⁻¹ ✕'). Comprobación: con a = e, ln e = 1 → d/dx (eˣ) = eˣ ✓. Gráficas de 2ˣ y eˣ: la de e crece justo con 'pendiente = altura'.",
+      "capitulo": "¿Y 2^x? Otras bases",
+      "pantalla": "KaTeX: d/dx (a^x) = a^x · ln a. Ejemplo: d/dx (2^x) = 2^x · ln 2 ≈ 0.693 · 2^x (tachado al lado: 'x · 2^(x−1) ✕'). Comprobación: con a = e, ln e = 1 → d/dx (e^x) = e^x ✓. Gráficas de 2^x y e^x: la de e crece justo con 'pendiente = altura'.",
       "voz": {
         "b1": "¿Y si la base no es e? Para cualquier a a la equis, la derivada es a a la equis, por el logaritmo natural de a.",
         "b2": "Por ejemplo, la derivada de dos a la equis es dos a la equis, por el logaritmo de dos: unas cero punto sesenta y nueve veces dos a la equis. No es equis por dos a la equis menos uno: eso sería aplicar la regla de la potencia donde no va.",
         "b3": "Y si la base es e, el logaritmo natural de e es uno. Por eso la derivada de e a la equis queda tan limpia. Es la base natural."
       },
       "sub": {
-        "b1": "Para cualquier base: la derivada de aˣ es aˣ · ln a.",
-        "b2": "Ejemplo: la derivada de 2ˣ es 2ˣ · ln 2 ≈ 0.69 · 2ˣ. No es x · 2ˣ⁻¹: eso es usar la regla de la potencia donde no va.",
-        "b3": "Si la base es e, ln e = 1. Por eso la derivada de eˣ queda tan limpia: es la base natural."
+        "b1": "Para cualquier base: la derivada de a^x es a^x · ln a.",
+        "b2": "Ejemplo: la derivada de 2^x es 2^x · ln 2 ≈ 0.69 · 2^x. No es x · 2^(x−1): eso es usar la regla de la potencia donde no va.",
+        "b3": "Si la base es e, ln e = 1. Por eso la derivada de e^x queda tan limpia: es la base natural."
       },
       "pausa": 1.4
     },
     {
       "id": "logaritmo",
       "capitulo": "La derivada de ln x",
-      "pantalla": "Gráficas de eˣ y ln x reflejadas en la diagonal y = x (punteada): 'ln es la inversa de eˣ'. Tangentes en ln x: x = 1 → pendiente 1 · x = 2 → 0.5 · x = 10 → 0.1. Fórmula grande KaTeX: d/dx (ln x) = 1/x. Sticker: 'crece cada vez más lento'.",
+      "pantalla": "Gráficas de e^x y ln x reflejadas en la diagonal y = x (punteada): 'ln es la inversa de e^x'. Tangentes en ln x: x = 1 → pendiente 1 · x = 2 → 0.5 · x = 10 → 0.1. Fórmula grande KaTeX: d/dx (ln x) = 1/x. Sticker: 'crece cada vez más lento'.",
       "voz": {
         "l1": "El logaritmo natural es la inversa de e a la equis: deshace lo que la exponencial hace. Su gráfica es el reflejo en la diagonal.",
         "l2": "Mira sus pendientes: en uno es uno. En dos, cero punto cinco. En diez, cero punto uno.",
@@ -116,7 +116,7 @@
         "l4": "Por eso el logaritmo siempre sube, pero cada vez más lento. Es lo contrario de la exponencial."
       },
       "sub": {
-        "l1": "El logaritmo natural, ln x, es la inversa de eˣ. Su gráfica es el reflejo en la diagonal.",
+        "l1": "El logaritmo natural, ln x, es la inversa de e^x. Su gráfica es el reflejo en la diagonal.",
         "l2": "Sus pendientes: en 1, es 1. En 2, es 0.5. En 10, es 0.1.",
         "l3": "Es 1/x: la derivada de ln x es 1/x."
       },
@@ -125,7 +125,7 @@
     {
       "id": "ejemplo",
       "capitulo": "Ejemplo resuelto",
-      "pantalla": "f(x) = 3eˣ + 5 ln x − x², cada término en su caja. Paso 1: 3eˣ → 3eˣ · Paso 2: 5 ln x → 5/x · Paso 3: −x² → −2x. Resultado: f'(x) = 3eˣ + 5/x − 2x. Evaluación: f'(1) = 3e + 5 − 2 = 3e + 3 ≈ 11.15.",
+      "pantalla": "f(x) = 3e^x + 5 ln x − x², cada término en su caja. Paso 1: 3e^x → 3e^x · Paso 2: 5 ln x → 5/x · Paso 3: −x² → −2x. Resultado: f'(x) = 3e^x + 5/x − 2x. Evaluación: f'(1) = 3e + 5 − 2 = 3e + 3 ≈ 11.15.",
       "voz": {
         "e1": "Juntemos todo con las reglas del episodio anterior: tres e a la equis, más cinco logaritmo de equis, menos equis al cuadrado.",
         "e2": "Tres e a la equis: el tres se queda, y e a la equis es su propia derivada. Tres e a la equis.",
@@ -134,8 +134,8 @@
         "e5": "En uno: tres e, más cinco, menos dos. Tres e más tres: unos once punto quince."
       },
       "sub": {
-        "e1": "Todo junto, con las reglas del episodio anterior: f(x) = 3eˣ + 5 ln x − x².",
-        "e2": "3eˣ: el 3 se queda, y eˣ es su propia derivada. Queda 3eˣ.",
+        "e1": "Todo junto, con las reglas del episodio anterior: f(x) = 3e^x + 5 ln x − x².",
+        "e2": "3e^x: el 3 se queda, y e^x es su propia derivada. Queda 3e^x.",
         "e3": "5 ln x: el 5 se queda, por 1/x. Queda 5/x.",
         "e4": "−x², con la regla de la potencia: −2x.",
         "e5": "En x = 1: 3e + 5 − 2 = 3e + 3 ≈ 11.15."
@@ -177,21 +177,21 @@
         "y3": "Y dos a la equis, por el logaritmo de dos."
       },
       "sub": {
-        "y2": "SymPy confirma las reglas de hoy: eˣ da eˣ, y ln x da 1/x.",
-        "y3": "Y 2ˣ da 2ˣ · ln 2."
+        "y2": "SymPy confirma las reglas de hoy: e^x da e^x, y ln x da 1/x.",
+        "y3": "Y 2^x da 2^x · ln 2."
       },
       "pausa": 1.4
     },
     {
       "id": "error",
       "capitulo": "Errores comunes",
-      "pantalla": "Sticker '¡CUIDADO!'. Tarjeta 1: d/dx (2ˣ) ≠ x · 2ˣ⁻¹ → = 2ˣ · ln 2. Tarjeta 2: ln(a + b) ≠ ln a + ln b; lo que sí: ln(a · b) = ln a + ln b. Ejemplo numérico: ln(2 + 3) = 1.61 vs ln 2 + ln 3 = 1.79.",
+      "pantalla": "Sticker '¡CUIDADO!'. Tarjeta 1: d/dx (2^x) ≠ x · 2^(x−1) → = 2^x · ln 2. Tarjeta 2: ln(a + b) ≠ ln a + ln b; lo que sí: ln(a · b) = ln a + ln b. Ejemplo numérico: ln(2 + 3) = 1.61 vs ln 2 + ln 3 = 1.79.",
       "voz": {
         "f1": "Dos errores comunes. El primero, el que mencionamos: usar la regla de la potencia con dos a la equis. Si la equis está arriba, la regla es otra.",
         "f2": "El segundo: el logaritmo de una suma no es la suma de los logaritmos. Lo que sí se cumple es que el logaritmo de un producto es la suma de los logaritmos."
       },
       "sub": {
-        "f1": "Error 1: usar la regla de la potencia con 2ˣ. Si la x está arriba, la derivada es 2ˣ · ln 2.",
+        "f1": "Error 1: usar la regla de la potencia con 2^x. Si la x está arriba, la derivada es 2^x · ln 2.",
         "f2": "Error 2: ln(a + b) no es ln a + ln b. Lo que sí: ln(a · b) = ln a + ln b."
       },
       "pausa": 1.4
@@ -199,14 +199,14 @@
     {
       "id": "reto",
       "capitulo": "Reto y resumen",
-      "pantalla": "Tarjeta 'RETO': f(x) = 5 ln x + eˣ → ¿f'(x)? ¿y f'(1)? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. (eˣ)' = eˣ · 2. (ln x)' = 1/x · 3. (aˣ)' = aˣ · ln a.",
+      "pantalla": "Tarjeta 'RETO': f(x) = 5 ln x + e^x → ¿f'(x)? ¿y f'(1)? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. (e^x)' = e^x · 2. (ln x)' = 1/x · 3. (a^x)' = a^x · ln a.",
       "voz": {
         "w1": "El reto: deriva cinco logaritmo de equis, más e a la equis. Y evalúa la derivada en uno. Déjalo en los comentarios.",
         "w2": "En resumen: e a la equis es su propia derivada. La derivada del logaritmo natural es uno entre equis. Y para otra base, se multiplica por su logaritmo natural."
       },
       "sub": {
-        "w1": "Reto: deriva f(x) = 5 ln x + eˣ, y evalúa f'(1). Déjalo en los comentarios.",
-        "w2": "Resumen: (eˣ)' = eˣ. (ln x)' = 1/x. Y (aˣ)' = aˣ · ln a."
+        "w1": "Reto: deriva f(x) = 5 ln x + e^x, y evalúa f'(1). Déjalo en los comentarios.",
+        "w2": "Resumen: (e^x)' = e^x. (ln x)' = 1/x. Y (a^x)' = a^x · ln a."
       },
       "pausa": 1.4
     },

@@ -1354,3 +1354,61 @@ export const MiniEntropia: React.FC = () => (
     </div>
   </AbsoluteFill>
 );
+
+export const MiniCalculo05: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 35% 50%, #1c3a8a 0%, #0b1020 62%)" }} />
+    <div style={{ position: "absolute", left: 50, top: 70 }}>
+      <Formula tex={"\\ent{x}^{10} \\reg{\\to} \\der{10\\ent{x}^{9}}"} size={170} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
+    </div>
+    <div style={{ position: "absolute", left: 60, top: 400, display: "flex", flexDirection: "column", gap: 6 }}>
+      <Nombre color="#ffffff" size={110}>
+        ¡EN 1 PASO!
+      </Nombre>
+    </div>
+    <div style={{ position: "absolute", right: 60, top: 420 }}>
+      <svg width={180} height={180} viewBox="0 0 100 100">
+        <polygon points="58,4 18,58 46,58 38,96 82,38 54,38" fill="#ffd166" stroke="#0b1020" strokeWidth={4} strokeLinejoin="round" />
+      </svg>
+    </div>
+    <div style={{ position: "absolute", left: 50, bottom: 30 }}>
+      <ChipMini bg={C.blue} color="#ffffff">
+        CÁLCULO DIFERENCIAL #5
+      </ChipMini>
+    </div>
+  </AbsoluteFill>
+);
+
+export const MiniCalculo06: React.FC = () => {
+  const X = (x: number) => 30 + (x + 2) * 120;
+  const Y = (y: number) => 440 - y * 42;
+  const pts = Array.from({ length: 61 }, (_, i) => -2 + (i * 4.3) / 60).map((x) => `${X(x)},${Y(Math.exp(x))}`);
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 30% 45%, #1c3a8a 0%, #0b1020 62%)" }} />
+      <div style={{ position: "absolute", left: 50, top: 70 }}>
+        <Formula tex={"(e^{\\ent{x}})' = \\der{e^{\\ent{x}}}"} size={150} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
+      </div>
+      <div style={{ position: "absolute", left: 60, top: 380, display: "flex", flexDirection: "column", gap: 4 }}>
+        <Nombre color="#ffffff" size={86}>
+          SU PROPIA
+        </Nombre>
+        <Nombre color="#ffd166" size={86}>
+          DERIVADA
+        </Nombre>
+      </div>
+      <svg width={600} height={470} viewBox="0 0 600 470" style={{ position: "absolute", right: 20, top: 120 }}>
+        <line x1={20} y1={440} x2={590} y2={440} stroke={C.blue} strokeWidth={6} />
+        <line x1={X(0)} y1={455} x2={X(0)} y2={10} stroke={C.green} strokeWidth={6} />
+        <polyline points={pts.join(" ")} fill="none" stroke="#ffd166" strokeWidth={12} strokeLinecap="round" />
+        <line x1={X(0.6)} y1={Y(Math.exp(1.6) * (0.6 - 1.6) + Math.exp(1.6))} x2={X(2.05)} y2={Y(Math.exp(1.6) * (2.05 - 1.6) + Math.exp(1.6))} stroke={C.coral} strokeWidth={10} strokeLinecap="round" />
+        <circle cx={X(1.6)} cy={Y(Math.exp(1.6))} r={18} fill="#ffffff" stroke="#0b1020" strokeWidth={6} />
+      </svg>
+      <div style={{ position: "absolute", right: 50, bottom: 30 }}>
+        <ChipMini bg={C.blue} color="#ffffff">
+          CÁLCULO DIFERENCIAL #6
+        </ChipMini>
+      </div>
+    </AbsoluteFill>
+  );
+};

@@ -1,0 +1,31 @@
+Reglas de derivación explicadas desde cero: la regla de la potencia, la derivada de una constante, del múltiplo constante y de una suma, con ejemplos resueltos paso a paso.
+Episodio 5 del curso de Cálculo Diferencial: cómo derivar cualquier polinomio en segundos, sin usar la definición por límites.
+
+Episodio 5 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. Descubrimos el patrón de las derivadas, la regla de la potencia (también con exponentes negativos y raíces), resolvemos la derivada de un polinomio completo y vemos de dónde sale la gravedad al derivar la caída de una pelota. Y como plus, cómo se deriva el error de un modelo.
+
+Capítulos:
+00:00 ¿Derivar x¹⁰ con la definición?
+00:29 Recuerda y objetivo
+00:54 El patrón
+01:20 Regla de la potencia
+01:55 Constantes y sumas
+02:23 Ejemplo resuelto
+02:55 ¿Para qué se usa?
+03:22 Plus: en Ciencia de Datos
+03:43 En Python
+03:55 Errores comunes
+04:22 Reto y resumen
+04:44 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 03:43.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 6.
+
+El ejemplo del error de un modelo usa números inventados (ejemplo simplificado).
+
+Episodio anterior: Qué es la derivada | Cálculo Diferencial #4
+Próximo episodio: Derivada exponencial y logaritmo | Cálculo Diferencial #6
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #derivadas #calculodiferencial #cienciadedatos

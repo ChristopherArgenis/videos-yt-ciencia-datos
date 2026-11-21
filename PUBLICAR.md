@@ -222,3 +222,26 @@ y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 **Comentario fijado:** 🧩 Reto: ¿cuánto cambia la entropía al convertir 1 mol de agua líquida a 25 °C en vapor a 100 °C? Pista: son 2 etapas 👇
 **Respuesta del reto:** 75.3·ln(373.15/298.15) + 40 700/373.15 = 16.90 + 109.07 = 125.97 J/K.
 **Lista sugerida:** "Fisicoquímica: ejercicios resueltos" (si se hacen más).
+
+## C05 · Reglas de derivación (5:04)
+**Título:** Reglas de derivación | Cálculo Diferencial #5 (45)
+**Alternativas:** Regla de la potencia, paso a paso | Cálculo Diferencial #5 (55) · Derivar polinomios en segundos | Cálculo Diferencial #5 (51)
+**Miniatura:** `Mini-C05-Reglas` → "x¹⁰ → 10x⁹" + "¡EN 1 PASO!" con un rayo
+**Voz:** alex_nicola · Fórmulas con KaTeX · Error del modelo: "Ejemplo simplificado".
+**Descripción:** `videos/c05-reglas/descripcion.txt` (sin código; remite al 03:43).
+**#:** #calculo #matematicas #derivadas #calculodiferencial #cienciadedatos
+**Comentario fijado:** 🧩 Reto: deriva f(x) = 4x³ + 2x − 9 y evalúa f'(1) 👇 (la solución, en el episodio 6)
+**Respuesta del reto (para el #6):** f'(x) = 12x² + 2, f'(1) = 14.
+**Pantalla final:** episodio 4 + lista del curso.
+
+## C06 · Derivada exponencial y logaritmo (5:37)
+**Título:** Derivada exponencial y logaritmo | Cálculo Diferencial #6 (57)
+**Alternativas:** El número e y su derivada | Cálculo Diferencial #6 (47) · La función que es su propia derivada | Cálculo Diferencial #6 (58)
+**Miniatura:** `Mini-C06-ExpLog` → "(eˣ)' = eˣ" + "SU PROPIA DERIVADA" con la curva y su tangente
+**Voz:** alex_nicola · Fórmulas con KaTeX · Banco: "Ejemplo simplificado".
+**Descripción:** `videos/c06-exp-log/descripcion.txt` (sin código; remite al 04:24).
+**#:** #calculo #matematicas #derivadas #logaritmos #calculodiferencial
+**Comentario fijado:** 🧩 Reto: deriva f(x) = 5 ln x + e^x y evalúa f'(1) 👇 (la solución, en el episodio 7)
+**Respuesta del reto (para el #7):** f'(x) = 5/x + e^x, f'(1) = 5 + e ≈ 7.72.
+**Pantalla final:** episodio 5 + lista del curso.
+**Nota:** en subtítulos se escribe e^x en lugar de eˣ (la fuente Poppins no tiene el carácter ˣ).

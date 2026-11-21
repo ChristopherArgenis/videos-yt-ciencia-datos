@@ -94,6 +94,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** derivada de x² en x = 5. (10)
 
 ### 5 · Reglas de derivación | Cálculo Diferencial #5
+- **Estado:** ✅ hecho (5:04, `out/C05-Reglas.mp4`). Guion: `src/guiones/c05-reglas.json`.
 - **Gancho:** "Usar la definición cada vez es lento. Hay atajos, y con ellos sale el error de un modelo."
 - **Qué es:** reglas de la constante (0), la potencia (n·xⁿ⁻¹), el múltiplo constante y la suma.
 - **Cómo se calcula:** f(x) = 3x⁴ − 5x² + 7 → f'(x) = 12x³ − 10x.
@@ -106,6 +107,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** derivada de 4x³ + 2x. (12x² + 2)
 
 ### 6 · Derivada exponencial y logaritmo | Cálculo Diferencial #6
+- **Estado:** ✅ hecho (5:37, `out/C06-ExpLog.mp4`). Guion: `src/guiones/c06-exp-log.json`. Nota: el plan original ponía producto/cociente en el #6; se intercambió (exp y log van antes).
 - **Gancho:** "¿Por qué los modelos suman logaritmos en vez de multiplicar probabilidades?"
 - **Qué es:** eˣ es su propia derivada; la derivada de ln x es 1/x.
 - **Cómo se calcula:** (3eˣ)' = 3eˣ; (ln x)' en x = 2 → 0.5.

@@ -1,0 +1,32 @@
+Derivada de la función exponencial y del logaritmo natural, explicada desde cero: qué es el número e, por qué e^x es su propia derivada, la derivada de ln x y de cualquier exponencial a^x.
+Episodio 6 del curso de Cálculo Diferencial: del interés compuesto al número e, con ejemplos resueltos paso a paso.
+
+Episodio 6 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. Vemos cómo aparece el número e con el interés compuesto, por qué la pendiente de e^x es igual a su altura, la regla para otras bases, la derivada del logaritmo natural y su uso en el crecimiento de poblaciones. Y como plus, por qué los modelos de ciencia de datos trabajan con logaritmos.
+
+Capítulos:
+00:00 ¿Cuánto rinde 1 peso al 100 %?
+00:38 Recuerda y objetivo
+01:05 ¿Qué es el número e?
+01:30 La derivada de e^x
+02:05 ¿Y 2^x? Otras bases
+02:35 La derivada de ln x
+03:02 Ejemplo resuelto
+03:34 ¿Para qué se usa?
+04:01 Plus: en Ciencia de Datos
+04:24 En Python
+04:37 Errores comunes
+04:58 Reto y resumen
+05:17 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 04:24.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 7.
+
+El ejemplo del banco usa números inventados (ejemplo simplificado).
+
+Episodio anterior: Reglas de derivación | Cálculo Diferencial #5
+Próximo episodio: Regla del producto y cociente | Cálculo Diferencial #7
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #derivadas #logaritmos #calculodiferencial
