@@ -1,50 +1,93 @@
 import React from "react";
 import { Sequence, useCurrentFrame } from "remotion";
-import { Card, Split, Stage, Sticker, Words } from "../kit/kit";
+import { Card, Stage, Sticker, Words } from "../kit/kit";
 import { leerGuion, VideoLargo, type EscenaProps } from "../kit/largo";
 import { Aparece, Chip, Codigo, useP } from "../kit/futbol";
-import { CierreCurso, COL, Cuidado, Formula, Objetivo, Paso, PlusDatos, Recuerda, RetoResumen, SerieCalculo } from "../kit/curso";
+import { CierreCurso, COL, Cuidado, Curva, Formula, Maquina, Nota, Objetivo, Paso, Plano, Recuerda, RetoResumen, SerieCalculo } from "../kit/curso";
 import { C, FONT, MONO } from "../kit/theme";
 import guion from "../guiones/c08-cadena.json";
 
 // Cálculo Diferencial #8 · Regla de la cadena. Énfasis matemático; la Ciencia de Datos es un plus.
 
-const Engrane: React.FC<{ label: string; color: string; at: number }> = ({ label, color, at }) => (
-  <Aparece at={at}>
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-      <svg width={170} height={170} viewBox="-85 -85 170 170">
-        <circle r={62} fill={`${C.bg2}`} stroke={color} strokeWidth={10} />
-        {Array.from({ length: 8 }, (_, i) => (
-          <rect key={i} x={-9} y={-82} width={18} height={26} rx={4} fill={color} transform={`rotate(${i * 45})`} />
-        ))}
-        <text y={22} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={60} fill={C.ink}>
-          {label}
-        </text>
-      </svg>
-    </div>
-  </Aparece>
-);
+/** Engranaje con `n` dientes, radio `r`, girado `ang` grados. */
+const Engranaje: React.FC<{ cx: number; cy: number; r: number; n: number; ang: number; color: string; letra: string }> = ({ cx, cy, r, n, ang, color, letra }) => {
+  const d: string[] = [];
+  const ri = r * 0.82;
+  for (let i = 0; i < n; i++) {
+    const a0 = (2 * Math.PI * i) / n;
+    const w = Math.PI / n;
+    const pts = [
+      [ri, a0 - w * 0.55],
+      [r, a0 - w * 0.3],
+      [r, a0 + w * 0.3],
+      [ri, a0 + w * 0.55],
+    ];
+    d.push(pts.map(([rr, a], k) => `${k === 0 && i === 0 ? "M" : "L"} ${rr * Math.cos(a)} ${rr * Math.sin(a)}`).join(" "));
+  }
+  return (
+    <g transform={`translate(${cx} ${cy})`}>
+      <g transform={`rotate(${ang})`}>
+        <path d={d.join(" ") + " Z"} fill={`${color}33`} stroke={color} strokeWidth={6} strokeLinejoin="round" />
+        <circle r={r * 0.3} fill="none" stroke={color} strokeWidth={6} />
+        <line x1={0} y1={-r * 0.3} x2={0} y2={-ri + 6} stroke={color} strokeWidth={6} />
+      </g>
+      <text y={r + 56} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={48} fill={color}>
+        {letra}
+      </text>
+    </g>
+  );
+};
 
 const Gancho: React.FC<EscenaProps> = ({ lineas }) => {
   const [g1, g2, g3, g4] = lineas;
+  const frame = useCurrentFrame();
+  const t = frame / 30;
+  // C gira 30°/s; B el doble; A seis veces (sentidos alternados).
+  const angC = 30 * t;
+  const angB = -2 * 30 * t;
+  const angA = 6 * 30 * t;
   return (
-    <Stage gap={34}>
-      <div style={{ display: "flex", gap: 60, alignItems: "center" }}>
-        <Engrane label="A" color={C.blue} at={g1.at} />
-        <Engrane label="B" color={C.green} at={g1.at + 25} />
-        <Engrane label="C" color={C.yellow} at={g1.at + 50} />
+    <Stage gap={20}>
+      <svg width={1500} height={480} viewBox="0 0 1500 480">
+        <Engranaje cx={260} cy={200} r={110} n={10} ang={angA} color={C.blue} letra="A" />
+        <Engranaje cx={720} cy={200} r={150} n={14} ang={angB} color={C.green} letra="B" />
+        <Engranaje cx={1220} cy={200} r={170} n={16} ang={angC} color={C.yellow} letra="C" />
+        {frame >= g1.at + 20 && (
+          <g>
+            <rect x={420} y={30} width={140} height={64} rx={16} fill={C.bg2} stroke={C.coral} strokeWidth={4} />
+            <text x={490} y={74} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={40} fill={C.coral}>
+              ×3
+            </text>
+          </g>
+        )}
+        {frame >= g1.at + g1.frames * 0.55 && (
+          <g>
+            <rect x={900} y={30} width={140} height={64} rx={16} fill={C.bg2} stroke={C.coral} strokeWidth={4} />
+            <text x={970} y={74} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={40} fill={C.coral}>
+              ×2
+            </text>
+          </g>
+        )}
+      </svg>
+      <div style={{ height: 160, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+        {frame >= g2.at && frame < g3.at && (
+          <Aparece at={g2.at}>
+            <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 60, color: C.ink }}>
+              ¿<span style={{ color: C.blue }}>A</span> respecto a <span style={{ color: C.yellow }}>C</span>?
+            </div>
+          </Aparece>
+        )}
+        {frame >= g3.at && (
+          <Aparece at={g3.at}>
+            <Formula tex={"\\times 3 \\;\\cdot\\; \\times 2 \\;=\\; \\der{\\times 6}"} size={96} />
+          </Aparece>
+        )}
+        <Sequence from={g4.at} layout="none">
+          <Sticker bg={C.coral} color={C.ink} size={36}>
+            Los ritmos se MULTIPLICAN
+          </Sticker>
+        </Sequence>
       </div>
-      <Aparece at={g2.at}>
-        <Formula tex={"\\text{¿A respecto a C?}"} size={60} color={C.dim} />
-      </Aparece>
-      <Aparece at={g3.at}>
-        <Formula tex={"\\reg{3} \\times \\reg{2} = \\der{6}"} size={90} />
-      </Aparece>
-      <Sequence from={g4.at} layout="none">
-        <Sticker bg={C.green} size={36}>
-          Los ritmos se MULTIPLICAN
-        </Sticker>
-      </Sequence>
     </Stage>
   );
 };
@@ -54,12 +97,12 @@ const RecuerdaEsc: React.FC<EscenaProps> = ({ lineas }) => {
   return (
     <Recuerda
       at={r1.at}
-      idea={<>(f · g)' = f'g + fg'</>}
+      idea={<>Producto: (f · g)' = f'g + fg'</>}
       atReto={r2.at}
       reto={
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-          <Formula tex={"(\\ent{x} e^{\\ent{x}})' = e^{\\ent{x}} + \\ent{x} e^{\\ent{x}}"} size={60} />
-          <Formula tex={"f'(\\ent{0}) = \\der{1}"} size={70} />
+          <Formula tex={"(\\ent{x} \\cdot e^{\\ent{x}})' = 1 \\cdot e^{\\ent{x}} + \\ent{x} \\cdot e^{\\ent{x}}"} size={60} />
+          <Formula tex={"f'(\\ent{0}) = 1 + 0 = \\der{1}"} size={64} />
         </div>
       }
     />
@@ -75,7 +118,7 @@ const ObjetivoEsc: React.FC<EscenaProps> = ({ lineas }) => {
       metas={[
         { at: o1.at + 10, t: "Reconocer una función dentro de otra" },
         { at: o1.at + t, t: "Usar la regla de la cadena" },
-        { at: o1.at + 2 * t, t: "Aplicarla a potencias, exponenciales y logaritmos" },
+        { at: o1.at + 2 * t, t: "Aplicarla a potencias, exp y log" },
       ]}
     />
   );
@@ -83,26 +126,46 @@ const ObjetivoEsc: React.FC<EscenaProps> = ({ lineas }) => {
 
 const Composicion: React.FC<EscenaProps> = ({ lineas }) => {
   const [a1, a2, a3] = lineas;
+  const frame = useCurrentFrame();
+  if (frame < a2.at) {
+    return (
+      <Stage gap={30}>
+        <Aparece at={a1.at}>
+          <Formula tex={"(3\\ent{x} + 1)^5"} size={130} />
+        </Aparece>
+        <Aparece at={a1.at + a1.frames * 0.45}>
+          <div style={{ opacity: 0.55, position: "relative" }}>
+            <Formula tex={"243x^5 + 405x^4 + 270x^3 + 90x^2 + 15x + 1"} size={52} />
+            <div style={{ position: "absolute", left: -10, right: -10, top: "50%", height: 6, background: C.coral, borderRadius: 3 }} />
+          </div>
+        </Aparece>
+        <Sequence from={a1.at + a1.frames * 0.7} layout="none">
+          <Chip bg={C.coral} color={C.ink} size={30}>
+            6 términos: mejor no
+          </Chip>
+        </Sequence>
+      </Stage>
+    );
+  }
   return (
-    <Stage gap={34}>
-      <Words text="Una función *dentro* de otra" size={70} accent={C.yellow} delay={a1.at} />
-      <Aparece at={a1.at + 30}>
-        <Formula tex={"f(g(x)) = (\\reg{3x + 1})^{\\der{5}}"} size={80} />
-      </Aparece>
-      <div style={{ display: "flex", gap: 40 }}>
-        <Aparece at={a2.at}>
-          <Card accent={COL.entrada} style={{ textAlign: "center" }}>
-            <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 36, color: COL.entrada }}>ADENTRO</div>
-            <Formula tex={"u = g(x) = 3x + 1"} size={52} />
-          </Card>
-        </Aparece>
-        <Aparece at={a3.at}>
-          <Card accent={COL.salida} style={{ textAlign: "center" }}>
-            <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 36, color: COL.salida }}>AFUERA</div>
-            <Formula tex={"f(u) = u^5"} size={52} />
-          </Card>
-        </Aparece>
+    <Stage gap={30}>
+      <div style={{ display: "flex", flexDirection: "column", gap: 56, alignItems: "center", marginTop: 20 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <Chip bg={C.blue} color={C.ink} size={26}>
+            ADENTRO
+          </Chip>
+          <Maquina entrada="1" salidas={["4"]} regla="3x + 1" at={a2.at + 20} ancho={300} />
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <Chip bg={C.green} size={26}>
+            AFUERA
+          </Chip>
+          <Maquina entrada="4" salidas={["1024"]} regla="u⁵" at={a2.at + 70} ancho={300} />
+        </div>
       </div>
+      <Aparece at={a3.at}>
+        <Formula tex={"\\sal{f}\\big(\\ent{g(x)}\\big) = \\big(\\ent{3x + 1}\\big)^{\\sal{5}}"} size={76} />
+      </Aparece>
     </Stage>
   );
 };
@@ -110,18 +173,33 @@ const Composicion: React.FC<EscenaProps> = ({ lineas }) => {
 const Regla: React.FC<EscenaProps> = ({ lineas }) => {
   const [b1, b2, b3] = lineas;
   return (
-    <Stage gap={34}>
+    <Stage gap={30}>
+      <Chip bg={C.yellow} size={32}>
+        REGLA DE LA CADENA
+      </Chip>
       <Aparece at={b1.at}>
-        <Formula tex={"[f(g(x))]' = \\reg{f'(g(x))} \\cdot \\der{g'(x)}"} size={84} />
+        <Formula tex={"\\big[\\sal{f}(\\ent{g(x)})\\big]' = \\sal{f'}(\\ent{g(x)}) \\cdot \\ent{g'(x)}"} size={96} />
       </Aparece>
       <Aparece at={b2.at}>
-        <Chip bg={C.bg2} color={C.ink} size={30}>
-          afuera: se deriva sin tocar lo de adentro · por la derivada de adentro
-        </Chip>
+        <div style={{ display: "flex", gap: 24, alignItems: "center", fontFamily: FONT, fontWeight: 800, fontSize: 34 }}>
+          <Card accent={C.green} style={{ padding: "12px 24px" }}>
+            <span style={{ color: COL.salida }}>derivada de AFUERA</span>
+            <div style={{ fontFamily: MONO, fontSize: 24, color: C.dim }}>sin tocar lo de adentro</div>
+          </Card>
+          <span style={{ fontSize: 60, color: C.yellow }}>×</span>
+          <Card accent={C.blue} style={{ padding: "12px 24px" }}>
+            <span style={{ color: COL.entrada }}>derivada de ADENTRO</span>
+          </Card>
+        </div>
       </Aparece>
       <Aparece at={b3.at}>
-        <Formula tex={"\\dfrac{dy}{dx} = \\dfrac{dy}{du} \\cdot \\dfrac{du}{dx}"} size={64} color={C.dim} />
+        <Formula tex={"\\dfrac{dy}{d\\ent{x}} = \\dfrac{dy}{\\reg{du}} \\cdot \\dfrac{\\reg{du}}{d\\ent{x}}"} size={80} />
       </Aparece>
+      <Sequence from={b3.at + b3.frames * 0.55} layout="none">
+        <Chip bg={C.bg2} color={C.ink} size={28}>
+          como los engranajes: ×3 · ×2 = ×6
+        </Chip>
+      </Sequence>
     </Stage>
   );
 };
@@ -129,98 +207,162 @@ const Regla: React.FC<EscenaProps> = ({ lineas }) => {
 const Ejemplo1: React.FC<EscenaProps> = ({ lineas }) => {
   const [e1, e2, e3, e4] = lineas;
   const frame = useCurrentFrame();
+  if (frame >= e4.at) {
+    return (
+      <Stage gap={30}>
+        <Chip bg={C.green} size={32}>
+          ¿FUNCIONA? COMPRUÉBALO CON EL CUADRADO
+        </Chip>
+        <div style={{ display: "flex", gap: 30 }}>
+          <Aparece at={e4.at + 20}>
+            <Card accent={C.dim} style={{ width: 760, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+              <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 32, color: C.dim }}>Desarrollando</div>
+              <Formula tex={"(3x + 1)^2 = 9x^2 + 6x + 1"} size={50} />
+              <Formula tex={"\\to \\; \\der{18x + 6}"} size={58} />
+            </Card>
+          </Aparece>
+          <Aparece at={e4.at + e4.frames * 0.6}>
+            <Card accent={C.green} style={{ width: 760, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+              <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 32, color: C.green }}>Con la cadena</div>
+              <Formula tex={"2(3x + 1) \\cdot 3"} size={50} />
+              <Formula tex={"= \\der{18x + 6} \\;\\; \\checkmark"} size={58} />
+            </Card>
+          </Aparece>
+        </div>
+      </Stage>
+    );
+  }
   return (
     <Stage gap={28}>
-      <Aparece at={e1.at}>
-        <Formula tex={"(3x + 1)^5"} size={80} />
-      </Aparece>
-      <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-        <Paso at={e1.at + 30} n={1} tex={"5(3x + 1)^4"} nota="afuera" on={frame < e2.at} ancho={700} size={60} />
-        <Paso at={e2.at} n={2} tex={"\\cdot 3"} nota="adentro" on={frame >= e2.at && frame < e3.at} ancho={700} size={60} />
-        <Paso at={e3.at} n={3} tex={"= \\sal{15(3x + 1)^4}"} on={frame >= e3.at} ancho={700} size={60} />
+      <Formula tex={"\\big(\\ent{3x + 1}\\big)^{\\sal{5}}"} size={110} />
+      <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+        <Paso at={e1.at + e1.frames * 0.35} n={1} tex={"\\sal{5}\\big(\\ent{3x + 1}\\big)^{4}"} nota="afuera: u⁵ → 5u⁴" on={frame < e2.at} ancho={620} size={64} />
+        <Paso at={e2.at} n={2} tex={"\\ent{(3x + 1)'} = \\ent{3}"} nota="adentro" on={frame >= e2.at && frame < e3.at} ancho={620} size={64} />
+        <Paso at={e3.at} n={3} tex={"\\sal{5}(3x + 1)^4 \\cdot \\ent{3} = \\der{15(3x + 1)^4}"} on={frame >= e3.at} ancho={980} size={60} />
       </div>
-      <Aparece at={e4.at}>
-        <Card accent={C.dim} style={{ padding: "12px 34px" }}>
-          <Formula tex={"(3x+1)^2 = 9x^2 + 6x + 1 \\Rightarrow 18x + 6"} size={44} />
-          <Formula tex={"2(3x+1) \\cdot 3 = 18x + 6 \\;\\checkmark"} size={44} color={C.green} />
-        </Card>
-      </Aparece>
     </Stage>
   );
 };
 
 const Ejemplo2: React.FC<EscenaProps> = ({ lineas }) => {
   const [f1, f2, f3] = lineas;
+  const frame = useCurrentFrame();
+  const tarjeta = (at: number, on: boolean, f: string, afuera: string, adentro: string, res: string) => (
+    <Aparece at={at}>
+      <Card accent={on ? C.yellow : C.dim} style={{ width: 720, display: "flex", flexDirection: "column", alignItems: "center", gap: 14, opacity: on ? 1 : 0.55 }}>
+        <Formula tex={f} size={76} />
+        <div style={{ display: "flex", gap: 16 }}>
+          <span style={{ whiteSpace: "nowrap" }}>
+            <Chip bg={C.green} size={22}>
+              afuera: {afuera}
+            </Chip>
+          </span>
+          <span style={{ whiteSpace: "nowrap" }}>
+            <Chip bg={C.blue} color={C.ink} size={22}>
+              adentro: {adentro}
+            </Chip>
+          </span>
+        </div>
+        <Formula tex={res} size={62} color={COL.derivada} />
+      </Card>
+    </Aparece>
+  );
   return (
     <Stage gap={30}>
       <Words text="Con exponenciales y *logaritmos*" size={64} accent={C.yellow} delay={f1.at} />
-      <div style={{ display: "flex", gap: 36 }}>
-        <Aparece at={f2.at}>
-          <Card accent={C.blue} style={{ width: 720, textAlign: "center", display: "flex", flexDirection: "column", gap: 12 }}>
-            <Formula tex={"e^{-x^2}"} size={60} />
-            <Formula tex={"\\der{-2x \\, e^{-x^2}}"} size={56} />
-          </Card>
-        </Aparece>
-        <Aparece at={f3.at}>
-          <Card accent={COL.salida} style={{ width: 720, textAlign: "center", display: "flex", flexDirection: "column", gap: 12 }}>
-            <Formula tex={"\\ln(x^2 + 1)"} size={60} />
-            <Formula tex={"\\der{\\dfrac{2x}{x^2 + 1}}"} size={56} />
-          </Card>
-        </Aparece>
+      <div style={{ display: "flex", gap: 30 }}>
+        {tarjeta(f2.at, frame < f3.at, "e^{\\ent{-x^2}}", "eᵘ → eᵘ", "−x² → −2x", "-2x\\,e^{-x^2}")}
+        {tarjeta(f3.at, frame >= f3.at, "\\ln\\big(\\ent{x^2 + 1}\\big)", "ln u → 1/u", "x² + 1 → 2x", "\\dfrac{2x}{x^2 + 1}")}
       </div>
+      {frame >= f2.at && frame < f3.at && (
+        <Aparece at={f2.at + 30}>
+          <Plano w={520} h={150} x={[-3, 3]} y={[0, 1.2]} paso={1} pasoY={1} etiquetaY="">
+            {(e) => <Curva e={e} f={(x) => Math.exp(-x * x)} x={[-3, 3]} ancho={5} />}
+          </Plano>
+        </Aparece>
+      )}
     </Stage>
   );
 };
 
 const ParaQue: React.FC<EscenaProps> = ({ lineas }) => {
   const [u1, u2] = lineas;
-  const p = useP(u1.at, u2.at);
-  const r = 60 + 110 * p;
+  const frame = useCurrentFrame();
+  const r = 70 + 90 * Math.min(1, Math.max(0, (frame - u1.at) / (u1.frames + u2.frames * 0.5)));
   return (
-    <Split
-      ratio={0.42}
-      left={
-        <>
-          <Words text="¿Para qué se *usa*?" size={64} align="left" accent={C.blue} delay={u1.at} />
-          <Aparece at={u1.at + 30}>
-            <Formula tex={"V = \\tfrac{4}{3}\\pi r^3"} size={60} />
-          </Aparece>
-          <Aparece at={u2.at}>
-            <Formula tex={"\\dfrac{dV}{dt} = \\dfrac{dV}{dr} \\cdot \\dfrac{dr}{dt}"} size={54} />
-          </Aparece>
-          <Aparece at={u2.at + u2.frames * 0.5}>
-            <Formula tex={"r = 10: \\; \\der{800\\pi \\approx 2513\\ \\text{cm}^3/\\text{s}}"} size={46} />
-          </Aparece>
-          <Chip bg={C.bg2} color={C.ink} size={26}>
-            Ejemplo simplificado · dr/dt = 2 cm/s
-          </Chip>
-        </>
-      }
-      right={
-        <svg width={520} height={520} viewBox="-260 -260 520 520">
-          <circle r={r} fill={`${C.blue}55`} stroke={C.blue} strokeWidth={8} />
-          <text y={r + 60} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={40} fill={C.ink}>
-            r = {(10 * p).toFixed(0)} cm
-          </text>
-        </svg>
-      }
-    />
+    <Stage direction="row" gap={80}>
+      <svg width={440} height={560} viewBox="0 0 440 560">
+        <ellipse cx={220} cy={240} rx={r} ry={r * 1.12} fill={`${C.coral}cc`} stroke={C.ink} strokeWidth={4} />
+        <path d={`M ${220 - 10} ${240 + r * 1.12} L 220 ${240 + r * 1.12 + 16} L ${220 + 10} ${240 + r * 1.12} Z`} fill={C.coral} />
+        <path d={`M 220 ${240 + r * 1.12 + 16} C 200 ${330 + r}, 240 ${380 + r * 0.6}, 220 540`} fill="none" stroke={C.dim} strokeWidth={3} />
+        <line x1={220} y1={240} x2={220 + r} y2={240} stroke={C.ink} strokeWidth={4} strokeDasharray="8 6" />
+        <text x={220 + r / 2} y={226} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={28} fill={C.ink}>
+          r
+        </text>
+      </svg>
+      <div style={{ display: "flex", flexDirection: "column", gap: 22, width: 1000 }}>
+        <Words text="¿Para qué se *usa*?" size={68} align="left" accent={C.blue} delay={u1.at} />
+        <Aparece at={u1.at + 40}>
+          <Formula tex={"V = \\tfrac{4}{3}\\pi \\ent{r}^3 \\qquad \\dfrac{d\\ent{r}}{dt} = 2 \\ \\text{cm/s}"} size={56} />
+        </Aparece>
+        <Aparece at={u2.at}>
+          <Formula tex={"\\dfrac{dV}{dt} = \\sal{\\dfrac{dV}{d\\ent{r}}} \\cdot \\reg{\\dfrac{d\\ent{r}}{dt}} = \\sal{4\\pi \\ent{r}^2} \\cdot \\reg{2}"} size={56} />
+        </Aparece>
+        <Aparece at={u2.at + u2.frames * 0.55}>
+          <Card accent={C.green} style={{ padding: "12px 30px" }}>
+            <Formula tex={"\\ent{r} = 10: \\quad 800\\pi \\approx \\der{2513 \\ \\text{cm}^3\\text{/s}}"} size={56} />
+          </Card>
+        </Aparece>
+      </div>
+      <Nota>Ejemplo simplificado</Nota>
+    </Stage>
   );
 };
 
+const CAPAS = ["x", "capa 1", "capa 2", "capa 3", "error"];
+
 const Plus: React.FC<EscenaProps> = ({ lineas }) => {
   const [k1, k2] = lineas;
+  const frame = useCurrentFrame();
+  const pF = useP(k1.at + 20, k1.at + k1.frames);
+  const pB = useP(k2.at + 10, k2.at + k2.frames * 0.6);
   return (
     <Stage gap={34}>
-      <PlusDatos />
-      <Words text="Un *plus*: cómo aprende una red" size={62} accent={C.purple} delay={k1.at} />
-      <Aparece at={k1.at + 40}>
-        <Formula tex={"\\dfrac{\\partial L}{\\partial w} = 2(\\sigma - y)\\,\\sigma(1-\\sigma)\\,x"} size={62} />
+      <Chip bg={C.purple} color={C.bg} size={28}>
+        PLUS · CIENCIA DE DATOS
+      </Chip>
+      <Words text="Un *plus*: así aprende una red neuronal" size={58} accent={C.purple} delay={k1.at} />
+      <svg width={1500} height={250} viewBox="0 0 1500 250">
+        {CAPAS.map((c, i) => {
+          const x = 120 + i * 315;
+          const on = pF * 4 >= i;
+          const back = frame >= k2.at && pB * 4 >= 4 - i;
+          return (
+            <g key={c}>
+              {i < 4 && <line x1={x + 100} y1={80} x2={x + 215} y2={80} stroke={pF * 4 > i ? C.green : `${C.dim}55`} strokeWidth={6} markerEnd="" />}
+              {i < 4 && back && (
+                <g>
+                  <line x1={x + 215} y1={170} x2={x + 100} y2={170} stroke={C.coral} strokeWidth={6} />
+                  <text x={x + 157} y={215} textAnchor="middle" fontFamily={MONO} fontWeight={700} fontSize={30} fill={C.coral}>
+                    × derivada
+                  </text>
+                </g>
+              )}
+              <rect x={x - 100} y={30} width={200} height={100} rx={20} fill={on ? (i === 4 ? `${C.purple}55` : `${C.blue}44`) : C.bg2} stroke={i === 4 ? C.purple : C.blue} strokeWidth={4} />
+              <text x={x} y={92} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={34} fill={C.ink}>
+                {c}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+      <Aparece at={k2.at + k2.frames * 0.45}>
+        <Formula tex={"\\dfrac{d\\,\\text{error}}{dw} = \\der{2(\\sigma - y)} \\cdot \\reg{\\sigma(1 - \\sigma)} \\cdot \\ent{x}"} size={56} />
       </Aparece>
-      <Sequence from={k2.at} layout="none">
-        <Chip bg={C.purple} color={C.bg} size={30}>
-          PyTorch y TensorFlow lo hacen solos, de atrás hacia adelante
-        </Chip>
+      <Sequence from={k2.at + k2.frames * 0.7} layout="none">
+        <Sticker bg={C.purple} size={30}>
+          Retropropagación: PyTorch lo hace solo
+        </Sticker>
       </Sequence>
     </Stage>
   );
@@ -230,50 +372,49 @@ const Python: React.FC<EscenaProps> = ({ lineas }) => {
   const [y1, y2, y3] = lineas;
   return (
     <Stage gap={30}>
-      <div style={{ width: 1180, background: "#060a16", border: `3px solid ${C.dim}44`, borderRadius: 24, padding: "22px 30px 28px" }}>
+      <div style={{ width: 1200, background: "#060a16", border: `3px solid ${C.dim}44`, borderRadius: 24, padding: "22px 30px 28px" }}>
         <div style={{ display: "flex", gap: 10, marginBottom: 18 }}>
           {[C.coral, C.yellow, C.green].map((c) => (
             <div key={c} style={{ width: 18, height: 18, borderRadius: 9, background: c }} />
           ))}
           <span style={{ fontFamily: MONO, fontSize: 22, color: C.dim, marginLeft: 12 }}>python · sympy</span>
         </div>
-        <Codigo at={y1.at} texto="sp.diff((3*x + 1)**5, x)" dur={26} />
-        <Aparece at={y1.at + 34}>
-          <div style={{ fontFamily: MONO, fontSize: 30, color: COL.salida, height: 50 }}>15*(3*x + 1)**4</div>
+        <Codigo at={y1.at} texto="sp.diff((3*x + 1)**5, x)" dur={20} />
+        <Aparece at={y2.at}>
+          <div style={{ fontFamily: MONO, fontSize: 32, color: COL.salida, height: 50 }}>15*(3*x + 1)**4</div>
         </Aparece>
-        <Codigo at={y2.at} texto="sp.diff(sp.exp(-x**2), x)" dur={26} />
-        <Aparece at={y2.at + 34}>
-          <div style={{ fontFamily: MONO, fontSize: 30, color: COL.salida, height: 50 }}>-2*x*exp(-x**2)</div>
+        <Codigo at={y3.at} texto="sp.diff(sp.exp(-x**2), x)" dur={20} />
+        <Aparece at={y3.at + 28}>
+          <div style={{ fontFamily: MONO, fontSize: 32, color: COL.salida, height: 50 }}>-2*x*exp(-x**2)</div>
         </Aparece>
       </div>
-      <Sequence from={y3.at} layout="none">
-        <Sticker bg={C.green} size={30}>
-          Mismos resultados que a mano
-        </Sticker>
-      </Sequence>
     </Stage>
   );
 };
 
 const ErrorComun: React.FC<EscenaProps> = ({ lineas }) => {
   const [x1, x2] = lineas;
-  const frame = useCurrentFrame();
   return (
-    <Stage gap={34}>
+    <Stage gap={30}>
       <Sticker bg={C.coral} color={C.ink} size={48}>
         ¡CUIDADO!
       </Sticker>
-      {frame < x2.at ? (
+      <div style={{ display: "flex", gap: 30 }}>
         <Cuidado at={x1.at + 10}>
-          <Formula tex={"(3x+1)^5 \\to 5(3x+1)^4 \\; \\boldsymbol{\\times}"} size={60} color={C.coral} />
-          <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 34, color: C.ink }}>falta la derivada de adentro</div>
+          <div style={{ width: 720, display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+            <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 34, color: C.ink }}>Olvidar la derivada de adentro</div>
+            <Formula tex={"5(3x + 1)^4 \\;\\; \\boldsymbol{\\times}"} size={56} color={C.coral} />
+            <Formula tex={"5(3x + 1)^4 \\cdot \\reg{3} = 15(3x + 1)^4 \\;\\checkmark"} size={42} color={C.green} />
+          </div>
         </Cuidado>
-      ) : (
         <Cuidado at={x2.at}>
-          <Formula tex={"\\to 15(3x+1)^4 \\;\\checkmark"} size={64} color={C.green} />
-          <Formula tex={"(e^{-x^2})' \\neq e^{-x^2} \\;\\; \\boldsymbol{\\times}"} size={50} color={C.coral} />
+          <div style={{ width: 720, display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+            <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 34, color: C.ink }}>Solo eˣ sola es su propia derivada</div>
+            <Formula tex={"(e^{-x^2})' = e^{-x^2} \\;\\; \\boldsymbol{\\times}"} size={52} color={C.coral} />
+            <Formula tex={"(e^{-x^2})' = -2x\\,e^{-x^2} \\;\\checkmark"} size={52} color={C.green} />
+          </div>
         </Cuidado>
-      )}
+      </div>
     </Stage>
   );
 };
@@ -287,8 +428,8 @@ const Reto: React.FC<EscenaProps> = ({ lineas }) => {
       durResumen={w2.frames - 20}
       reto={
         <Card accent={C.yellow} style={{ textAlign: "center", display: "flex", flexDirection: "column", gap: 16, padding: "30px 60px" }}>
-          <Formula tex={"f(\\ent{x}) = (2\\ent{x} + 1)^3"} size={80} />
-          <Formula tex={"f'(\\ent{x}) = \\; ? \\qquad f'(\\ent{0}) = \\; ?"} size={80} color={C.yellow} />
+          <Formula tex={"f(\\ent{x}) = (2\\ent{x} + 1)^3"} size={90} />
+          <Formula tex={"f'(\\ent{x}) = \\; ? \\qquad f'(\\ent{0}) = \\; ?"} size={84} color={C.yellow} />
         </Card>
       }
       ideas={["Composición: una función dentro de otra", "[f(g(x))]' = f'(g(x)) · g'(x)", "Los ritmos se multiplican, como engranajes"]}

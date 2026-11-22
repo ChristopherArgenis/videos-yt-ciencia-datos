@@ -2,14 +2,19 @@ import { loadFont } from "@remotion/fonts";
 import { staticFile } from "remotion";
 
 // Fuentes locales (public/fonts) para que el render no dependa de internet.
-export const FONT = "Poppins";
+// Poppins no trae superíndices (⁴ ⁿ ˣ), √, ≈ ni ≠: "Inter Simbolos" (subconjunto de Inter, OFL) los cubre.
+export const FONT = "Poppins, 'Inter Simbolos'";
 export const MONO = "JetBrains Mono";
 
 Promise.all([
-  loadFont({ family: FONT, url: staticFile("fonts/Poppins-600.woff2"), weight: "600" }),
-  loadFont({ family: FONT, url: staticFile("fonts/Poppins-800.woff2"), weight: "800" }),
-  loadFont({ family: FONT, url: staticFile("fonts/Poppins-900.woff2"), weight: "900" }),
+  loadFont({ family: "Poppins", url: staticFile("fonts/Poppins-600.woff2"), weight: "600" }),
+  loadFont({ family: "Poppins", url: staticFile("fonts/Poppins-800.woff2"), weight: "800" }),
+  loadFont({ family: "Poppins", url: staticFile("fonts/Poppins-900.woff2"), weight: "900" }),
   loadFont({ family: MONO, url: staticFile("fonts/JetBrainsMono-700.woff2"), weight: "700" }),
+  ...(["SemiBold:600", "ExtraBold:800", "Black:900"] as const).map((x) => {
+    const [n, w] = x.split(":");
+    return loadFont({ family: "Inter Simbolos", url: staticFile(`fonts/InterSimbolos-${n}.woff2`), weight: w });
+  }),
 ]);
 
 export const C = {

@@ -117,7 +117,7 @@ export const MiniFutbol01: React.FC = () => (
       <Grande size={150}>DATOS</Grande>
       <div
         style={{
-          fontFamily: "Poppins",
+          fontFamily: "Poppins, 'Inter Simbolos'",
           fontWeight: 800,
           fontSize: 40,
           color: C.ink,
@@ -365,7 +365,7 @@ const Jugador: React.FC<{
         x={112}
         y={198}
         textAnchor="middle"
-        fontFamily="Poppins"
+        fontFamily="Poppins, 'Inter Simbolos'"
         fontWeight={900}
         fontSize={64}
         fill="#ffd166"
@@ -408,7 +408,7 @@ const Nombre: React.FC<{
 }> = ({ children, color, size = 128 }) => (
   <div
     style={{
-      fontFamily: "Poppins",
+      fontFamily: "Poppins, 'Inter Simbolos'",
       fontWeight: 900,
       fontSize: size,
       lineHeight: 0.9,
@@ -444,7 +444,7 @@ export const MiniFutbol03: React.FC = () => (
         x={300}
         y={600}
         textAnchor="middle"
-        fontFamily="Poppins"
+        fontFamily="Poppins, 'Inter Simbolos'"
         fontWeight={900}
         fontSize={560}
         fill="#ffffff"
@@ -456,7 +456,7 @@ export const MiniFutbol03: React.FC = () => (
         x={1000}
         y={600}
         textAnchor="middle"
-        fontFamily="Poppins"
+        fontFamily="Poppins, 'Inter Simbolos'"
         fontWeight={900}
         fontSize={560}
         fill="#ffffff"
@@ -498,7 +498,7 @@ export const MiniFutbol03: React.FC = () => (
         </Nombre>
         <span
           style={{
-            fontFamily: "Poppins",
+            fontFamily: "Poppins, 'Inter Simbolos'",
             fontWeight: 900,
             fontSize: 40,
             color: "#fff",
@@ -529,7 +529,7 @@ export const MiniFutbol03: React.FC = () => (
       <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
         <span
           style={{
-            fontFamily: "Poppins",
+            fontFamily: "Poppins, 'Inter Simbolos'",
             fontWeight: 900,
             fontSize: 40,
             color: "#fff",
@@ -573,7 +573,7 @@ export const MiniFutbol03: React.FC = () => (
     >
       <span
         style={{
-          fontFamily: "Poppins",
+          fontFamily: "Poppins, 'Inter Simbolos'",
           fontWeight: 900,
           fontSize: 92,
           color: "#0b1020",
@@ -597,7 +597,7 @@ export const MiniFutbol03: React.FC = () => (
     >
       <div
         style={{
-          fontFamily: "Poppins",
+          fontFamily: "Poppins, 'Inter Simbolos'",
           fontWeight: 900,
           fontSize: 26,
           background: C.green,
@@ -647,7 +647,7 @@ const MarcadorMini: React.FC<{ texto: string; color: string }> = ({
 }) => (
   <div
     style={{
-      fontFamily: "Poppins",
+      fontFamily: "Poppins, 'Inter Simbolos'",
       fontWeight: 900,
       fontSize: 34,
       color: "#fff",
@@ -678,7 +678,7 @@ export const MiniFutbol05: React.FC = () => {
           x={320}
           y={640}
           textAnchor="middle"
-          fontFamily="Poppins"
+          fontFamily="Poppins, 'Inter Simbolos'"
           fontWeight={900}
           fontSize={420}
           fill="#ffffff"
@@ -719,7 +719,7 @@ export const MiniFutbol05: React.FC = () => {
           </Nombre>
           <span
             style={{
-              fontFamily: "Poppins",
+              fontFamily: "Poppins, 'Inter Simbolos'",
               fontWeight: 900,
               fontSize: 44,
               color: "#fff",
@@ -846,7 +846,7 @@ export const MiniFutbol07: React.FC = () => {
           x={980}
           y={640}
           textAnchor="middle"
-          fontFamily="Poppins"
+          fontFamily="Poppins, 'Inter Simbolos'"
           fontWeight={900}
           fontSize={600}
           fill="#ffffff"
@@ -921,7 +921,7 @@ export const MiniFutbol08: React.FC = () => (
         x={290}
         y={640}
         textAnchor="middle"
-        fontFamily="Poppins"
+        fontFamily="Poppins, 'Inter Simbolos'"
         fontWeight={900}
         fontSize={600}
         fill="#ffffff"
@@ -933,7 +933,7 @@ export const MiniFutbol08: React.FC = () => (
         x={1010}
         y={640}
         textAnchor="middle"
-        fontFamily="Poppins"
+        fontFamily="Poppins, 'Inter Simbolos'"
         fontWeight={900}
         fontSize={600}
         fill="#ffffff"
@@ -961,7 +961,7 @@ export const MiniFutbol08: React.FC = () => (
         </Nombre>
         <span
           style={{
-            fontFamily: "Poppins",
+            fontFamily: "Poppins, 'Inter Simbolos'",
             fontWeight: 900,
             fontSize: 40,
             color: "#fff",
@@ -989,7 +989,7 @@ export const MiniFutbol08: React.FC = () => (
       <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
         <span
           style={{
-            fontFamily: "Poppins",
+            fontFamily: "Poppins, 'Inter Simbolos'",
             fontWeight: 900,
             fontSize: 40,
             color: "#fff",
@@ -1111,8 +1111,8 @@ export const MiniFutbol09: React.FC = () => (
         justifyContent: "center",
       }}
     >
-      <span style={{ fontFamily: "Poppins", fontWeight: 900, fontSize: 110, color: "#ffd166", lineHeight: 1 }}>0.67</span>
-      <span style={{ fontFamily: "Poppins", fontWeight: 800, fontSize: 30, color: "#fff" }}>similitud</span>
+      <span style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 900, fontSize: 110, color: "#ffd166", lineHeight: 1 }}>0.67</span>
+      <span style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 800, fontSize: 30, color: "#fff" }}>similitud</span>
     </div>
     <div style={{ position: "absolute", left: 0, right: 0, bottom: 20, display: "flex", justifyContent: "center" }}>
       <ChipMini bg={C.green}>FÚTBOL CON DATOS #9</ChipMini>
@@ -1167,7 +1167,7 @@ const Mapeo: React.FC<{ de: string[]; a: string[]; ok: boolean }> = ({ de, a, ok
         display: "flex",
         alignItems: "center",
         gap: 18,
-        fontFamily: "Poppins",
+        fontFamily: "Poppins, 'Inter Simbolos'",
         fontWeight: 900,
         fontSize: 64,
         boxShadow: `0 0 40px ${color}55`,
@@ -1413,46 +1413,168 @@ export const MiniCalculo06: React.FC = () => {
   );
 };
 
+/** Fondo de pizarra: cuadrícula de puntos + resplandor de color. */
+const Pizarra: React.FC<{ glow: string; x?: string; y?: string }> = ({ glow, x = "50%", y = "45%" }) => (
+  <>
+    <div style={{ position: "absolute", inset: 0, backgroundColor: "#070b18" }} />
+    <div style={{ position: "absolute", inset: 0, backgroundImage: `radial-gradient(circle at ${x} ${y}, ${glow} 0%, #070b1800 58%)` }} />
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "radial-gradient(circle, #ffffff22 1.6px, transparent 1.8px)",
+        backgroundSize: "36px 36px",
+        opacity: 0.6,
+      }}
+    />
+  </>
+);
+
+/** Tarjeta de respuesta con brillo (para la miniatura del #7). */
+const Respuesta: React.FC<{ tex: string; color: string; rot: number }> = ({ tex, color, rot }) => (
+  <div
+    style={{
+      background: "#0b1020",
+      border: `10px solid ${color}`,
+      borderRadius: 40,
+      padding: "18px 44px",
+      rotate: `${rot}deg`,
+      boxShadow: `0 0 70px ${color}88, 0 24px 0 rgba(0,0,0,0.5)`,
+    }}
+  >
+    <Formula tex={tex} size={190} color={color} />
+  </div>
+);
+
+/** #7 · Producto: duelo 6x³ vs 5x⁴ (uno está mal). */
 export const MiniCalculo07: React.FC = () => (
-  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
-    <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 30% 45%, #1c3a8a 0%, #0b1020 62%)" }} />
-    <div style={{ position: "absolute", left: 50, top: 80 }}>
-      <Formula tex={"(\\ent{f}\\cdot\\ent{g})' = \\reg{f'}\\,g + f\\,\\reg{g'}"} size={92} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
+  <AbsoluteFill style={{ overflow: "hidden" }}>
+    <Pizarra glow="#2a3f9a" />
+    {/* Mitades de color, sutiles */}
+    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(100deg, #ff6b5b22 0%, #ff6b5b00 45%, #3ddc8400 55%, #3ddc8422 100%)" }} />
+    <div style={{ position: "absolute", left: 0, right: 0, top: 26, display: "flex", justifyContent: "center" }}>
+      <Formula tex={"\\left(x^2 \\cdot x^3\\right)' ="} size={96} color="#ffffff" style={{ textShadow: "0 8px 0 rgba(0,0,0,0.6)" }} />
     </div>
-    <div style={{ position: "absolute", left: 60, top: 380, display: "flex", flexDirection: "column", gap: 4 }}>
-      <Nombre color="#ffffff" size={112}>
-        ¿CUÁL
-      </Nombre>
-      <Nombre color="#ffd166" size={96}>
-        ESTÁ BIEN?
+    <div style={{ position: "absolute", left: 40, top: 178 }}>
+      <Respuesta tex={"6x^3"} color={C.coral} rot={-5} />
+    </div>
+    <div style={{ position: "absolute", right: 40, top: 178 }}>
+      <Respuesta tex={"5x^4"} color={C.green} rot={5} />
+    </div>
+    <div
+      style={{
+        position: "absolute",
+        left: 640 - 85,
+        top: 245,
+        width: 170,
+        height: 170,
+        borderRadius: 85,
+        background: "#ffd166",
+        border: "10px solid #070b18",
+        boxShadow: "0 0 60px #ffd16699",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "Poppins, 'Inter Simbolos'",
+        fontWeight: 900,
+        fontSize: 74,
+        color: "#070b18",
+      }}
+    >
+      VS
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 92, display: "flex", justifyContent: "center" }}>
+      <Nombre color="#ffd166" size={104}>
+        UNO ESTÁ MAL
       </Nombre>
     </div>
-    <div style={{ position: "absolute", right: 50, bottom: 30 }}>
-      <ChipMini bg={C.blue} color="#ffffff">
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 22, display: "flex", justifyContent: "center" }}>
+      <div style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 800, fontSize: 30, color: "#ffffff", background: C.blue, borderRadius: 14, padding: "4px 22px" }}>
         CÁLCULO DIFERENCIAL #7
-      </ChipMini>
+      </div>
     </div>
   </AbsoluteFill>
 );
 
+/** Engranaje para miniaturas. */
+const Rueda: React.FC<{ cx: number; cy: number; r: number; n: number; ang: number; color: string }> = ({ cx, cy, r, n, ang, color }) => {
+  const ri = r * 0.8;
+  const d: string[] = [];
+  for (let i = 0; i < n; i++) {
+    const a0 = (2 * Math.PI * i) / n;
+    const w = Math.PI / n;
+    const pts = [
+      [ri, a0 - w * 0.6],
+      [r, a0 - w * 0.32],
+      [r, a0 + w * 0.32],
+      [ri, a0 + w * 0.6],
+    ];
+    d.push(pts.map(([rr, a], k) => `${k === 0 && i === 0 ? "M" : "L"} ${(rr * Math.cos(a)).toFixed(1)} ${(rr * Math.sin(a)).toFixed(1)}`).join(" "));
+  }
+  return (
+    <g transform={`translate(${cx} ${cy}) rotate(${ang})`}>
+      <path d={d.join(" ") + " Z"} fill={color} stroke="#070b18" strokeWidth={8} strokeLinejoin="round" />
+      <circle r={r * 0.34} fill="#070b18" />
+      <circle r={r * 0.16} fill={color} />
+    </g>
+  );
+};
+
+/** #8 · Cadena: tres engranajes, ×3 · ×2 = ×6. */
 export const MiniCalculo08: React.FC = () => (
-  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
-    <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 70% 50%, #1c3a8a 0%, #0b1020 62%)" }} />
-    <div style={{ position: "absolute", left: 50, top: 80 }}>
-      <Formula tex={"[f(g(x))]' = \\reg{f'(g)}\\cdot g'"} size={96} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
-    </div>
-    <div style={{ position: "absolute", left: 60, top: 380, display: "flex", flexDirection: "column", gap: 4 }}>
-      <Nombre color="#ffffff" size={96}>
-        UNA DENTRO
+  <AbsoluteFill style={{ overflow: "hidden" }}>
+    <Pizarra glow="#3b2f8f" x="68%" y="50%" />
+    <svg width={1280} height={720} viewBox="0 0 1280 720" style={{ position: "absolute", inset: 0, filter: "drop-shadow(0 16px 0 rgba(0,0,0,0.45))" }}>
+      <Rueda cx={790} cy={215} r={92} n={10} ang={10} color={C.blue} />
+      <Rueda cx={960} cy={350} r={130} n={14} ang={4} color={C.green} />
+      <Rueda cx={1190} cy={570} r={180} n={20} ang={6} color="#ffd166" />
+    </svg>
+    {/* Chips de los ritmos */}
+    {[
+      { t: "×3", x: 905, y: 150 },
+      { t: "×2", x: 1110, y: 300 },
+    ].map((c) => (
+      <div
+        key={c.t}
+        style={{
+          position: "absolute",
+          left: c.x,
+          top: c.y,
+          fontFamily: "Poppins, 'Inter Simbolos'",
+          fontWeight: 900,
+          fontSize: 64,
+          color: "#ffffff",
+          background: C.coral,
+          border: "6px solid #070b18",
+          borderRadius: 22,
+          padding: "0 22px",
+          boxShadow: "0 10px 0 rgba(0,0,0,0.5)",
+          rotate: "-4deg",
+        }}
+      >
+        {c.t}
+      </div>
+    ))}
+    <div style={{ position: "absolute", left: 50, top: 60, display: "flex", flexDirection: "column", gap: 0 }}>
+      <Nombre color="#ffffff" size={92}>
+        LOS RITMOS
       </Nombre>
-      <Nombre color="#ffd166" size={96}>
-        DE OTRA
+      <Nombre color="#ffd166" size={92}>
+        SE
+      </Nombre>
+      <Nombre color="#ffd166" size={92}>
+        MULTIPLICAN
       </Nombre>
     </div>
-    <div style={{ position: "absolute", right: 50, bottom: 30 }}>
-      <ChipMini bg={C.blue} color="#ffffff">
-        CÁLCULO DIFERENCIAL #8
-      </ChipMini>
+    <div style={{ position: "absolute", left: 50, top: 420 }}>
+      <div style={{ background: "#0b1020ee", border: `6px solid ${C.coral}`, borderRadius: 26, padding: "6px 26px", boxShadow: "0 0 40px #ff6b5b55" }}>
+        <Formula tex={"\\times 3 \\cdot \\times 2 = \\times 6"} size={74} color="#ffffff" />
+      </div>
+    </div>
+    <div style={{ position: "absolute", left: 50, bottom: 26 }}>
+      <div style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 800, fontSize: 30, color: "#ffffff", background: C.blue, borderRadius: 14, padding: "4px 22px" }}>
+        CÁLCULO DIFERENCIAL #8 · REGLA DE LA CADENA
+      </div>
     </div>
   </AbsoluteFill>
 );
