@@ -1,0 +1,31 @@
+Regla del producto y del cociente en cálculo, explicada desde cero: por qué la derivada de un producto no es el producto de las derivadas, con ejemplos resueltos paso a paso.
+Episodio 7 del curso de Cálculo Diferencial: la regla del producto, la regla del cociente y su uso en economía y en la sigmoide de las redes neuronales.
+
+Episodio 7 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. Vemos de dónde sale la regla del producto con un rectángulo que crece, la regla del cociente con un ejemplo completo, y por qué el orden importa en la resta. Y como plus, cómo la regla del cociente simplifica la derivada de la sigmoide.
+
+Capítulos:
+00:00 ¿6x³ o 5x⁴?
+00:29 Recuerda y objetivo
+00:55 ¿Por qué no basta multiplicar?
+01:21 La regla del producto
+01:52 Ejemplo: x² · e^x
+02:16 La regla del cociente
+02:51 ¿Para qué se usa?
+03:11 Plus: en Ciencia de Datos
+03:37 En Python
+03:50 Errores comunes
+04:07 Reto y resumen
+04:30 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 03:37.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 8.
+
+Los ejemplos de la tienda y del cociente son ejemplos simplificados.
+
+Episodio anterior: Derivada exponencial y logaritmo | Cálculo Diferencial #6
+Próximo episodio: Regla de la cadena | Cálculo Diferencial #8
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #derivadas #reglaDelProducto #calculodiferencial

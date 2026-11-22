@@ -1,0 +1,31 @@
+Regla de la cadena en cálculo, explicada desde cero: cómo derivar una función dentro de otra, con ejemplos de potencias, exponenciales y logaritmos.
+Episodio 8 del curso de Cálculo Diferencial: la regla de la cadena paso a paso, el globo que se infla y cómo las redes neuronales la usan para aprender.
+
+Episodio 8 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. Usamos la idea de los engranajes para entender por qué los ritmos se multiplican, derivamos (3x + 1)⁵ paso a paso y comprobamos el resultado con un cuadrado. Y como plus, cómo la retropropagación en ciencia de datos es una cadena de derivadas.
+
+Capítulos:
+00:00 Engranajes
+00:30 Recuerda y objetivo
+00:58 Una función dentro de otra
+01:21 La regla de la cadena
+01:46 Ejemplo: (3x + 1)⁵
+02:26 Con exponenciales y logaritmos
+02:58 ¿Para qué se usa?
+03:24 Plus: en Ciencia de Datos
+03:47 En Python
+04:01 Error común
+04:25 Reto y resumen
+04:45 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 03:47.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 9.
+
+El globo usa un ejemplo simplificado.
+
+Episodio anterior: Regla del producto y cociente | Cálculo Diferencial #7
+Próximo episodio: Máximos y mínimos | Cálculo Diferencial #9
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #reglaDeLaCadena #calculodiferencial #cienciadedatos

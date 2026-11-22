@@ -1412,3 +1412,47 @@ export const MiniCalculo06: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+export const MiniCalculo07: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 30% 45%, #1c3a8a 0%, #0b1020 62%)" }} />
+    <div style={{ position: "absolute", left: 50, top: 80 }}>
+      <Formula tex={"(\\ent{f}\\cdot\\ent{g})' = \\reg{f'}\\,g + f\\,\\reg{g'}"} size={92} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
+    </div>
+    <div style={{ position: "absolute", left: 60, top: 380, display: "flex", flexDirection: "column", gap: 4 }}>
+      <Nombre color="#ffffff" size={112}>
+        ¿CUÁL
+      </Nombre>
+      <Nombre color="#ffd166" size={96}>
+        ESTÁ BIEN?
+      </Nombre>
+    </div>
+    <div style={{ position: "absolute", right: 50, bottom: 30 }}>
+      <ChipMini bg={C.blue} color="#ffffff">
+        CÁLCULO DIFERENCIAL #7
+      </ChipMini>
+    </div>
+  </AbsoluteFill>
+);
+
+export const MiniCalculo08: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
+    <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 70% 50%, #1c3a8a 0%, #0b1020 62%)" }} />
+    <div style={{ position: "absolute", left: 50, top: 80 }}>
+      <Formula tex={"[f(g(x))]' = \\reg{f'(g)}\\cdot g'"} size={96} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
+    </div>
+    <div style={{ position: "absolute", left: 60, top: 380, display: "flex", flexDirection: "column", gap: 4 }}>
+      <Nombre color="#ffffff" size={96}>
+        UNA DENTRO
+      </Nombre>
+      <Nombre color="#ffd166" size={96}>
+        DE OTRA
+      </Nombre>
+    </div>
+    <div style={{ position: "absolute", right: 50, bottom: 30 }}>
+      <ChipMini bg={C.blue} color="#ffffff">
+        CÁLCULO DIFERENCIAL #8
+      </ChipMini>
+    </div>
+  </AbsoluteFill>
+);

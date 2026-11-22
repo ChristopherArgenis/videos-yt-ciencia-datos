@@ -121,6 +121,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** derivada de 5·ln x. (5/x)
 
 ### 7 · Regla del producto y cociente | Cálculo Diferencial #7
+- **Estado:** ✅ hecho (4:50, `out/C07-Producto.mp4`). Guion: `src/guiones/c07-producto.json`.
 - **Gancho:** "La derivada de la sigmoide tiene una forma bellísima… y explica por qué las redes profundas se atoran."
 - **Qué es:** (f·g)' = f'g + fg' y (f/g)' = (f'g − fg') / g².
 - **Cómo se calcula:** [x²(x + 1)]' = 2x(x + 1) + x² = 3x² + 2x; [x/(x + 1)]' = 1/(x + 1)².
@@ -134,6 +135,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** derivada de x·eˣ. (eˣ + x·eˣ)
 
 ### 8 · Regla de la cadena | Cálculo Diferencial #8
+- **Estado:** ✅ hecho (5:05, `out/C08-Cadena.mp4`). Guion: `src/guiones/c08-cadena.json`.
 - **Gancho:** "Así aprenden las redes neuronales: la regla de la cadena, repetida millones de veces."
 - **Qué es:** la derivada de una función dentro de otra: [f(g(x))]' = f'(g(x))·g'(x) (engranajes que se multiplican).
 - **Cómo se calcula:** [(3x + 1)⁵]' = 5(3x + 1)⁴·3 = 15(3x + 1)⁴; [e^(−x²)]' = −2x·e^(−x²).

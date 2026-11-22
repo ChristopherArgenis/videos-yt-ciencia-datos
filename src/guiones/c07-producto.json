@@ -2,7 +2,7 @@
   "_nota": "Cálculo Diferencial #7. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #6: f'(x) = 5/x + e^x, f'(1) = 5 + e ≈ 7.72. En subtítulos se escribe e^x (Poppins no tiene ˣ).",
   "id": "c07-producto",
   "titulo": "Regla del producto y cociente | Cálculo Diferencial #7",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/explica.wav",
   "voz": "alex_nicola",
   "acento": "#5b8cff",

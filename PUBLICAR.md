@@ -245,3 +245,25 @@ y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 **Respuesta del reto (para el #7):** f'(x) = 5/x + e^x, f'(1) = 5 + e ≈ 7.72.
 **Pantalla final:** episodio 5 + lista del curso.
 **Nota:** en subtítulos se escribe e^x en lugar de eˣ (la fuente Poppins no tiene el carácter ˣ).
+
+## C07 · Regla del producto y cociente (4:50)
+**Título:** Regla del producto y cociente | Cálculo Diferencial #7 (52)
+**Alternativas:** Derivar producto y cociente paso a paso | Cálculo Diferencial #7 (53) · ¿6x³ o 5x⁴? La regla del producto | Cálculo Diferencial #7 (56)
+**Miniatura:** `Mini-C07-Producto` → fórmula del producto + "¿CUÁL ESTÁ BIEN?"
+**Voz:** alex_nicola · Fórmulas con KaTeX · Ejemplo de la tienda: "Ejemplo simplificado".
+**Descripción:** `videos/c07-producto/descripcion.txt` (sin código; remite al 03:37).
+**#:** #calculo #matematicas #derivadas #reglaDelProducto #calculodiferencial
+**Comentario fijado:** 🧩 Reto: deriva f(x) = x·e^x y evalúa f'(0) 👇 (la solución, en el episodio 8)
+**Respuesta del reto (para el #8):** f'(x) = e^x + x·e^x, f'(0) = 1.
+**Pantalla final:** episodio 6 + lista del curso.
+
+## C08 · Regla de la cadena (5:05)
+**Título:** Regla de la cadena | Cálculo Diferencial #8 (39)
+**Alternativas:** Derivar una función dentro de otra | Cálculo Diferencial #8 (46) · Engranajes y la regla de la cadena | Cálculo Diferencial #8 (49)
+**Miniatura:** `Mini-C08-Cadena` → "[f(g(x))]' = f'(g)·g'" + "UNA DENTRO DE OTRA"
+**Voz:** alex_nicola · Fórmulas con KaTeX · Globo: "Ejemplo simplificado".
+**Descripción:** `videos/c08-cadena/descripcion.txt` (sin código; remite al 03:47).
+**#:** #calculo #matematicas #reglaDeLaCadena #calculodiferencial #cienciadedatos
+**Comentario fijado:** 🧩 Reto: deriva f(x) = (2x + 1)³ y evalúa f'(0) 👇 (la solución, en el episodio 9)
+**Respuesta del reto (para el #9):** f'(x) = 6(2x + 1)², f'(0) = 6.
+**Pantalla final:** episodio 7 + lista del curso.
