@@ -1,0 +1,179 @@
+{
+  "_nota": "Cálculo Diferencial #10. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #9: x = 2, f(2) = −4. Gancho: 'aplanar la curva' de casos (curva ilustrativa, ejemplo simplificado, sin datos reales). Caída: s = 4.9t² (como en el #5).",
+  "id": "c10-segunda",
+  "titulo": "Segunda derivada y concavidad | Cálculo Diferencial #10",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "«Se está aplanando la curva»",
+      "pantalla": "Una curva de casos acumulados que sube (forma de S, sin datos reales: 'Ejemplo simplificado'). Titular de noticia dibujado: 'SE ESTÁ APLANANDO LA CURVA'. Contador de casos que sigue subiendo. Pregunta: 'Si sigue subiendo, ¿qué es lo que bajó?'",
+      "voz": {
+        "g1": "Seguro escuchaste esta frase en las noticias: se está aplanando la curva.",
+        "g2": "Pero mira la gráfica: los casos seguían subiendo. Cada día había más que el anterior.",
+        "g3": "Entonces, ¿qué era lo que estaba bajando? No eran los casos, ni la velocidad a la que crecían.",
+        "g4": "Era algo más sutil: la segunda derivada. Hoy aprendes a leerla."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #10' con el mapa de los 12 temas; se ilumina '2.ª derivada'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio diez."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': máximos y mínimos donde f'(x) = 0. 'RESPUESTA DEL RETO': f(x) = x² − 4x → f'(x) = 2x − 4 = 0 → x = 2 → f(2) = 4 − 8 = −4 (mínimo).",
+      "voz": {
+        "r1": "En el episodio anterior: los máximos y mínimos están donde la derivada vale cero.",
+        "r2": "El reto: la derivada de equis al cuadrado menos cuatro equis es dos equis menos cuatro. Vale cero en dos. Y el mínimo vale cuatro menos ocho: menos cuatro."
+      },
+      "sub": {
+        "r1": "En el episodio anterior: máximos y mínimos donde f'(x) = 0.",
+        "r2": "El reto: f'(x) = 2x − 4 = 0 → x = 2. El mínimo vale 4 − 8 = −4."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Calcular la segunda derivada · 2. Leer la concavidad · 3. Clasificar máximos y mínimos sin tabla de signos.",
+      "voz": {
+        "o1": "Hoy vas a poder calcular la segunda derivada, leer la concavidad de una curva, y clasificar máximos y mínimos sin hacer tabla de signos."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "que_es",
+      "capitulo": "La derivada de la derivada",
+      "pantalla": "Cadena de tres tarjetas con flechas 'derivar': POSICIÓN s(t) = 4.9t² → VELOCIDAD s'(t) = 9.8t → ACELERACIÓN s''(t) = 9.8. Notación KaTeX: f''(x) = d²y/dx². Sticker: 'cómo cambia la pendiente'.",
+      "voz": {
+        "q1": "La segunda derivada es, simplemente, derivar dos veces. Y tiene un significado muy concreto.",
+        "q2": "En el episodio cinco, la pelota que cae: su posición es cuatro punto nueve te al cuadrado. Al derivar, la velocidad: nueve punto ocho te.",
+        "q3": "Y si derivas otra vez, nueve punto ocho: la aceleración. Cuando un auto acelera y te pega al asiento, estás sintiendo una segunda derivada.",
+        "q4": "En general, la segunda derivada mide cómo cambia la pendiente. Se escribe efe biprima, o de dos ye entre de equis al cuadrado."
+      },
+      "sub": {
+        "q2": "En el episodio 5: la pelota cae s(t) = 4.9t². Su velocidad: s'(t) = 9.8t.",
+        "q3": "Si derivas otra vez: s''(t) = 9.8, la aceleración. Cuando un auto acelera y te pega al asiento, sientes una segunda derivada.",
+        "q4": "En general, la segunda derivada mide cómo cambia la pendiente. Se escribe f''(x), o d²y/dx²."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "concavidad",
+      "capitulo": "Concavidad: ¿sonríe o está triste?",
+      "pantalla": "Dos curvas lado a lado con su tangente recorriéndolas. CÓNCAVA HACIA ARRIBA (sonrisa, verde): la pendiente va creciendo (−2, −1, 0, 1, 2) → f'' > 0. CÓNCAVA HACIA ABAJO (tristeza, coral): la pendiente va bajando (2, 1, 0, −1, −2) → f'' < 0. Emojis dibujados de sonrisa y tristeza sobre cada una.",
+      "voz": {
+        "c1": "Mira esta curva con forma de sonrisa. Recórrela con la tangente: la pendiente empieza negativa, llega a cero, y se vuelve positiva. Siempre va creciendo.",
+        "c2": "Si la pendiente crece, su derivada es positiva. Segunda derivada positiva: la curva es cóncava hacia arriba.",
+        "c3": "Y al revés: en una curva con forma de tristeza, la pendiente va bajando. Segunda derivada negativa: cóncava hacia abajo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "criterio",
+      "capitulo": "Cómo se calcula: el criterio",
+      "pantalla": "f(x) = x³ − 3x (la del #9). Pasos: 1) f'(x) = 3x² − 3 · 2) f''(x) = 6x · 3) en x = 1: f''(1) = 6 > 0 → sonrisa → MÍNIMO · en x = −1: f''(−1) = −6 < 0 → tristeza → MÁXIMO. Curva con los dos puntos y su emoji.",
+      "voz": {
+        "k1": "Esto da un atajo para clasificar puntos críticos. Volvamos a equis al cubo, menos tres equis, del episodio anterior.",
+        "k2": "Su derivada es tres equis al cuadrado menos tres. Y derivando otra vez, la segunda derivada es seis equis.",
+        "k3": "En equis igual a uno, vale seis: positiva. La curva sonríe ahí, así que es un mínimo. En menos uno, vale menos seis: negativa. Está triste: es un máximo.",
+        "k4": "Lo mismo que con la tabla de signos, pero en un solo paso."
+      },
+      "sub": {
+        "k1": "Un atajo para clasificar puntos críticos. Volvamos a f(x) = x³ − 3x, del episodio anterior.",
+        "k2": "f'(x) = 3x² − 3. Derivando otra vez: f''(x) = 6x.",
+        "k3": "En x = 1: f'' = 6, positiva: sonríe, es un mínimo. En x = −1: f'' = −6, negativa: está triste, es un máximo.",
+        "k4": "Lo mismo que la tabla de signos, en un solo paso."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "inflexion",
+      "capitulo": "Punto de inflexión",
+      "pantalla": "La misma curva x³ − 3x con dos zonas sombreadas: izquierda coral 'f'' < 0', derecha verde 'f'' > 0', y el punto (0, 0) resaltado: 'PUNTO DE INFLEXIÓN: f'' = 0 y cambia de signo'. Luego vuelve la curva del gancho con su punto de inflexión marcado: 'aquí se empieza a aplanar'.",
+      "voz": {
+        "f1": "¿Y dónde la segunda derivada vale cero? Seis equis igual a cero: en el origen. Ahí la curva cambia de tristeza a sonrisa. Ese cambio se llama punto de inflexión.",
+        "f2": "Y esa es la respuesta del inicio. Aplanar la curva era llegar al punto de inflexión: los casos seguían subiendo, pero cada vez más despacio. La segunda derivada se había vuelto negativa."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué se usa?",
+      "pantalla": "Tres tarjetas: ACELERACIÓN (la segunda derivada de la posición) · RENDIMIENTOS DECRECIENTES (estudiar 1, 2, 3, 4 horas: la nota sube, pero cada hora suma menos: f' > 0, f'' < 0) · EPIDEMIAS (el punto de inflexión).",
+      "voz": {
+        "u1": "¿Para qué más sirve? En física, es la aceleración. En economía, los rendimientos decrecientes: algo sigue creciendo, pero cada vez menos.",
+        "u2": "Como estudiar: la segunda hora te ayuda menos que la primera, y la quinta, casi nada. Primera derivada positiva, segunda derivada negativa."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Dos superficies de error dibujadas como curvas: CONVEXA (un solo valle, f'' > 0 siempre: 'regresión lineal y logística') y NO CONVEXA (varios valles: 'redes neuronales: mínimos locales'). Del #9: E(c) = Σ(xᵢ − c)² → E''(c) = 2n > 0.",
+      "voz": {
+        "p1": "Un plus para ciencia de datos: si la segunda derivada del error es positiva en todos lados, la curva es como un solo valle. Se dice que es convexa, y tiene un único mínimo.",
+        "p2": "Así son los errores de la regresión lineal y la logística: el entrenamiento siempre encuentra la mejor solución. Las redes neuronales no: tienen muchos valles, y pueden quedarse atoradas en uno."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 2 instrucciones (SymPy): d2 = sp.diff(x**3 - 3*x, x, 2) → 6*x / [d2.subs(x, v) for v in (-1, 1)] → [-6, 6].",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Con un dos al final, SimPy deriva dos veces: seis equis.",
+        "y3": "Y al evaluar en los puntos críticos: menos seis y seis. Un máximo y un mínimo."
+      },
+      "sub": {
+        "y2": "Con un 2 al final, SymPy deriva dos veces: 6x.",
+        "y3": "Evaluada en los puntos críticos: −6 y 6. Un máximo y un mínimo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Error común",
+      "pantalla": "Sticker '¡CUIDADO!'. Gráfica de y = x⁴: f''(x) = 12x², f''(0) = 0, pero a los dos lados f'' = 12 > 0: no cambia de signo → NO es inflexión, es un mínimo. Etiqueta: 'f'' = 0 no basta: tiene que cambiar de signo'.",
+      "voz": {
+        "x1": "Cuidado: que la segunda derivada valga cero no basta para un punto de inflexión. Equis a la cuarta tiene segunda derivada cero en el origen.",
+        "x2": "Pero a los dos lados es positiva: la curva sonríe todo el tiempo. Ahí hay un mínimo, no una inflexión. Tiene que cambiar de signo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': f(x) = x³ − 6x² → ¿dónde está su punto de inflexión? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. f'' = cómo cambia la pendiente · 2. f'' > 0 sonrisa (mínimo), f'' < 0 tristeza (máximo) · 3. Inflexión: f'' cambia de signo.",
+      "voz": {
+        "w1": "El reto: equis al cubo, menos seis equis al cuadrado. ¿Dónde está su punto de inflexión? Déjalo en los comentarios.",
+        "w2": "En resumen: la segunda derivada mide cómo cambia la pendiente. Si es positiva, la curva sonríe, y un punto crítico ahí es un mínimo. Si es negativa, está triste: es un máximo. Y donde cambia de signo, hay un punto de inflexión."
+      },
+      "sub": {
+        "w1": "Reto: f(x) = x³ − 6x². ¿Dónde está su punto de inflexión? Déjalo en los comentarios.",
+        "w2": "Resumen: f'' mide cómo cambia la pendiente. Positiva: sonríe, mínimo. Negativa: triste, máximo. Donde cambia de signo: inflexión."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #11 Derivadas parciales y gradiente'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio damos el salto a varias variables: las derivadas parciales, y el gradiente.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "_nota": "Cálculo Diferencial #9. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #8: f'(x) = 6(2x + 1)², f'(0) = 6. Corral: 40 m de cerca, rectángulo de lados x y 20 − x (ejemplo simplificado). Plus: datos 1, 2, 6 (ejemplo simplificado).",
+  "id": "c09-maxmin",
+  "titulo": "Máximos y mínimos | Cálculo Diferencial #9",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿El corral más grande?",
+      "pantalla": "Una cerca de 40 m (cuerda animada) que forma rectángulos distintos, cada uno con su área: 5 × 15 = 75 m² · 8 × 12 = 96 m² · 10 × 10 = 100 m² · 12 × 8 = 96 m². Barra de área que sube y baja. Pregunta: '¿Hay uno mejor que 100?'",
+      "voz": {
+        "g1": "Tienes cuarenta metros de cerca para hacer un corral rectangular. ¿Qué medidas te dan el área más grande?",
+        "g2": "Cinco por quince da setenta y cinco metros cuadrados. Ocho por doce, noventa y seis. Diez por diez, cien. Y doce por ocho, otra vez noventa y seis.",
+        "g3": "Parece que el mejor es diez por diez. Pero, ¿cómo estar seguro, sin probar todos los números del mundo?",
+        "g4": "Con derivadas se puede demostrar en una línea. Hoy aprendes a encontrar el punto más alto y el más bajo de una función."
+      },
+      "sub": {
+        "g1": "Tienes 40 m de cerca para un corral rectangular. ¿Qué medidas dan el área más grande?",
+        "g2": "5 × 15 = 75 m². 8 × 12 = 96. 10 × 10 = 100. Y 12 × 8, otra vez 96.",
+        "g3": "Parece que el mejor es 10 × 10. Pero, ¿cómo estar seguro sin probar todos los números?"
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #9' con el mapa de los 12 temas; se ilumina 'Máx y mín'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio nueve."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': regla de la cadena = afuera × adentro. 'RESPUESTA DEL RETO': (2x + 1)³ → 3(2x + 1)² · 2 = 6(2x + 1)² → f'(0) = 6.",
+      "voz": {
+        "r1": "En el episodio anterior vimos la regla de la cadena: la derivada de afuera, por la derivada de adentro.",
+        "r2": "El reto: dos equis más uno, al cubo. Afuera: tres, por dos equis más uno al cuadrado. Por la derivada de adentro, dos. Seis, por dos equis más uno al cuadrado. Y en cero, vale seis."
+      },
+      "sub": {
+        "r1": "En el episodio anterior: la regla de la cadena, derivada de afuera × derivada de adentro.",
+        "r2": "El reto: (2x + 1)³ → 3(2x + 1)² · 2 = 6(2x + 1)². En x = 0, vale 6."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Encontrar los puntos críticos · 2. Saber si son máximo o mínimo · 3. Resolver un problema de optimización.",
+      "voz": {
+        "o1": "Hoy vas a poder encontrar los puntos críticos de una función, saber si son un máximo o un mínimo, y resolver un problema de optimización."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "idea",
+      "capitulo": "La idea: la tangente horizontal",
+      "pantalla": "Una curva con una cima y un valle. Un punto recorre la curva con su tangente: sube (pendiente +, verde), llega a la cima (pendiente 0, amarilla, horizontal), baja (pendiente −, coral), llega al valle (pendiente 0 otra vez). Etiquetas 'máximo' y 'mínimo'. Fórmula KaTeX: f'(x) = 0 → 'puntos críticos'.",
+      "voz": {
+        "i1": "Imagina que caminas sobre una gráfica. Mientras subes, la pendiente es positiva. Mientras bajas, negativa.",
+        "i2": "Justo en la cima, dejas de subir y todavía no empiezas a bajar. Ahí la tangente queda horizontal: la pendiente es cero. Y en el fondo de un valle pasa lo mismo.",
+        "i3": "Entonces, los máximos y mínimos están donde la derivada vale cero. Esos puntos se llaman puntos críticos."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "calcula",
+      "capitulo": "Cómo se calcula",
+      "pantalla": "Ejemplo f(x) = x² − 6x + 5 con 3 pasos: 1) f'(x) = 2x − 6 · 2) 2x − 6 = 0 → x = 3 · 3) f(3) = 9 − 18 + 5 = −4. Luego la prueba de signos en una recta numérica: a la izquierda (x = 2) f' = −2 'baja', a la derecha (x = 4) f' = +2 'sube' → 'baja y luego sube: MÍNIMO'. Parábola con el punto (3, −4).",
+      "voz": {
+        "c1": "Tomemos equis al cuadrado, menos seis equis, más cinco. Paso uno: derivar. Dos equis menos seis.",
+        "c2": "Paso dos: igualar a cero y despejar. Dos equis menos seis igual a cero, así que equis vale tres.",
+        "c3": "Paso tres: evaluar la función ahí. Nueve, menos dieciocho, más cinco: menos cuatro. El punto crítico es tres, menos cuatro.",
+        "c4": "¿Es máximo o mínimo? Mira la derivada a cada lado. En dos vale menos dos: la función baja. En cuatro vale dos: sube.",
+        "c5": "Si baja y luego sube, es el fondo de un valle: un mínimo."
+      },
+      "sub": {
+        "c1": "Tomemos f(x) = x² − 6x + 5. Paso 1: derivar. f'(x) = 2x − 6.",
+        "c2": "Paso 2: igualar a cero y despejar. 2x − 6 = 0, así que x = 3.",
+        "c3": "Paso 3: evaluar. f(3) = 9 − 18 + 5 = −4. El punto crítico es (3, −4).",
+        "c4": "¿Máximo o mínimo? En x = 2, f' = −2: baja. En x = 4, f' = 2: sube.",
+        "c5": "Si baja y luego sube, es el fondo de un valle: un mínimo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ejemplo2",
+      "capitulo": "Un máximo y un mínimo",
+      "pantalla": "f(x) = x³ − 3x. f'(x) = 3x² − 3 = 0 → x = −1 y x = 1. Recta numérica de signos: x = −2 → +9 (sube) · x = 0 → −3 (baja) · x = 2 → +9 (sube). Curva con 'máximo local (−1, 2)' arriba y 'mínimo local (1, −2)' abajo.",
+      "voz": {
+        "m1": "Una función puede tener varios. Equis al cubo, menos tres equis. Su derivada, tres equis al cuadrado menos tres, vale cero en menos uno y en uno.",
+        "m2": "Con los signos: antes de menos uno sube, entre menos uno y uno baja, y después de uno vuelve a subir.",
+        "m3": "Sube y baja: en menos uno hay un máximo, de altura dos. Baja y sube: en uno hay un mínimo, de altura menos dos. Se llaman locales, porque son la cima y el fondo de su zona."
+      },
+      "sub": {
+        "m1": "Una función puede tener varios. f(x) = x³ − 3x. Su derivada, 3x² − 3, vale 0 en x = −1 y en x = 1.",
+        "m2": "Signos: antes de −1 sube, entre −1 y 1 baja, y después de 1 vuelve a subir.",
+        "m3": "En x = −1 hay un máximo, de altura 2. En x = 1, un mínimo, de altura −2. Se llaman locales: la cima y el fondo de su zona."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "corral",
+      "capitulo": "El corral, resuelto",
+      "pantalla": "Rectángulo con lados x y 20 − x ('perímetro 40 → x + (20 − x) = 20'). KaTeX: A(x) = x(20 − x) = 20x − x². A'(x) = 20 − 2x = 0 → x = 10 → A = 100 m². Signos: x = 9 → +2, x = 11 → −2 → 'sube y baja: MÁXIMO'. Parábola del área con su cima en (10, 100). Sticker: 'el mejor rectángulo es un cuadrado'.",
+      "voz": {
+        "k1": "Ahora sí, el corral. Si un lado mide equis, el otro mide veinte menos equis, para usar los cuarenta metros.",
+        "k2": "El área es equis por veinte menos equis: veinte equis, menos equis al cuadrado. Su derivada es veinte menos dos equis.",
+        "k3": "Igualamos a cero: equis vale diez. Antes de diez la derivada es positiva, y después es negativa. Sube y baja: es un máximo.",
+        "k4": "Diez por diez, cien metros cuadrados. Ya no es una sospecha: es una demostración. Y el mejor rectángulo resulta ser un cuadrado."
+      },
+      "sub": {
+        "k1": "El corral: si un lado mide x, el otro mide 20 − x, para usar los 40 metros.",
+        "k2": "Área: A(x) = x(20 − x) = 20x − x². Su derivada: A'(x) = 20 − 2x.",
+        "k3": "Igualamos a cero: x = 10. Antes la derivada es positiva, después negativa: es un máximo.",
+        "k4": "10 × 10 = 100 m². Ya no es sospecha: es demostración. El mejor rectángulo es un cuadrado."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué se usa?",
+      "pantalla": "Tres tarjetas con ícono: GANANCIA máxima (precio óptimo) · COSTO mínimo (una lata con el menor material) · TIEMPO mínimo (la ruta más corta). Etiqueta común: 'optimizar = f'(x) = 0'.",
+      "voz": {
+        "u1": "Esto se llama optimizar, y está en todas partes. El precio que da la ganancia más grande. La lata que gasta menos material. La ruta que tarda menos.",
+        "u2": "En todos los casos, la receta es la misma: escribe lo que quieres optimizar como una función, deriva, e iguala a cero."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Datos 1, 2, 6 en una recta. Un número c se desliza; las distancias al cuadrado se dibujan como cuadrados. KaTeX: E(c) = Σ(xᵢ − c)² → E'(c) = −2Σ(xᵢ − c) = 0 → c = promedio = 3. Sticker: 'entrenar un modelo = minimizar el error'.",
+      "voz": {
+        "p1": "Un plus para ciencia de datos: ¿qué número se equivoca menos con unos datos? Si mides el error como la suma de las diferencias al cuadrado, y derivas e igualas a cero, el resultado es el promedio.",
+        "p2": "Con uno, dos y seis, el mejor número es tres. Y entrenar un modelo es exactamente esto: encontrar los parámetros que hacen mínimo el error."
+      },
+      "sub": {
+        "p1": "Un plus: ¿qué número se equivoca menos con unos datos? Si el error es la suma de diferencias al cuadrado, derivar e igualar a 0 da el promedio.",
+        "p2": "Con 1, 2 y 6, el mejor número es 3. Entrenar un modelo es esto: encontrar los parámetros con el error mínimo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 2 instrucciones (SymPy): sp.solve(sp.diff(x**2 - 6*x + 5, x), x) → [3] / sp.solve(sp.diff(x**3 - 3*x, x), x) → [-1, 1].",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Derivas, igualas a cero, y SimPy despeja por ti: tres.",
+        "y3": "Y para equis al cubo menos tres equis, los dos puntos críticos: menos uno y uno."
+      },
+      "sub": {
+        "y2": "Derivas, igualas a 0, y SymPy despeja por ti: 3.",
+        "y3": "Y para x³ − 3x, los dos puntos críticos: −1 y 1."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Error común",
+      "pantalla": "Sticker '¡CUIDADO!'. Gráfica de y = x³ pasando por el origen con su tangente horizontal en x = 0. KaTeX: f'(0) = 0, pero sube antes y sube después. Etiqueta: 'f' = 0 no siempre es máximo o mínimo · revisa los signos'.",
+      "voz": {
+        "x1": "Cuidado: que la derivada valga cero no garantiza un máximo o un mínimo. Equis al cubo tiene derivada cero en el origen.",
+        "x2": "Pero antes sube, y después también sube. Solo se aplana un instante. Por eso siempre hay que revisar los signos a cada lado."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': f(x) = x² − 4x → ¿en qué x es mínima? ¿cuánto vale ese mínimo? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. Máx y mín: donde f'(x) = 0 · 2. Signos: sube→baja = máximo, baja→sube = mínimo · 3. Optimizar: función → derivar → igualar a 0.",
+      "voz": {
+        "w1": "El reto: equis al cuadrado menos cuatro equis. ¿En qué equis es mínima, y cuánto vale ese mínimo? Déjalo en los comentarios.",
+        "w2": "En resumen: los máximos y mínimos están donde la derivada vale cero. Si sube y luego baja, es un máximo; si baja y luego sube, un mínimo. Y para optimizar: escribe la función, deriva, e iguala a cero."
+      },
+      "sub": {
+        "w1": "Reto: f(x) = x² − 4x. ¿En qué x es mínima, y cuánto vale ese mínimo? Déjalo en los comentarios."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #10 Segunda derivada y concavidad'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio: la derivada de la derivada. Cómo saber si una curva sonríe o está triste, sin dibujarla.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
