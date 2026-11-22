@@ -149,6 +149,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** derivada de (2x + 1)³. (6(2x + 1)²)
 
 ### 9 · Máximos y mínimos | Cálculo Diferencial #9
+- **Estado:** ✅ hecho (5:05, `out/C09-MaxMin.mp4`). Guion: `src/guiones/c09-maxmin.json`.
 - **Gancho:** "El promedio que usas todos los días es, en realidad, la solución de un problema de cálculo."
 - **Qué es:** los puntos críticos, donde f'(x) = 0 (la tangente queda horizontal).
 - **Cómo se calcula:** f(x) = x² − 6x + 5 → 2x − 6 = 0 → x = 3, f(3) = −4; el signo de f' antes y
@@ -163,6 +164,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** ¿en qué x es mínima x² − 4x? (2)
 
 ### 10 · Segunda derivada y concavidad | Cálculo Diferencial #10
+- **Estado:** ✅ hecho (4:50, `out/C10-Segunda.mp4`). Guion: `src/guiones/c10-segunda.json`.
 - **Gancho:** "¿Cómo sabe un modelo que llegó al fondo del valle y no a la cima de una montaña?"
 - **Qué es:** la derivada de la derivada: curvatura (forma de sonrisa o de tristeza), aceleración.
 - **Cómo se calcula:** f(x) = x³ − 3x → f' = 3x² − 3 → f'' = 6x. En x = 1, f'' = 6 > 0: mínimo;

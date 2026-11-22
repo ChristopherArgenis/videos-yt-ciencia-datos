@@ -1660,3 +1660,101 @@ export const MiniCalculo06: React.FC = () => (
     </div>
   </AbsoluteFill>
 );
+
+/** Chip de la serie del curso. */
+const ChipCurso: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <div style={{ position: "absolute", left: 50, bottom: 26 }}>
+    <div style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 800, fontSize: 30, color: "#ffffff", background: C.blue, borderRadius: 14, padding: "4px 22px" }}>
+      {children}
+    </div>
+  </div>
+);
+
+/** Carita dibujada en SVG (centro cx, cy). */
+const CaraSvg: React.FC<{ cx: number; cy: number; r: number; feliz: boolean; color: string }> = ({ cx, cy, r, feliz, color }) => {
+  const w = r * 0.5;
+  const yb = feliz ? cy + r * 0.22 : cy + r * 0.5;
+  const ctrl = feliz ? cy + r * 0.62 : cy + r * 0.12;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={r} fill="#0b1020" stroke={color} strokeWidth={r * 0.14} />
+      <circle cx={cx - r * 0.35} cy={cy - r * 0.25} r={r * 0.12} fill={color} />
+      <circle cx={cx + r * 0.35} cy={cy - r * 0.25} r={r * 0.12} fill={color} />
+      <path d={`M ${cx - w} ${yb} Q ${cx} ${ctrl} ${cx + w} ${yb}`} fill="none" stroke={color} strokeWidth={r * 0.14} strokeLinecap="round" />
+    </g>
+  );
+};
+
+/** #9 · Máximos y mínimos: la cima de la colina, donde la tangente es plana. */
+export const MiniCalculo09: React.FC = () => {
+  // Parábola y = 600 − 0.0042 (x − 900)^2 en píxeles (cima en x=900, y=150)
+  const X0 = 900;
+  const Y0 = 175;
+  const k = 0.0042;
+  const pts: string[] = [];
+  for (let x = 560; x <= 1280; x += 8) pts.push(`${x},${(Y0 + k * (x - X0) ** 2).toFixed(1)}`);
+  return (
+    <AbsoluteFill style={{ overflow: "hidden" }}>
+      <Pizarra glow="#1f6b4a" x="70%" y="28%" />
+      <svg width={1280} height={720} viewBox="0 0 1280 720" style={{ position: "absolute", inset: 0 }}>
+        <polygon points={`560,720 ${pts.join(" ")} 1280,720`} fill="#ffd16614" />
+        <polyline points={pts.join(" ")} fill="none" stroke="#ffd166" strokeWidth={16} strokeLinecap="round" style={{ filter: "drop-shadow(0 0 18px #ffd16688)" }} />
+        {/* Tangente horizontal en la cima */}
+        <line x1={690} y1={Y0} x2={1110} y2={Y0} stroke={C.coral} strokeWidth={12} strokeLinecap="round" />
+        <circle cx={X0} cy={Y0} r={58} fill={C.green} opacity={0.25} />
+        <circle cx={X0} cy={Y0} r={30} fill={C.green} stroke="#070b18" strokeWidth={8} style={{ filter: "drop-shadow(0 0 30px #3ddc84)" }} />
+      </svg>
+      <div style={{ position: "absolute", left: 980, top: 76, rotate: "4deg", fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 900, fontSize: 40, color: "#fff", background: C.coral, border: "6px solid #070b18", borderRadius: 18, padding: "0 18px", boxShadow: "0 10px 0 rgba(0,0,0,0.5)" }}>
+        pendiente 0
+      </div>
+      <div style={{ position: "absolute", left: 50, top: 60, display: "flex", flexDirection: "column" }}>
+        <Nombre color="#ffffff" size={118}>
+          LA CIMA
+        </Nombre>
+        <Nombre color="#ffd166" size={118}>
+          EXACTA
+        </Nombre>
+      </div>
+      <div style={{ position: "absolute", left: 60, top: 350 }}>
+        <Respuesta tex={"f'(x) = 0"} color={C.green} rot={-4} size={120} />
+      </div>
+      <ChipCurso>CÁLCULO DIFERENCIAL #9 · MÁXIMOS Y MÍNIMOS</ChipCurso>
+    </AbsoluteFill>
+  );
+};
+
+/** #10 · Segunda derivada: la curva que sonríe y la que está triste. */
+export const MiniCalculo10: React.FC = () => {
+  // Cúbica: colina a la izquierda (triste) y valle a la derecha (feliz)
+  const f = (x: number) => x ** 3 - 3 * x;
+  const X = (x: number) => 900 + x * 165;
+  const Y = (y: number) => 380 - y * 95;
+  const pts: string[] = [];
+  for (let x = -2.15; x <= 2.15; x += 0.03) pts.push(`${X(x).toFixed(1)},${Y(f(x)).toFixed(1)}`);
+  return (
+    <AbsoluteFill style={{ overflow: "hidden" }}>
+      <Pizarra glow="#3b2f8f" x="70%" y="50%" />
+      <svg width={1280} height={720} viewBox="0 0 1280 720" style={{ position: "absolute", inset: 0 }}>
+        <polyline points={pts.join(" ")} fill="none" stroke="#ffd166" strokeWidth={16} strokeLinecap="round" style={{ filter: "drop-shadow(0 0 18px #ffd16688)" }} />
+        <circle cx={X(-1)} cy={Y(2)} r={22} fill={C.coral} stroke="#070b18" strokeWidth={7} />
+        <circle cx={X(1)} cy={Y(-2)} r={22} fill={C.green} stroke="#070b18" strokeWidth={7} />
+        <circle cx={X(0)} cy={Y(0)} r={40} fill="#ffffff" opacity={0.18} />
+        <circle cx={X(0)} cy={Y(0)} r={18} fill="#ffffff" stroke="#070b18" strokeWidth={6} />
+        <CaraSvg cx={X(-1)} cy={Y(2) - 110} r={68} feliz={false} color={C.coral} />
+        <CaraSvg cx={X(1) - 150} cy={Y(-2) + 40} r={68} feliz color={C.green} />
+      </svg>
+      <div style={{ position: "absolute", left: 50, top: 60, display: "flex", flexDirection: "column" }}>
+        <Nombre color={C.green} size={112}>
+          ¿FELIZ
+        </Nombre>
+        <Nombre color="#ffffff" size={112}>
+          O <span style={{ color: C.coral }}>TRISTE?</span>
+        </Nombre>
+      </div>
+      <div style={{ position: "absolute", left: 60, top: 350 }}>
+        <Respuesta tex={"f''(x)"} color="#ffd166" rot={-4} size={130} />
+      </div>
+      <ChipCurso>CÁLCULO DIFERENCIAL #10 · SEGUNDA DERIVADA</ChipCurso>
+    </AbsoluteFill>
+  );
+};

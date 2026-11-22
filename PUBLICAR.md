@@ -268,4 +268,26 @@ y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 **Respuesta del reto (para el #9):** f'(x) = 6(2x + 1)², f'(0) = 6.
 **Pantalla final:** episodio 7 + lista del curso.
 
+## C09 · Máximos y mínimos (5:05)
+**Título:** Máximos y mínimos | Cálculo Diferencial #9 (42)
+**Alternativas:** Optimizar con derivadas | Cálculo Diferencial #9 (38) · El corral más grande: máximos y mínimos | Cálculo Diferencial #9 (59)
+**Miniatura:** `Mini-C09-MaxMin` → colina con la cima brillando y la tangente plana ("pendiente 0") + "LA CIMA EXACTA" + "f'(x) = 0"
+**Voz:** alex_nicola · Fórmulas con KaTeX · Corral y datos del plus: "Ejemplo simplificado".
+**Descripción:** `videos/c09-maxmin/descripcion.txt` (sin código; remite al 03:52).
+**#:** #calculo #matematicas #optimizacion #calculodiferencial #cienciadedatos
+**Comentario fijado:** 🧩 Reto: ¿en qué x es mínima f(x) = x² − 4x, y cuánto vale el mínimo? 👇 (la solución, en el episodio 10)
+**Respuesta del reto (para el #10):** f'(x) = 2x − 4 = 0 → x = 2; f(2) = −4.
+**Pantalla final:** episodio 8 + lista del curso.
+
+## C10 · Segunda derivada y concavidad (4:50)
+**Título:** Segunda derivada y concavidad | Cálculo Diferencial #10 (55)
+**Alternativas:** Segunda derivada | Cálculo Diferencial #10 (35) · Punto de inflexión y concavidad | Cálculo Diferencial #10 (55)
+**Miniatura:** `Mini-C10-Segunda` → curva con carita triste en la cima y feliz en el valle, inflexión brillando + "¿FELIZ O TRISTE?" + "f''(x)"
+**Voz:** alex_nicola · Fórmulas con KaTeX · Curvas de casos y de estudio: "Ejemplo simplificado (curva ilustrativa)".
+**Descripción:** `videos/c10-segunda/descripcion.txt` (sin código; remite al 03:35).
+**#:** #calculo #matematicas #concavidad #calculodiferencial #cienciadedatos
+**Comentario fijado:** 🧩 Reto: ¿dónde está el punto de inflexión de f(x) = x³ − 6x²? 👇 (la solución, en el episodio 11)
+**Respuesta del reto (para el #11):** f''(x) = 6x − 12 = 0 → x = 2 (f(2) = −16).
+**Pantalla final:** episodio 9 + lista del curso.
+
 **Fuente de respaldo (desde el #7):** `public/fonts/InterSimbolos-*.woff2` (subconjunto de Inter, OFL) cubre ⁴ ⁿ ˣ √ ≈ ≠ que Poppins no trae; `FONT` = "Poppins, 'Inter Simbolos'".

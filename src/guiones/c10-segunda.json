@@ -2,7 +2,7 @@
   "_nota": "Cálculo Diferencial #10. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #9: x = 2, f(2) = −4. Gancho: 'aplanar la curva' de casos (curva ilustrativa, ejemplo simplificado, sin datos reales). Caída: s = 4.9t² (como en el #5).",
   "id": "c10-segunda",
   "titulo": "Segunda derivada y concavidad | Cálculo Diferencial #10",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/explica.wav",
   "voz": "alex_nicola",
   "acento": "#5b8cff",

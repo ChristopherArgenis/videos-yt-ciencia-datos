@@ -1,0 +1,31 @@
+Máximos y mínimos en cálculo, explicados desde cero: cómo encontrar el valor más grande o más pequeño de una función con la derivada.
+Episodio 9 del curso de Cálculo Diferencial: puntos críticos, f'(x) = 0, la tabla de signos y un problema de optimización resuelto paso a paso.
+
+Episodio 9 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. Con 40 metros de cerca, ¿qué corral rectangular encierra más área? Vemos por qué en la cima y en el fondo de una curva la tangente queda horizontal, cómo encontrar esos puntos igualando la derivada a cero, cómo saber si son máximo o mínimo, y resolvemos el corral: el mejor rectángulo es un cuadrado. Y como plus, por qué el promedio de tus datos es la solución de un problema de mínimos.
+
+Capítulos:
+00:00 ¿El corral más grande?
+00:37 Recuerda y objetivo
+01:07 La idea: la tangente horizontal
+01:33 Cómo se calcula
+02:08 Un máximo y un mínimo
+02:37 El corral, resuelto
+03:10 ¿Para qué se usa?
+03:29 Plus: en Ciencia de Datos
+03:52 En Python
+04:05 Error común
+04:23 Reto y resumen
+04:45 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 03:52.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 10.
+
+El corral y los datos del plus son ejemplos simplificados.
+
+Episodio anterior: Regla de la cadena | Cálculo Diferencial #8
+Próximo episodio: Segunda derivada y concavidad | Cálculo Diferencial #10
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #optimizacion #calculodiferencial #cienciadedatos

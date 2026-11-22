@@ -1,0 +1,31 @@
+Segunda derivada y concavidad en cálculo, explicadas desde cero: qué mide f''(x), cuándo una curva sonríe o está triste y qué es un punto de inflexión.
+Episodio 10 del curso de Cálculo Diferencial: el criterio de la segunda derivada para saber si un punto crítico es máximo o mínimo, con ejemplos paso a paso.
+
+Episodio 10 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. ¿Qué significa que "se está aplanando la curva"? Vemos la derivada de la derivada (posición, velocidad y aceleración), la concavidad, el criterio de la segunda derivada con x³ − 3x y el punto de inflexión, donde la curva cambia de forma. Y como plus, por qué los errores convexos hacen que un modelo siempre encuentre su mejor solución.
+
+Capítulos:
+00:00 «Se está aplanando la curva»
+00:26 Recuerda y objetivo
+00:54 La derivada de la derivada
+01:28 Concavidad: ¿sonríe o está triste?
+01:55 Cómo se calcula: el criterio
+02:26 Punto de inflexión
+02:50 ¿Para qué se usa?
+03:10 Plus: en Ciencia de Datos
+03:35 En Python
+03:47 Error común
+04:06 Reto y resumen
+04:30 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 03:35.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 11.
+
+La curva de casos y la de horas de estudio son ejemplos simplificados (curvas ilustrativas).
+
+Episodio anterior: Máximos y mínimos | Cálculo Diferencial #9
+Próximo episodio: Derivadas parciales y gradiente | Cálculo Diferencial #11
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #concavidad #calculodiferencial #cienciadedatos
