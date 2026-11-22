@@ -226,7 +226,7 @@ y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 ## C05 · Reglas de derivación (5:04)
 **Título:** Reglas de derivación | Cálculo Diferencial #5 (45)
 **Alternativas:** Regla de la potencia, paso a paso | Cálculo Diferencial #5 (55) · Derivar polinomios en segundos | Cálculo Diferencial #5 (51)
-**Miniatura:** `Mini-C05-Reglas` → "x¹⁰ → 10x⁹" + "¡EN 1 PASO!" con un rayo
+**Miniatura:** `Mini-C05-Reglas` → camino largo tachado ("11 términos", coral) vs atajo "10x⁹" (verde), rayo al centro, "(x¹⁰)' =" arriba + "¡EN 1 PASO!"
 **Voz:** alex_nicola · Fórmulas con KaTeX · Error del modelo: "Ejemplo simplificado".
 **Descripción:** `videos/c05-reglas/descripcion.txt` (sin código; remite al 03:43).
 **#:** #calculo #matematicas #derivadas #calculodiferencial #cienciadedatos
@@ -237,7 +237,7 @@ y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 ## C06 · Derivada exponencial y logaritmo (5:37)
 **Título:** Derivada exponencial y logaritmo | Cálculo Diferencial #6 (57)
 **Alternativas:** El número e y su derivada | Cálculo Diferencial #6 (47) · La función que es su propia derivada | Cálculo Diferencial #6 (58)
-**Miniatura:** `Mini-C06-ExpLog` → "(eˣ)' = eˣ" + "SU PROPIA DERIVADA" con la curva y su tangente
+**Miniatura:** `Mini-C06-ExpLog` → tarjeta "eˣ" con brillo y una flecha "derivar" que da la vuelta y regresa a sí misma + "¡NO CAMBIA!" + chip "e = 2.71828…"
 **Voz:** alex_nicola · Fórmulas con KaTeX · Banco: "Ejemplo simplificado".
 **Descripción:** `videos/c06-exp-log/descripcion.txt` (sin código; remite al 04:24).
 **#:** #calculo #matematicas #derivadas #logaritmos #calculodiferencial

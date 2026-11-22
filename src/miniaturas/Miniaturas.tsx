@@ -1355,64 +1355,6 @@ export const MiniEntropia: React.FC = () => (
   </AbsoluteFill>
 );
 
-export const MiniCalculo05: React.FC = () => (
-  <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
-    <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 35% 50%, #1c3a8a 0%, #0b1020 62%)" }} />
-    <div style={{ position: "absolute", left: 50, top: 70 }}>
-      <Formula tex={"\\ent{x}^{10} \\reg{\\to} \\der{10\\ent{x}^{9}}"} size={170} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
-    </div>
-    <div style={{ position: "absolute", left: 60, top: 400, display: "flex", flexDirection: "column", gap: 6 }}>
-      <Nombre color="#ffffff" size={110}>
-        ¡EN 1 PASO!
-      </Nombre>
-    </div>
-    <div style={{ position: "absolute", right: 60, top: 420 }}>
-      <svg width={180} height={180} viewBox="0 0 100 100">
-        <polygon points="58,4 18,58 46,58 38,96 82,38 54,38" fill="#ffd166" stroke="#0b1020" strokeWidth={4} strokeLinejoin="round" />
-      </svg>
-    </div>
-    <div style={{ position: "absolute", left: 50, bottom: 30 }}>
-      <ChipMini bg={C.blue} color="#ffffff">
-        CÁLCULO DIFERENCIAL #5
-      </ChipMini>
-    </div>
-  </AbsoluteFill>
-);
-
-export const MiniCalculo06: React.FC = () => {
-  const X = (x: number) => 30 + (x + 2) * 120;
-  const Y = (y: number) => 440 - y * 42;
-  const pts = Array.from({ length: 61 }, (_, i) => -2 + (i * 4.3) / 60).map((x) => `${X(x)},${Y(Math.exp(x))}`);
-  return (
-    <AbsoluteFill style={{ backgroundColor: "#0b1020", overflow: "hidden" }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 30% 45%, #1c3a8a 0%, #0b1020 62%)" }} />
-      <div style={{ position: "absolute", left: 50, top: 70 }}>
-        <Formula tex={"(e^{\\ent{x}})' = \\der{e^{\\ent{x}}}"} size={150} style={{ textShadow: "0 10px 0 rgba(0,0,0,0.45)" }} />
-      </div>
-      <div style={{ position: "absolute", left: 60, top: 380, display: "flex", flexDirection: "column", gap: 4 }}>
-        <Nombre color="#ffffff" size={86}>
-          SU PROPIA
-        </Nombre>
-        <Nombre color="#ffd166" size={86}>
-          DERIVADA
-        </Nombre>
-      </div>
-      <svg width={600} height={470} viewBox="0 0 600 470" style={{ position: "absolute", right: 20, top: 120 }}>
-        <line x1={20} y1={440} x2={590} y2={440} stroke={C.blue} strokeWidth={6} />
-        <line x1={X(0)} y1={455} x2={X(0)} y2={10} stroke={C.green} strokeWidth={6} />
-        <polyline points={pts.join(" ")} fill="none" stroke="#ffd166" strokeWidth={12} strokeLinecap="round" />
-        <line x1={X(0.6)} y1={Y(Math.exp(1.6) * (0.6 - 1.6) + Math.exp(1.6))} x2={X(2.05)} y2={Y(Math.exp(1.6) * (2.05 - 1.6) + Math.exp(1.6))} stroke={C.coral} strokeWidth={10} strokeLinecap="round" />
-        <circle cx={X(1.6)} cy={Y(Math.exp(1.6))} r={18} fill="#ffffff" stroke="#0b1020" strokeWidth={6} />
-      </svg>
-      <div style={{ position: "absolute", right: 50, bottom: 30 }}>
-        <ChipMini bg={C.blue} color="#ffffff">
-          CÁLCULO DIFERENCIAL #6
-        </ChipMini>
-      </div>
-    </AbsoluteFill>
-  );
-};
-
 /** Fondo de pizarra: cuadrícula de puntos + resplandor de color. */
 const Pizarra: React.FC<{ glow: string; x?: string; y?: string }> = ({ glow, x = "50%", y = "45%" }) => (
   <>
@@ -1431,7 +1373,7 @@ const Pizarra: React.FC<{ glow: string; x?: string; y?: string }> = ({ glow, x =
 );
 
 /** Tarjeta de respuesta con brillo (para la miniatura del #7). */
-const Respuesta: React.FC<{ tex: string; color: string; rot: number }> = ({ tex, color, rot }) => (
+const Respuesta: React.FC<{ tex: string; color: string; rot: number; size?: number }> = ({ tex, color, rot, size = 190 }) => (
   <div
     style={{
       background: "#0b1020",
@@ -1442,7 +1384,7 @@ const Respuesta: React.FC<{ tex: string; color: string; rot: number }> = ({ tex,
       boxShadow: `0 0 70px ${color}88, 0 24px 0 rgba(0,0,0,0.5)`,
     }}
   >
-    <Formula tex={tex} size={190} color={color} />
+    <Formula tex={tex} size={size} color={color} />
   </div>
 );
 
@@ -1574,6 +1516,146 @@ export const MiniCalculo08: React.FC = () => (
     <div style={{ position: "absolute", left: 50, bottom: 26 }}>
       <div style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 800, fontSize: 30, color: "#ffffff", background: C.blue, borderRadius: 14, padding: "4px 22px" }}>
         CÁLCULO DIFERENCIAL #8 · REGLA DE LA CADENA
+      </div>
+    </div>
+  </AbsoluteFill>
+);
+
+/** #5 · Reglas: el camino largo (tachado) contra el atajo x¹⁰ → 10x⁹. */
+export const MiniCalculo05: React.FC = () => (
+  <AbsoluteFill style={{ overflow: "hidden" }}>
+    <Pizarra glow="#2a3f9a" />
+    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(100deg, #ff6b5b1f 0%, #ff6b5b00 42%, #3ddc8400 58%, #3ddc8424 100%)" }} />
+    <div style={{ position: "absolute", left: 0, right: 0, top: 26, display: "flex", justifyContent: "center" }}>
+      <Formula tex={"\\left(x^{10}\\right)' ="} size={100} color="#ffffff" style={{ textShadow: "0 8px 0 rgba(0,0,0,0.6)" }} />
+    </div>
+    {/* Camino largo: tachado */}
+    <div style={{ position: "absolute", left: 34, top: 190, width: 500, rotate: "-5deg" }}>
+      <div
+        style={{
+          background: "#0b1020",
+          border: `10px solid ${C.coral}`,
+          borderRadius: 36,
+          padding: "22px 24px",
+          boxShadow: `0 0 60px ${C.coral}77, 0 22px 0 rgba(0,0,0,0.5)`,
+          display: "flex",
+          flexDirection: "column",
+          gap: 4,
+          position: "relative",
+          opacity: 0.95,
+        }}
+      >
+        {["x^{10} + 10x^9h + 45x^8h^2", "+\\,120x^7h^3 + 210x^6h^4", "+\\,252x^5h^5 + \\cdots"].map((t) => (
+          <Formula key={t} tex={t} size={33} color="#a3abd6" />
+        ))}
+        <svg width={460} height={170} viewBox="0 0 460 170" style={{ position: "absolute", left: 10, top: 10 }}>
+          <line x1={10} y1={10} x2={450} y2={160} stroke={C.coral} strokeWidth={14} strokeLinecap="round" />
+          <line x1={450} y1={10} x2={10} y2={160} stroke={C.coral} strokeWidth={14} strokeLinecap="round" />
+        </svg>
+      </div>
+      <div style={{ marginTop: 14, display: "flex", justifyContent: "center" }}>
+        <div style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 900, fontSize: 34, color: "#ffffff", background: C.coral, borderRadius: 14, padding: "2px 18px" }}>
+          11 términos
+        </div>
+      </div>
+    </div>
+    {/* Atajo */}
+    <div style={{ position: "absolute", right: 36, top: 196 }}>
+      <Respuesta tex={"10x^{9}"} color={C.green} rot={4} size={150} />
+    </div>
+    {/* Rayo central */}
+    <div
+      style={{
+        position: "absolute",
+        left: 640 - 85,
+        top: 250,
+        width: 170,
+        height: 170,
+        borderRadius: 85,
+        background: "#ffd166",
+        border: "10px solid #070b18",
+        boxShadow: "0 0 60px #ffd16699",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <svg width={96} height={110} viewBox="0 0 100 100">
+        <polygon points="58,4 16,58 46,58 36,98 84,38 54,38" fill="#070b18" />
+      </svg>
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 92, display: "flex", justifyContent: "center" }}>
+      <Nombre color="#ffd166" size={110}>
+        ¡EN 1 PASO!
+      </Nombre>
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 22, display: "flex", justifyContent: "center" }}>
+      <div style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 800, fontSize: 30, color: "#ffffff", background: C.blue, borderRadius: 14, padding: "4px 22px" }}>
+        CÁLCULO DIFERENCIAL #5
+      </div>
+    </div>
+  </AbsoluteFill>
+);
+
+/** #6 · Exponencial: eˣ que se deriva y vuelve a sí misma. */
+export const MiniCalculo06: React.FC = () => (
+  <AbsoluteFill style={{ overflow: "hidden" }}>
+    <Pizarra glow="#5a4a12" x="50%" y="48%" />
+    <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 50% 46%, #2a3f9a66 0%, #070b1800 55%)" }} />
+    {/* Flecha que da la vuelta: derivar */}
+    <svg width={1280} height={720} viewBox="0 0 1280 720" style={{ position: "absolute", inset: 0, filter: "drop-shadow(0 10px 0 rgba(0,0,0,0.45))" }}>
+      <defs>
+        <marker id="punta6" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill={C.coral} />
+        </marker>
+      </defs>
+      <path d="M 850 300 C 1150 280, 1170 40, 640 40 C 110 40, 130 280, 425 300" fill="none" stroke={C.coral} strokeWidth={18} strokeLinecap="round" markerEnd="url(#punta6)" />
+    </svg>
+    <div
+      style={{
+        position: "absolute",
+        left: 640 - 92,
+        top: 18,
+        fontFamily: "Poppins, 'Inter Simbolos'",
+        fontWeight: 900,
+        fontSize: 40,
+        color: "#ffffff",
+        background: C.coral,
+        border: "6px solid #070b18",
+        borderRadius: 18,
+        padding: "0 20px",
+        boxShadow: "0 8px 0 rgba(0,0,0,0.5)",
+      }}
+    >
+      derivar
+    </div>
+    {/* Tarjeta central */}
+    <div style={{ position: "absolute", left: 0, right: 0, top: 150, display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          background: "#0b1020",
+          border: "12px solid #ffd166",
+          borderRadius: 48,
+          padding: "10px 70px 26px",
+          boxShadow: "0 0 90px #ffd16699, 0 26px 0 rgba(0,0,0,0.5)",
+        }}
+      >
+        <Formula tex={"e^{\\ent{x}}"} size={190} color="#ffd166" />
+      </div>
+    </div>
+    <div style={{ position: "absolute", left: 40, top: 520 }}>
+      <div style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 800, fontSize: 30, color: "#ffffff", background: "#0b1020ee", border: "4px solid #5b8cff", borderRadius: 16, padding: "4px 18px" }}>
+        e = 2.71828…
+      </div>
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 86, display: "flex", justifyContent: "center" }}>
+      <Nombre color="#ffffff" size={112}>
+        ¡NO CAMBIA!
+      </Nombre>
+    </div>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 22, display: "flex", justifyContent: "center" }}>
+      <div style={{ fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 800, fontSize: 30, color: "#ffffff", background: C.blue, borderRadius: 14, padding: "4px 22px" }}>
+        CÁLCULO DIFERENCIAL #6
       </div>
     </div>
   </AbsoluteFill>
