@@ -1,0 +1,198 @@
+{
+  "_nota": "Cálculo Diferencial #7. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #6: f'(x) = 5/x + e^x, f'(1) = 5 + e ≈ 7.72. En subtítulos se escribe e^x (Poppins no tiene ˣ).",
+  "id": "c07-producto",
+  "titulo": "Regla del producto y cociente | Cálculo Diferencial #7",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿6x³ o 5x⁴?",
+      "pantalla": "KaTeX: x²·x³. Camino 1 (coral): derivar cada parte y multiplicar: 2x · 3x² = 6x³. Camino 2 (verde): primero multiplicar, x²·x³ = x⁵, y derivar: 5x⁴. Las dos respuestas lado a lado con un '≠' gigante. Pregunta: '¿Cuál está bien?'",
+      "voz": {
+        "g1": "Equis al cuadrado, por equis al cubo. ¿Cuál es su derivada?",
+        "g2": "Si derivas cada parte y las multiplicas, te da dos equis, por tres equis al cuadrado: seis equis al cubo.",
+        "g3": "Pero si primero multiplicas, equis al cuadrado por equis al cubo es equis a la quinta. Y su derivada es cinco equis a la cuarta.",
+        "g4": "Dos respuestas distintas. Solo una está bien, y hoy vas a saber por qué."
+      },
+      "sub": {
+        "g1": "x² · x³. ¿Cuál es su derivada?",
+        "g2": "Si derivas cada parte y las multiplicas: 2x · 3x² = 6x³.",
+        "g3": "Pero si primero multiplicas: x² · x³ = x⁵. Y su derivada es 5x⁴."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #7' con el mapa de los 12 temas; se ilumina 'Producto'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio siete."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': (eˣ)' = eˣ · (ln x)' = 1/x. 'RESPUESTA DEL RETO': f(x) = 5 ln x + eˣ → f'(x) = 5/x + eˣ → f'(1) = 5 + e ≈ 7.72.",
+      "voz": {
+        "r1": "En el episodio anterior: e a la equis es su propia derivada, y la del logaritmo natural es uno entre equis.",
+        "r2": "El reto: la derivada de cinco logaritmo de equis, más e a la equis, es cinco entre equis, más e a la equis. Y en uno: cinco más e, unos siete punto setenta y dos."
+      },
+      "sub": {
+        "r1": "En el episodio anterior: (e^x)' = e^x, y (ln x)' = 1/x.",
+        "r2": "El reto: la derivada de 5 ln x + e^x es 5/x + e^x. En x = 1: 5 + e ≈ 7.72."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Derivar un producto · 2. Derivar un cociente · 3. Evitar el error más común.",
+      "voz": {
+        "o1": "Hoy vas a poder derivar un producto, derivar un cociente, y evitar el error que acabamos de ver."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "intuicion",
+      "capitulo": "¿Por qué no basta multiplicar?",
+      "pantalla": "Un rectángulo de lados f (azul) y g (verde): su área es f·g. Los lados crecen un poquito: aparece una franja a la derecha (f'·g, amarilla), otra arriba (f·g', coral) y una esquinita diminuta (gris, 'casi cero'). Etiqueta: 'el área nueva = f'g + fg''.",
+      "voz": {
+        "i1": "Piensa en un rectángulo. Un lado mide efe, el otro mide ge, y su área es efe por ge.",
+        "i2": "Si los dos lados crecen un poquito, el área crece en dos franjas: una a lo largo de un lado, y otra a lo largo del otro.",
+        "i3": "Más una esquinita tan pequeña que, en el límite, desaparece.",
+        "i4": "Por eso la derivada de un producto no es el producto de las derivadas. Es la suma de las dos franjas."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "producto",
+      "capitulo": "La regla del producto",
+      "pantalla": "Fórmula grande KaTeX: (f·g)' = f'·g + f·g' con colores. Mnemotecnia: 'deriva el primero, deja el segundo · más · deja el primero, deriva el segundo'. Comprobación con el gancho: (x²·x³)' = 2x·x³ + x²·3x² = 2x⁴ + 3x⁴ = 5x⁴ ✓ (coincide con el camino verde).",
+      "voz": {
+        "p1": "Esa es la regla del producto: la derivada de efe por ge es efe prima por ge, más efe por ge prima.",
+        "p2": "En palabras: derivas el primero y dejas el segundo, más dejas el primero y derivas el segundo.",
+        "p3": "Comprobemos con el inicio. Dos equis por equis al cubo, más equis al cuadrado por tres equis al cuadrado. Dos equis a la cuarta, más tres equis a la cuarta: cinco equis a la cuarta.",
+        "p4": "El camino correcto era el segundo. Multiplicar las derivadas, no funciona."
+      },
+      "sub": {
+        "p1": "La regla del producto: (f · g)' = f' · g + f · g'.",
+        "p2": "En palabras: derivas el primero y dejas el segundo, más dejas el primero y derivas el segundo.",
+        "p3": "Con el inicio: 2x · x³ + x² · 3x² = 2x⁴ + 3x⁴ = 5x⁴.",
+        "p4": "El camino correcto era el segundo. Multiplicar las derivadas no funciona."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ejemplo1",
+      "capitulo": "Ejemplo: x² · e^x",
+      "pantalla": "f(x) = x²·eˣ, con f = x² (azul) y g = eˣ (verde). Paso 1: f' = 2x, g' = eˣ. Paso 2: (x²eˣ)' = 2x·eˣ + x²·eˣ. Paso 3: factorizar eˣ: eˣ(x² + 2x) = x(x + 2)eˣ.",
+      "voz": {
+        "e1": "Un ejemplo que antes no podíamos hacer: equis al cuadrado, por e a la equis.",
+        "e2": "El primero es equis al cuadrado, y su derivada, dos equis. El segundo es e a la equis, y su derivada, e a la equis.",
+        "e3": "Con la regla: dos equis por e a la equis, más equis al cuadrado por e a la equis.",
+        "e4": "Y si sacas el factor común: e a la equis, por equis al cuadrado más dos equis."
+      },
+      "sub": {
+        "e1": "Un ejemplo que antes no podíamos hacer: x² · e^x.",
+        "e2": "El primero es x², su derivada 2x. El segundo es e^x, su derivada e^x.",
+        "e3": "Con la regla: 2x · e^x + x² · e^x.",
+        "e4": "Sacando factor común: e^x · (x² + 2x)."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cociente",
+      "capitulo": "La regla del cociente",
+      "pantalla": "Fórmula grande KaTeX: (f/g)' = (f'·g − f·g')/g². Mnemotecnia en tarjeta: 'el de abajo por la derivada del de arriba, menos el de arriba por la derivada del de abajo, entre el de abajo al cuadrado'. Ejemplo: x/(x + 1) → (1·(x + 1) − x·1)/(x + 1)² = 1/(x + 1)².",
+      "voz": {
+        "c1": "Para una división hay otra regla, la del cociente: efe prima por ge, menos efe por ge prima, todo entre ge al cuadrado.",
+        "c2": "Una forma de recordarla: el de abajo por la derivada del de arriba, menos el de arriba por la derivada del de abajo, entre el de abajo al cuadrado.",
+        "c3": "Un ejemplo: equis entre equis más uno. Arriba, la derivada de equis es uno. Abajo, la de equis más uno también es uno.",
+        "c4": "Queda: equis más uno, menos equis, entre equis más uno al cuadrado. Arriba se cancela todo, menos el uno: uno entre equis más uno al cuadrado."
+      },
+      "sub": {
+        "c1": "Para una división, la regla del cociente: (f/g)' = (f' · g − f · g') / g².",
+        "c2": "Para recordarla: abajo por la derivada de arriba, menos arriba por la derivada de abajo, entre abajo al cuadrado.",
+        "c3": "Ejemplo: x / (x + 1). Arriba, la derivada de x es 1. Abajo, la de x + 1 también es 1.",
+        "c4": "Queda: ((x + 1) − x) / (x + 1)². Arriba solo queda 1: 1 / (x + 1)²."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué se usa?",
+      "pantalla": "Una tienda: INGRESO = precio × cantidad, I = p·q. Si sube el precio, se venden menos: los dos cambian a la vez. KaTeX: I' = p'·q + p·q'. Tarjetas: 'efecto precio' (p'·q, verde) y 'efecto ventas' (p·q', coral) que se compensan.",
+      "voz": {
+        "u1": "¿Para qué sirve? Un ejemplo de economía: el ingreso de una tienda es el precio, por la cantidad que vende.",
+        "u2": "Pero si subes el precio, vendes menos. Las dos cosas cambian a la vez. La regla del producto separa los dos efectos: lo que ganas por cobrar más, y lo que pierdes por vender menos."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Sigmoide σ(x) = eˣ/(1 + eˣ) con la regla del cociente → σ'(x) = σ(x)(1 − σ(x)). Gráfica de σ' con su máximo 0.25 en x = 0. Tarjeta: 'capa tras capa: 0.25 × 0.25 × 0.25… → casi cero'.",
+      "voz": {
+        "k1": "Un plus para ciencia de datos: la sigmoide, la curva de las probabilidades, es una división. Con la regla del cociente, su derivada queda en una forma muy limpia: sigma, por uno menos sigma.",
+        "k2": "Su valor más grande es apenas cero punto veinticinco. Y en una red con muchas capas, esos números se multiplican hasta casi cero. Por eso las redes modernas usan otras funciones."
+      },
+      "sub": {
+        "k1": "Un plus: la sigmoide es una división. Con la regla del cociente, su derivada queda limpia: σ · (1 − σ).",
+        "k2": "Su valor máximo es 0.25. En una red con muchas capas se multiplican hasta casi 0. Por eso las redes modernas usan otras funciones."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 2 instrucciones (SymPy): sp.diff(x**2 * sp.exp(x), x) → x**2*exp(x) + 2*x*exp(x) / sp.simplify(sp.diff(x/(x + 1), x)) → (x + 1)**(-2).",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "SimPy aplica la regla del producto, y te da lo mismo que a mano.",
+        "y3": "Y con la del cociente, después de simplificar, uno entre equis más uno al cuadrado."
+      },
+      "sub": {
+        "y2": "SymPy aplica la regla del producto: lo mismo que a mano.",
+        "y3": "Y con el cociente, al simplificar: 1 / (x + 1)²."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Errores comunes",
+      "pantalla": "Sticker '¡CUIDADO!'. Tarjeta 1: (f·g)' ≠ f'·g' (el error del gancho: 6x³ ✕ vs 5x⁴ ✓). Tarjeta 2: en el cociente el orden importa: f'g − fg' ✓ vs fg' − f'g ✕ (sale con el signo al revés).",
+      "voz": {
+        "x1": "Dos errores comunes. El primero, el del inicio: la derivada de un producto no es el producto de las derivadas.",
+        "x2": "Y el segundo: en el cociente, el orden importa. Hay una resta, y si la escribes al revés, el resultado te sale con el signo cambiado."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': f(x) = x·eˣ → ¿f'(x)? ¿y f'(0)? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. (f·g)' = f'g + fg' · 2. (f/g)' = (f'g − fg')/g² · 3. La derivada de un producto NO es el producto de derivadas.",
+      "voz": {
+        "w1": "El reto: deriva equis por e a la equis, y evalúa la derivada en cero. Déjalo en los comentarios.",
+        "w2": "En resumen: para un producto, derivas el primero por el segundo, más el primero por la derivada del segundo. Para un cociente, el de abajo por la derivada del de arriba, menos al revés, entre el de abajo al cuadrado. Y nunca multipliques las derivadas."
+      },
+      "sub": {
+        "w1": "Reto: deriva f(x) = x · e^x, y evalúa f'(0). Déjalo en los comentarios.",
+        "w2": "Resumen: (f·g)' = f'g + fg'. (f/g)' = (f'g − fg') / g². Y nunca multipliques las derivadas."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #8 Regla de la cadena'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio: qué pasa cuando una función está dentro de otra. La regla más importante del curso: la regla de la cadena.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "_nota": "Cálculo Diferencial #8. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #7: f'(x) = e^x + x·e^x, f'(0) = 1. Globo: V = (4/3)πr³, dr/dt = 2 cm/s, r = 10 cm → dV/dt = 800π ≈ 2513 cm³/s (ejemplo simplificado). En subtítulos se escribe e^x (Poppins no tiene ˣ).",
+  "id": "c08-cadena",
+  "titulo": "Regla de la cadena | Cálculo Diferencial #8",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "Engranajes",
+      "pantalla": "Tres engranajes animados A, B y C. A gira 3 veces más rápido que B ('×3'), B gira 2 veces más rápido que C ('×2'). Pregunta: '¿A respecto a C?' → '×3 × ×2 = ×6'. Sticker: 'los ritmos se MULTIPLICAN'.",
+      "voz": {
+        "g1": "Tres engranajes. El primero gira tres veces más rápido que el segundo. Y el segundo, dos veces más rápido que el tercero.",
+        "g2": "¿Qué tan rápido gira el primero, comparado con el tercero?",
+        "g3": "Seis veces. Tres por dos. Los ritmos de cambio se multiplican.",
+        "g4": "Esa idea tan simple es la regla de la cadena. La más importante del curso, y la que usan las redes neuronales para aprender."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #8' con el mapa de los 12 temas; se ilumina 'Cadena'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio ocho."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': (f·g)' = f'g + fg'. 'RESPUESTA DEL RETO': (x·eˣ)' = 1·eˣ + x·eˣ = eˣ(1 + x) → f'(0) = 1.",
+      "voz": {
+        "r1": "En el episodio anterior vimos la regla del producto: derivas el primero por el segundo, más el primero por la derivada del segundo.",
+        "r2": "El reto: la derivada de equis por e a la equis es uno por e a la equis, más equis por e a la equis. Y en cero, vale uno."
+      },
+      "sub": {
+        "r1": "En el episodio anterior: (f · g)' = f'g + fg'.",
+        "r2": "El reto: (x · e^x)' = 1 · e^x + x · e^x. En x = 0, vale 1."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Reconocer una función dentro de otra · 2. Usar la regla de la cadena · 3. Aplicarla a potencias, exponenciales y logaritmos.",
+      "voz": {
+        "o1": "Hoy vas a poder reconocer una función dentro de otra, usar la regla de la cadena, y aplicarla a potencias, exponenciales y logaritmos."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "composicion",
+      "capitulo": "Una función dentro de otra",
+      "pantalla": "Dos máquinas en fila (las del #1): x → [ADENTRO: u = 3x + 1] → u → [AFUERA: u⁵] → y. KaTeX: (3x + 1)⁵ = f(g(x)), con g = 3x + 1 (azul) y f = u⁵ (verde). Tachado al lado: desarrollar el binomio, '6 términos'.",
+      "voz": {
+        "a1": "Mira esta función: tres equis más uno, a la quinta. Podrías desarrollar el binomio, pero son seis términos.",
+        "a2": "Mejor míralo como dos máquinas en fila. La de adentro calcula tres equis más uno. Y la de afuera toma ese resultado y lo eleva a la quinta.",
+        "a3": "Eso se llama una composición: una función dentro de otra. Efe de ge de equis."
+      },
+      "sub": {
+        "a1": "Mira: (3x + 1)⁵. Podrías desarrollar el binomio, pero son 6 términos.",
+        "a2": "Mejor: dos máquinas en fila. La de adentro calcula 3x + 1. La de afuera lo eleva a la quinta.",
+        "a3": "Eso es una composición: una función dentro de otra. f(g(x))."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "regla",
+      "capitulo": "La regla de la cadena",
+      "pantalla": "Fórmula grande KaTeX: [f(g(x))]' = f'(g(x)) · g'(x), con 'afuera' en verde y 'adentro' en azul. Versión de Leibniz debajo: dy/dx = dy/du · du/dx (los du se 'cancelan', como los engranajes). Mnemotecnia: 'deriva la de afuera, dejando adentro igual · por · la derivada de adentro'.",
+      "voz": {
+        "b1": "La regla de la cadena dice: la derivada de efe de ge de equis, es efe prima de ge de equis, por ge prima de equis.",
+        "b2": "En palabras: derivas la función de afuera, sin tocar lo de adentro. Y lo multiplicas por la derivada de lo de adentro.",
+        "b3": "Escrita de otra forma, de ye entre de equis es de ye entre de u, por de u entre de equis. Como los engranajes: los ritmos se multiplican."
+      },
+      "sub": {
+        "b1": "La regla de la cadena: [f(g(x))]' = f'(g(x)) · g'(x).",
+        "b2": "En palabras: derivas la de afuera sin tocar lo de adentro, y multiplicas por la derivada de adentro.",
+        "b3": "Otra forma: dy/dx = dy/du · du/dx. Como los engranajes: los ritmos se multiplican."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ejemplo1",
+      "capitulo": "Ejemplo: (3x + 1)⁵",
+      "pantalla": "Paso 1: afuera u⁵ → 5u⁴, dejando adentro igual: 5(3x + 1)⁴. Paso 2: adentro 3x + 1 → 3. Paso 3: multiplicar: 5(3x + 1)⁴ · 3 = 15(3x + 1)⁴. Comprobación chica con (3x + 1)²: desarrollado 9x² + 6x + 1 → 18x + 6; con la cadena 2(3x + 1)·3 = 18x + 6 ✓.",
+      "voz": {
+        "e1": "Volvamos a tres equis más uno, a la quinta. Paso uno: la de afuera es algo a la quinta. Su derivada es cinco por ese algo a la cuarta. Cinco, por tres equis más uno, a la cuarta.",
+        "e2": "Paso dos: la derivada de adentro, tres equis más uno, es tres.",
+        "e3": "Paso tres: multiplicar. Cinco por tres: quince, por tres equis más uno, a la cuarta.",
+        "e4": "¿Funciona de verdad? Pruébalo con el cuadrado. Desarrollado, tres equis más uno al cuadrado es nueve equis al cuadrado, más seis equis, más uno. Su derivada: dieciocho equis más seis. Y con la cadena: dos por tres equis más uno, por tres. También dieciocho equis más seis."
+      },
+      "sub": {
+        "e1": "(3x + 1)⁵. Paso 1: la de afuera es u⁵, su derivada 5u⁴. Queda 5(3x + 1)⁴.",
+        "e2": "Paso 2: la derivada de adentro, 3x + 1, es 3.",
+        "e3": "Paso 3: multiplicar. 5 · 3 = 15: queda 15(3x + 1)⁴.",
+        "e4": "Comprobación con el cuadrado: (3x + 1)² = 9x² + 6x + 1, cuya derivada es 18x + 6. Con la cadena: 2(3x + 1) · 3 = 18x + 6. ✓"
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ejemplo2",
+      "capitulo": "Con exponenciales y logaritmos",
+      "pantalla": "Dos tarjetas KaTeX, cada una con 'afuera' y 'adentro' marcados: e^(−x²) → e^(−x²) · (−2x) = −2x·e^(−x²) (y su campana de Gauss en mini gráfica) · ln(x² + 1) → 1/(x² + 1) · 2x = 2x/(x² + 1).",
+      "voz": {
+        "f1": "Con las reglas del episodio seis, ahora puedes derivar mucho más.",
+        "f2": "E a la menos equis al cuadrado. Afuera está la exponencial, que es su propia derivada. Adentro, menos equis al cuadrado, con derivada menos dos equis. Resultado: menos dos equis, por e a la menos equis al cuadrado.",
+        "f3": "Y el logaritmo de equis al cuadrado más uno. Afuera, el logaritmo: uno entre lo de adentro. Por la derivada de adentro, dos equis. Queda dos equis entre equis al cuadrado más uno."
+      },
+      "sub": {
+        "f2": "e^(−x²). Afuera la exponencial, adentro −x² (derivada −2x). Resultado: −2x · e^(−x²).",
+        "f3": "ln(x² + 1). Afuera el logaritmo: 1 / (x² + 1). Por la derivada de adentro, 2x. Queda 2x / (x² + 1)."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué se usa?",
+      "pantalla": "Un globo que se infla (animación). El radio crece 2 cm/s; el volumen depende del radio: V = (4/3)πr³. KaTeX: dV/dt = dV/dr · dr/dt = 4πr² · 2. Con r = 10 cm: 800π ≈ 2513 cm³/s. Nota: 'Ejemplo simplificado'.",
+      "voz": {
+        "u1": "¿Para qué sirve? Cuando una cosa depende de otra, que a su vez cambia con el tiempo. Como un globo: el volumen depende del radio, y el radio crece con el tiempo.",
+        "u2": "Si el radio crece dos centímetros por segundo, el volumen crece la derivada del volumen respecto al radio, por dos. Cuando el radio mide diez centímetros, eso da ochocientos pi: unos dos mil quinientos trece centímetros cúbicos por segundo."
+      },
+      "sub": {
+        "u1": "Cuando algo depende de otra cosa que cambia con el tiempo. Un globo: el volumen depende del radio, y el radio crece.",
+        "u2": "Si el radio crece 2 cm/s: dV/dt = 4πr² · 2. Con r = 10 cm: 800π ≈ 2513 cm³/s."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Una red neuronal como cadena de máquinas: x → capa 1 → capa 2 → capa 3 → error. Flechas de regreso multiplicando derivadas (backpropagation). Fórmula de una neurona: dL/dw = 2(σ − y) · σ(1 − σ) · x, cada factor de un color. Tarjeta: 'PyTorch y TensorFlow lo hacen solos'.",
+      "voz": {
+        "k1": "Un plus para ciencia de datos: una red neuronal es una cadena de funciones, capa tras capa, que termina en el error.",
+        "k2": "Para saber cómo corregir cada peso, se aplica la regla de la cadena de atrás hacia adelante, multiplicando derivadas. Eso se llama retropropagación, y librerías como PyTorch lo hacen solas, millones de veces."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 2 instrucciones (SymPy): sp.diff((3*x + 1)**5, x) → 15*(3*x + 1)**4 / sp.diff(sp.exp(-x**2), x) → -2*x*exp(-x**2).",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "SimPy aplica la regla de la cadena: quince, por tres equis más uno, a la cuarta.",
+        "y3": "Y con la exponencial: menos dos equis, por e a la menos equis al cuadrado. Igual que a mano."
+      },
+      "sub": {
+        "y2": "SymPy aplica la regla de la cadena: 15(3x + 1)⁴.",
+        "y3": "Y con la exponencial: −2x · e^(−x²). Igual que a mano."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Error común",
+      "pantalla": "Sticker '¡CUIDADO!'. Tarjeta: (3x + 1)⁵ → 5(3x + 1)⁴ ✕ 'falta la derivada de adentro' → 15(3x + 1)⁴ ✓. Segunda: (e^(−x²))' ≠ e^(−x²) ✕ → −2x·e^(−x²) ✓.",
+      "voz": {
+        "x1": "El error más común: olvidar multiplicar por la derivada de adentro. Si derivas tres equis más uno a la quinta y te quedas en cinco, por tres equis más uno a la cuarta, te falta el tres.",
+        "x2": "Y con la exponencial: e a la menos equis al cuadrado no es su propia derivada. Solo e a la equis, sola, lo es. Si adentro hay algo más, la cadena multiplica."
+      },
+      "sub": {
+        "x1": "Error: olvidar la derivada de adentro. (3x + 1)⁵ → 5(3x + 1)⁴ está incompleto: falta el 3.",
+        "x2": "Y e^(−x²) no es su propia derivada. Solo e^x sola lo es. Si adentro hay algo más, la cadena multiplica."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': f(x) = (2x + 1)³ → ¿f'(x)? ¿y f'(0)? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. Composición: una función dentro de otra · 2. [f(g(x))]' = f'(g(x)) · g'(x) · 3. Los ritmos se multiplican, como engranajes.",
+      "voz": {
+        "w1": "El reto: deriva dos equis más uno, al cubo. Y evalúa la derivada en cero. Déjalo en los comentarios.",
+        "w2": "En resumen: cuando una función está dentro de otra, derivas la de afuera sin tocar lo de adentro, y multiplicas por la derivada de adentro. Como los engranajes: los ritmos se multiplican."
+      },
+      "sub": {
+        "w1": "Reto: deriva f(x) = (2x + 1)³, y evalúa f'(0). Déjalo en los comentarios.",
+        "w2": "Resumen: derivas la de afuera sin tocar lo de adentro, por la derivada de adentro. Como engranajes: los ritmos se multiplican."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #9 Máximos y mínimos'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio usamos todo lo que sabemos de derivadas para encontrar el punto más alto y el más bajo de una función: máximos y mínimos.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
