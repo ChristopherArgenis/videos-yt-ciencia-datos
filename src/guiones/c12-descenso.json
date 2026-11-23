@@ -2,7 +2,7 @@
   "_nota": "Cálculo Diferencial #12 (final del curso). Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy y Python. Fórmulas con KaTeX. Respuesta del reto del #11: ∇(x² + y²) = (2x, 2y) → (2, 2) en (1, 1). L(w) = (w − 3)², w₀ = 0, η = 0.1: 0.6, 1.08, 1.464, 1.7712 … → 3 (cada paso la distancia a 3 se multiplica por 0.8). η = 0.5: llega en 1 paso. η = 1.1: 6.6, −1.32, 8.184 … diverge. Plus: datos (1, 3), (2, 5), (3, 5), y = wx: L'(w) = 28w − 56 → w = 2; con η = 0.02: 1.12, 1.6128, 1.8296 … Reto final: η = 0.25 desde 0 → 1.5, 2.25.",
   "id": "c12-descenso",
   "titulo": "Descenso de gradiente | Cálculo Diferencial #12",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/explica.wav",
   "voz": "alex_nicola",
   "acento": "#5b8cff",

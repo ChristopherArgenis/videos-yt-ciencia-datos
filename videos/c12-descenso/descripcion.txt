@@ -1,0 +1,32 @@
+Descenso de gradiente explicado desde cero: el algoritmo con el que se entrena casi toda la inteligencia artificial, paso a paso y a mano.
+Episodio 12 y final del curso de Cálculo Diferencial: la regla del descenso de gradiente, la tasa de aprendizaje y cómo un modelo de machine learning encuentra su mejor solución.
+
+Episodio 12 de "Cálculo Diferencial", el final del curso para aprender cálculo desde cero, solo con álgebra básica. ¿Cómo bajas una montaña con niebla, sin ver el fondo? Escribimos la regla del descenso de gradiente, hacemos los pasos a mano, la usamos con varias variables y vemos qué pasa si la tasa de aprendizaje es muy chica o muy grande. Como plus, entrenamos una recta con datos. Y cerramos con el mapa completo del curso: de la función al descenso de gradiente.
+
+Capítulos:
+00:00 Bajar con niebla
+00:28 Recuerda y objetivo
+00:52 La regla: un paso cuesta abajo
+01:22 Cómo se calcula: paso a paso
+02:04 Con varias variables
+02:28 La tasa de aprendizaje
+02:54 ¿Para qué se usa?
+03:14 Plus: en Ciencia de Datos
+03:45 En Python
+04:00 Error común
+04:16 Reto y resumen
+04:40 El mapa del curso
+05:04 Cierre
+
+💻 El código en Python aparece en el video en el 03:45.
+🧩 Reto final: deja tu respuesta en los comentarios. La solución queda fijada en los comentarios.
+
+La montaña y los datos del plus son ejemplos simplificados.
+
+Episodio anterior: Derivadas parciales y gradiente | Cálculo Diferencial #11
+Curso completo: lista de reproducción "Cálculo Diferencial" en el canal (empieza por el episodio 1).
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #descensodegradiente #machinelearning #cienciadedatos

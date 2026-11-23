@@ -1,0 +1,31 @@
+Derivadas parciales y gradiente explicados desde cero: cómo derivar una función de varias variables y hacia dónde sube más rápido.
+Episodio 11 del curso de Cálculo Diferencial: qué es una derivada parcial, cómo se calcula, qué es el vector gradiente y por qué apunta hacia la subida más empinada.
+
+Episodio 11 de "Cálculo Diferencial", un curso para aprender cálculo desde cero, solo con álgebra básica. En una colina, si al este subes 8 metros por paso y al norte 7, ¿hacia dónde subes más rápido? No es al este. Cortamos la colina en rebanadas para entender las derivadas parciales, las calculamos paso a paso, juntamos todo en el gradiente y medimos su largo. Y como plus, por qué un modelo de machine learning tiene un gradiente con un número por cada peso.
+
+Capítulos:
+00:00 ¿Hacia dónde sube más?
+00:25 Recuerda y objetivo
+00:56 Una rebanada a la vez
+01:26 Cómo se calcula
+01:57 El gradiente
+02:23 Otro ejemplo
+02:39 ¿Para qué se usa?
+02:57 Plus: en Ciencia de Datos
+03:19 En Python
+03:31 Error común
+03:47 Reto y resumen
+04:09 Cierre
+
+💻 El código en Python (SymPy) aparece en el video en el 03:19.
+🧩 Reto: deja tu respuesta en los comentarios. La solución, en el episodio 12.
+
+La colina y los datos del plus son ejemplos simplificados.
+
+Episodio anterior: Segunda derivada y concavidad | Cálculo Diferencial #10
+Próximo episodio: Descenso de gradiente | Cálculo Diferencial #12
+
+Suscríbete a @UniversoCienciaDatos para más matemáticas y ciencia de datos.
+TikTok: @argenis2125 · Instagram: @kriz2125
+
+#calculo #matematicas #gradiente #calculodiferencial #cienciadedatos

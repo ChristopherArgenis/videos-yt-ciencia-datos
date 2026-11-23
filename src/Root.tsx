@@ -24,6 +24,8 @@ import {
   MiniCalculo08,
   MiniCalculo09,
   MiniCalculo10,
+  MiniCalculo11,
+  MiniCalculo12,
   MiniEntropia,
   MiniPlantilla,
 } from "./miniaturas/Miniaturas";
@@ -47,6 +49,8 @@ import { C07, C07Producto } from "./videos/C07Producto";
 import { C08, C08Cadena } from "./videos/C08Cadena";
 import { C09, C09MaxMin } from "./videos/C09MaxMin";
 import { C10, C10Segunda } from "./videos/C10Segunda";
+import { C11, C11Gradiente } from "./videos/C11Gradiente";
+import { C12, C12Descenso } from "./videos/C12Descenso";
 import { E01, E01Entropia } from "./videos/E01Entropia";
 
 // Cada video largo: <Composition id="NN-Nombre"> con la duración que sale de su guion.
@@ -225,6 +229,22 @@ export const RemotionRoot: React.FC = () => (
         width={W}
         height={H}
       />
+      <Composition
+        id="C11-Gradiente"
+        component={C11Gradiente}
+        durationInFrames={planificar(C11).total}
+        fps={FPS}
+        width={W}
+        height={H}
+      />
+      <Composition
+        id="C12-Descenso"
+        component={C12Descenso}
+        durationInFrames={planificar(C12).total}
+        fps={FPS}
+        width={W}
+        height={H}
+      />
     </Folder>
     <Folder name="Especiales">
       <Composition
@@ -366,6 +386,18 @@ export const RemotionRoot: React.FC = () => (
       <Still
         id="Mini-C10-Segunda"
         component={MiniCalculo10}
+        width={MINI_W}
+        height={MINI_H}
+      />
+      <Still
+        id="Mini-C11-Gradiente"
+        component={MiniCalculo11}
+        width={MINI_W}
+        height={MINI_H}
+      />
+      <Still
+        id="Mini-C12-Descenso"
+        component={MiniCalculo12}
         width={MINI_W}
         height={MINI_H}
       />

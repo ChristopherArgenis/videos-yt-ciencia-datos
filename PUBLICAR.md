@@ -290,4 +290,26 @@ y la Ciencia de Datos un plus corto. Sin datos de terceros: se puede monetizar.
 **Respuesta del reto (para el #11):** f''(x) = 6x − 12 = 0 → x = 2 (f(2) = −16).
 **Pantalla final:** episodio 9 + lista del curso.
 
+## C11 · Derivadas parciales y gradiente (4:29)
+**Título:** Derivadas parciales y gradiente | Cálculo Diferencial #11 (57)
+**Alternativas:** Gradiente | Cálculo Diferencial #11 (32) · ¿Hacia dónde sube más? Gradiente | Cálculo Diferencial #11 (58)
+**Miniatura:** `Mini-C11-Gradiente` → mapa de nivel con la flecha amarilla en diagonal (este y norte en gris) + "¿HACIA DÓNDE SUBE?" + "∇f" + "¿al este? NO"
+**Voz:** alex_nicola · Fórmulas con KaTeX · Colina y datos del plus: "Ejemplo simplificado".
+**Descripción:** `videos/c11-gradiente/descripcion.txt` (sin código; remite al 03:19).
+**#:** #calculo #matematicas #gradiente #calculodiferencial #cienciadedatos
+**Comentario fijado:** 🧩 Reto: ¿cuánto vale el gradiente de f(x, y) = x² + y² en (1, 1)? 👇 (la solución, en el episodio 12)
+**Respuesta del reto (para el #12):** ∇f = (2x, 2y) → (2, 2).
+**Pantalla final:** episodio 10 + lista del curso.
+
+## C12 · Descenso de gradiente (5:24) · final del curso
+**Título:** Descenso de gradiente | Cálculo Diferencial #12 (47)
+**Alternativas:** Así aprende la IA | Cálculo Diferencial #12 (43) · Tasa de aprendizaje y descenso | Cálculo Diferencial #12 (56)
+**Miniatura:** `Mini-C12-Descenso` → bolita bajando al valle con flechas de cada paso + "ASÍ APRENDE LA IA" + "w − η∇L" + "FINAL DEL CURSO"
+**Voz:** alex_nicola · Fórmulas con KaTeX · Montaña y datos del plus: "Ejemplo simplificado" / "Ilustración".
+**Descripción:** `videos/c12-descenso/descripcion.txt` (sin código; remite al 03:45).
+**#:** #calculo #matematicas #descensodegradiente #machinelearning #cienciadedatos
+**Comentario fijado:** 🧩 Reto final: L(w) = (w − 3)², empezando en w = 0 con η = 0.25. ¿Cuánto vale w después de 2 pasos? 👇 Gracias por terminar el curso 🎓
+**Respuesta del reto (fijarla en una semana):** w₁ = 0 − 0.25·(−6) = 1.5; w₂ = 1.5 − 0.25·(−3) = 2.25.
+**Pantalla final:** lista del curso + episodio 1.
+
 **Fuente de respaldo (desde el #7):** `public/fonts/InterSimbolos-*.woff2` (subconjunto de Inter, OFL) cubre ⁴ ⁿ ˣ √ ≈ ≠ que Poppins no trae; `FONT` = "Poppins, 'Inter Simbolos'".

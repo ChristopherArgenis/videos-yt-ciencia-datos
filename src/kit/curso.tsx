@@ -481,3 +481,120 @@ export const Recuerda: React.FC<{ at: number; idea: React.ReactNode; atReto: num
     </Aparece>
   </Stage>
 );
+
+/** Mapa de nivel (vista desde arriba) de f(x, y): color suave por altura y curvas de nivel lisas. */
+export const Mapa: React.FC<{
+  w: number;
+  h: number;
+  x: [number, number];
+  y: [number, number];
+  f: (x: number, y: number) => number;
+  /** Separación entre niveles. */
+  nivel: number;
+  celdas?: number;
+  ejes?: boolean;
+  children?: (e: Ejes) => React.ReactNode;
+}> = ({ w, h, x, y, f, nivel, celdas = 90, ejes = true, children }) => {
+  const X = (v: number) => ((v - x[0]) / (x[1] - x[0])) * w;
+  const Y = (v: number) => h - ((v - y[0]) / (y[1] - y[0])) * h;
+  const nx = celdas;
+  const ny = Math.round((celdas * h) / w);
+  // valores en los vértices de la malla
+  const V: number[][] = [];
+  for (let j = 0; j <= ny; j++) {
+    const fila: number[] = [];
+    for (let i = 0; i <= nx; i++) fila.push(f(x[0] + (i / nx) * (x[1] - x[0]), y[0] + (j / ny) * (y[1] - y[0])));
+    V.push(fila);
+  }
+  const todos = V.flat();
+  const lo = Math.min(...todos);
+  const hi = Math.max(...todos);
+  const px = (i: number) => (i / nx) * w;
+  const py = (j: number) => h - (j / ny) * h;
+  // relleno: celdas de 1/3 de la resolución, color continuo
+  const rects: React.ReactNode[] = [];
+  const paso = 3;
+  for (let j = 0; j < ny; j += paso)
+    for (let i = 0; i < nx; i += paso) {
+      const v = V[Math.min(ny, j + 1)][Math.min(nx, i + 1)];
+      const t = Math.max(0, Math.min(1, (v - lo) / Math.max(1e-9, hi - lo)));
+      const r = Math.round(18 + 150 * t * t);
+      const g = Math.round(34 + 120 * t);
+      const b = Math.round(90 + 20 * t - 40 * t * t);
+      rects.push(<rect key={`${i}-${j}`} x={px(i)} y={py(Math.min(ny, j + paso))} width={(w / nx) * paso + 0.8} height={(h / ny) * paso + 0.8} fill={`rgb(${r},${g},${b})`} />);
+    }
+  // curvas de nivel: marching squares
+  const segs: string[] = [];
+  const k0 = Math.ceil(lo / nivel);
+  const k1 = Math.floor(hi / nivel);
+  for (let k = k0; k <= k1; k++) {
+    const c = k * nivel;
+    for (let j = 0; j < ny; j++)
+      for (let i = 0; i < nx; i++) {
+        const a = V[j][i], b = V[j][i + 1], d = V[j + 1][i], e2 = V[j + 1][i + 1];
+        const pts: [number, number][] = [];
+        const cruza = (p: number, q: number) => (p - c) * (q - c) < 0;
+        if (cruza(a, b)) pts.push([px(i + (c - a) / (b - a)), py(j)]);
+        if (cruza(b, e2)) pts.push([px(i + 1), py(j + (c - b) / (e2 - b))]);
+        if (cruza(d, e2)) pts.push([px(i + (c - d) / (e2 - d)), py(j + 1)]);
+        if (cruza(a, d)) pts.push([px(i), py(j + (c - a) / (d - a))]);
+        if (pts.length >= 2) segs.push(`M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}L${pts[1][0].toFixed(1)} ${pts[1][1].toFixed(1)}`);
+        if (pts.length === 4) segs.push(`M${pts[2][0].toFixed(1)} ${pts[2][1].toFixed(1)}L${pts[3][0].toFixed(1)} ${pts[3][1].toFixed(1)}`);
+      }
+  }
+  return (
+    <svg width={w + 60} height={h + 60} viewBox={`-40 -20 ${w + 60} ${h + 60}`} style={{ overflow: "visible" }}>
+      <defs>
+        <clipPath id={`mapa-${w}-${h}`}>
+          <rect x={0} y={0} width={w} height={h} rx={14} />
+        </clipPath>
+      </defs>
+      <g clipPath={`url(#mapa-${w}-${h})`}>
+        {rects}
+        <path d={segs.join("")} stroke="#dfe6ff" strokeOpacity={0.55} strokeWidth={2.6} fill="none" strokeLinecap="round" />
+      </g>
+      <rect x={0} y={0} width={w} height={h} rx={14} fill="none" stroke={`${C.dim}66`} strokeWidth={3} />
+      {ejes && (
+        <>
+          <text x={w + 14} y={h + 8} fontFamily={FONT} fontWeight={900} fontSize={30} fill={COL.entrada}>
+            x
+          </text>
+          <text x={-8} y={-2} textAnchor="end" fontFamily={FONT} fontWeight={900} fontSize={30} fill={COL.salida}>
+            y
+          </text>
+        </>
+      )}
+      {children?.({ X, Y })}
+    </svg>
+  );
+};
+
+/** Flecha en un plano o mapa, de (x0, y0) a (x1, y1) en coordenadas de los ejes. */
+export const Flecha: React.FC<{ e: Ejes; x0: number; y0: number; x1: number; y1: number; color: string; ancho?: number; p?: number }> = ({
+  e,
+  x0,
+  y0,
+  x1,
+  y1,
+  color,
+  ancho = 9,
+  p = 1,
+}) => {
+  const ax = e.X(x0);
+  const ay = e.Y(y0);
+  const bx = ax + (e.X(x1) - ax) * p;
+  const by = ay + (e.Y(y1) - ay) * p;
+  const L = Math.hypot(bx - ax, by - ay);
+  if (L < 2) return null;
+  const ux = (bx - ax) / L;
+  const uy = (by - ay) / L;
+  const s = ancho * 3;
+  const cx = bx - ux * s;
+  const cy = by - uy * s;
+  return (
+    <g>
+      <line x1={ax} y1={ay} x2={cx} y2={cy} stroke={color} strokeWidth={ancho} strokeLinecap="round" />
+      <polygon points={`${bx},${by} ${cx - uy * s * 0.6},${cy + ux * s * 0.6} ${cx + uy * s * 0.6},${cy - ux * s * 0.6}`} fill={color} />
+    </g>
+  );
+};

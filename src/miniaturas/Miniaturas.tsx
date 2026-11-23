@@ -1758,3 +1758,109 @@ export const MiniCalculo10: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+/** Flecha SVG simple en píxeles. */
+const FlechaSvg: React.FC<{ x0: number; y0: number; x1: number; y1: number; color: string; ancho: number; glow?: boolean }> = ({ x0, y0, x1, y1, color, ancho, glow }) => {
+  const L = Math.hypot(x1 - x0, y1 - y0);
+  const ux = (x1 - x0) / L;
+  const uy = (y1 - y0) / L;
+  const s = ancho * 2.6;
+  const cx = x1 - ux * s;
+  const cy = y1 - uy * s;
+  return (
+    <g style={glow ? { filter: `drop-shadow(0 0 22px ${color})` } : undefined}>
+      <line x1={x0} y1={y0} x2={cx} y2={cy} stroke={color} strokeWidth={ancho} strokeLinecap="round" />
+      <polygon points={`${x1},${y1} ${cx - uy * s * 0.65},${cy + ux * s * 0.65} ${cx + uy * s * 0.65},${cy - ux * s * 0.65}`} fill={color} />
+    </g>
+  );
+};
+
+/** #11 · Gradiente: mapa de nivel con la flecha que sube más rápido (no es al este). */
+export const MiniCalculo11: React.FC = () => {
+  const cx = 1240;
+  const cy = 60;
+  const px = 840;
+  const py = 470;
+  const d = Math.hypot(cx - px, cy - py);
+  const L = 330;
+  return (
+    <AbsoluteFill style={{ overflow: "hidden" }}>
+      <Pizarra glow="#2f5f3a" x="85%" y="15%" />
+      <svg width={1280} height={720} viewBox="0 0 1280 720" style={{ position: "absolute", inset: 0 }}>
+        {Array.from({ length: 16 }).map((_, i) => (
+          <ellipse
+            key={i}
+            cx={cx}
+            cy={cy}
+            rx={70 + i * 62}
+            ry={50 + i * 44}
+            transform={`rotate(-38 ${cx} ${cy})`}
+            fill="none"
+            stroke={i % 4 === 0 ? "#ffd16688" : "#9fb2ff44"}
+            strokeWidth={i % 4 === 0 ? 5 : 3}
+          />
+        ))}
+        <FlechaSvg x0={px} y0={py} x1={px + 230} y1={py} color="#5b6a9a" ancho={14} />
+        <FlechaSvg x0={px} y0={py} x1={px} y1={py - 210} color="#5b6a9a" ancho={14} />
+        <FlechaSvg x0={px} y0={py} x1={px + ((cx - px) / d) * L} y1={py + ((cy - py) / d) * L} color="#ffd166" ancho={26} glow />
+        <circle cx={px} cy={py} r={26} fill="#ffffff" stroke="#070b18" strokeWidth={8} />
+      </svg>
+      <div style={{ position: "absolute", left: 960, top: 520, rotate: "3deg", whiteSpace: "nowrap", fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 900, fontSize: 40, color: "#fff", background: C.coral, border: "6px solid #070b18", borderRadius: 18, padding: "0 18px", boxShadow: "0 10px 0 rgba(0,0,0,0.5)" }}>
+        ¿al este? NO
+      </div>
+      <div style={{ position: "absolute", left: 50, top: 60, display: "flex", flexDirection: "column" }}>
+        <Nombre color="#ffffff" size={104}>
+          ¿HACIA DÓNDE
+        </Nombre>
+        <Nombre color="#ffd166" size={104}>
+          SUBE?
+        </Nombre>
+      </div>
+      <div style={{ position: "absolute", left: 60, top: 330 }}>
+        <Respuesta tex={"\\nabla f"} color="#ffd166" rot={-4} size={150} />
+      </div>
+      <ChipCurso>CÁLCULO DIFERENCIAL #11 · GRADIENTE</ChipCurso>
+    </AbsoluteFill>
+  );
+};
+
+/** #12 · Descenso de gradiente: la bolita bajando al valle paso a paso. Final del curso. */
+export const MiniCalculo12: React.FC = () => {
+  const X = (w: number) => 700 + w * 85;
+  const Y = (l: number) => 660 - l * 60;
+  const Lf = (w: number) => 0.55 * (w - 3.4) ** 2;
+  const curva: string[] = [];
+  for (let w = 0; w <= 6.6; w += 0.05) curva.push(`${X(w).toFixed(1)},${Y(Lf(w)).toFixed(1)}`);
+  const ws = [0.15];
+  for (let i = 0; i < 5; i++) ws.push(ws[i] - 0.4 * (ws[i] - 3.4));
+  return (
+    <AbsoluteFill style={{ overflow: "hidden" }}>
+      <Pizarra glow="#1f6b4a" x="72%" y="80%" />
+      <svg width={1280} height={720} viewBox="0 0 1280 720" style={{ position: "absolute", inset: 0 }}>
+        <polygon points={`${X(0)},720 ${curva.join(" ")} ${X(6.6)},720`} fill="#3ddc8418" />
+        <polyline points={curva.join(" ")} fill="none" stroke={C.green} strokeWidth={14} strokeLinecap="round" style={{ filter: "drop-shadow(0 0 18px #3ddc8488)" }} />
+        {ws.slice(0, -1).map((w, i) => (
+          <FlechaSvg key={i} x0={X(w)} y0={Y(Lf(w)) - 30} x1={X(ws[i + 1])} y1={Y(Lf(ws[i + 1])) - 30} color="#ffd166" ancho={9} />
+        ))}
+        {ws.map((w, i) => (
+          <circle key={i} cx={X(w)} cy={Y(Lf(w))} r={i === ws.length - 1 ? 30 : 14} fill={i === ws.length - 1 ? "#ffffff" : "#ffd166"} stroke="#070b18" strokeWidth={6} />
+        ))}
+      </svg>
+      <div style={{ position: "absolute", right: 40, top: 40, rotate: "4deg", fontFamily: "Poppins, 'Inter Simbolos'", fontWeight: 900, fontSize: 40, color: "#070b18", background: C.green, border: "6px solid #070b18", borderRadius: 18, padding: "0 18px", boxShadow: "0 10px 0 rgba(0,0,0,0.5)" }}>
+        FINAL DEL CURSO
+      </div>
+      <div style={{ position: "absolute", left: 50, top: 60, display: "flex", flexDirection: "column" }}>
+        <Nombre color="#ffffff" size={112}>
+          ASÍ APRENDE
+        </Nombre>
+        <Nombre color="#ffd166" size={112}>
+          LA IA
+        </Nombre>
+      </div>
+      <div style={{ position: "absolute", left: 60, top: 330 }}>
+        <Respuesta tex={"w - \\eta\\,\\nabla L"} color={C.green} rot={-4} size={96} />
+      </div>
+      <ChipCurso>CÁLCULO DIFERENCIAL #12 · DESCENSO DE GRADIENTE</ChipCurso>
+    </AbsoluteFill>
+  );
+};

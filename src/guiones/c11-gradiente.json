@@ -2,7 +2,7 @@
   "_nota": "Cálculo Diferencial #11. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #10: f''(x) = 6x − 12 = 0 → x = 2, y cambia de signo. Gancho: colina f(x, y) = x² + 3xy + y² en (1, 2): ∂f/∂x = 8, ∂f/∂y = 7, |∇f| = √113 ≈ 10.6 (ejemplo simplificado).",
   "id": "c11-gradiente",
   "titulo": "Derivadas parciales y gradiente | Cálculo Diferencial #11",
-  "aprobado": false,
+  "aprobado": true,
   "musica": "musica/explica.wav",
   "voz": "alex_nicola",
   "acento": "#5b8cff",

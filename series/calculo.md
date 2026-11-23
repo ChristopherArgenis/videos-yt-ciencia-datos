@@ -179,6 +179,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** segunda derivada de x⁴. (12x²)
 
 ### 11 · Derivadas parciales y gradiente | Cálculo Diferencial #11
+- **Estado:** ✅ hecho (4:29, `out/C11-Gradiente.mp4`). Guion: `src/guiones/c11-gradiente.json`.
 - **Gancho:** "Un modelo real no tiene un peso: tiene miles. ¿Cómo se deriva eso?"
 - **Qué es:** derivar respecto a una variable dejando las demás fijas. El gradiente junta todas las parciales en
   un vector que apunta hacia donde la función sube más rápido.
@@ -192,6 +193,7 @@ SymPy (BSD) para verificar cada resultado y para el código en pantalla.
 - **Reto:** gradiente de x² + y² en (1, 1). ((2, 2))
 
 ### 12 · Descenso de gradiente | Cálculo Diferencial #12
+- **Estado:** ✅ hecho (5:24, `out/C12-Descenso.mp4`). Guion: `src/guiones/c12-descenso.json`. Reto final cambiado a η = 0.25 (2 pasos → 2.25).
 - **Gancho:** "Bajar una montaña con niebla, sin ver el fondo: así se entrena casi toda la inteligencia artificial."
 - **Qué es:** repetir un paso: w ← w − η·∇L (η = tasa de aprendizaje).
 - **Cómo se calcula:** L(w) = (w − 3)², empezando en w = 0 con η = 0.1: w₁ = 0.6, w₂ = 1.08 … → 3.
