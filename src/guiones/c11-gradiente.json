@@ -1,0 +1,188 @@
+{
+  "_nota": "Cálculo Diferencial #11. Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy. Fórmulas con KaTeX. Respuesta del reto del #10: f''(x) = 6x − 12 = 0 → x = 2, y cambia de signo. Gancho: colina f(x, y) = x² + 3xy + y² en (1, 2): ∂f/∂x = 8, ∂f/∂y = 7, |∇f| = √113 ≈ 10.6 (ejemplo simplificado).",
+  "id": "c11-gradiente",
+  "titulo": "Derivadas parciales y gradiente | Cálculo Diferencial #11",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "¿Hacia dónde sube más?",
+      "pantalla": "Mapa de curvas de nivel de una colina (vista desde arriba, colores por altura; 'Ejemplo simplificado'). Un punto 'estás aquí'. Flecha al ESTE: '+8 m por paso'. Flecha al NORTE: '+7 m por paso'. Pregunta: '¿Hacia dónde sube más rápido?'. Luego aparece una tercera flecha diagonal brillante: '+10.6 m por paso'.",
+      "voz": {
+        "g1": "Estás en una colina. Si das un paso al este, subes ocho metros. Si das un paso al norte, subes siete.",
+        "g2": "¿Hacia dónde sube más rápido? La respuesta obvia es al este. Pero está mal.",
+        "g3": "Hay una dirección en diagonal donde subes casi once metros por paso. Para encontrarla, hay que derivar en dos direcciones a la vez."
+      },
+      "sub": {
+        "g1": "Estás en una colina. Un paso al este: subes 8 m. Un paso al norte: subes 7 m.",
+        "g3": "Hay una diagonal donde subes casi 11 m por paso. Para encontrarla, hay que derivar en dos direcciones a la vez."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #11' con el mapa de los 12 temas; se ilumina 'Gradiente'.",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio once."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': f'' mide cómo cambia la pendiente; inflexión donde f'' cambia de signo. 'RESPUESTA DEL RETO': f(x) = x³ − 6x² → f'(x) = 3x² − 12x → f''(x) = 6x − 12 = 0 → x = 2 (antes negativa, después positiva: inflexión).",
+      "voz": {
+        "r1": "En el episodio anterior: la segunda derivada, y el punto de inflexión, donde cambia de signo.",
+        "r2": "El reto: la segunda derivada de equis al cubo menos seis equis al cuadrado es seis equis menos doce. Vale cero en dos, y ahí cambia de signo: el punto de inflexión está en equis igual a dos."
+      },
+      "sub": {
+        "r1": "En el episodio anterior: la segunda derivada, y la inflexión donde f'' cambia de signo.",
+        "r2": "El reto: f''(x) = 6x − 12 = 0 → x = 2, y ahí cambia de signo: la inflexión está en x = 2."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Calcular derivadas parciales · 2. Armar el gradiente · 3. Saber hacia dónde sube más una función.",
+      "voz": {
+        "o1": "Hoy vas a poder calcular derivadas parciales, armar el gradiente, y saber hacia dónde sube más rápido una función de varias variables."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "que_es",
+      "capitulo": "Una rebanada a la vez",
+      "pantalla": "La colina f(x, y) = x² + 3xy + y² dibujada como mapa de nivel. Se corta una rebanada horizontal en y = 2 (línea azul): al lado, la curva f(x, 2) = x² + 6x + 4, una función de UNA variable, con su tangente en x = 1: pendiente 8. Luego la rebanada vertical en x = 1 (línea verde): f(1, y) = y² + 3y + 1, tangente en y = 2: pendiente 7.",
+      "voz": {
+        "q1": "La colina depende de dos números: equis y ye. Ya sabemos derivar con una sola variable. El truco es congelar la otra.",
+        "q2": "Si fijas ye en dos, cortas la colina en una rebanada. Queda una curva normal, con una sola variable. Su pendiente en equis igual a uno es ocho: la subida hacia el este.",
+        "q3": "Si fijas equis en uno, cortas en la otra dirección. Esa rebanada tiene pendiente siete: la subida hacia el norte. Cada una es una derivada parcial."
+      },
+      "sub": {
+        "q2": "Si fijas y = 2, cortas una rebanada: f(x, 2) = x² + 6x + 4. Su pendiente en x = 1 es 8: la subida al este.",
+        "q3": "Si fijas x = 1: f(1, y) = y² + 3y + 1, con pendiente 7 en y = 2: la subida al norte. Cada una es una derivada parcial."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "calcula",
+      "capitulo": "Cómo se calcula",
+      "pantalla": "Notación ∂f/∂x ('derivada parcial de f respecto a x'). f(x, y) = x² + 3xy + y², cada término coloreado. Paso 1: ∂f/∂x → y es constante: 2x + 3y + 0. Paso 2: ∂f/∂y → x es constante: 0 + 3x + 2y. Paso 3: en (1, 2): ∂f/∂x = 2 + 6 = 8, ∂f/∂y = 3 + 4 = 7. Coinciden con las rebanadas.",
+      "voz": {
+        "c1": "Se escribe con esta de redonda: derivada parcial de efe respecto a equis. La regla es una sola: las otras variables se tratan como números fijos.",
+        "c2": "Respecto a equis: equis al cuadrado da dos equis. Tres equis ye da tres ye, porque ye es un número fijo. Y ye al cuadrado, que no tiene equis, da cero.",
+        "c3": "Respecto a ye, al revés: cero, más tres equis, más dos ye.",
+        "c4": "En el punto uno, dos: dos más seis, ocho. Y tres más cuatro, siete. Las mismas pendientes de las rebanadas."
+      },
+      "sub": {
+        "c1": "Se escribe ∂f/∂x: derivada parcial de f respecto a x. La regla: las otras variables son números fijos.",
+        "c2": "Respecto a x: x² da 2x. 3xy da 3y (y es fija). Y y², sin x, da 0.",
+        "c3": "Respecto a y, al revés: 0 + 3x + 2y.",
+        "c4": "En (1, 2): 2 + 6 = 8, y 3 + 4 = 7. Las mismas pendientes de las rebanadas."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "gradiente",
+      "capitulo": "El gradiente",
+      "pantalla": "∇f = (∂f/∂x, ∂f/∂y) = (2x + 3y, 3x + 2y). En (1, 2): ∇f = (8, 7). Sobre el mapa de nivel, la flecha (8, 7) sale del punto, perpendicular a la curva de nivel. Su largo: |∇f| = √(8² + 7²) = √113 ≈ 10.6. Vuelve la pregunta del gancho: esa es la diagonal.",
+      "voz": {
+        "d1": "Ahora juntamos las parciales en un vector: el gradiente. Se escribe con este triángulo, y en el punto uno, dos vale ocho, siete.",
+        "d2": "Ese vector apunta justo hacia donde la colina sube más rápido. Siempre cruza las curvas de nivel en ángulo recto.",
+        "d3": "Y su largo dice qué tan empinado es: la raíz de ocho al cuadrado más siete al cuadrado. Casi once. La respuesta del inicio."
+      },
+      "sub": {
+        "d1": "Juntamos las parciales en un vector: el gradiente, ∇f. En (1, 2): ∇f = (8, 7).",
+        "d3": "Su largo dice qué tan empinado es: √(8² + 7²) = √113 ≈ 10.6. La respuesta del inicio."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "ejemplo2",
+      "capitulo": "Otro ejemplo",
+      "pantalla": "g(x, y) = x²y + 5y. ∂g/∂x = 2xy (y fija) · ∂g/∂y = x² + 5 (x fija, x² es un número). En (2, 1): ∇g = (4, 9). Flecha en un mapa pequeño.",
+      "voz": {
+        "e1": "Otro: ge igual a equis al cuadrado por ye, más cinco ye. Respecto a equis: dos equis ye. Respecto a ye: equis al cuadrado más cinco.",
+        "e2": "En el punto dos, uno, el gradiente es cuatro, nueve: sube mucho más rápido en la dirección de ye."
+      },
+      "sub": {
+        "e1": "Otro: g(x, y) = x²y + 5y. Respecto a x: 2xy. Respecto a y: x² + 5.",
+        "e2": "En (2, 1): ∇g = (4, 9). Sube mucho más rápido en la dirección de y."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué se usa?",
+      "pantalla": "Dos tarjetas: MAPAS DE MONTAÑA (el gradiente marca la ruta más empinada; el agua baja en sentido contrario) · CALOR (el calor fluye en contra del gradiente de temperatura, de lo caliente a lo frío).",
+      "voz": {
+        "u1": "¿Para qué se usa? En un mapa de montaña, el gradiente marca la ruta más empinada. Y el agua de lluvia baja justo en sentido contrario.",
+        "u2": "En física, el calor fluye en contra del gradiente de temperatura: de lo caliente a lo frío, por el camino más directo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Recta y = wx + b sobre unos puntos. Error L(w, b) = Σ(wxᵢ + b − yᵢ)². Su gradiente: ∇L = (∂L/∂w, ∂L/∂b): una parcial por cada peso. Luego una red neuronal dibujada con muchas conexiones: 'millones de pesos → un gradiente con millones de números'. Enlace al Short de vectores (Mates7).",
+      "voz": {
+        "p1": "Un plus para ciencia de datos: el error de una regresión lineal depende de dos números, la pendiente y la ordenada. Su gradiente tiene una parcial para cada uno.",
+        "p2": "Y una red neuronal tiene millones de pesos. Su gradiente es un vector con millones de parciales: dice cómo mover cada peso para que el error suba más rápido."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 2 instrucciones (SymPy): f = x**2 + 3*x*y + y**2 / grad = [sp.diff(f, v) for v in (x, y)] → [2*x + 3*y, 3*x + 2*y] / [g.subs({x: 1, y: 2}) for g in grad] → [8, 7].",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "SimPy deriva respecto a cada variable, y nos da las dos parciales.",
+        "y3": "Y evaluadas en uno, dos: ocho y siete. El gradiente."
+      },
+      "sub": {
+        "y2": "SymPy deriva respecto a cada variable: las dos parciales.",
+        "y3": "Evaluadas en (1, 2): 8 y 7. El gradiente."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "error",
+      "capitulo": "Error común",
+      "pantalla": "Sticker '¡CUIDADO!'. ∂/∂x (y²) = 2y ✗ tachado → = 0 ✓. ∂/∂x (3xy) = 3y + 3x ✗ → = 3y ✓. Etiqueta: 'si no es la variable, es un número'.",
+      "voz": {
+        "x1": "Cuidado: el error más común es derivar también la variable congelada. Respecto a equis, ye al cuadrado no da dos ye: da cero.",
+        "x2": "Y tres equis ye da tres ye, nada más. Si no es la variable con la que derivas, trátala como un número."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO': f(x, y) = x² + y² → ¿cuánto vale su gradiente en (1, 1)? 'Respuesta en el próximo video'. Luego 3 tarjetas de resumen: 1. Parcial: derivar una variable, las demás fijas · 2. Gradiente: el vector de las parciales · 3. Apunta hacia donde la función sube más rápido.",
+      "voz": {
+        "w1": "El reto: equis al cuadrado más ye al cuadrado. ¿Cuánto vale su gradiente en el punto uno, uno? Déjalo en los comentarios.",
+        "w2": "En resumen: una derivada parcial deriva una variable y deja las demás fijas. El gradiente junta todas las parciales en un vector. Y ese vector apunta hacia donde la función sube más rápido."
+      },
+      "sub": {
+        "w1": "Reto: f(x, y) = x² + y². ¿Cuánto vale ∇f en (1, 1)? Déjalo en los comentarios.",
+        "w2": "Resumen: la parcial deriva una variable con las demás fijas. El gradiente junta las parciales. Y apunta hacia donde la función sube más rápido."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'PRÓXIMO EPISODIO · #12 Descenso de gradiente · el final del curso'; luego el cierre estándar. Mitad derecha libre para la pantalla final.",
+      "voz": {
+        "z1": "En el próximo episodio, el final del curso: si el gradiente apunta hacia arriba, caminamos al revés. Así aprende un modelo: el descenso de gradiente.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
