@@ -1,0 +1,205 @@
+{
+  "_nota": "Cálculo Diferencial #12 (final del curso). Énfasis matemático; la Ciencia de Datos va como plus corto. Cuentas verificadas con SymPy y Python. Fórmulas con KaTeX. Respuesta del reto del #11: ∇(x² + y²) = (2x, 2y) → (2, 2) en (1, 1). L(w) = (w − 3)², w₀ = 0, η = 0.1: 0.6, 1.08, 1.464, 1.7712 … → 3 (cada paso la distancia a 3 se multiplica por 0.8). η = 0.5: llega en 1 paso. η = 1.1: 6.6, −1.32, 8.184 … diverge. Plus: datos (1, 3), (2, 5), (3, 5), y = wx: L'(w) = 28w − 56 → w = 2; con η = 0.02: 1.12, 1.6128, 1.8296 … Reto final: η = 0.25 desde 0 → 1.5, 2.25.",
+  "id": "c12-descenso",
+  "titulo": "Descenso de gradiente | Cálculo Diferencial #12",
+  "aprobado": false,
+  "musica": "musica/explica.wav",
+  "voz": "alex_nicola",
+  "acento": "#5b8cff",
+  "subtitulos": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "capitulo": "Bajar con niebla",
+      "pantalla": "Una montaña dibujada cubierta de niebla (capas grises translúcidas). Un excursionista (punto con linterna) que solo ve el suelo a sus pies: flecha 'baja por aquí' según la inclinación. Da pasos y aparece el rastro hasta el valle. Texto: 'Sin ver el fondo'.",
+      "voz": {
+        "g1": "Estás en una montaña con tanta niebla que no ves nada. Quieres llegar al valle. ¿Cómo lo haces?",
+        "g2": "Solo puedes sentir el suelo bajo tus pies: hacia dónde se inclina. Así que das un paso cuesta abajo. Y otro. Y otro.",
+        "g3": "Eso, escrito con derivadas, es el algoritmo con el que se entrena casi toda la inteligencia artificial. Hoy lo construyes tú."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "serie",
+      "pantalla": "Sello 'CÁLCULO DIFERENCIAL #12' con el mapa de los 12 temas; se ilumina 'Descenso' (el último).",
+      "voz": {
+        "s1": "Esto es Cálculo Diferencial, episodio doce: el final del curso."
+      },
+      "pausa": 0.5
+    },
+    {
+      "id": "recuerda",
+      "capitulo": "Recuerda y objetivo",
+      "pantalla": "Tarjeta 'RECUERDA': el gradiente apunta hacia donde la función sube más rápido. 'RESPUESTA DEL RETO': f(x, y) = x² + y² → ∇f = (2x, 2y) → en (1, 1): ∇f = (2, 2).",
+      "voz": {
+        "r1": "En el episodio anterior: el gradiente apunta hacia donde la función sube más rápido.",
+        "r2": "El reto: el gradiente de equis al cuadrado más ye al cuadrado es dos equis, dos ye. En el punto uno, uno: dos, dos."
+      },
+      "sub": {
+        "r1": "En el episodio anterior: el gradiente apunta hacia donde la función sube más rápido.",
+        "r2": "El reto: ∇f = (2x, 2y). En (1, 1): ∇f = (2, 2)."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "objetivo",
+      "pantalla": "Tarjeta 'AL FINAL DE ESTE VIDEO VAS A PODER:' con 3 casillas: 1. Escribir la regla del descenso de gradiente · 2. Hacer los pasos a mano · 3. Elegir una buena tasa de aprendizaje.",
+      "voz": {
+        "o1": "Hoy vas a poder escribir la regla del descenso de gradiente, hacer los pasos a mano, y elegir una buena tasa de aprendizaje."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "que_es",
+      "capitulo": "La regla: un paso cuesta abajo",
+      "pantalla": "Curva L(w) (un valle). Un punto en la ladera con su tangente. Si la pendiente es positiva, flecha a la izquierda; si es negativa, a la derecha. Fórmula KaTeX coloreada: w_nuevo = w − η · L'(w). Etiquetas: w (dónde estás), L'(w) (la pendiente), η 'eta: tasa de aprendizaje, el tamaño del paso', el signo menos 'cuesta abajo'.",
+      "voz": {
+        "q1": "Pongamos el error de un modelo como una curva, y el peso del modelo, doble ve, como tu posición. La derivada es la inclinación del suelo.",
+        "q2": "Si la pendiente es positiva, el valle está a la izquierda. Si es negativa, a la derecha. Siempre hay que moverse en contra de la derivada.",
+        "q3": "La regla: el nuevo peso es el peso actual, menos eta por la derivada. Eta es la tasa de aprendizaje: el tamaño del paso. Y el signo menos es lo que te hace bajar."
+      },
+      "sub": {
+        "q1": "Pongamos el error del modelo como una curva L(w), y el peso w como tu posición. La derivada es la inclinación del suelo.",
+        "q3": "La regla: w nuevo = w − η·L'(w). η (eta) es la tasa de aprendizaje: el tamaño del paso. El signo menos te hace bajar."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "calcula",
+      "capitulo": "Cómo se calcula: paso a paso",
+      "pantalla": "L(w) = (w − 3)² (mínimo en w = 3), L'(w) = 2(w − 3). Tabla que se llena: w₀ = 0 · paso 1: 0 − 0.1·(−6) = 0.6 · paso 2: 0.6 − 0.1·(−4.8) = 1.08 · paso 3: 1.464 · … · paso 20: 2.97. La bolita baja por la parábola dejando rastro, con pasos cada vez más cortos.",
+      "voz": {
+        "c1": "Hagámoslo a mano. El error es doble ve menos tres, al cuadrado. Su mínimo está en tres, pero hagamos como que no lo sabemos.",
+        "c2": "Su derivada es dos por doble ve menos tres. Empezamos en cero, con eta igual a cero punto uno.",
+        "c3": "En cero, la derivada vale menos seis. El nuevo peso: cero menos cero punto uno por menos seis. Cero punto seis.",
+        "c4": "Otra vez: en cero punto seis, la derivada vale menos cuatro punto ocho. Nuevo peso: uno punto cero ocho. Y luego, uno punto cuatro seis.",
+        "c5": "Fíjate: los pasos se hacen más cortos solos, porque cerca del fondo el suelo es más plano. A los veinte pasos ya estamos en dos punto nueve siete."
+      },
+      "sub": {
+        "c1": "A mano: L(w) = (w − 3)². Su mínimo está en 3, pero hagamos como que no lo sabemos.",
+        "c2": "L'(w) = 2(w − 3). Empezamos en w = 0, con η = 0.1.",
+        "c3": "En 0, L'(0) = −6. Nuevo peso: 0 − 0.1·(−6) = 0.6.",
+        "c4": "Otra vez: L'(0.6) = −4.8. Nuevo peso: 1.08. Y luego, 1.464.",
+        "c5": "Los pasos se acortan solos: cerca del fondo el suelo es más plano. A los 20 pasos: 2.97."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "varias",
+      "capitulo": "Con varias variables",
+      "pantalla": "Mapa de nivel de f(x, y) = x² + y² (círculos). Desde (1, 1), flecha del gradiente (2, 2) hacia afuera en gris y flecha −∇f hacia adentro en verde. Fórmula: (x, y) ← (x, y) − η·∇f. Con η = 0.25: (1, 1) → (0.5, 0.5) → (0.25, 0.25) → … hacia (0, 0).",
+      "voz": {
+        "v1": "Con varias variables es igual, pero con el gradiente. Usemos el reto: en uno, uno, el gradiente es dos, dos, y apunta hacia arriba.",
+        "v2": "Así que caminamos al revés: menos el gradiente. Con eta igual a cero punto veinticinco, pasamos a cero punto cinco, cero punto cinco. Luego a cero punto veinticinco. Directo al fondo del valle, en cero, cero."
+      },
+      "sub": {
+        "v1": "Con varias variables es igual, con el gradiente. El del reto: en (1, 1), ∇f = (2, 2), apunta hacia arriba.",
+        "v2": "Caminamos al revés: (x, y) − η·∇f. Con η = 0.25: (0.5, 0.5), luego (0.25, 0.25). Directo al fondo, en (0, 0)."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "tasa",
+      "capitulo": "La tasa de aprendizaje",
+      "pantalla": "Tres parábolas lado a lado con la misma L(w) = (w − 3)² desde w = 0: η = 0.01 'muy chica' (pasitos diminutos, casi no avanza: 'tarda una eternidad') · η = 0.5 'justa' (llega a 3 en un paso) · η = 1.1 'muy grande' (rebota de un lado a otro, cada vez más lejos: 6.6, −1.32, 8.18 → 'DIVERGE').",
+      "voz": {
+        "t1": "Todo depende de eta. Si es muy chica, avanzas a pasitos y tardas una eternidad.",
+        "t2": "Si es justa, llegas rápido. Aquí, con cero punto cinco, llegas al tres en un solo paso.",
+        "t3": "Y si es muy grande, te pasas del fondo: con uno punto uno, saltas a seis punto seis, luego a menos uno punto tres, luego a ocho punto dos. Cada salto te aleja más. Eso se llama divergir."
+      },
+      "sub": {
+        "t1": "Todo depende de η. Si es muy chica, avanzas a pasitos y tardas una eternidad.",
+        "t2": "Si es justa, llegas rápido. Con η = 0.5, llegas a 3 en un solo paso.",
+        "t3": "Si es muy grande, te pasas del fondo: con η = 1.1, saltas a 6.6, luego a −1.32, luego a 8.18. Cada salto te aleja más: diverge."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "para_que",
+      "capitulo": "¿Para qué se usa?",
+      "pantalla": "Tarjeta: 'OPTIMIZAR CUALQUIER COSA QUE TENGA DERIVADA, aunque no puedas despejar'. Ejemplos chicos: ajustar el diseño de una pieza, la ruta de un robot, los precios.",
+      "voz": {
+        "u1": "¿Para qué se usa? Para optimizar casi cualquier cosa que tenga derivada. En el episodio nueve igualábamos la derivada a cero y despejábamos.",
+        "u2": "Pero muchas veces esa ecuación no se puede despejar. El descenso de gradiente no necesita despejar nada: solo saber hacia dónde bajar."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "plus",
+      "capitulo": "Plus: en Ciencia de Datos",
+      "pantalla": "Chip 'PLUS: CIENCIA DE DATOS'. Tres puntos (1, 3), (2, 5), (3, 5) y una recta y = wx que gira con cada paso: w = 0 → 1.12 → 1.61 → 1.83 → … → 2. Al lado, L'(w) = 28w − 56 y η = 0.02. Abajo: 'lo mismo entrena la regresión logística (Fútbol con Datos #2) y las redes neuronales'. 'Ejemplo simplificado'.",
+      "voz": {
+        "p1": "Un plus para ciencia de datos: esto es entrenar un modelo. Con tres puntos y una recta que pasa por el origen, el error depende de la pendiente doble ve.",
+        "p2": "Empezamos con la recta plana, y en cada paso se inclina un poco más: uno punto uno dos, uno punto seis uno, uno punto ocho tres, hasta dos, la mejor recta.",
+        "p3": "Así se entrenan la regresión logística y las redes neuronales: con millones de pesos y su gradiente, pero el mismo paso cuesta abajo, repetido miles de veces."
+      },
+      "sub": {
+        "p1": "Un plus para ciencia de datos: esto es entrenar un modelo. Con 3 puntos y la recta y = wx, el error depende de w.",
+        "p2": "Empezamos con la recta plana, y en cada paso se inclina más: 1.12, 1.61, 1.83… hasta w = 2, la mejor recta."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "python",
+      "capitulo": "En Python",
+      "pantalla": "Editor con 3 líneas: w, lr = 0, 0.1 / for _ in range(100): w -= lr * 2 * (w - 3) / print(round(w, 4)) → 3.0.",
+      "voz": {
+        "y1": "Este es el código.",
+        "y2": "Cien veces el mismo paso: el peso, menos la tasa por la derivada.",
+        "y3": "Y aunque nunca le dijimos dónde estaba el mínimo, el resultado es tres. El modelo lo encontró solo."
+      },
+      "pausa": 1.4,
+      "sub": {
+        "y3": "Nunca le dijimos dónde estaba el mínimo, y el resultado es 3. Lo encontró solo."
+      }
+    },
+    {
+      "id": "error",
+      "capitulo": "Error común",
+      "pantalla": "Sticker '¡CUIDADO!'. Gráfica del error contra el número de paso: una curva que baja (bien) y otra que sube y se dispara (η demasiado grande). Etiqueta: 'si el error sube, baja η'. Segundo aviso: 'un mínimo local no es el mejor' (curva con dos valles, del #10).",
+      "voz": {
+        "x1": "Cuidado: si al entrenar el error crece en vez de bajar, casi siempre la tasa de aprendizaje es demasiado grande. Hay que bajarla.",
+        "x2": "Y recuerda el episodio diez: si el error no es convexo, puedes llegar a un valle que no es el más profundo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "reto",
+      "capitulo": "Reto y resumen",
+      "pantalla": "Tarjeta 'RETO FINAL': L(w) = (w − 3)², empezando en w = 0 con η = 0.25. ¿Cuánto vale w después de 2 pasos? 'Dejo la respuesta fijada en los comentarios'. Luego 3 tarjetas de resumen: 1. w ← w − η·L'(w) · 2. η chica: lento; grande: diverge · 3. Así aprende un modelo.",
+      "voz": {
+        "w1": "El reto final: el mismo error, empezando en cero, pero con eta igual a cero punto veinticinco. ¿Cuánto vale el peso después de dos pasos? Déjalo en los comentarios.",
+        "w2": "En resumen: el nuevo peso es el actual menos eta por la derivada. Si eta es chica, vas lento; si es muy grande, diverges. Y repetido muchas veces, así aprende un modelo."
+      },
+      "sub": {
+        "w1": "Reto final: L(w) = (w − 3)², desde w = 0, con η = 0.25. ¿Cuánto vale w después de 2 pasos? Déjalo en los comentarios.",
+        "w2": "Resumen: w nuevo = w − η·L'(w). η chica: lento; muy grande: diverge. Repetido muchas veces, así aprende un modelo."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "mapa",
+      "capitulo": "El mapa del curso",
+      "pantalla": "El mapa de los 12 temas se enciende uno por uno, unido por flechas: función → límite → continuidad → derivada → reglas → exp y log → producto → cadena → óptimo → curvatura → gradiente → descenso. Al final: 'Ya sabes cómo aprende un modelo'.",
+      "voz": {
+        "m1": "Y mira todo lo que recorriste. Empezamos con una función. Con el límite llegamos a la derivada, aprendimos sus reglas y la cadena.",
+        "m2": "Con la derivada encontramos máximos y mínimos, leímos la curvatura, y con varias variables, el gradiente. Hasta llegar aquí.",
+        "m3": "Doce episodios después, ya sabes cómo aprende un modelo. Gracias por llegar hasta el final."
+      },
+      "sub": {
+        "m3": "12 episodios después, ya sabes cómo aprende un modelo. Gracias por llegar hasta el final."
+      },
+      "pausa": 1.4
+    },
+    {
+      "id": "cierre",
+      "capitulo": "Cierre",
+      "pantalla": "'CURSO COMPLETO · Cálculo Diferencial' con la lista de reproducción; luego el cierre estándar. Mitad derecha libre para la pantalla final (lista del curso + episodio 1).",
+      "voz": {
+        "z1": "Si quieres repasar, la lista completa del curso está en el canal.",
+        "z2": "¿Te sirvió? Ve más videos en Universo Ciencia de Datos, y suscríbete."
+      },
+      "min": 20
+    }
+  ]
+}
